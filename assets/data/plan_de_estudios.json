@@ -1,0 +1,114 @@
+{
+  "semesters": [
+    {
+      "number": 1,
+      "courses": [
+        {"name":"Álgebra Lineal","clave":"20174","sigla":"MT010","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"AB","prereq":[],"syllabus":"","description":""},
+        {"name":"Cálculo I y Taller","clave":"20048","sigla":"MT001","credits":10,"hours":{"with_prof":6,"independent":4},"lab":false,"lab_clave":null,"area":"AB","prereq":[],"syllabus":"","description":""},
+        {"name":"Fundamentos de Programación y Laboratorio","clave":"20825","sigla":"IE012","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"7115","area":"AB","prereq":[],"syllabus":"","description":""},
+        {"name":"Pensamiento de Ingeniería","clave":"24271","sigla":"IE085","credits":3,"hours":{"with_prof":2,"independent":1},"lab":false,"lab_clave":null,"area":"AB","prereq":[],"syllabus":"","description":""},
+        {"name":"Taller de Escritura Académica","clave":"23981","sigla":"LE001","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"AB","prereq":[],"syllabus":"","description":""},
+        {"name":"Taller de Integración Universitaria","clave":"24077","sigla":"PFI001","credits":4,"hours":{"with_prof":2,"independent":2},"lab":false,"lab_clave":null,"area":"AB","prereq":[],"syllabus":"","description":""}
+      ]
+    },
+    {
+      "number": 2,
+      "courses": [
+        {"name":"Cálculo II","clave":"2201","sigla":"MT076","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"AB","prereq":["20048"],"syllabus":"","description":""},
+        {"name":"Física I","clave":"24370","sigla":"FI048","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"AB","prereq":[],"syllabus":"","description":""},
+        {"name":"Ingeniería de Circuitos y Laboratorio","clave":"80012","sigla":"IE089","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"80426","area":"AB","prereq":[],"syllabus":"","description":""},
+        {"name":"Laboratorio de Física I","clave":"24371","sigla":"FI049","credits":4,"hours":{"with_prof":2,"independent":2},"lab":true,"lab_clave":null,"area":"AB","prereq":[],"syllabus":"","description":""},
+        {"name":"Pensamiento Creativo e Innovación","clave":"24289","sigla":"IE086","credits":4,"hours":{"with_prof":2,"independent":2},"lab":false,"lab_clave":null,"area":"AB","prereq":["24271"],"syllabus":"","description":""},
+        {"name":"Programación Aplicada y Laboratorio","clave":"20827","sigla":"IE014","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"7117","area":"AB","prereq":["20825"],"syllabus":"","description":""}
+      ]
+    },
+    {
+      "number": 3,
+      "courses": [
+        {"name":"Gestión de la Tecnología","clave":"80018","sigla":"IE093","credits":4,"hours":{"with_prof":2,"independent":2},"lab":false,"lab_clave":null,"area":"AM","prereq":["24289"],"syllabus":"","description":""},
+        {"name":"Física II","clave":"24372","sigla":"FI050","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"AB","prereq":["24370"],"syllabus":"","description":""},
+        {"name":"Programación de Modelos en Ecuaciones Diferenciales","clave":"80064","sigla":"MT133","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"AB","prereq":["2201","20827"],"syllabus":"","description":""},
+        {"name":"Sistemas Analógicos y de Potencia y Laboratorio","clave":"80014","sigla":"IE090","credits":12,"hours":{"with_prof":8,"independent":4},"lab":true,"lab_clave":"80427","area":"AM","prereq":["80012"],"syllabus":"","description":""},
+        {"name":"Sistemas de Bases de Datos y Laboratorio","clave":"20831","sigla":"IE018","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"7121","area":"AM","prereq":["20827"],"syllabus":"","description":""}
+      ]
+    },
+    {
+      "number": 4,
+      "courses": [
+        {"name":"Modelado de Sistemas Lineales y Laboratorio","clave":"80023","sigla":"IE098","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"80423","area":"ASE","prereq":["80064"],"syllabus":"","description":""},
+        {"name":"Programación Orientada a Objetos y Laboratorio","clave":"20835","sigla":"IE022","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"7122","area":"AM","prereq":["20827"],"syllabus":"","description":""},
+        {"name":"Sistemas Digitales y Laboratorio","clave":"80016","sigla":"IE091","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"80428","area":"AM","prereq":["80012"],"syllabus":"","description":""},
+        {"name":"Dibujo Técnico y Comunicación Gráfica","clave":"24563","sigla":"IN100","credits":10,"hours":{"with_prof":6,"independent":4},"lab":false,"lab_clave":null,"area":"AB","prereq":[],"syllabus":"","description":""}
+      ]
+    },
+    {
+      "number": 5,
+      "courses": [
+        {"name":"Sistemas Embebidos y Laboratorio","clave":"80017","sigla":"IE092","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"80429","area":"AM","prereq":["80014","80016"],"syllabus":"","description":""},
+        {"name":"Procesamiento de Señales y Laboratorio","clave":"22684","sigla":"IE076","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"8776","area":"AM","prereq":["80023"],"syllabus":"","description":""},
+        {"name":"Selección de Materiales","clave":"24683","sigla":"IN112","credits":10,"hours":{"with_prof":6,"independent":4},"lab":false,"lab_clave":null,"area":"AM","prereq":[],"syllabus":"","description":""},
+        {"name":"Tecnologías para el Desarrollo Sostenible","clave":"80019","sigla":"IE094","credits":4,"hours":{"with_prof":2,"independent":2},"lab":false,"lab_clave":null,"area":"AM","prereq":["80018"],"syllabus":"","description":""},
+        {"name":"ARU 1","clave":"23908","sigla":"RU102","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"ARU","prereq":[],"syllabus":"","description":""}
+      ]
+    },
+    {
+      "number": 6,
+      "courses": [
+        {"name":"Arquitectura de Sistemas Embebidos y Laboratorio","clave":"80039","sigla":"IE106","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"80431","area":"AM","prereq":["80016"],"syllabus":"","description":""},
+        {"name":"Procesamiento de Imágenes y Laboratorio","clave":"22694","sigla":"IE077","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"8775","area":"AM","prereq":["22684"],"syllabus":"","description":""},
+        {"name":"Dinámica de Mecanismos y Actuadores","clave":"24710","sigla":"IN118","credits":10,"hours":{"with_prof":6,"independent":4},"lab":false,"lab_clave":null,"area":"AM","prereq":[],"syllabus":"","description":""},
+        {"name":"Ingeniería de Control y Laboratorio","clave":"80028","sigla":"IE100","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"80443","area":"AM","prereq":["80023","80017"],"syllabus":"","description":""}
+      ]
+    },
+    {
+      "number": 7,
+      "courses": [
+        {"name":"Integración Mecatrónica y Laboratorio","clave":"80041","sigla":"IE108","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"80448","area":"AM","prereq":["24710","80017"],"syllabus":"","description":""},
+        {"name":"Control Avanzado y Robótica y Laboratorio","clave":"80029","sigla":"IE101","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"80444","area":"AM","prereq":["80028"],"syllabus":"","description":""},
+        {"name":"Control Inteligente y Laboratorio","clave":"80030","sigla":"IE102","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"80445","area":"AM","prereq":["80028"],"syllabus":"","description":""},
+        {"name":"Automatización por Lógica Programable y Laboratorio","clave":"80020","sigla":"IE095","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"80441","area":"AM","prereq":["80016"],"syllabus":"","description":""}
+      ]
+    },
+    {
+      "number": 8,
+      "courses": [
+        {"name":"Optativa A (10 créditos)","clave":"19045","sigla":"OPT10A","credits":10,"hours":{"with_prof":6,"independent":4},"lab":false,"lab_clave":null,"area":"OP","prereq":[],"syllabus":"","description":""},
+        {"name":"Optativa 1 (8 créditos)","clave":"19035","sigla":"OPT8A","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"OP","prereq":[],"syllabus":"","description":""},
+        {"name":"ARU 2","clave":"ARU2","sigla":"ARU2","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"ARU","prereq":["23908"],"syllabus":"","description":""},
+        {"name":"Automatización de Sistemas Productivos y Laboratorio","clave":"80021","sigla":"IE096","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"80442","area":"AM","prereq":["80020","80028"],"syllabus":"","description":""},
+        {"name":"Analítica de Datos","clave":"80005","sigla":"IE088","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"AM","prereq":["80064"],"syllabus":"","description":""}
+      ]
+    },
+    {
+      "number": 9,
+      "courses": [
+        {"name":"Optativa B (10 créditos)","clave":"19046","sigla":"OPT10B","credits":10,"hours":{"with_prof":6,"independent":4},"lab":false,"lab_clave":null,"area":"OP","prereq":[],"syllabus":"","description":""},
+        {"name":"Optativa 2 (8 créditos)","clave":"19036","sigla":"OPT8B","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"OP","prereq":[],"syllabus":"","description":""},
+        {"name":"ARU 3","clave":"ARU3","sigla":"ARU3","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"ARU","prereq":["23908"],"syllabus":"","description":""},
+        {"name":"Sistemas Ciberfísicos de Automatización y Laboratorio","clave":"80031","sigla":"IE103","credits":10,"hours":{"with_prof":6,"independent":4},"lab":true,"lab_clave":"80446","area":"AM","prereq":["80021"],"syllabus":"","description":""},
+        {"name":"Aplicaciones de Analítica de Datos","clave":"80027","sigla":"IE099","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"AM","prereq":["80005"],"syllabus":"","description":""}
+      ]
+    },
+    {
+      "number": 10,
+      "courses": [
+        {"name":"Optativa 3 (8 créditos)","clave":"19037","sigla":"OPT8C","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"OP","prereq":[],"syllabus":"","description":""},
+        {"name":"Optativa 4 (8 créditos)","clave":"19038","sigla":"OPT8D","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"OP","prereq":[],"syllabus":"","description":""},
+        {"name":"ARU 4","clave":"ARU4","sigla":"ARU4","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"ARU","prereq":["23908"],"syllabus":"","description":""},
+        {"name":"Robótica Móvil y Multiagente y Laboratorio","clave":"80032","sigla":"IE104","credits":8,"hours":{"with_prof":4,"independent":4},"lab":true,"lab_clave":"80447","area":"AM","prereq":["80029"],"syllabus":"","description":""},
+        {"name":"Internet de las Cosas","clave":"80040","sigla":"IE107","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"AM","prereq":["80017"],"syllabus":"","description":""},
+        {"name":"Proyecto Terminal de Ingeniería","clave":"80105","sigla":"IE130","credits":8,"hours":{"with_prof":4,"independent":4},"lab":false,"lab_clave":null,"area":"ASE","prereq":["80023"],"syllabus":"","description":""}
+      ]
+    }
+  ],
+  "optatives": [
+    {"name":"Aeronaves no tripuladas y laboratorio","clave":"80052","lab":true,"lab_clave":"80449","area":"Sistemas Autónomos","prereq":["80030"]},
+    {"name":"Robótica probabilista y navegación y laboratorio","clave":"80054","lab":true,"lab_clave":"80451","area":"Sistemas Autónomos","prereq":["80029"]},
+    {"name":"Vehículos autónomos y laboratorio","clave":"80053","lab":true,"lab_clave":"80450","area":"Sistemas Autónomos","prereq":["80029"]},
+    {"name":"Robótica de servicio y laboratorio","clave":"80055","lab":true,"lab_clave":"80452","area":"Biomecatrónica","prereq":["80029"]},
+    {"name":"Dispositivos de tecnología corporal y laboratorio","clave":"80056","lab":true,"lab_clave":"80434","area":"Biomecatrónica","prereq":["80017"]},
+    {"name":"Introducción a la biomecatrónica y laboratorio","clave":"80057","lab":true,"lab_clave":"80435","area":"Biomecatrónica","prereq":["22684"]},
+    {"name":"Aplicaciones móviles y laboratorio","clave":"22258","lab":true,"lab_clave":"8770","area":"Inteligencia Artificial","prereq":["20835"]},
+    {"name":"Fundamentos de redes digitales y laboratorio","clave":"20841","lab":true,"lab_clave":"7131","area":"Internet de las Cosas","prereq":["20827"]}
+  ]
+}

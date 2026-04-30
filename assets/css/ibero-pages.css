@@ -1,0 +1,229 @@
+
+/* =============================================================
+ * Páginas internas · Mecatrónica IBERO
+ * Complementa ibero-home.css sin modificar styles.css global.
+ * ============================================================= */
+body.ibero-inner-page {
+  background: #fff;
+}
+
+.ibero-internal-hero {
+  background: #fff;
+  padding: 4.4rem 0 3.4rem;
+}
+.ibero-internal-title {
+  margin: 0;
+  color: var(--ibero-black);
+  font-family: var(--ibero-serif);
+  font-size: clamp(3.5rem, 6.5vw, 6.9rem);
+  font-weight: 500;
+  line-height: .94;
+  letter-spacing: -.045em;
+}
+.ibero-internal-lead {
+  max-width: 760px;
+  color: #35393e;
+  font-size: clamp(1.16rem, 1.55vw, 1.48rem);
+  line-height: 1.48;
+  font-weight: 400;
+}
+
+/* Académicos */
+.ibero-academics-section {
+  background: var(--ibero-soft);
+}
+.ibero-person-card {
+  height: 100%;
+  background: #fff;
+  border: 1px solid var(--ibero-border);
+  display: flex;
+  flex-direction: column;
+}
+.ibero-person-img-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1.25rem 0;
+}
+.ibero-person-img {
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f1f1f1;
+}
+.ibero-person-body {
+  padding: 1.35rem 1.35rem 1.6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 auto;
+}
+.ibero-person-name {
+  margin: 0 0 .65rem;
+  color: var(--ibero-black);
+  font-family: var(--ibero-serif);
+  font-size: clamp(1.65rem, 2.2vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -.025em;
+}
+.ibero-person-role {
+  min-height: 2.2em;
+  margin-bottom: .9rem;
+  color: var(--ibero-red);
+  font-weight: 800;
+  line-height: 1.2;
+}
+.ibero-person-email {
+  color: var(--ibero-black);
+  font-size: .98rem;
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.ibero-person-email:hover,
+.ibero-person-email:focus {
+  color: var(--ibero-red);
+  text-decoration: underline;
+}
+.ibero-person-location {
+  margin-top: .55rem;
+  color: var(--ibero-gray);
+  font-size: .95rem;
+}
+.ibero-person-btn {
+  margin-top: auto;
+  min-width: 160px;
+  padding-block: .72rem;
+}
+
+/* Grupos estudiantiles */
+.ibero-groups-section {
+  background: var(--ibero-soft);
+}
+.ibero-group-card {
+  height: 100%;
+  background: #fff;
+  border: 1px solid var(--ibero-border);
+  display: flex;
+  flex-direction: column;
+}
+.ibero-group-media {
+  aspect-ratio: 16 / 9;
+  background: #111;
+  overflow: hidden;
+}
+.ibero-group-media iframe,
+.ibero-group-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+.ibero-group-body {
+  padding: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+.ibero-group-title {
+  margin: 0 0 .75rem;
+  font-family: var(--ibero-serif);
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.035em;
+}
+.ibero-group-body p {
+  color: #34373b;
+  font-size: 1.08rem;
+  line-height: 1.5;
+}
+.ibero-group-link {
+  margin-top: auto;
+}
+.ibero-group-link.disabled,
+.ibero-group-link.is-disabled {
+  color: var(--ibero-gray) !important;
+  border-color: #bfbfbf !important;
+  background: #f5f5f5 !important;
+  opacity: 1 !important;
+}
+
+/* Plan de estudios */
+.ibero-plan-shell .page-section {
+  padding: 4rem 0 5rem;
+  background: #fff;
+}
+.ibero-plan-shell .section-heading {
+  margin-bottom: 1.6rem;
+  color: var(--ibero-black);
+  font-family: var(--ibero-serif);
+  font-size: clamp(2.8rem, 4.8vw, 5.2rem);
+  font-weight: 500;
+  line-height: .96;
+  letter-spacing: -.04em;
+  text-transform: none !important;
+}
+.ibero-plan-shell #viewSelector {
+  margin-top: .6rem;
+}
+.ibero-plan-shell #planView {
+  border-radius: 999px;
+  border-color: var(--ibero-border);
+  padding-left: 1rem;
+  padding-right: 2.4rem;
+}
+.ibero-plan-shell .view-divider {
+  background: var(--ibero-red);
+  max-width: 980px;
+}
+.ibero-plan-shell #planNav .btn,
+.ibero-plan-shell .btn-ibero-mini {
+  border-radius: 999px;
+}
+.ibero-plan-shell #planGrid {
+  background: #fff;
+}
+.ibero-plan-shell .sem-header {
+  background: var(--ibero-red);
+  color: #fff;
+  border-radius: 0;
+}
+.ibero-plan-shell .course-card {
+  border-color: var(--ibero-border);
+  border-radius: 0;
+  background: #fff;
+}
+.ibero-plan-shell .course-card:hover {
+  border-color: var(--ibero-red);
+}
+
+/* Footer: mantener discreto en internas */
+.ibero-inner-page .ibero-footer {
+  margin-top: 0;
+}
+
+@media (max-width: 991.98px) {
+  .ibero-internal-hero {
+    padding: 3rem 0 2.3rem;
+  }
+  .ibero-internal-lead {
+    margin-top: 1rem;
+  }
+  .ibero-person-img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ibero-internal-title {
+    font-size: 3rem;
+  }
+  .ibero-group-body {
+    padding: 1.25rem;
+  }
+}

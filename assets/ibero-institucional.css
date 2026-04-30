@@ -1,0 +1,666 @@
+/* ==========================================================================
+   Tema institucional IBERO CDMX
+   Archivo agregado para homologar el sitio de Mecatrónica con el lenguaje visual
+   observado en los sitios institucionales de referencia.
+   Mantiene Bootstrap, pero redefine navegación, botones, tarjetas, títulos y footer.
+   ========================================================================== */
+
+:root{
+  --ibero-red:#d60032;
+  --ibero-red-dark:#a80028;
+  --ibero-black:#1f1f1f;
+  --ibero-gray:#f4f4f4;
+  --ibero-line:#d7d7d7;
+  --ibero-muted:#5e5e5e;
+  --ibero-white:#ffffff;
+  --ibero-serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --ibero-sans:"Source Sans 3","Source Sans Pro",Arial,sans-serif;
+}
+
+html{ scroll-behavior:smooth; }
+
+body.ibero-theme{
+  font-family:var(--ibero-sans);
+  color:var(--ibero-black);
+  background:#fff;
+  font-size:18px;
+  line-height:1.55;
+}
+
+body.ibero-theme h1,
+body.ibero-theme h2,
+body.ibero-theme h3,
+body.ibero-theme h4,
+body.ibero-theme .display-1,
+body.ibero-theme .display-2,
+body.ibero-theme .display-3,
+body.ibero-theme .display-4,
+body.ibero-theme .display-5,
+body.ibero-theme .display-6,
+body.ibero-theme .section-heading{
+  font-family:var(--ibero-serif);
+  color:var(--ibero-black);
+  letter-spacing:-.03em;
+  line-height:.98;
+  font-weight:500;
+}
+
+body.ibero-theme p,
+body.ibero-theme li{
+  color:var(--ibero-black);
+}
+
+/* --------------------------------------------------------------------------
+   Barra institucional
+   -------------------------------------------------------------------------- */
+.ibero-navbar{
+  background:#fff !important;
+  border-bottom:1px solid rgba(0,0,0,.12);
+  min-height:112px;
+  padding:1.1rem 2rem .9rem;
+  z-index:1030;
+}
+
+.ibero-brand{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  text-decoration:none;
+  color:var(--ibero-black);
+  min-width:280px;
+}
+
+.ibero-brand:hover{ color:var(--ibero-black); }
+
+.ibero-wordmark{
+  display:block;
+  color:var(--ibero-red);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:2.25rem;
+  line-height:.82;
+  letter-spacing:-.08rem;
+}
+
+.ibero-city{
+  display:block;
+  color:var(--ibero-red);
+  font-size:.62rem;
+  font-weight:700;
+  line-height:1;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+}
+
+.ibero-brand-divider{
+  width:1px;
+  align-self:stretch;
+  min-height:44px;
+  background:var(--ibero-red);
+}
+
+.ibero-program{
+  color:var(--ibero-red);
+  font-weight:800;
+  font-size:.83rem;
+  line-height:1.05;
+  max-width:190px;
+}
+
+.ibero-navbar .navbar-toggler{
+  border:0;
+  box-shadow:none !important;
+  color:var(--ibero-black);
+  padding:.5rem;
+}
+
+.ibero-navbar .navbar-toggler-icon{
+  width:2rem;
+  height:2rem;
+  background-image:none;
+  position:relative;
+}
+
+.ibero-navbar .navbar-toggler-icon::before{
+  content:"☰";
+  display:block;
+  color:var(--ibero-black);
+  font-size:2rem;
+  line-height:1;
+}
+
+.ibero-navbar .navbar-nav{
+  align-items:center;
+  gap:.15rem;
+}
+
+.ibero-navbar .nav-link{
+  color:var(--ibero-black) !important;
+  font-size:1.03rem;
+  font-weight:500 !important;
+  padding:.8rem 1rem !important;
+  position:relative;
+}
+
+.ibero-navbar .nav-link::after{
+  content:"";
+  position:absolute;
+  left:1rem;
+  right:1rem;
+  bottom:.45rem;
+  height:2px;
+  background:var(--ibero-red);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .18s ease;
+}
+
+.ibero-navbar .nav-link:hover::after,
+.ibero-navbar .nav-link.active::after{
+  transform:scaleX(1);
+}
+
+.ibero-navbar .nav-link.active{
+  color:var(--ibero-red) !important;
+}
+
+.ibero-navbar .btn-admisiones{
+  background:var(--ibero-red);
+  color:#fff !important;
+  border-radius:999px;
+  padding:.7rem 1.25rem !important;
+  margin-left:.5rem;
+  font-weight:700 !important;
+}
+
+.ibero-navbar .btn-admisiones::after{ display:none; }
+.ibero-navbar .btn-admisiones:hover{ background:var(--ibero-red-dark); }
+
+/* Opción de cabecera roja, por si más adelante se desea usar en páginas tipo prensa */
+.ibero-navbar.ibero-navbar-red{
+  background:var(--ibero-red) !important;
+  border-bottom:0;
+}
+.ibero-navbar.ibero-navbar-red .ibero-wordmark,
+.ibero-navbar.ibero-navbar-red .ibero-city,
+.ibero-navbar.ibero-navbar-red .ibero-program,
+.ibero-navbar.ibero-navbar-red .nav-link,
+.ibero-navbar.ibero-navbar-red .navbar-toggler-icon::before{
+  color:#fff !important;
+}
+.ibero-navbar.ibero-navbar-red .ibero-brand-divider,
+.ibero-navbar.ibero-navbar-red .nav-link::after{
+  background:#fff;
+}
+
+/* --------------------------------------------------------------------------
+   Hero institucional
+   -------------------------------------------------------------------------- */
+.ibero-page-hero{
+  background:var(--ibero-red);
+  color:#fff;
+  padding:5.25rem 0 4.8rem;
+  text-align:center;
+}
+
+.ibero-page-hero .ibero-eyebrow,
+.ibero-home-label{
+  color:#fff;
+  text-transform:uppercase;
+  letter-spacing:.42em;
+  font-size:.83rem;
+  font-weight:800;
+  margin-bottom:1.25rem;
+}
+
+.ibero-page-hero h1{
+  color:#fff !important;
+  font-size:clamp(3rem,7.2vw,6.4rem);
+  margin:0 auto 1.3rem;
+  max-width:1120px;
+}
+
+.ibero-page-hero p{
+  color:#fff !important;
+  max-width:980px;
+  margin:0 auto;
+  font-size:clamp(1.1rem,1.8vw,1.45rem);
+  line-height:1.7;
+}
+
+/* Carrusel actual con tratamiento más institucional */
+#masthead{
+  background:var(--ibero-red);
+}
+
+#heroCarousel,
+#heroCarousel .carousel-item{
+  min-height:680px;
+}
+
+#heroCarousel .hero-bg{
+  width:100%;
+  height:680px;
+  object-fit:cover;
+  display:block;
+}
+
+#heroCarousel .overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,.64),rgba(0,0,0,.16));
+}
+
+#heroCarousel .hero-card{
+  position:absolute;
+  left:clamp(1.5rem,8vw,8rem);
+  top:50%;
+  transform:translateY(-50%);
+  max-width:650px;
+  padding:0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
+
+#heroCarousel .hero-card h1{
+  color:#fff !important;
+  font-size:clamp(3rem,6vw,6rem);
+  font-family:var(--ibero-serif);
+  font-weight:500 !important;
+  letter-spacing:-.04em;
+  line-height:.95;
+}
+
+#heroCarousel .hero-card .lead{
+  color:#fff !important;
+  max-width:590px;
+  font-size:1.35rem;
+  line-height:1.55;
+}
+
+#heroCarousel .carousel-indicators [data-bs-target]{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+}
+
+/* --------------------------------------------------------------------------
+   Secciones, títulos y cajas
+   -------------------------------------------------------------------------- */
+body.ibero-theme section{
+  scroll-margin-top:130px;
+}
+
+body.ibero-theme .container{
+  max-width:1400px;
+}
+
+body.ibero-theme .section-heading{
+  font-size:clamp(2.8rem,5vw,5.2rem);
+  text-transform:none !important;
+  margin-bottom:1.3rem;
+}
+
+body.ibero-theme .text-uppercase.text-danger,
+body.ibero-theme .text-danger,
+body.ibero-theme .small.text-muted:first-letter{
+  color:var(--ibero-red) !important;
+}
+
+body.ibero-theme .bg-light{
+  background:#f5f5f5 !important;
+}
+
+body.ibero-theme .bg-primary{
+  background:var(--ibero-red) !important;
+}
+
+body.ibero-theme .rounded-3,
+body.ibero-theme .rounded-4{
+  border-radius:0 !important;
+}
+
+body.ibero-theme .shadow-sm{
+  box-shadow:none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Botones institucionales
+   -------------------------------------------------------------------------- */
+body.ibero-theme .btn{
+  border-radius:999px !important;
+  font-weight:800;
+  padding:.85rem 1.65rem;
+  border-width:1.5px;
+}
+
+body.ibero-theme .btn-danger,
+body.ibero-theme .btn-primary{
+  background:var(--ibero-red) !important;
+  border-color:var(--ibero-red) !important;
+  color:#fff !important;
+}
+
+body.ibero-theme .btn-danger:hover,
+body.ibero-theme .btn-primary:hover{
+  background:var(--ibero-red-dark) !important;
+  border-color:var(--ibero-red-dark) !important;
+}
+
+body.ibero-theme .btn-outline-dark{
+  border-color:var(--ibero-black) !important;
+  color:var(--ibero-black) !important;
+  background:transparent !important;
+}
+
+body.ibero-theme .btn-outline-dark:hover{
+  background:var(--ibero-black) !important;
+  color:#fff !important;
+}
+
+body.ibero-theme .btn-outline-light{
+  color:#fff !important;
+  border-color:#fff !important;
+}
+body.ibero-theme .btn-outline-light:hover{
+  color:var(--ibero-red) !important;
+  background:#fff !important;
+}
+
+/* --------------------------------------------------------------------------
+   Tarjetas tipo noticia / recursos / académicos
+   -------------------------------------------------------------------------- */
+body.ibero-theme .card{
+  border:1px solid var(--ibero-line);
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:#fff;
+  overflow:hidden;
+}
+
+body.ibero-theme .card-body{
+  padding:1.8rem;
+}
+
+body.ibero-theme .card-title,
+body.ibero-theme .card h2,
+body.ibero-theme .card h3,
+body.ibero-theme .card h4,
+body.ibero-theme .card h5{
+  font-family:var(--ibero-serif);
+  color:var(--ibero-black);
+  font-weight:500;
+  letter-spacing:-.03em;
+}
+
+body.ibero-theme .card-text,
+body.ibero-theme .text-muted{
+  color:#424242 !important;
+}
+
+.ibero-academic-card{
+  height:100%;
+  transition:transform .18s ease, border-color .18s ease;
+}
+.ibero-academic-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--ibero-red);
+}
+.ibero-academic-card .card-body{
+  padding:0 0 1.35rem !important;
+  background:#fff !important;
+}
+.ibero-academic-card img{
+  width:100% !important;
+  height:220px !important;
+  max-width:none !important;
+  object-fit:cover;
+  display:block;
+  border-radius:0 !important;
+  padding:0 !important;
+  margin:0 0 1.55rem !important;
+}
+.ibero-academic-card h5{
+  font-size:clamp(1.65rem,2vw,2.3rem);
+  line-height:1.02;
+  margin:0 1.55rem .9rem;
+}
+.ibero-academic-card .fst-italic{
+  font-style:normal !important;
+  color:#675c5c !important;
+  text-transform:uppercase;
+  letter-spacing:.45em;
+  font-size:.78rem;
+  font-weight:800;
+  margin:0 1.55rem 1rem;
+}
+.ibero-academic-card .text-center[style*="color"]{
+  color:var(--ibero-red) !important;
+  margin:0 1.55rem .8rem;
+  text-align:left !important;
+  word-break:break-word;
+}
+.ibero-academic-card .mb-3{
+  margin:0 1.55rem 1rem !important;
+  text-align:left !important;
+}
+.ibero-academic-card .d-grid{
+  margin:1rem 1.55rem 0;
+}
+
+/* Grupos estudiantiles */
+.group-card{
+  border:1px solid var(--ibero-line) !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+}
+.group-card .media-frame{
+  border-radius:0 !important;
+}
+.group-card .card-title{
+  font-size:2.1rem;
+}
+
+/* Noticias del home */
+#deii-noticias h3:first-child{
+  font-family:var(--ibero-serif);
+  font-size:clamp(2.4rem,4vw,4.6rem);
+  letter-spacing:-.035em;
+}
+
+/* Plan de estudios: mantiene la lógica actual, solo afina marco visual */
+#plan{
+  padding-top:4.5rem;
+  padding-bottom:5rem;
+}
+#plan .form-select,
+#plan .modal-content{
+  border-radius:0;
+}
+#planGrid .card,
+#planGrid [class*="course"],
+#planGrid [class*="materia"]{
+  border-radius:0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   Footer institucional
+   -------------------------------------------------------------------------- */
+.ibero-footer{
+  background:#f3f3f3;
+  color:var(--ibero-black);
+  padding:5.5rem 0 2.4rem;
+  margin-top:0;
+}
+
+.ibero-footer .ibero-footer-wordmark{
+  font-family:Georgia,"Times New Roman",serif;
+  color:#000;
+  font-size:4.1rem;
+  letter-spacing:-.1em;
+  line-height:.8;
+}
+
+.ibero-footer .ibero-footer-city{
+  color:#000;
+  text-transform:uppercase;
+  font-size:.85rem;
+  font-weight:700;
+  margin-bottom:2.3rem;
+}
+
+.ibero-footer p{
+  color:#111 !important;
+  font-size:1.25rem;
+  line-height:1.45;
+}
+
+.ibero-footer a{
+  color:#111;
+  text-decoration:none;
+}
+
+.ibero-footer a:hover{
+  color:var(--ibero-red);
+}
+
+.ibero-footer h2,
+.ibero-footer h3{
+  font-family:var(--ibero-serif);
+  font-size:2.3rem;
+  margin-bottom:1rem;
+}
+
+.ibero-footer .footer-link-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.ibero-footer .footer-link-list li{
+  margin-bottom:.65rem;
+}
+
+.ibero-social{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+  margin-top:2rem;
+}
+
+.ibero-social a{
+  width:58px;
+  height:58px;
+  border:1px solid #9fa6ad;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.45rem;
+  color:#222;
+  background:#fff;
+}
+
+.ibero-social a:hover{
+  border-color:var(--ibero-red);
+  background:var(--ibero-red);
+  color:#fff;
+}
+
+.ibero-contact-band{
+  margin-top:4rem;
+  background:var(--ibero-red);
+  color:#fff;
+  padding:2.6rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+}
+
+.ibero-contact-band p,
+.ibero-contact-band a{
+  color:#fff !important;
+}
+
+.ibero-contact-email{
+  font-family:var(--ibero-serif);
+  font-size:clamp(2rem,4vw,4.5rem);
+  line-height:1;
+  letter-spacing:-.05em;
+}
+
+.ibero-footer-bottom{
+  margin-top:2.2rem;
+  padding-top:1.4rem;
+  border-top:1px solid #d0d0d0;
+  font-size:.95rem;
+  color:#555;
+}
+
+/* --------------------------------------------------------------------------
+   Responsivo
+   -------------------------------------------------------------------------- */
+@media (max-width:1199.98px){
+  .ibero-navbar{
+    min-height:auto;
+    padding:.95rem 1.15rem;
+  }
+  .ibero-navbar .navbar-collapse{
+    border-top:1px solid #e2e2e2;
+    margin-top:1rem;
+    padding-top:1rem;
+  }
+  .ibero-navbar .navbar-nav{
+    align-items:flex-start;
+  }
+  .ibero-navbar .btn-admisiones{
+    margin-left:0;
+    margin-top:.35rem;
+    display:inline-block;
+  }
+}
+
+@media (max-width:767.98px){
+  body.ibero-theme{
+    font-size:16px;
+  }
+
+  .ibero-brand{
+    min-width:0;
+    gap:.7rem;
+  }
+  .ibero-wordmark{
+    font-size:1.95rem;
+  }
+  .ibero-program{
+    font-size:.72rem;
+    max-width:145px;
+  }
+
+  .ibero-page-hero{
+    padding:3.7rem 1rem 3.5rem;
+  }
+
+  #heroCarousel,
+  #heroCarousel .carousel-item,
+  #heroCarousel .hero-bg{
+    min-height:560px;
+    height:560px;
+  }
+
+  #heroCarousel .hero-card{
+    left:1.25rem;
+    right:1.25rem;
+    max-width:none;
+  }
+
+  .ibero-footer{
+    padding-top:3.5rem;
+  }
+
+  .ibero-contact-band{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:1.6rem;
+  }
+}

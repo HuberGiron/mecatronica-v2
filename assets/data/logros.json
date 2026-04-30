@@ -1,0 +1,42 @@
+[
+  {
+    "img": "../../assets/img/logros/1.jpg",
+    "title": "Robot seguidor de línea",
+    "desc": "1.º lugar en la competencia nacional de robótica 2025."
+  },
+  {
+    "img": "../../assets/img/logros/2.jpg",
+    "title": "Sistema pick-and-place",
+    "desc": "Brazo SCARA que clasifica 120 pzs/min en línea de producción."
+  },
+  {
+    "img": "../../assets/img/logros/3.jpg",
+    "title": "Drone de inspección",
+    "desc": "Vehículo aéreo para monitoreo de cableado de media tensión."
+  },
+  {
+    "img": "../../assets/img/logros/4.jpg",
+    "title": "Impresora 3D casera",
+    "desc": "Construida 100 % con refacciones locales; volumen 220×220 mm."
+  },
+  {
+    "img": "../../assets/img/logros/5.jpg",
+    "title": "Brazo colaborativo",
+    "desc": "Robot 6-DoF certificado para trabajo cerca de operarios."
+  },
+  {
+    "img": "../../assets/img/logros/6.jpg",
+    "title": "Prótesis mioeléctrica",
+    "desc": "Integra EMG + IA para agarres precisos de baja latencia."
+  },
+  {
+    "img": "../../assets/img/logros/7.jpg",
+    "title": "Vehículo autónomo mini",
+    "desc": "Corre 1 km indoor con SLAM y evasión de obstáculos."
+  },
+  {
+    "img": "../../assets/img/logros/8.jpg",
+    "title": "Estación meteorológica IoT",
+    "desc": "Sensores LoRaWAN + dashboard en tiempo real."
+  }
+]

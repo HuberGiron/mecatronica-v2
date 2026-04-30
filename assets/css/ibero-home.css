@@ -1,0 +1,1178 @@
+
+:root {
+  --ibero-red: #E00034;
+  --ibero-red-dark: #c9002e;
+  --ibero-black: #1f1f24;
+  --ibero-gray: #82786F;
+  --ibero-soft: #f3f3f1;
+  --ibero-border: #d9d9d9;
+  --ibero-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --ibero-sans: "Source Sans 3", Arial, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body.ibero-home {
+  font-family: var(--ibero-sans);
+  color: var(--ibero-black);
+  background: #fff;
+  overflow-x: hidden;
+}
+.ibero-page { padding-top: 76px; }
+
+.ibero-main-nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 1030;
+  min-height: 76px;
+  background: var(--ibero-red);
+  border-bottom: 1px solid var(--ibero-red);
+  box-shadow: none;
+  transition: min-height .24s ease, box-shadow .24s ease;
+}
+.ibero-main-nav .container-fluid { min-height: inherit; }
+.ibero-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: .95rem;
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+.ibero-logo-stack {
+  position: relative;
+  width: 118px;
+  height: 46px;
+  flex: 0 0 auto;
+  transition: width .24s ease, height .24s ease;
+}
+.ibero-logo-stack img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.ibero-logo-stack .logo-white { opacity: 1; }
+.ibero-logo-stack .logo-red { opacity: 0; }
+.ibero-program-mark {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding-left: .9rem;
+  border-left: 2px solid rgba(255,255,255,.75);
+  color: #fff;
+  font-weight: 700;
+  font-size: .82rem;
+  line-height: 1.04;
+  transition: opacity .2s ease, width .2s ease, margin .2s ease, padding .2s ease;
+}
+.ibero-main-nav .navbar-collapse { flex-grow: 0; }
+.ibero-main-nav .navbar-nav {
+  gap: clamp(.9rem, 1.45vw, 1.55rem);
+  align-items: center;
+}
+.ibero-main-nav .nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: .2rem 0 .26rem;
+  border-bottom: 2px solid transparent;
+  color: #fff;
+  font-size: .96rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: .02em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: border-color .18s ease, opacity .18s ease;
+}
+.ibero-main-nav .nav-link:hover,
+.ibero-main-nav .nav-link:focus,
+.ibero-main-nav .nav-link.active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+.ibero-main-nav .dropdown-toggle {
+  gap: .38rem;
+  white-space: nowrap;
+}
+.ibero-main-nav .dropdown-toggle::after {
+  flex: 0 0 auto;
+  display: inline-block;
+  margin-left: .25rem;
+  vertical-align: middle;
+  content: "";
+  border-top: .34em solid;
+  border-right: .34em solid transparent;
+  border-bottom: 0;
+  border-left: .34em solid transparent;
+  width: 0;
+  height: 0;
+  background: transparent;
+  transition: none;
+}
+.ibero-main-nav .dropdown-menu {
+  margin-top: .35rem;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 0;
+  box-shadow: 0 18px 36px rgba(0,0,0,.14);
+  padding: .55rem 0;
+}
+.ibero-main-nav .dropdown-item {
+  padding: .7rem 1.1rem;
+  color: var(--ibero-black);
+  font-weight: 600;
+}
+.ibero-main-nav .dropdown-item:hover,
+.ibero-main-nav .dropdown-item:focus,
+.ibero-main-nav .dropdown-item.active {
+  color: var(--ibero-red);
+  background: #f6f6f6;
+}
+.ibero-main-nav .navbar-toggler {
+  display: none;
+  border: 0;
+  padding: .2rem;
+  box-shadow: none !important;
+}
+.hamburger-lines {
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 21px;
+}
+.hamburger-lines span {
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  border-radius: 999px;
+  background: #fff;
+}
+.hamburger-lines span:nth-child(1) { top: 0; }
+.hamburger-lines span:nth-child(2) { top: 9px; }
+.hamburger-lines span:nth-child(3) { top: 18px; }
+
+.ibero-main-nav.is-scrolled {
+  min-height: 54px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+}
+.ibero-main-nav.is-scrolled .ibero-logo-stack {
+  width: 86px;
+  height: 34px;
+}
+.ibero-main-nav.is-scrolled .ibero-program-mark {
+  opacity: 1;
+  width: auto;
+  min-height: 30px;
+  padding-left: .65rem;
+  margin-left: 0;
+  border-left: 2px solid rgba(255,255,255,.75);
+  overflow: visible;
+  font-size: .68rem;
+  line-height: 1.04;
+}
+
+@media (min-width: 1200px) {
+  .ibero-main-nav.is-scrolled .navbar-toggler {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  .ibero-main-nav.is-scrolled .navbar-collapse:not(.show):not(.collapsing) {
+    display: none !important;
+  }
+  .ibero-main-nav.is-scrolled .navbar-collapse.show,
+  .ibero-main-nav.is-scrolled .navbar-collapse.collapsing {
+    display: block !important;
+    position: absolute;
+    top: 54px;
+    right: 2rem;
+    width: min(430px, calc(100vw - 2rem));
+    background: #fff;
+    border: 1px solid var(--ibero-border);
+    box-shadow: 0 22px 45px rgba(0,0,0,.16);
+    padding: 1rem 1.25rem;
+    z-index: 1040;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+  .ibero-main-nav.is-scrolled .navbar-collapse.collapsing {
+    height: auto !important;
+    transition: none;
+  }
+  .ibero-main-nav.is-scrolled .navbar-nav {
+    align-items: stretch;
+    gap: 0;
+  }
+  .ibero-main-nav.is-scrolled .nav-link {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: auto;
+    padding: .78rem 0;
+    border-bottom: 1px solid #ececec;
+    color: var(--ibero-black);
+    text-transform: none;
+  }
+  .ibero-main-nav.is-scrolled .nav-link:hover,
+  .ibero-main-nav.is-scrolled .nav-link:focus,
+  .ibero-main-nav.is-scrolled .nav-link.active {
+    color: var(--ibero-red);
+    border-bottom-color: #ececec;
+  }
+  .ibero-main-nav.is-scrolled .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    width: 100%;
+    margin: 0 0 .65rem 0;
+    border: 0;
+    border-left: 3px solid var(--ibero-red);
+    border-radius: 0;
+    box-shadow: none;
+    padding: .25rem 0 .25rem .7rem;
+    background: #fafafa;
+  }
+  .ibero-main-nav.is-scrolled .dropdown-item { white-space: normal; }
+}
+
+@media (max-width: 1199.98px) {
+  .ibero-page { padding-top: 60px; }
+  .ibero-main-nav,
+  .ibero-main-nav.is-scrolled { min-height: 60px; }
+  .ibero-main-nav .navbar-toggler {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  .ibero-main-nav .navbar-collapse {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid #ececec;
+    box-shadow: 0 18px 35px rgba(0,0,0,.1);
+    padding: .85rem 1.25rem 1.15rem;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+  .ibero-main-nav .navbar-collapse.collapsing {
+    height: auto !important;
+    transition: none;
+  }
+  .ibero-main-nav .navbar-nav { align-items: stretch; gap: 0; }
+  .ibero-main-nav .nav-link {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: auto;
+    padding: .8rem 0;
+    border-bottom: 1px solid #ededed;
+    color: var(--ibero-black);
+    text-transform: none;
+  }
+  .ibero-main-nav .nav-link:hover,
+  .ibero-main-nav .nav-link:focus,
+  .ibero-main-nav .nav-link.active {
+    color: var(--ibero-red);
+    border-bottom-color: #ededed;
+  }
+  .ibero-main-nav .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    width: 100%;
+    margin: 0 0 .65rem 0;
+    border: 0;
+    border-left: 3px solid var(--ibero-red);
+    border-radius: 0;
+    box-shadow: none;
+    padding: .25rem 0 .25rem .7rem;
+    background: #fafafa;
+  }
+  .ibero-logo-stack,
+  .ibero-main-nav.is-scrolled .ibero-logo-stack { width: 96px; height: 38px; }
+  .ibero-program-mark { display: none; }
+}
+
+.ibero-home-intro {
+  background: #fff;
+  padding: 4.9rem 0 2.5rem;
+}
+.ibero-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  margin-bottom: 4.7rem;
+  color: #6d6d6d;
+  font-size: 1.06rem;
+}
+.ibero-breadcrumbs a { color: inherit; text-decoration: none; }
+.ibero-breadcrumbs a:hover { color: var(--ibero-red); }
+.ibero-breadcrumbs .separator {
+  color: #777;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.ibero-eyebrow {
+  margin-bottom: 1.45rem;
+  color: #222;
+  font-size: clamp(.95rem, 1.15vw, 1.1rem);
+  font-weight: 700;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+}
+.ibero-home-title,
+.ibero-section-title,
+.ibero-red-band h2,
+.ibero-video-title,
+.ibero-card-title,
+.ibero-footer p {
+  font-family: var(--ibero-serif);
+}
+.ibero-home-title {
+  margin: 0;
+  color: var(--ibero-black);
+  font-size: clamp(3.7rem, 7.2vw, 7.6rem);
+  font-weight: 500;
+  line-height: .94;
+  letter-spacing: -.045em;
+}
+.ibero-home-lead {
+  max-width: 760px;
+  color: #35393e;
+  font-size: clamp(1.18rem, 1.7vw, 1.6rem);
+  line-height: 1.43;
+  font-weight: 400;
+}
+.ibero-home-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2.1rem;
+}
+.btn-ibero {
+  --bs-btn-padding-x: 2.15rem;
+  --bs-btn-padding-y: .9rem;
+  --bs-btn-border-radius: 999px;
+  --bs-btn-font-weight: 700;
+  --bs-btn-font-size: 1rem;
+}
+.btn-ibero-red {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--ibero-red);
+  --bs-btn-border-color: var(--ibero-red);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--ibero-red-dark);
+  --bs-btn-hover-border-color: var(--ibero-red-dark);
+}
+.btn-ibero-outline {
+  --bs-btn-color: var(--ibero-red);
+  --bs-btn-border-color: var(--ibero-red);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--ibero-red);
+  --bs-btn-hover-border-color: var(--ibero-red);
+}
+
+
+.ibero-video-section {
+  background: #fff;
+  padding: 1.5rem 0 5.5rem;
+}
+.ibero-video-frame {
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  aspect-ratio: 16 / 9;
+  margin-inline: auto;
+  overflow: hidden;
+  background: #111;
+  border: 0;
+  box-shadow: 0 18px 42px rgba(0,0,0,.10);
+}
+.ibero-video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: #111;
+  cursor: pointer;
+}
+.ibero-video-placeholder img,
+.ibero-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+}
+.ibero-video-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 108px;
+  height: 76px;
+  border-radius: 18px;
+  background: rgba(213, 0, 50, 0.96);
+  color: #fff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.22);
+  z-index: 2;
+}
+.ibero-video-play i {
+  font-size: 3rem;
+  line-height: 1;
+  margin-left: .2rem;
+}
+.ibero-section { padding: 5rem 0; }
+.ibero-section-soft { background: var(--ibero-soft); }
+.ibero-section-kicker {
+  margin-bottom: .85rem;
+  color: var(--ibero-red);
+  font-size: .9rem;
+  font-weight: 800;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+.ibero-section-title {
+  margin-bottom: 1.2rem;
+  font-size: clamp(2.8rem, 4.7vw, 5.2rem);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.04em;
+}
+.ibero-text-lg {
+  color: #34373b;
+  font-size: clamp(1.1rem, 1.35vw, 1.35rem);
+  line-height: 1.55;
+}
+.ibero-card {
+  height: 100%;
+  background: #fff;
+  border: 1px solid var(--ibero-border);
+  overflow: hidden;
+}
+.ibero-card-img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.ibero-card-body { padding: 1.75rem; }
+.ibero-card-date {
+  margin-bottom: 1rem;
+  color: #6e5d62;
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+.ibero-card-title {
+  margin-bottom: 1rem;
+  font-size: clamp(1.75rem, 2.4vw, 2.55rem);
+  line-height: 1.04;
+  letter-spacing: -.03em;
+}
+.ibero-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  margin-top: 1rem;
+  color: var(--ibero-red);
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.ibero-red-band {
+  background: var(--ibero-red);
+  color: #fff;
+  padding: clamp(3rem, 5vw, 5.2rem);
+}
+.ibero-red-band h2 {
+  font-size: clamp(2.6rem, 5vw, 5.2rem);
+  line-height: .98;
+  letter-spacing: -.04em;
+}
+.ibero-red-band p {
+  max-width: 760px;
+  font-size: clamp(1.1rem, 1.5vw, 1.45rem);
+  line-height: 1.55;
+}
+.ibero-stat-card {
+  height: 100%;
+  border: 1px solid var(--ibero-border);
+  background: #fff;
+  padding: 1.35rem;
+}
+.ibero-stat-card .label { color: var(--ibero-gray); font-size: .95rem; }
+.ibero-stat-card .value {
+  color: var(--ibero-black);
+  font-family: var(--ibero-serif);
+  font-size: 1.7rem;
+  line-height: 1.1;
+}
+
+
+.ibero-news-section {
+  background: #fff;
+  padding-top: clamp(4rem, 6vw, 6rem);
+}
+.ibero-news-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3.2rem;
+}
+.ibero-news-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: .85rem;
+  flex: 0 0 auto;
+}
+.ibero-news-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid var(--ibero-red);
+  background: #fff;
+  color: var(--ibero-red);
+  font-size: 1.25rem;
+  transition: background-color .2s ease, color .2s ease;
+}
+.ibero-news-arrow:hover,
+.ibero-news-arrow:focus {
+  background: var(--ibero-red);
+  color: #fff;
+}
+.ibero-news-title {
+  margin: 0;
+  color: var(--ibero-black);
+  font-family: var(--ibero-serif);
+  font-size: clamp(2.45rem, 4.2vw, 4.6rem);
+  font-weight: 500;
+  line-height: .95;
+  letter-spacing: -.045em;
+}
+.ibero-news-carousel .carousel-inner {
+  overflow: hidden;
+}
+.ibero-news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.4rem, 2.2vw, 2.4rem);
+}
+.ibero-news-card {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #bfc0c2;
+}
+.ibero-news-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  background: #e7e7e7;
+}
+.ibero-news-body {
+  flex: 1 1 auto;
+  padding: 2rem 1.75rem 2.4rem;
+}
+.ibero-news-date {
+  margin-bottom: 1.45rem;
+  color: #715f63;
+  font-size: .98rem;
+  font-weight: 700;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+}
+.ibero-news-card-title {
+  margin: 0;
+  color: var(--ibero-black);
+  font-family: var(--ibero-serif);
+  font-size: clamp(1.7rem, 2.25vw, 2.45rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -.025em;
+}
+.ibero-news-summary {
+  margin: 1.1rem 0 0;
+  color: #34373b;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+.ibero-news-footer {
+  border-top: 1px solid #d2d2d2;
+  padding: 1.55rem 1.75rem;
+}
+.ibero-news-link {
+  color: var(--ibero-red);
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.ibero-news-link:hover {
+  color: var(--ibero-red-dark);
+}
+.ibero-news-loading,
+.ibero-news-error {
+  padding: 2rem;
+  border: 1px solid var(--ibero-border);
+  color: var(--ibero-gray);
+  text-align: center;
+}
+@media (max-width: 991.98px) {
+  .ibero-news-header {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  .ibero-news-arrow { width: 48px; height: 48px; }
+  .ibero-news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ibero-footer {
+  background: var(--ibero-soft);
+  color: var(--ibero-black);
+  padding: 5rem 0 2rem;
+}
+.ibero-footer-logo { width: 165px; margin-bottom: 2rem; }
+.ibero-footer p {
+  font-size: clamp(1.1rem, 1.55vw, 1.45rem);
+  line-height: 1.35;
+}
+.ibero-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.ibero-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid #9fa4aa;
+  border-radius: 50%;
+  color: var(--ibero-black);
+  font-size: 1.45rem;
+  text-decoration: none;
+}
+.ibero-social a:hover { color: var(--ibero-red); border-color: var(--ibero-red); }
+.ibero-footer h3 {
+  margin-bottom: 1.3rem;
+  color: var(--ibero-red);
+  font-size: .95rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.ibero-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ibero-footer-links li + li { margin-top: .75rem; }
+.ibero-footer-links a {
+  color: var(--ibero-black);
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+.ibero-footer-links a:hover { color: var(--ibero-red); }
+.ibero-footer-bottom {
+  margin-top: 4rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid #d0d0d0;
+  color: #5e6267;
+  font-size: .95rem;
+}
+.ibero-footer-bottom a { color: inherit; text-decoration: none; }
+
+@media (max-width: 991.98px) {
+  .ibero-home-intro { padding-top: 3.2rem; }
+  .ibero-breadcrumbs { margin-bottom: 2.8rem; }
+  .ibero-home-lead { margin-top: 1.6rem; }
+  .ibero-section { padding: 3.6rem 0; }
+}
+@media (max-width: 767.98px) {
+}
+@media (max-width: 575.98px) {
+  .ibero-home-title { font-size: 3rem; }
+  .ibero-home-actions .btn { width: 100%; }
+  .ibero-video-section { padding: 1rem 0 3.5rem; }
+  .ibero-video-play { width: 84px; height: 58px; border-radius: 14px; }
+  .ibero-video-play i { font-size: 2.4rem; }
+}
+
+
+/* =============================================================
+   OVERRIDE v11: menú hamburguesa visible + dropdown solo clic
+   Motivo: /assets/styles.css tiene reglas con !important para
+   #mainNav .nav-link que pueden dejar texto blanco sobre panel blanco.
+   ============================================================= */
+body.ibero-home #mainNav.ibero-main-nav {
+  background: var(--ibero-red) !important;
+}
+
+/* Desktop arriba: menú completo visible y en fila */
+@media (min-width: 1200px) {
+  body.ibero-home #mainNav.ibero-main-nav:not(.is-scrolled) .navbar-toggler {
+    display: none !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav:not(.is-scrolled) #navbarResponsive.navbar-collapse {
+    display: flex !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 0 !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav:not(.is-scrolled) #navbarResponsive .navbar-nav {
+    flex-direction: row !important;
+    align-items: center !important;
+    width: auto !important;
+    overflow: visible !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav:not(.is-scrolled) #navbarResponsive .nav-item {
+    width: auto !important;
+    margin-right: 0 !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav:not(.is-scrolled) #navbarResponsive .nav-link {
+    color: #fff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Desktop con scroll: aparece hamburguesa y el panel se vuelve columna */
+@media (min-width: 1200px) {
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled .navbar-toggler {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive.navbar-collapse:not(.show):not(.collapsing) {
+    display: none !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive.navbar-collapse.show,
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive.navbar-collapse.collapsing {
+    display: block !important;
+    position: absolute !important;
+    top: 54px !important;
+    right: 1.25rem !important;
+    left: auto !important;
+    width: min(430px, calc(100vw - 2.5rem)) !important;
+    height: auto !important;
+    max-height: calc(100vh - 70px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    background: #fff !important;
+    border: 1px solid var(--ibero-border) !important;
+    box-shadow: 0 22px 45px rgba(0,0,0,.16) !important;
+    padding: .85rem 1.15rem !important;
+    z-index: 2000 !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive .navbar-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive .nav-item {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive .nav-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-height: auto !important;
+    padding: .78rem 0 !important;
+    border-bottom: 1px solid #ececec !important;
+    color: var(--ibero-black) !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-indent: 0 !important;
+    text-transform: none !important;
+    white-space: normal !important;
+    font-size: 1rem !important;
+    line-height: 1.25 !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive .nav-link:hover,
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive .nav-link:focus,
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive .nav-link.show {
+    color: var(--ibero-red) !important;
+    border-bottom-color: #ececec !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    inset: auto !important;
+    display: none;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 0 .65rem 0 !important;
+    border: 0 !important;
+    border-left: 3px solid var(--ibero-red) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: .25rem 0 .25rem .75rem !important;
+    background: #fafafa !important;
+    overflow: visible !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive .dropdown-menu.show {
+    display: block !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive .dropdown-item {
+    display: block !important;
+    width: 100% !important;
+    padding: .62rem .85rem !important;
+    color: var(--ibero-black) !important;
+    background: transparent !important;
+    white-space: normal !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive .dropdown-item:hover,
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive .dropdown-item:focus {
+    color: var(--ibero-red) !important;
+    background: #f2f2f2 !important;
+  }
+}
+
+/* Móvil/tablet: panel hamburguesa en columna y texto visible */
+@media (max-width: 1199.98px) {
+  body.ibero-home #mainNav.ibero-main-nav #navbarResponsive.navbar-collapse.show,
+  body.ibero-home #mainNav.ibero-main-nav #navbarResponsive.navbar-collapse.collapsing {
+    display: block !important;
+    overflow-x: hidden !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav #navbarResponsive .navbar-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav #navbarResponsive .nav-item {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav #navbarResponsive .nav-link {
+    color: var(--ibero-black) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-transform: none !important;
+    white-space: normal !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav #navbarResponsive .nav-link:hover,
+  body.ibero-home #mainNav.ibero-main-nav #navbarResponsive .nav-link:focus,
+  body.ibero-home #mainNav.ibero-main-nav #navbarResponsive .nav-link.show {
+    color: var(--ibero-red) !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav #navbarResponsive .dropdown-menu.show {
+    display: block !important;
+  }
+  body.ibero-home #mainNav.ibero-main-nav #navbarResponsive .dropdown-item {
+    color: var(--ibero-black) !important;
+    white-space: normal !important;
+  }
+}
+
+
+/* ============================================================
+   FOOTER CONTACTO — v13
+   ============================================================ */
+.ibero-footer .row.g-5 {
+  row-gap: 2.5rem;
+}
+.ibero-footer-contact-card {
+  max-width: 760px;
+  margin-left: auto;
+  padding: clamp(1.6rem, 3vw, 2.4rem);
+  background: #ffffff;
+  border-left: 6px solid var(--ibero-red);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, .06);
+}
+.ibero-footer-contact-card h3 {
+  margin-bottom: 1rem !important;
+  color: var(--ibero-red) !important;
+  font-size: .95rem !important;
+  font-weight: 800 !important;
+  letter-spacing: .22em !important;
+  text-transform: uppercase !important;
+}
+.ibero-footer-contact-card h4 {
+  margin: 0 0 .8rem 0;
+  color: var(--ibero-black);
+  font-family: var(--ibero-serif);
+  font-size: clamp(2rem, 3.2vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+.ibero-footer-contact-card .ibero-contact-role {
+  margin-bottom: 1.4rem;
+  color: #33383f;
+  font-family: var(--ibero-sans);
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.45;
+}
+.ibero-contact-list {
+  display: grid;
+  gap: .9rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ibero-contact-list li {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 1rem;
+  padding-top: .9rem;
+  border-top: 1px solid #e3e3e3;
+  color: #25272b;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+.ibero-contact-list .contact-label {
+  color: var(--ibero-red);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.ibero-contact-list a {
+  color: var(--ibero-black);
+  font-weight: 700;
+  text-decoration: none;
+}
+.ibero-contact-list a:hover,
+.ibero-contact-list a:focus {
+  color: var(--ibero-red);
+  text-decoration: underline;
+}
+@media (max-width: 991.98px) {
+  .ibero-footer-contact-card {
+    margin-left: 0;
+  }
+}
+@media (max-width: 575.98px) {
+  .ibero-contact-list li {
+    grid-template-columns: 1fr;
+    gap: .25rem;
+  }
+}
+
+
+/* =============================================================
+   Footer v14 - contacto discreto + cromática institucional
+   Manual IBERO: Rojo PMS 185 / HEX #E00034; Warm Gray 9 / #82786F.
+   ============================================================= */
+.ibero-footer-contact-simple {
+  max-width: 640px;
+  margin-left: auto;
+  color: var(--ibero-black);
+}
+.ibero-footer-contact-simple h3 {
+  margin-bottom: 1.1rem !important;
+  color: var(--ibero-red) !important;
+  font-size: .95rem !important;
+  font-weight: 800 !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+}
+.ibero-footer-contact-simple p {
+  margin: 0;
+  color: var(--ibero-black);
+  font-family: var(--ibero-serif);
+  font-size: clamp(1.1rem, 1.55vw, 1.45rem);
+  line-height: 1.35;
+}
+.ibero-footer-contact-simple strong {
+  font-weight: 600;
+}
+.ibero-footer-contact-simple a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+}
+.ibero-footer-contact-simple a:hover,
+.ibero-footer-contact-simple a:focus {
+  color: var(--ibero-red);
+  text-decoration: underline;
+}
+
+/* Neutraliza estilos v13 por si quedan en caché o coexistencia */
+.ibero-footer-contact-card,
+.ibero-contact-list {
+  all: unset;
+}
+
+@media (max-width: 991.98px) {
+  .ibero-footer-contact-simple {
+    margin-left: 0;
+  }
+}
+
+
+/* =============================================================
+ * Ajustes v15: botones en fondos rojos y barra compacta
+ * ============================================================= */
+.ibero-red-band .btn,
+.ibero-red-band .btn-ibero,
+.ibero-red-band .btn-light {
+  color: #fff !important;
+  background: transparent !important;
+  border: 2px solid #fff !important;
+  box-shadow: none !important;
+}
+.ibero-red-band .btn:hover,
+.ibero-red-band .btn:focus,
+.ibero-red-band .btn-ibero:hover,
+.ibero-red-band .btn-ibero:focus,
+.ibero-red-band .btn-light:hover,
+.ibero-red-band .btn-light:focus {
+  color: var(--ibero-red) !important;
+  background: #fff !important;
+  border-color: #fff !important;
+}
+
+.ibero-main-nav.is-scrolled .ibero-program-mark {
+  display: inline-flex !important;
+  opacity: 1 !important;
+  width: auto !important;
+  min-height: 30px !important;
+  padding-left: .65rem !important;
+  margin-left: 0 !important;
+  border-left: 2px solid rgba(255,255,255,.75) !important;
+  overflow: visible !important;
+  color: #fff !important;
+  font-size: .68rem !important;
+  line-height: 1.04 !important;
+}
+
+@media (min-width: 1200px) {
+  .ibero-main-nav.is-scrolled .ibero-logo {
+    gap: .65rem !important;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .ibero-program-mark,
+  .ibero-main-nav.is-scrolled .ibero-program-mark {
+    display: none !important;
+  }
+}
+
+/* =============================================================
+ * Ajustes v16: logo compacto estable + botones homologados
+ * ============================================================= */
+body.ibero-home #mainNav.ibero-main-nav .ibero-logo-stack img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+}
+
+body.ibero-home #mainNav.ibero-main-nav .ibero-logo {
+  min-width: 0 !important;
+  gap: .9rem !important;
+}
+
+body.ibero-home #mainNav.ibero-main-nav .ibero-logo-stack,
+body.ibero-home #mainNav.ibero-main-nav.is-scrolled .ibero-logo-stack {
+  width: 118px !important;
+  height: 46px !important;
+  flex: 0 0 118px !important;
+}
+
+body.ibero-home #mainNav.ibero-main-nav .ibero-program-mark,
+body.ibero-home #mainNav.ibero-main-nav.is-scrolled .ibero-program-mark {
+  display: inline-flex !important;
+  opacity: 1 !important;
+  width: auto !important;
+  max-width: 190px !important;
+  min-height: 36px !important;
+  padding-left: .85rem !important;
+  margin-left: 0 !important;
+  border-left: 2px solid rgba(255,255,255,.75) !important;
+  overflow: visible !important;
+  color: #fff !important;
+  font-size: .78rem !important;
+  line-height: 1.05 !important;
+  white-space: normal !important;
+}
+
+body.ibero-home #mainNav.ibero-main-nav.is-scrolled {
+  min-height: 60px !important;
+}
+
+@media (min-width: 1200px) {
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive.show,
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled #navbarResponsive.collapsing {
+    top: 60px !important;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  body.ibero-home #mainNav.ibero-main-nav .ibero-program-mark,
+  body.ibero-home #mainNav.ibero-main-nav.is-scrolled .ibero-program-mark {
+    display: none !important;
+  }
+}
+
+.btn-ibero,
+.ibero-red-band .btn,
+.ibero-home-actions .btn {
+  min-width: 210px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ibero-red-band .btn,
+.ibero-red-band .btn-ibero,
+.ibero-red-band .btn-light {
+  min-width: 240px;
+}
+
+@media (max-width: 575.98px) {
+  .btn-ibero,
+  .ibero-red-band .btn,
+  .ibero-home-actions .btn {
+    min-width: 0;
+    width: 100%;
+  }
+}

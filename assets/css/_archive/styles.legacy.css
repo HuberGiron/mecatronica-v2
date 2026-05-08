@@ -1,0 +1,939 @@
+/* captions visibles y legibles también en móvil */
+.btn-ibero{ background:#E00034; border-color:#E00034; color:#fff; }
+.btn-ibero:hover,.btn-ibero:focus{ background:#c9002e; border-color:#c9002e; color:#fff; }
+#iberoNewsSplit .img-cover{ width:100%; height:360px; object-fit:cover; border-radius:.75rem; }
+@media (max-width:576px){ #iberoNewsSplit .img-cover{ height:220px; } }
+#iberoNewsSplit .carousel-item{ padding:.75rem 0; }
+
+/* ── NAVBAR ESTILO IBERO ───────────────────────────────────────────────── */
+
+#mainNav{
+  background:#E00034 !important;        /* rojo fijo                          */
+  padding-top:1.25rem;
+  padding-bottom:1.25rem;
+}
+
+#mainNav.container,         /* por si queda la clase en otra página */
+#mainNav .container-fluid{   /* contener el logo sin pegarse del todo */
+  padding-left: 1rem;        /* ajusta al gusto */
+  padding-right: 1rem;       /* mantén simetría */
+}
+
+/* Logo un poco más grande */
+#mainNav .navbar-brand{
+  margin-left:0;             /* elimina margen automático */
+  padding-left:0;            /* ya lo controla el contenedor */
+}
+
+#mainNav .navbar-brand img{
+    height: 3rem;      /* ← prueba 2.5rem, 3rem, etc.  (1 rem ≈ 16 px) */
+    width: auto;       /* mantiene la proporción */
+}
+
+/* Enlaces principales */
+#mainNav .nav-link{
+  font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:0.85rem;                        /* ligeramente mayor                  */
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:#fff !important;
+  transition:none;
+  padding-left:0.5rem;
+  padding-right:1rem;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus{
+  background:#585858;   /* gris más claro que #353535            */
+  color:#ffffff;
+}
+/* Hover para el item que YA es activo: mantenlo igual            */
+.dropdown-item.active,
+.dropdown-item.active:hover,
+.dropdown-item.active:focus{
+  background:#353535;
+  color:#ffffff;
+}
+
+/* Margen entre ítems en pantallas grandes */
+@media (min-width:992px){
+  #mainNav .navbar-nav .nav-item{margin-right:1.5rem;}
+  #mainNav .navbar-nav .nav-item:last-child{margin-right:0;}
+}
+
+/* ── DROPDOWN ----------------------------------------------------------------*/
+
+.dropdown-menu{
+  background:#fff;                       /* fondo blanco                       */
+  border:1px solid #000000;
+}
+.dropdown-item{
+  color:#000;                            /* texto negro                        */
+  font-size:.95rem;
+  font-weight:500;
+  text-transform:none;
+}
+.dropdown-item:hover,
+.dropdown-item:focus{
+  background:#353535;                    /* gris claro al hover                */
+  color:#ffffff;
+}
+
+/* ── OPCIONAL: icono ▾ alineado y sin subrayado al pasar el cursor ─────── */
+.navbar .dropdown-toggle::after{
+  margin-left:.25rem;
+}
+
+
+/* ── Eliminar el rectángulo morado (focus) ─────────────────────────────── */
+.navbar .dropdown-toggle:focus{
+  box-shadow:none !important;
+  outline:0;
+}
+
+/* ── Resaltar la opción padre mientras el sub-menú está abierto ────────── */
+.navbar .dropdown-toggle.show{
+  color:#231F20 !important;     /* texto negro                     */
+  font-size:0.95rem;            /* ligeramente más grande          */
+  font-weight:700;              /* opcional: negritas extra        */
+}
+
+/* — (opcional) evitar que el sub-menú se pegue al botón — */
+.dropdown-menu{
+  margin-top:0.3rem;            /* separa un poco el menú          */
+}
+
+
+/* ── Botón hamburguesa 100 % blanco ────────────────────────────────────── */
+.navbar-dark .navbar-toggler {
+  border-color:#fff;                   /* contorno blanco nítido          */
+}
+
+/* Sustituimos la imagen SVG que trae Bootstrap por una con trazo 100 %   */
+.navbar-dark .navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23ffffff' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-size:1.5rem 1.5rem;      /* mismo tamaño que el original    */
+}
+
+
+/* ── HERO genérico para secciones internas ──────────────────────────────*/
+#masthead{
+  position: relative;
+  min-height: 48vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: url("/assets/img/hero/vida_universitaria.jpg") center/cover no-repeat;
+  color:#fff;
+}
+.masthead-overlay{
+  background: rgba(0,0,0,.45);
+  padding: 6rem 0 4rem;
+}
+.masthead-heading{font-size:2.25rem;font-weight:700;margin-bottom:.25rem;}
+.masthead-subheading{font-size:1rem;font-weight:300;}
+
+.barra-roja{
+  background:#E00034;
+  text-align:center;
+  padding:.5rem 0;
+}
+.scroll-btn{font-weight:600;letter-spacing:.05em;}
+
+
+/* ── Plan de estudios (grid horizontal) ─────────────────────────────────*/
+#planGrid{
+  display:flex;
+  gap:1rem;
+  overflow-x:auto;
+  padding-bottom:.5rem;
+  scroll-snap-type:x proximity;  /* efecto “pegarse” */
+}
+.sem-col{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  min-width:9.2rem;
+  flex:0 0 9.2rem;
+  scroll-snap-align:start;
+}
+.sem-header{
+  background:#121212;
+  color:#fff;
+  font-weight:700;
+  text-align:center;
+  padding:.35rem .25rem;
+  border-radius:.2rem;
+  font-size:.75rem;
+  text-transform:uppercase;
+}
+.course-card{
+  box-sizing: border-box; 
+  border:2px solid #aeaeae;
+  position:relative;
+  cursor:pointer;
+  font-size:.70rem;
+  line-height:1.1rem;
+  color:#000000;
+  background:#ffffff;         
+  border-radius:.25rem;
+  padding:.45rem .25rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  width:100%;
+  min-height:5.85rem;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.course-card:hover{
+  transform:scale(1.06);
+  /*box-shadow:0 3px 7px rgb(49, 49, 49);*/
+}
+
+/* Ocultar scrollbar grande en desktop (se mantiene en móvil como pista) */
+@media (min-width:992px){
+  #planGrid{scrollbar-width:none;}          /* Firefox */
+  #planGrid::-webkit-scrollbar{display:none;}/* WebKit */
+}
+
+
+
+
+/* ── Ajuste fino al título del plan ─────────────────────────── */
+/* ── Ajustes de título + selector ───────────────────────────── */
+#plan .section-heading{
+  margin-top: 2rem;
+  margin-bottom: .5rem;       /* solo un pequeño espacio */
+  padding: 0;                 /* sin padding interno extra */
+  border: none;
+}
+
+#viewSelector select.form-select{
+  background:#737373;         /* opcional, estilo ligero */
+  font-weight:600;
+}
+
+/* Línea roja que separa selector y contenido */
+.view-divider{
+  width:100%;
+  max-width:850px;            /* misma anchura aprox que el grid */
+  height:3px;
+  background:#E00034;
+}
+
+
+
+/* ==== HERO / carrusel ancho completo ==== */
+/* 1. Anula la plantilla antigua de #masthead (alto, flex, fondo)   */
+#masthead{
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+  background: none;
+  display: block;          /* ya no queremos flex aquí */
+}
+
+/* 2. El carrusel debe ocupar todo el ancho que dejó #masthead      */
+#heroCarousel{
+  width: 100%;
+  height: clamp(320px,48vh,480px);  /* alto responsivo */
+  overflow: hidden;                 /* oculta zoom al hacer fade */
+}
+
+#heroCarousel .carousel-inner{
+  height:100%;
+}
+
+/* 3. Cada diapositiva llena el carrusel y centra el texto          */
+#heroCarousel .carousel-item{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;   /* centro horizontal */
+  align-items: center;       /* centro vertical   */
+  position: relative;        /* para el overlay   */
+  background-size: cover;
+  background-position: center;
+}
+
+/* 4. Imagen (ya viene inline con style="background-image:…")       */
+/*    No necesitas .bg-cover absoluta → solo conserva la clase      */
+.bg-cover{ background-size: inherit; background-position: inherit; }
+
+/* 5. Overlay y texto se mantienen igual                            */
+.carousel-item .overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+}
+
+.hero-copy{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 960px;
+  padding: 0 1rem;            /* aire lateral móvil */
+  text-align: center;
+  color: #fff;
+}
+
+.hero-copy h1{ font-size: 2rem; }
+@media (min-width: 992px){
+  .hero-copy h1{ font-size: 2.75rem; }
+}
+
+#heroCarousel .carousel-item picture,
+#heroCarousel .carousel-item img{
+  position: absolute;
+  inset: 0;                        /* top,right,bottom,left:0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;               /* llena sin deformar (recorta) */
+  object-position: center;         /* centra la zona viva         */
+}
+
+
+
+
+
+
+/* HERO video background */
+.hero-bg,
+.hero-bg img{          /* img = fallback poster */
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* overlay oscuro */
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
+}
+
+/* centra el copy */
+.hero-copy{
+  position:relative;           /* mantén encima del overlay */
+  z-index:2;
+  top:50%;
+  transform:translateY(-50%);
+  width:100%;
+}
+/* posición y estilo “card” */
+.hero-copy--corner{
+  position:absolute;
+  right:4rem; bottom:4rem;
+  max-width:480px;             /* ancho máx. en desktop */
+  width:fit-content;
+  background:rgba(0,0,0,.45);
+  padding:2rem 2.5rem 2.5rem;  /* extra padding abajo para botones */
+  border-radius:.75rem;
+  backdrop-filter:blur(4px);
+  z-index:2;  
+  color:#fff;                 /* encima del overlay y del video */
+}
+@media (max-width: 768px){
+  .hero-copy--corner{
+    right:1rem; left:1rem;   /* ocupa casi todo el ancho en móvil */
+    bottom:2rem;
+  }
+}
+
+/* tarjeta flotante: misma estética que admisiones */
+.hero-card{
+  position:absolute;
+  top:50%;
+  right:4%;
+  transform:translateY(-50%);
+  max-width:420px;
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(8px);
+  padding:2rem 2.5rem;
+  border-radius:1rem;
+}
+
+/* botón primario rojo y secundario (si quisieras más botones) */
+.hero-card .btn-danger{
+  --bs-btn-bg:#E00034;
+  --bs-btn-border-color:#E00034;
+}
+
+/* ── Selector de vista: estilo + caret ────────────────────────── */
+#viewSelector select.form-select{
+  background-color:#f8f9fa;
+  font-weight:600;
+
+  /* caret similar al de los dropdowns de la navbar  */
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12' viewBox='0 0 16 12'%3E%3Cpath fill='none' stroke='%23231F20' stroke-width='2' d='M1 3l7 7 7-7'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right .75rem center;
+  background-size:16px 12px;
+
+  padding-right:2.5rem;          /* deja espacio para la flecha */
+  -webkit-appearance:none;        /* quita flechas nativas */
+  -moz-appearance:none;
+  appearance:none;
+}
+
+/* ── Línea roja y espaciado ───────────────────────────────────── */
+.view-divider{
+  width:100%;
+  max-width:850px;
+  height:3px;
+  background:#E00034;
+
+  /* deja 2 rem debajo para separar del texto/ grid */
+  margin:1rem auto 2rem;   /* top 1 rem, bottom 2 rem */
+}
+
+/* ── Ajuste de título (sin padding extra) ─────────────────────── */
+#plan .section-heading{
+  margin-bottom:.5rem;   /* título pegado al selector */
+  padding:0;
+  border:none;
+}
+
+/* ===== Estilos calculadora ===== */
+.course-card.cursado{
+  border:4px solid #E00034;          /* rojo Bootstrap */
+  position:relative;
+}
+.course-card.porcursar{
+  border:4px solid #00b020;          /* verde Bootstrap */
+  position:relative;
+}
+
+/* Cambiar sólo este botón */
+#brushTodo{
+  /* verde personalizado */
+  color:#00b020;
+  border-color:#00b020;
+}
+#brushTodo.active,
+#brushTodo:hover,
+#brushTodo:active{
+  background:#00b020;     /* relleno verde */
+  color:#fff;
+  border-color:#00b020;
+}
+/* ===== Estilos seriaciones ===== */
+.course-card.chain{
+  border: 4px solid #7a00c0;      /* morado */
+  box-shadow: 0 0 5px rgba(122,0,192,.35);
+}
+
+/* Flecha / brocha no visible aún – solo estilo de tarjeta        */
+
+#calcSummary{
+  max-width:820px;
+  margin:1rem auto 2rem;
+  padding:0rem 1rem;
+  /*border-top:2px solid #E00034;*/
+}
+
+#brushClear{
+  color:#333;
+  border-color:#6c757d;
+}
+#brushClear:hover{
+  background:#6c757d;
+  color:#fff;
+}
+
+/* ── Botón de copiar en el modal ───────────────────────── */
+.btn-copy{
+  width: 2rem;       /* 32 px */
+  height: 2rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-copy i{
+  font-size: 1rem;   /* 16 px */
+  line-height: 1;
+}
+
+/* --- Dimensiones generales --- */
+#galeria-logros {
+  --alto-galeria: 85vh;   /* modifica si quieres más/menos alto */
+}
+#galeria-logros .carousel-item img {
+  height: var(--alto-galeria);
+  object-fit: cover;
+}
+#thumbs {
+  max-height: var(--alto-galeria);
+  overflow-y: auto;
+}
+#thumbs img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+/* --- Thumbnails en dos columnas ------------------------------ */
+/* Altura fija de la columna de la derecha = altura de la galería */
+.right-panel{
+  height: var(--alto-galeria);   /* 85vh ahora mismo */
+  max-height: var(--alto-galeria);
+  overflow: hidden;              /* evita que el contenedor crezca */
+}
+
+/* El grid mantiene su propio scroll como antes */
+.thumbs-grid{
+  display: grid;
+  /* dos columnas iguales */
+  grid-template-columns: repeat(2, 1fr);
+  gap: .5rem;              /* separación entre cuadros */
+  max-height: var(--alto-galeria);
+  overflow-y: auto;
+  padding-right: .25rem;   /* para que no roce el scroll */
+}
+
+/* Cada miniatura cuadrada */
+.thumbs-grid img{
+  width: 100%;
+  aspect-ratio: 1 / 1;     /* fuerza 1:1 */
+  object-fit: cover;
+  cursor: pointer;
+  border: 3px solid transparent;
+  border-radius: .25rem;
+}
+
+/* Resaltado de la miniatura activa */
+.thumbs-grid img.active{
+  border-color: #e83d2e;   /* rojo IBERO */
+}
+
+/* Encabezado fijo sobre la lista de miniaturas */
+/* Encabezado fijo y centrado sobre miniaturas */
+.thumbs-header{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #f8f9fa;      /* igual a bg-light */
+  text-align: center;       /* centrado horizontal */
+  padding: 2rem 0rem;          /* espacio arriba y abajo */
+  border-bottom: 1px solid #dee2e6;
+}
+
+
+/* separa levemente el grid del borde inferior del header */
+.thumbs-grid{
+  padding-top: .25rem;
+}
+
+
+/* === TIMELINE APRENDER HACIENDO ======================================= */
+.timeline{
+  border-top:3px solid #E00034;
+  position:relative;
+}
+.timeline .step{
+  position:relative;
+}
+.timeline .circle{
+  width:52px;height:52px;
+  border-radius:50%;
+  background:#E00034;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.25rem;
+  margin-inline:auto;
+  margin-top:-28px;          /* coloca el círculo sobre la línea */
+}
+
+/* === FLIP CARDS ======================================================= */
+.flip-card{ perspective:800px; }
+.flip-card-inner{
+  position:relative;
+  width:100%;height:180px;
+  transition:transform .6s;
+  transform-style:preserve-3d;
+}
+.flip-card:hover .flip-card-inner{ transform:rotateY(180deg); }
+.flip-card-front,
+.flip-card-back{
+  position:absolute; inset:0;
+  backface-visibility:hidden;
+  border:1px solid #ddd;border-radius:.5rem;
+  background:#fff;
+}
+.flip-card-back{
+  transform:rotateY(180deg);
+  padding:1rem;
+  font-size:.9rem;
+}
+
+/* === WORLD MAP PINS =================================================== */
+.world-map{ max-width:720px; }
+.pin{
+  position:absolute;
+  width:14px;height:14px;
+  background:#E00034;border-radius:50%;
+  border:2px solid #fff;
+}
+.pin-es{ top:55%; left:47%; }   /* ajusta coordenadas según el SVG */
+.pin-us{ top:40%; left:28%; }
+
+/* === CTA final background animado ==================================== */
+.cta-final{
+  background:linear-gradient(135deg,#E00034 0%,#750d00 100%);
+  position:relative;
+  overflow:hidden;
+}
+
+/* efecto de “elevación” al pasar el cursor */
+.hover-lift {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === Aprender haciendo roadmap ======================================= */
+.roadmap{
+  position:relative;
+  padding-top:2rem;
+}
+.roadmap::before{          /* línea horizontal/vertical */
+  content:"";
+  position:absolute;
+  left:50%; top:0;
+  transform:translateX(-50%);
+  width:4px; height:100%;
+  background:#E00034;
+}
+@media (min-width:768px){
+  .roadmap::before{
+    top:50%; left:0; width:100%; height:4px;
+    transform:translateY(-50%);
+  }
+}
+.phase{ position:relative; }
+.badge-phase{
+  width:74px; height:74px;
+  border-radius:50%;
+  background:#E00034;
+  color:#fff; font-size:1.75rem;
+  display:flex; align-items:center; justify-content:center;
+  margin-inline:auto;
+  transition:transform .4s;
+}
+.phase:hover .badge-phase{ transform:scale(1.12) rotate(6deg); }
+
+/* Alínea los textos en desktop */
+@media (min-width:768px){
+  .badge-phase{ margin-inline:0; }
+  .phase{ text-align:left; padding-top:4rem; }
+}
+
+/* vídeo decorativo */
+#aprender video{ object-fit:cover; }
+
+
+
+
+/* barras de perfil de ingreso */
+.progress-ibero {
+  height: 10px;
+  background: #e9ecef;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.progress-ibero .progress-bar {
+  width: 0;                       /* animación inicia en 0 */
+  background-image: linear-gradient(90deg,#E00034,#ba0d0d);
+  transition: width 1s ease-out;
+  border-radius: 50px;
+}
+
+
+/* === Perfil de ingreso: layout vertical ================================= */
+.perfil-item { gap: 1rem; }
+.perfil-attr  { width: 200px; flex-shrink: 0; font-weight: 600; }
+
+/* (opcional) transición un poco más suave */
+.progress-ibero .progress-bar {
+  transition: width 1.2s cubic-bezier(.4,.0,.2,1);
+}
+
+
+
+
+
+
+
+
+
+
+/* === Pilares Mecatrónica ============================================== */
+/* === Pilares Mecatrónica (ajustado) =================================== */
+.pilares-grid{
+  position:relative;
+  width:760px;              /* un pelín más ancho  */
+  max-width:100%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  column-gap:6rem;          /* más espacio lateral  */
+  row-gap:12rem;             /* MÁS espacio vertical */
+  justify-items:center;
+  padding-bottom:6rem;      /* evita corte inferior */
+}
+
+
+/* Esfera principal */
+.pillar{
+  position:relative;
+  width:160px; height:160px;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-weight:700;
+  cursor:default;
+  transform:scale(var(--scale,1));
+  transition:transform .35s ease, opacity .35s ease;
+}
+.pillar:hover{ transform:scale(1.05); }
+
+.pillar-label{ pointer-events:none; }
+
+/* Colores */
+.pillar-comp{ background:#004aad; }
+.pillar-elec{ background:#02b25f; }
+.pillar-mec { background:#f5d449; color:#000; }
+.pillar-ctrl{ background:#E00034; }
+
+/* Sub-esferas */
+.sub-sphere{
+  position:absolute;
+  left:50%; top:50%;
+  transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y)))scale(var(--scale,1));
+  width:46px; height:46px;
+  border-radius:50%;
+  background:var(--sub-color,#000);
+  cursor:pointer;
+  transition:transform .35s, box-shadow .35s;
+}
+.pillar-comp .sub-sphere{ --sub-color:#002e75; }
+.pillar-elec .sub-sphere{ --sub-color:#006638; }
+.pillar-mec  .sub-sphere{ --sub-color:#9d8723; }
+.pillar-ctrl .sub-sphere{ --sub-color:#7b1919; }
+
+/* Tooltip simple via ::after */
+.sub-sphere::after{
+  content:attr(data-label);
+  position:absolute;
+  left:50%; top:50%;
+  transform:translate(-50%,-50%) scale(0);
+  white-space:nowrap;
+  font-size:.7rem;
+  color:#fff;
+  pointer-events:none;
+  transition:transform .25s;
+}
+.pillar-mec .sub-sphere::after{ color:#000; } /* texto oscuro sobre amarillo */
+
+/* Hover / focus */
+.sub-sphere:hover,
+.sub-sphere:focus{
+  transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(1.4);
+  box-shadow:0 0 0 4px rgba(0,0,0,.15);
+}
+.sub-sphere:hover::after,
+.sub-sphere:focus::after{
+  transform:translate(-50%,-50%) scale(1);
+}
+
+.pop-init{ opacity:0; --scale:0; }
+
+
+
+
+
+
+
+
+
+/* --- Sección full-height con video cuadrado ----------------------- */
+/* — sección — */
+.video-section {
+  min-height: 65vh;
+  background:#fff;          /* igual al fondo de la página */
+  position: relative;
+  overflow:hidden;
+}
+
+/* — video — */
+.video-section .video-bg{
+  position:absolute;
+  top:50%; left:50%;
+  height:100%; width:auto;
+  transform:translate(-50%,-50%);
+  object-fit:contain;
+  background:transparent;   /* ← quita el negro */
+  border:none; outline:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---- Intro modal & vídeos ventana emergente-------------------------- */
+#introModal .modal-content{
+  border:0;
+  border-radius:.75rem;
+  overflow:hidden;
+}
+
+#introModal .modal-dialog {
+  max-width: 550px;           /* opcional: anchura total */
+}
+
+.intro-video{
+  aspect-ratio:5/4;   /* 5:4 exactamente */
+  max-height: 60vh;    /* 5:4 exactamente */
+  background:#000;    /* para que no parpadee */
+  width: 100%;
+  object-fit: contain;  
+}
+
+#introModal .carousel-caption{
+  position:static;          /* que no flote sobre el vídeo */
+  padding:1rem;
+  text-align:center;
+  background:#f8f9fa;
+}
+/* Intro modal – botón cerrar siempre visible */
+#introModal .btn-close{
+  z-index: 1060;          /* un poco por encima del vídeo */
+}
+
+/* ————————————————————————————————
+   Cabecera del modal “Guía rápida”   */
+.intro-header{
+  justify-content: center;          /* centra el bloque de texto */
+  border-bottom: 2px solid #eee;
+  position: relative;               /* para posicionar la “X” */
+}
+
+
+/* título y subtítulo */
+.intro-header h5{
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+#introSubtitle{
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #555;
+  margin-top: .15rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*HOME PAGE*/
+/* Contadores */
+.stat{font-size:clamp(2.5rem,5vw,3.5rem);font-weight:700;}
+.stat-unit{font-size:1.5rem;vertical-align:top}
+
+/* Icons & logos */
+.icon-64{width:64px;height:64px}
+.partner-logo{height:64px;opacity:.8;filter:grayscale(1);transition:.3s;}
+.partner-logo:hover{opacity:1;filter:none}
+
+/* Masonry */
+.masonry{column-gap:1rem}
+@media(min-width:992px){.masonry{column-count:3}}
+.masonry-item{break-inside:avoid}
+
+/* Alumni pic */
+.alumni-pic{width:96px;height:96px;object-fit:cover;}
+
+/* Chart canvas responsive */
+#salaryChart{max-width:480px;margin-inline:auto}
+
+
+
+
+
+
+
+/* tarjetas uniformes */
+.perfil-card{
+  border:1px solid #eee;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.perfil-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 1rem 2rem rgba(0,0,0,.15);
+}
+/* iconos alineados en ingreso */
+.perfil-item i{ width:40px; text-align:center; }
+
+
+
+
+
+.perfil-video{ max-height:380px; object-fit:cover; border-radius:.5rem; }
+
+
+
+
+
+
+
+
+
+
+
+
+#mapInternational .leaflet-popup-content { font-size: .9rem; }

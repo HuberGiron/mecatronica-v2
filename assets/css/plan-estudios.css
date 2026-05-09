@@ -25,7 +25,7 @@
 .sem-header{
   background:var(--ibero-red);
   color:#fff;
-  font-weight:700;
+  font-weight:300;
   text-align:center;
   padding:.35rem .25rem;
   border-radius:0;
@@ -64,7 +64,7 @@
 /* Selector de vista, navegación y separadores */
 #viewSelector select.form-select{
   background-color:#f8f9fa;
-  font-weight:600;
+  font-weight:300;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12' viewBox='0 0 16 12'%3E%3Cpath fill='none' stroke='%23231F20' stroke-width='2' d='M1 3l7 7 7-7'/%3E%3C/svg%3E");
   background-repeat:no-repeat;
   background-position:right .75rem center;
@@ -176,11 +176,87 @@
 }
 .intro-header h5{
   font-size:1.4rem;
-  font-weight:700;
+  font-weight:300;
 }
 #introSubtitle{
   margin-top:.15rem;
   color:#555;
   font-size:.95rem;
-  font-weight:600;
+  font-weight:300;
 }
+
+/* ===========================================================================
+   Ajuste tipográfico institucional del plan de estudios
+   ---------------------------------------------------------------------------
+   Este archivo se carga después de ibero-site.css; por eso aquí se refuerzan
+   los componentes dinámicos del plan que genera JavaScript.
+   =========================================================================== */
+#plan,
+#planGrid,
+#viewSelector,
+#planNav,
+#calcSummary,
+#courseModal,
+#introModal {
+  font-family: var(--ibero-sans) !important;
+  font-weight: 300;
+}
+
+#plan .section-heading,
+#courseModalTitle,
+#introModal .intro-header h5 {
+  font-family: var(--ibero-serif) !important;
+  font-weight: 300 !important;
+  text-transform: none !important;
+}
+
+#plan .section-heading {
+  font-size: clamp(2.45rem, 4.15vw, 4.55rem);
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+
+.sem-header {
+  font-family: var(--ibero-sans) !important;
+  font-weight: 300 !important;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.course-card,
+.course-card strong,
+.course-card span,
+.course-card small,
+#viewSelector select.form-select,
+#viewSelector .fw-semibold,
+#calcSummary,
+#planNav .btn,
+.btn-ibero-mini,
+#brushTodo,
+#brushClear,
+#courseModal .modal-body,
+#courseModal .modal-body p,
+#courseModal .modal-body li,
+#courseModal .modal-body td,
+#courseModal .modal-body th,
+#introSubtitle,
+#introModal .carousel-caption,
+#introModal .carousel-caption p,
+#introModal .btn {
+  font-family: var(--ibero-sans) !important;
+  font-weight: 300 !important;
+}
+
+#courseModalTitle,
+#introModal .intro-header h5 {
+  font-size: clamp(1.75rem, 2.6vw, 2.35rem);
+  line-height: 1.05;
+  letter-spacing: -.03em;
+}
+
+@media (max-width: 575.98px) {
+  #plan .section-heading {
+    font-size: 2.45rem;
+  }
+}
+

@@ -19,8 +19,8 @@
   --ibero-gray: #82786F;
   --ibero-soft: #f3f3f1;
   --ibero-border: #d9d9d9;
-  --ibero-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --ibero-sans: "Source Sans 3", Arial, sans-serif;
+  --ibero-serif: alverata, Georgia, "Times New Roman", serif;
+  --ibero-sans: praxis-next, Arial, sans-serif;
 }
 html { scroll-behavior: smooth; }
 body.ibero-home {
@@ -1564,5 +1564,160 @@ body.ibero-inner-page .ibero-person-role {
 
   body.ibero-inner-page .ibero-section-kicker {
     letter-spacing: .18em;
+  }
+}
+
+
+/* ========================================================================== 
+   Ajuste tipográfico institucional · Adobe Fonts
+   --------------------------------------------------------------------------
+   Requiere en el <head>:
+   <link rel="stylesheet" href="https://use.typekit.net/jov3nat.css">
+
+   - Eyebrows / kickers: Praxis Next, peso 300.
+   - Títulos: Alverata, peso 300, con escala ligeramente menor.
+   - Cuerpos de texto: Praxis Next.
+   ========================================================================== */
+:root {
+  --ibero-serif: alverata, Georgia, "Times New Roman", serif;
+  --ibero-sans: praxis-next, Arial, Helvetica, sans-serif;
+  --bs-body-font-family: var(--ibero-sans);
+}
+
+body.ibero-home {
+  font-family: var(--ibero-sans);
+  font-weight: 300;
+}
+
+body.ibero-home p,
+body.ibero-home li,
+body.ibero-home .ibero-home-lead,
+body.ibero-home .ibero-internal-lead,
+body.ibero-home .ibero-academic-lead,
+body.ibero-home .ibero-text-lg,
+body.ibero-home .ibero-news-summary,
+body.ibero-home .ibero-group-body p,
+body.ibero-home .ibero-footer p,
+body.ibero-home .ibero-footer-contact-simple p,
+body.ibero-home .ibero-footer-contact-card .ibero-contact-role,
+body.ibero-home .course-card {
+  font-family: var(--ibero-sans);
+  font-weight: 300;
+}
+
+.ibero-home-title,
+.ibero-section-title,
+.ibero-red-band h2,
+.ibero-video-title,
+.ibero-card-title,
+.ibero-news-title,
+.ibero-academic-title,
+.ibero-news-card-title,
+.ibero-internal-title,
+.ibero-person-name,
+.ibero-group-title,
+.ibero-plan-shell .section-heading,
+body.ibero-inner-page .ibero-academic-title,
+.ibero-stat-card .value,
+.ibero-footer-contact-card h4,
+body.ibero-home h1,
+body.ibero-home h2,
+body.ibero-home h3,
+body.ibero-home h4 {
+  font-family: var(--ibero-serif);
+  font-weight: 300;
+}
+
+.ibero-eyebrow,
+.ibero-section-kicker,
+.ibero-card-date,
+.ibero-news-date,
+.ibero-footer h3,
+.ibero-footer-contact-card h3,
+.ibero-footer-contact-simple h3,
+.ibero-contact-list .contact-label,
+.ibero-stat-card .label {
+  font-family: var(--ibero-sans) !important;
+  font-weight: 300 !important;
+}
+
+.ibero-home-title {
+  font-size: clamp(3.2rem, 6.25vw, 6.4rem);
+  line-height: .96;
+  letter-spacing: -.04em;
+}
+
+.ibero-internal-title {
+  font-size: clamp(3rem, 5.4vw, 5.65rem);
+  line-height: .96;
+  letter-spacing: -.04em;
+}
+
+.ibero-section-title,
+.ibero-red-band h2,
+.ibero-plan-shell .section-heading {
+  font-size: clamp(2.45rem, 4.15vw, 4.55rem);
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+
+.ibero-news-title,
+.ibero-academic-title,
+body.ibero-inner-page .ibero-academic-title {
+  font-size: clamp(2.3rem, 3.9vw, 4.25rem);
+  line-height: .98;
+  letter-spacing: -.04em;
+}
+
+.ibero-card-title,
+.ibero-news-card-title {
+  font-size: clamp(1.55rem, 2vw, 2.2rem);
+  line-height: 1.08;
+}
+
+.ibero-group-title {
+  font-size: clamp(1.75rem, 2.5vw, 2.65rem);
+}
+
+.ibero-person-name {
+  font-size: clamp(1.45rem, 1.9vw, 2rem);
+}
+
+.ibero-footer-contact-card h4 {
+  font-size: clamp(1.75rem, 2.75vw, 2.85rem);
+}
+
+.ibero-home-lead,
+.ibero-internal-lead,
+.ibero-text-lg,
+.ibero-red-band p,
+.ibero-group-body p {
+  font-weight: 300;
+}
+
+.ibero-main-nav .nav-link,
+.ibero-main-nav .dropdown-item,
+.ibero-program-mark,
+.btn-ibero,
+.ibero-card-link,
+.ibero-news-link,
+.ibero-contact-list a,
+.ibero-footer-links a {
+  font-family: var(--ibero-sans);
+}
+
+@media (max-width: 575.98px) {
+  .ibero-home-title,
+  .ibero-internal-title {
+    font-size: 2.85rem;
+  }
+
+  .ibero-section-title,
+  .ibero-red-band h2,
+  .ibero-plan-shell .section-heading,
+  .ibero-news-title,
+  .ibero-academic-title,
+  body.ibero-inner-page .ibero-academic-title {
+    font-size: 2.45rem;
   }
 }

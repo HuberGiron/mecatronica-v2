@@ -1041,11 +1041,11 @@ body.ibero-home #mainNav.ibero-main-nav {
   line-height: 1.35;
 }
 .ibero-footer-contact-simple strong {
-  font-weight: 600;
+  font-weight: 400;
 }
 .ibero-footer-contact-simple a {
   color: inherit;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
 }
 .ibero-footer-contact-simple a:hover,
@@ -1277,12 +1277,13 @@ body.ibero-inner-page {
   min-height: 2.2em;
   margin-bottom: .9rem;
   color: var(--ibero-red);
-  font-weight: 800;
+  font-weight: 400;
   line-height: 1.2;
+  font-size: .9rem;
 }
 .ibero-person-email {
   color: var(--ibero-black);
-  font-size: .98rem;
+  font-size: .8rem;
   font-weight: 600;
   text-decoration: none;
   overflow-wrap: anywhere;
@@ -1680,7 +1681,7 @@ body.ibero-inner-page .ibero-academic-title {
 }
 
 .ibero-person-name {
-  font-size: clamp(1.45rem, 1.9vw, 2rem);
+  font-size: clamp(1rem, 1.9vw, 1.2rem);
 }
 
 .ibero-footer-contact-card h4 {

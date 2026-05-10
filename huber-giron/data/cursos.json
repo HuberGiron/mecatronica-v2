@@ -1,0 +1,62 @@
+[
+  {
+  "id": "curso-cps-lab",
+  "titulo": "Sistemas Ciberfísicos de Automatización y Laboratorio",
+  "descripcion": "Asignatura orientada al análisis e implementación de sistemas ciberfísicos para automatización industrial, integrando control, adquisición de datos, monitoreo remoto y redes de PLCs con distintos protocolos y topologías.",
+  "imagen": "assets/cps.png",
+  "alt": "Curso de sistemas ciberfísicos de automatización y laboratorio",
+  "categorias": [
+  "CPS",
+  "Automatización",
+  "PLCs",
+  "IoT"
+  ],
+  "autor": "Dr. Huber Girón Nieto",
+  "avatar": "/assets/img/team/huber.png",
+  "fechaISO": "2025-08-01",
+  "fechaTexto": "Primavera 2026",
+  "tipoEtiqueta": "Curso",
+  "botonTexto": "Leer mas",
+  "url": "cps/",
+  "habilitado": true
+  },
+  {
+  "id": "curso-pensamiento-ingenieria",
+  "titulo": "Pensamiento de Ingeniería",
+  "descripcion": "Primer acercamiento a los estudios universitarios y al pensamiento de ingeniería, abordando plan de estudios, procesos administrativos, técnicas de estudio, resiliencia y herramientas de pensamiento sistémico para modelar problemas complejos.",
+  "imagen": "assets/cps.png",
+  "alt": "Curso de pensamiento de ingeniería",
+  "categorias": [
+  "Ingeniería",
+  "Sistemas",
+  "Prototipado"
+  ],
+  "autor": "Dr. Huber Girón Nieto",
+  "avatar": "/assets/img/team/huber.png",
+  "fechaISO": "2025-01-15",
+  "fechaTexto": "Primavera 2026",
+  "tipoEtiqueta": "Curso",
+  "botonTexto": "Próximamente",
+  "url": "",
+  "habilitado": false
+  },
+  {
+  "id": "curso-proyecto-terminal",
+  "titulo": "Proyecto Terminal de Ingeniería",
+  "descripcion": "Curso enfocado en formular, evaluar y ejecutar soluciones a problemas reales mediante análisis de contexto, delimitación de alcances, validación de alternativas y selección de propuestas viables con enfoque en el usuario.",
+  "imagen": "assets/cps.png",
+  "alt": "Curso de proyecto terminal de ingeniería",
+  "categorias": [
+  "Proyectos",
+  "Innovación"
+  ],
+  "autor": "Dr. Huber Girón Nieto",
+  "avatar": "/assets/img/team/huber.png",
+  "fechaISO": "2024-08-01",
+  "fechaTexto": "Primavera 2026",
+  "tipoEtiqueta": "Curso",
+  "botonTexto": "Próximamente",
+  "url": "",
+  "habilitado": false
+  }
+]

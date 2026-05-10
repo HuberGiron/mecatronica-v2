@@ -1,0 +1,59 @@
+[
+  {
+    "id": "recurso-html-css-js",
+    "titulo": "HTML, CSS y JavaScript",
+    "descripcion": "Lección introductoria para aprender a construir páginas web y publicar contenidos académicos, documentación técnica y proyectos en línea.",
+    "imagen": "assets/html.jpg",
+    "alt": "Lección de HTML, CSS y JavaScript",
+    "categorias": [
+      "Web",
+      "Open source"
+    ],
+    "autor": "Dr. Huber Girón Nieto",
+    "avatar": "/assets/img/team/huber.jpg",
+    "fechaISO": "2026-01-26",
+    "fechaTexto": "26 Enero 2026",
+    "tipoEtiqueta": "Recurso",
+    "botonTexto": "Leer más",
+    "url": "https://hubergiron.github.io/Html-Css-Js/",
+    "habilitado": true
+  },
+  {
+    "id": "recurso-plantilla-repo",
+    "titulo": "Plantilla Repositorio",
+    "descripcion": "Guía para estructurar portafolios técnicos, repositorios y documentación con lenguaje de marcado y framework \"Just the docs\".",
+    "imagen": "assets/md.png",
+    "alt": "Lección de portafolio y repositorios académicos",
+    "categorias": [
+      "Repositorios",
+      "Documentación"
+    ],
+    "autor": "Dr. Huber Girón Nieto",
+    "avatar": "/assets/img/team/huber.jpg",
+    "fechaISO": "2026-01-19",
+    "fechaTexto": "19 Enero 2026",
+    "tipoEtiqueta": "Recurso",
+    "botonTexto": "Leer más",
+    "url": "https://hubergiron.github.io/portafolio-just-the-docs/",
+    "habilitado": true
+  },
+    {
+    "id": "recurso-micro",
+    "titulo": "Programación de Microcontroladores",
+    "descripcion": "Esta guía está pensada para enseñar a programar desde cero tres familias de plataformas: Seeed Studio XIAO RP2040, ESP32 (ESP32-WROOM-32 y Seeed Studio XIAO ESP32S3 Sense) y ATmega328P.",
+    "imagen": "assets/xiao.png",
+    "alt": "Programación de Microcontroladores",
+    "categorias": [
+      "IoT",
+      "Embebidos"
+    ],
+    "autor": "Dr. Huber Girón Nieto",
+    "avatar": "/assets/img/team/huber.jpg",
+    "fechaISO": "2026-01-19",
+    "fechaTexto": "20 Enero 2026",
+    "tipoEtiqueta": "Recurso",
+    "botonTexto": "Leer más",
+    "url": "https://hubergiron.github.io/embebidos/",
+    "habilitado": true
+  }
+]

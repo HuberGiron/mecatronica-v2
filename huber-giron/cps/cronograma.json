@@ -1,0 +1,469 @@
+[
+  {
+    "week": 1,
+    "range": "13-15 enero",
+    "title": "Introducción a sistemas ciberfísicos y arquitectura",
+    "sessions": [
+      {
+        "date": "13 enero",
+        "block": "Introducción",
+        "topic": "Relación entre sistemas mecatrónicos y sistemas ciberfísicos",
+        "activity": "Introducción a CPS, benchmark de protocolos y benchmark de dispositivos inteligentes.",
+        "lessonUrl": "pdf/cps1.pdf",
+        "lessonText": "Lección / tutorial",
+        "enabled": true
+      },
+      {
+        "date": "14 enero",
+        "block": "Arquitectura",
+        "topic": "Documentación y diagramas de integración",
+        "activity": "Documentación en Just the Docs y diagramas para integración de sistemas o arquitecturas.",
+        "lessonUrl": "https://hubergiron.github.io/portafolio-just-the-docs/",
+        "lessonText": "Lección / tutorial",
+        "enabled": true
+      },
+      {
+        "date": "15 enero",
+        "block": "Medición",
+        "topic": "Comparación de capacidad de cómputo",
+        "activity": "Ejercicio de medición de tiempos de procesamiento en 2 embebidos y 2 computadoras.",
+        "lessonUrl": "pdf/Benchmark.xlsx",
+        "lessonText": "Lección / tutorial",
+        "enabled": true
+      }
+    ]
+  },
+  {
+    "week": 2,
+    "range": "20-22 enero",
+    "title": "Sistemas embebidos: IO, sensores, actuadores y PCB",
+    "sessions": [
+      {
+        "date": "20 enero",
+        "block": "Embebidos",
+        "topic": "IO, sensores, actuadores y monitor serial",
+        "activity": "Introducción al uso del procesador embebido, entradas/salidas y apoyo de IA para programación.",
+        "lessonUrl": "https://hubergiron.github.io/embebidos/",
+        "lessonText": "Lección / tutorial",
+        "enabled": true
+      },
+      {
+        "date": "21 enero",
+        "block": "PCB",
+        "topic": "Diseño con KiCad y corte de PCB",
+        "activity": "Diseño de PCB con KiCad y fabricación en Roland SRM20.",
+        "lessonUrl": "",
+        "lessonText": "Proximamente",
+        "enabled": false
+      },
+      {
+        "date": "22 enero",
+        "block": "Práctica",
+        "topic": "PCB propia para microcontrolador SMD",
+        "activity": "Diseño de tarjeta propia para un microcontrolador SMD.",
+        "lessonUrl": "pcb.pdf",
+        "lessonText": "Lección / tutorial",
+        "enabled": true
+      }
+    ]
+  },
+  {
+    "week": 3,
+    "range": "27-29 enero",
+    "title": "Protocolos embebidos: UART, SPI e I2C",
+    "sessions": [
+      {
+        "date": "27 enero",
+        "block": "Protocolos",
+        "topic": "Comunicación embebida y métricas",
+        "activity": "Pruebas de envío, estrés, gráficas, latencia y tasa de error en UART, SPI e I2C.",
+        "lessonUrl": "pdf/cps2.pdf",
+        "lessonText": "Lección / tutorial",
+        "enabled": true
+      },
+      {
+        "date": "28 enero",
+        "block": "Práctica",
+        "topic": "Prueba de protocolos UART, SPI e I2C",
+        "activity": "Sesión práctica de validación y comparación de protocolos.",
+        "lessonUrl": "",
+        "lessonText": "Práctica",
+        "enabled": false
+      },
+      {
+        "date": "29 enero",
+        "block": "Práctica",
+        "topic": "Prueba de protocolos UART, SPI e I2C",
+        "activity": "Continuación de pruebas y documentación de resultados.",
+        "lessonUrl": "",
+        "lessonText": "Práctica",
+        "enabled": false
+      }
+    ]
+  },
+  {
+    "week": 4,
+    "range": "3-5 febrero",
+    "title": "Interfaces de usuario con Python, USB y Bluetooth",
+    "sessions": [
+      {
+        "date": "3 febrero",
+        "block": "UI",
+        "topic": "Programación con Python y Tkinter",
+        "activity": "Introducción a UI/UX y construcción de interfaces con Python.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "4 febrero",
+        "block": "USB / BLE",
+        "topic": "Protocolos de comunicación embebidos",
+        "activity": "Pruebas de envío, estrés, gráficas, latencia y tasa de error en USB y Bluetooth.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "5 febrero",
+        "block": "Práctica",
+        "topic": "Interfaz con envío de datos por USB y Bluetooth",
+        "activity": "Desarrollo de ejercicio práctico de UI conectada a un sistema embebido.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      }
+    ]
+  },
+  {
+    "week": 5,
+    "range": "10-12 febrero",
+    "title": "Servicios web: redes, HTML, CSS, JS y despliegue básico",
+    "sessions": [
+      {
+        "date": "10 febrero",
+        "block": "Redes",
+        "topic": "IPV4, ping, firewall y tipos de servidor",
+        "activity": "Servidores embebidos, PC local y nube con servicios gratuitos.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "11 febrero",
+        "block": "Web",
+        "topic": "Programación web con HTML, CSS y JS",
+        "activity": "Introducción al stack base para interfaces web del curso.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "12 febrero",
+        "block": "Práctica",
+        "topic": "Página web local y en nube",
+        "activity": "Implementación local en ESP32 y computadora, y publicación inicial en GitHub.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      }
+    ]
+  },
+  {
+    "week": 6,
+    "range": "17-19 febrero",
+    "title": "APIs, Flask y ciberseguridad básica",
+    "sessions": [
+      {
+        "date": "17 febrero",
+        "block": "API",
+        "topic": "Servidor Python Flask y tipos de request",
+        "activity": "Diseño de APIs, mensajes, respuestas y arquitectura básica de back-end.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "18 febrero",
+        "block": "Seguridad",
+        "topic": "Keys, tokens, .env, secretos y logging",
+        "activity": "Buenas prácticas para exponer servicios web de manera segura.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "19 febrero",
+        "block": "Práctica",
+        "topic": "API local que envía instrucciones a un embebido",
+        "activity": "Desarrollo de un flujo de control entre front, API y dispositivo.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      }
+    ]
+  },
+  {
+    "week": 7,
+    "range": "24-26 febrero",
+    "title": "Deploy, nube y contenedores",
+    "sessions": [
+      {
+        "date": "24 febrero",
+        "block": "Deploy",
+        "topic": "Arquitectura cloud, Docker y pipeline build/run",
+        "activity": "Selección de servidor y nociones de CI con GitHub Actions.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "25 febrero",
+        "block": "Práctica",
+        "topic": "Aplicación web completa en distintos servicios cloud",
+        "activity": "Comparación y despliegue en plataformas como Google Cloud, Render, DigitalOcean o AWS.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "26 febrero",
+        "block": "Práctica",
+        "topic": "Aplicación web completa en distintos servicios cloud",
+        "activity": "Continuación del despliegue y pruebas de integración.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      }
+    ]
+  },
+  {
+    "week": 8,
+    "range": "3-5 marzo",
+    "title": "Bases de datos y Firebase",
+    "sessions": [
+      {
+        "date": "3 marzo",
+        "block": "Datos",
+        "topic": "Relacionales, no relacionales y conexión desde Python",
+        "activity": "Despliegue e integración de bases de datos en la nube con Firebase.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "4 marzo",
+        "block": "Práctica",
+        "topic": "Aplicación web con base de datos en la nube",
+        "activity": "Implementación de flujo de datos entre web, nube y elemento embebido.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "5 marzo",
+        "block": "Práctica",
+        "topic": "Aplicación web con base de datos en la nube",
+        "activity": "Continuación de integración y consulta de datos.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      }
+    ]
+  },
+  {
+    "week": 9,
+    "range": "10-12 marzo",
+    "title": "Automatización industrial: PLC, HMI y UR",
+    "sessions": [
+      {
+        "date": "10 marzo",
+        "block": "Industria",
+        "topic": "Elementos de automatización industrial y redes",
+        "activity": "PLC, HMI, UR y redes industriales como TCP, OPC y Urscript.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "11 marzo",
+        "block": "Práctica",
+        "topic": "Aplicación web para monitoreo y control industrial",
+        "activity": "Implementación conectada a un proceso industrial.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "12 marzo",
+        "block": "Práctica",
+        "topic": "Aplicación web para monitoreo y control industrial",
+        "activity": "Continuación del ejercicio y validación funcional.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      }
+    ]
+  },
+  {
+    "week": 10,
+    "range": "17-19 marzo",
+    "title": "Protocolos web: TCP, UDP, MQTT y WebSocket",
+    "sessions": [
+      {
+        "date": "17 marzo",
+        "block": "Protocolos Web",
+        "topic": "Comparativa de TCP vs UDP, MQTT y WebSocket",
+        "activity": "Revisión de protocolos usados en sistemas distribuidos y tiempo real.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "18 marzo",
+        "block": "Práctica",
+        "topic": "Pruebas de latencia, estrés y tasa de errores",
+        "activity": "Comparación experimental de TCP, UDP, WebSocket y MQTT.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "19 marzo",
+        "block": "Práctica",
+        "topic": "Pruebas de latencia, estrés y tasa de errores",
+        "activity": "Continuación de pruebas, gráficas y documentación.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      }
+    ]
+  },
+  {
+    "week": 11,
+    "range": "24-26 marzo",
+    "title": "IA y realidad mixta",
+    "sessions": [
+      {
+        "date": "24 marzo",
+        "block": "IA",
+        "topic": "Visión por computadora y clasificadores",
+        "activity": "Python para visión por computadora y envío de datos a plataforma web.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "25 marzo",
+        "block": "LLM",
+        "topic": "LLM como planificadores y protocolo MCP",
+        "activity": "Uso de Ollama-Python y envío de resultados a una plataforma web.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "26 marzo",
+        "block": "XR",
+        "topic": "Realidad virtual, aumentada y mixta",
+        "activity": "Desarrollo de interfaz de realidad mixta conectada a plataforma web.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      }
+    ]
+  },
+  {
+    "week": 12,
+    "range": "7-16 abril",
+    "title": "Gestión de proyectos ciberfísicos",
+    "sessions": [
+      {
+        "date": "7 abril",
+        "block": "Proyecto",
+        "topic": "Definición del proyecto ciberfísico",
+        "activity": "Automatización industrial con embebidos, nube, visualización, almacenamiento de datos e IA.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "8-9 abril",
+        "block": "Proyecto",
+        "topic": "Desarrollo y revisión de arquitectura",
+        "activity": "Avance del sistema y consolidación del flujo técnico completo.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "14-16 abril",
+        "block": "Proyecto",
+        "topic": "Construcción iterativa del proyecto",
+        "activity": "Integración progresiva de automatización, embebidos y servicios en la nube.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      }
+    ]
+  },
+  {
+    "week": 13,
+    "range": "21-30 abril",
+    "title": "Integración, modelado, control y optimización",
+    "sessions": [
+      {
+        "date": "21-23 abril",
+        "block": "Integración",
+        "topic": "Modelado, control y optimización de sistemas ciberfísicos",
+        "activity": "Integración avanzada del proyecto y consolidación funcional.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "28-30 abril",
+        "block": "Integración",
+        "topic": "Ajuste final del sistema y preparación de entrega",
+        "activity": "Pruebas de desempeño, cierre de integración y afinación de la solución.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      }
+    ]
+  },
+  {
+    "week": 14,
+    "range": "5-13 mayo",
+    "title": "Entrega, documentación y cierre",
+    "sessions": [
+      {
+        "date": "5 mayo",
+        "block": "Entrega",
+        "topic": "Entrega de proyecto",
+        "activity": "Cierre formal y evaluación del proyecto ciberfísico.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "6-12 mayo",
+        "block": "Documentación",
+        "topic": "Documentación del proyecto",
+        "activity": "Integración de evidencia, resultados, arquitectura y entregables finales.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      },
+      {
+        "date": "13 mayo",
+        "block": "Cierre",
+        "topic": "Entrega de calificaciones",
+        "activity": "Cierre administrativo del curso.",
+        "lessonUrl": "",
+        "lessonText": "Lección / tutorial",
+        "enabled": false
+      }
+    ]
+  }
+]

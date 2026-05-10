@@ -1,0 +1,697 @@
+/* ========================================================================== 
+   Perfil académico · Dr. Huber Girón Nieto
+   --------------------------------------------------------------------------
+   Complemento específico para /huber-giron/.
+   Requiere cargar primero /assets/css/ibero-site.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hero y resumen del perfil
+   -------------------------------------------------------------------------- */
+.ibero-profile-page .ibero-internal-hero {
+  padding-bottom: clamp(2.4rem, 4vw, 4.2rem);
+}
+
+.ibero-profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .85rem;
+  margin-top: 2rem;
+}
+
+.ibero-profile-summary-section {
+  background: var(--ibero-soft);
+  padding: clamp(3rem, 5vw, 5rem) 0;
+}
+
+.ibero-profile-card,
+.ibero-profile-text-card,
+.ibero-profile-line-card,
+.ibero-profile-focus-card,
+.dynamic-content-card {
+  height: 100%;
+  background: #fff;
+  border: 1px solid var(--ibero-border);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.ibero-profile-card {
+  padding: clamp(1.5rem, 2.5vw, 2.2rem);
+  text-align: center;
+}
+
+.ibero-profile-photo {
+  width: min(210px, 68vw);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #f1f1f1;
+  margin-bottom: 1.35rem;
+}
+
+.ibero-profile-name {
+  margin: 0 0 .55rem;
+  color: var(--ibero-black);
+  font-family: var(--ibero-serif);
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.035em;
+}
+
+.ibero-profile-role {
+  color: var(--ibero-red);
+  font-size: .98rem;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 1.1rem;
+}
+
+.ibero-profile-email {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .42rem;
+  color: var(--ibero-black);
+  font-size: .9rem;
+  font-weight: 400;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.ibero-profile-email:hover,
+.ibero-profile-email:focus {
+  color: var(--ibero-red);
+  text-decoration: underline;
+}
+
+.ibero-profile-social {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin: 1.35rem 0 1.15rem;
+}
+
+.ibero-profile-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--ibero-border);
+  border-radius: 50%;
+  color: var(--ibero-black);
+  font-size: 1.15rem;
+  text-decoration: none;
+  transition: border-color .18s ease, color .18s ease;
+}
+
+.ibero-profile-social a:hover,
+.ibero-profile-social a:focus {
+  color: var(--ibero-red);
+  border-color: var(--ibero-red);
+}
+
+.ibero-profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .45rem;
+  margin-top: 1.1rem;
+}
+
+.ibero-profile-tag,
+.dynamic-card-badges .badge,
+.ibero-profile-page .badge.bg-primary,
+.ibero-profile-page .badge.bg-primary.bg-gradient {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px !important;
+  background: rgba(224, 0, 52, .08) !important;
+  color: var(--ibero-red) !important;
+  border: 1px solid rgba(224, 0, 52, .16);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.ibero-profile-text-card {
+  padding: clamp(1.7rem, 3vw, 2.7rem);
+}
+
+.ibero-profile-text-card p {
+  color: #34373b;
+  font-size: clamp(1.03rem, 1.2vw, 1.18rem);
+  line-height: 1.6;
+}
+
+.ibero-profile-text-card p:last-child {
+  margin-bottom: 0;
+}
+
+.ibero-profile-line-card {
+  padding: clamp(1.7rem, 3vw, 2.5rem);
+}
+
+.ibero-profile-line-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ibero-profile-line-list li {
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+  color: #34373b;
+  font-size: clamp(1.02rem, 1.15vw, 1.16rem);
+  line-height: 1.52;
+}
+
+.ibero-profile-line-list li + li {
+  margin-top: .85rem;
+}
+
+.ibero-profile-line-list i {
+  color: var(--ibero-red);
+  line-height: 1.4;
+  flex: 0 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Tarjetas editoriales del perfil
+   -------------------------------------------------------------------------- */
+.ibero-profile-focus-section {
+  background: #fff;
+  padding: clamp(3rem, 5vw, 5rem) 0;
+}
+
+.ibero-profile-focus-card {
+  padding: clamp(1.5rem, 2.4vw, 2rem);
+}
+
+.ibero-profile-focus-card i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  margin-bottom: 1.1rem;
+  color: var(--ibero-red);
+  background: rgba(224, 0, 52, .08);
+  font-size: 1.45rem;
+}
+
+.ibero-profile-focus-card h3 {
+  margin: 0 0 .75rem;
+  color: var(--ibero-black);
+  font-family: var(--ibero-serif);
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+
+.ibero-profile-focus-card p {
+  margin: 0;
+  color: #34373b;
+  font-size: 1.03rem;
+  line-height: 1.52;
+}
+
+/* --------------------------------------------------------------------------
+   Secciones dinámicas: cursos, proyectos, publicaciones y recursos
+   -------------------------------------------------------------------------- */
+.ibero-profile-dynamic-section {
+  padding: clamp(3.2rem, 5vw, 5.4rem) 0;
+}
+
+.ibero-profile-dynamic-section.is-soft {
+  background: var(--ibero-soft);
+}
+
+.ibero-profile-section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: clamp(1.6rem, 3vw, 2.7rem);
+}
+
+.ibero-profile-section-head .ibero-section-title {
+  margin-bottom: 0;
+}
+
+.ibero-profile-section-head p {
+  max-width: 560px;
+  margin: 0;
+  color: #34373b;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.ibero-dynamic-loading,
+.ibero-profile-page .alert {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--ibero-border) !important;
+  border-radius: 0;
+  background: #fff !important;
+  color: var(--ibero-gray);
+  box-shadow: none !important;
+}
+
+.dynamic-content-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: border-color .18s ease, transform .18s ease;
+}
+
+.dynamic-content-card:hover {
+  border-color: var(--ibero-red);
+  transform: translateY(-2px);
+}
+
+.dynamic-card-media {
+  height: 190px;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+.dynamic-card-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.dynamic-content-card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 275px;
+  padding: 1.35rem 1.35rem .85rem;
+}
+
+.dynamic-card-badges {
+  min-height: 2.35rem;
+  max-height: 2.35rem;
+  overflow: hidden;
+  margin-bottom: .35rem;
+}
+
+.dynamic-card-badges .badge {
+  margin-right: .25rem;
+  margin-bottom: .25rem !important;
+  padding: .35rem .6rem;
+}
+
+.dynamic-card-title,
+.dynamic-content-card .card-title {
+  min-height: 4.25rem;
+  margin: .15rem 0 .45rem;
+  color: var(--ibero-black);
+  font-family: var(--ibero-serif);
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -.03em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dynamic-card-text,
+.dynamic-content-card .card-text {
+  min-height: 6.4rem;
+  margin-bottom: 0;
+  color: #34373b;
+  font-size: .98rem;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.dynamic-card-actions {
+  padding-top: .9rem !important;
+  padding-bottom: 1.2rem !important;
+}
+
+.dynamic-card-actions .btn,
+.dynamic-content-card .btn,
+.ibero-profile-page .btn-primary {
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.ibero-profile-page .btn-primary,
+.ibero-profile-page .btn-outline-primary:hover,
+.ibero-profile-page .btn-outline-primary:focus {
+  background: var(--ibero-red) !important;
+  border-color: var(--ibero-red) !important;
+  color: #fff !important;
+}
+
+.ibero-profile-page .btn-outline-primary,
+.ibero-profile-page .text-primary {
+  color: var(--ibero-red) !important;
+  border-color: var(--ibero-red) !important;
+}
+
+.dynamic-content-card .card-footer {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--ibero-border);
+  background: #fafafa;
+}
+
+.dynamic-content-card .card-footer .small {
+  color: var(--ibero-gray);
+  line-height: 1.25;
+}
+
+/* --------------------------------------------------------------------------
+   CTA y página de listado completo
+   -------------------------------------------------------------------------- */
+.ibero-profile-cta {
+  background: var(--ibero-red);
+  color: #fff;
+  padding: clamp(2.2rem, 4vw, 3.6rem);
+}
+
+.ibero-profile-cta h2 {
+  margin: 0 0 .45rem;
+  color: #fff;
+  font-family: var(--ibero-serif);
+  font-size: clamp(2.3rem, 4.4vw, 4.5rem);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.04em;
+}
+
+.ibero-profile-cta p {
+  margin: 0;
+  max-width: 700px;
+  color: rgba(255, 255, 255, .86);
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.ibero-profile-cta .btn {
+  border-radius: 999px;
+  font-weight: 800;
+  min-width: 150px;
+}
+
+.ibero-profile-listing {
+  background: var(--ibero-soft);
+  min-height: 42vh;
+  padding: clamp(3rem, 5vw, 5rem) 0;
+}
+
+.ibero-profile-listing > section,
+.ibero-profile-listing .container,
+.ibero-profile-listing .container-fluid {
+  max-width: none;
+}
+
+/* Compatibilidad con clases usadas en versiones previas */
+.course-hero {
+  background: var(--ibero-red);
+  color: #fff;
+}
+
+.eyebrow,
+.hero-chip,
+.meta-chip {
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.section-title {
+  color: var(--ibero-black);
+  font-family: var(--ibero-serif);
+  font-weight: 500;
+}
+
+@media (max-width: 991.98px) {
+  .ibero-profile-section-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .75rem;
+  }
+
+  .dynamic-card-media {
+    height: 168px;
+  }
+
+  .dynamic-content-card .card-body,
+  .dynamic-card-badges,
+  .dynamic-card-title,
+  .dynamic-card-text,
+  .dynamic-content-card .card-footer {
+    min-height: auto;
+    max-height: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ibero-profile-actions .btn,
+  .ibero-profile-cta .btn {
+    width: 100%;
+  }
+
+  .ibero-profile-cta {
+    padding: 2rem 1.25rem;
+  }
+}
+
+/* ========================================================================== 
+   Ajuste v3 · Tarjetas dinámicas sin espacios artificiales
+   --------------------------------------------------------------------------
+   Mantiene las tarjetas limpias, evita tags cortados y elimina reservas de
+   altura excesivas cuando hay pocos tópicos.
+   ========================================================================== */
+
+/* Tags del perfil: más compactos, con respiración y sin salirse de la tarjeta */
+.ibero-profile-card {
+  padding: clamp(1.55rem, 2.6vw, 2.35rem);
+  overflow: hidden;
+}
+
+.ibero-profile-tags {
+  width: 100%;
+  max-width: 100%;
+  margin: 1.25rem auto 0;
+  padding-inline: .15rem;
+  gap: .45rem .38rem;
+}
+
+.ibero-profile-tag {
+  max-width: 100%;
+  padding: .38rem .62rem;
+  line-height: 1.1;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Tarjetas dinámicas: el espacio de tags ahora depende del contenido real */
+.dynamic-content-card {
+  overflow: hidden;
+}
+
+.dynamic-content-card .card-body {
+  min-height: 0;
+  padding: 1.35rem 1.35rem 1rem;
+}
+
+.dynamic-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: .38rem .42rem;
+  min-height: 0;
+  max-height: 4.35rem;
+  overflow: hidden;
+  margin: 0 0 1rem;
+}
+
+.dynamic-card-badges .badge {
+  margin: 0 !important;
+  padding: .34rem .58rem;
+  max-width: 100%;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+/* Títulos: tamaño más estable y sin traslapes con el resumen */
+.dynamic-card-title,
+.dynamic-content-card .card-title {
+  min-height: 0;
+  margin: 0 0 .75rem;
+  font-size: clamp(1.28rem, 1.45vw, 1.62rem);
+  line-height: 1.14;
+  letter-spacing: -.025em;
+  -webkit-line-clamp: 3;
+}
+
+/* Resumen: ocupa el espacio disponible sin obligar huecos grandes */
+.dynamic-card-text,
+.dynamic-content-card .card-text {
+  min-height: 0;
+  margin-bottom: 0;
+  font-size: .98rem;
+  line-height: 1.48;
+  -webkit-line-clamp: 5;
+}
+
+/* El botón baja naturalmente, sin empujar el título con espacios fijos */
+.dynamic-card-actions {
+  margin-top: auto;
+  padding-top: 1rem !important;
+  padding-bottom: 1.15rem !important;
+}
+
+.dynamic-content-card .card-footer {
+  min-height: 76px;
+  padding: .95rem 1.35rem;
+}
+
+@media (max-width: 991.98px) {
+  .dynamic-content-card .card-body {
+    padding: 1.25rem 1.15rem 1rem;
+  }
+
+  .dynamic-card-badges {
+    max-height: none;
+    overflow: visible;
+    margin-bottom: .85rem;
+  }
+
+  .dynamic-card-title,
+  .dynamic-content-card .card-title,
+  .dynamic-card-text,
+  .dynamic-content-card .card-text,
+  .dynamic-content-card .card-footer {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ibero-profile-card {
+    padding: 1.35rem 1rem;
+  }
+
+  .ibero-profile-tags {
+    gap: .38rem .32rem;
+    padding-inline: 0;
+  }
+
+  .ibero-profile-tag,
+  .dynamic-card-badges .badge {
+    padding: .34rem .5rem;
+    font-size: .6rem;
+    letter-spacing: .025em;
+  }
+
+  .dynamic-card-title,
+  .dynamic-content-card .card-title {
+    font-size: 1.34rem;
+    line-height: 1.15;
+  }
+}
+/* --------------------------------------------------------------------------
+   CTA rojo · Investigación, proyectos y recursos
+   -------------------------------------------------------------------------- */
+
+.ibero-profile-cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.ibero-profile-cta-btn {
+  width: 280px;
+  max-width: 100%;
+  min-height: 58px;
+  padding: .9rem 2rem;
+  border-radius: 999px;
+  font-family: var(--ibero-sans);
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color .18s ease,
+    color .18s ease,
+    border-color .18s ease,
+    transform .18s ease;
+}
+
+.ibero-profile-cta-btn:hover,
+.ibero-profile-cta-btn:focus {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.ibero-profile-cta-btn-primary {
+  color: var(--ibero-red);
+  background: #fff;
+  border: 2px solid #fff;
+}
+
+.ibero-profile-cta-btn-primary:hover,
+.ibero-profile-cta-btn-primary:focus {
+  color: var(--ibero-red);
+  background: #f4f4f4;
+  border-color: #f4f4f4;
+}
+
+.ibero-profile-cta-btn-outline {
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+.ibero-profile-cta-btn-outline:hover,
+.ibero-profile-cta-btn-outline:focus {
+  color: var(--ibero-red);
+  background: #fff;
+  border-color: #fff;
+}
+
+@media (max-width: 1199.98px) {
+  .ibero-profile-cta-actions {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ibero-profile-cta-actions {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .ibero-profile-cta-btn {
+    width: 100%;
+    min-width: 0;
+  }
+}

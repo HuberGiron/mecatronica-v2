@@ -695,3 +695,70 @@
     min-width: 0;
   }
 }
+
+/* ========================================================================== 
+   Ajuste v5 · Encabezados reales en /mas-contenido.html
+   --------------------------------------------------------------------------
+   content-loader.js puede construir los listados con un h2 simple. La página
+   mas-contenido.html normaliza ese encabezado agregando .ibero-profile-listing-head.
+   Estas reglas garantizan que el resultado use el mismo formato del perfil.
+   ========================================================================== */
+
+.ibero-profile-listing-page {
+  background: #fff;
+  min-height: 42vh;
+  padding: 0;
+}
+
+.ibero-profile-listing-page .ibero-profile-dynamic-section,
+.ibero-profile-listing-page .ibero-profile-dynamic-section.is-soft,
+.ibero-profile-listing-page [data-listing-page] > section {
+  background: #fff;
+  padding: clamp(3.2rem, 5vw, 5.4rem) 0 clamp(3.8rem, 5.5vw, 6rem);
+}
+
+.ibero-profile-listing-head {
+  display: flex !important;
+  align-items: end !important;
+  justify-content: space-between !important;
+  gap: 2rem !important;
+  margin-bottom: clamp(1.6rem, 3vw, 2.7rem) !important;
+}
+
+.ibero-profile-listing-head .ibero-section-kicker {
+  margin-bottom: .85rem;
+}
+
+.ibero-profile-listing-head .ibero-section-title {
+  margin: 0;
+  font-family: var(--ibero-serif);
+  font-size: clamp(3.2rem, 5.8vw, 6.1rem);
+  font-weight: 500;
+  line-height: .94;
+  letter-spacing: -.045em;
+}
+
+.ibero-profile-listing-head p {
+  max-width: 700px;
+  margin: 0;
+  color: #34373b;
+  font-size: clamp(1.08rem, 1.45vw, 1.35rem);
+  line-height: 1.55;
+}
+
+.ibero-profile-listing-page + .ibero-footer,
+.ibero-profile-page .ibero-footer {
+  border-top: 1px solid var(--ibero-border);
+}
+
+@media (max-width: 991.98px) {
+  .ibero-profile-listing-head {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: .75rem !important;
+  }
+
+  .ibero-profile-listing-head .ibero-section-title {
+    font-size: clamp(2.8rem, 12vw, 4.4rem);
+  }
+}

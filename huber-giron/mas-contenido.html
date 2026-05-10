@@ -89,7 +89,7 @@
       </div>
     </section>
 
-    <section class="ibero-profile-listing">
+    <section class="ibero-profile-listing ibero-profile-listing-page">
       <div class="container-fluid px-4 px-lg-5">
         <div class="row justify-content-center">
           <div class="col-12 col-xxl-11">
@@ -140,5 +140,99 @@
   <script src="/assets/js/site-config.js"></script>
   <script src="/assets/js/ibero-navbar.js"></script>
   <script src="js/content-loader.js"></script>
+
+  <script>
+    /* ----------------------------------------------------------------------
+       Normaliza el encabezado de /huber-giron/mas-contenido.html
+       ----------------------------------------------------------------------
+       content-loader.js construye la página de listado con un título simple.
+       Este bloque conserva la carga dinámica, pero sustituye ese encabezado
+       por el formato institucional usado en las secciones del perfil.
+    ---------------------------------------------------------------------- */
+    (() => {
+      const LISTING_HEADS = {
+        cursos: {
+          kicker: 'Docencia',
+          title: 'Cursos',
+          text: 'Asignaturas, laboratorios y experiencias formativas relacionadas con mecatrónica, automatización, sistemas ciberfísicos y robótica.'
+        },
+        proyectos: {
+          kicker: 'Desarrollo experimental',
+          title: 'Proyectos',
+          text: 'Prototipos, plataformas experimentales, sistemas interactivos y desarrollos aplicados a robótica, IA, IoT y fabricación digital.'
+        },
+        publicaciones: {
+          kicker: 'Investigación',
+          title: 'Publicaciones',
+          text: 'Producción académica vinculada con control, robótica, sistemas ciberfísicos, innovación tecnológica y validación experimental.'
+        },
+        recursos: {
+          kicker: 'Material abierto',
+          title: 'Lecciones y recursos',
+          text: 'Tutoriales, guías, repositorios y materiales didácticos para apoyar el aprendizaje basado en proyectos y documentación reproducible.'
+        }
+      };
+
+      function getTipo() {
+        const params = new URLSearchParams(window.location.search);
+        const raw = (params.get('tipo') || 'proyectos').toLowerCase();
+        return LISTING_HEADS[raw] ? raw : 'proyectos';
+      }
+
+      function buildHeading(config) {
+        const heading = document.createElement('div');
+        heading.className = 'ibero-profile-section-head ibero-profile-listing-head';
+        heading.innerHTML = `
+          <div>
+            <div class="ibero-section-kicker">${config.kicker}</div>
+            <h2 class="ibero-section-title">${config.title}</h2>
+          </div>
+          <p>${config.text}</p>
+        `;
+        return heading;
+      }
+
+      function normalizeListingHeading() {
+        const listingRoot = document.querySelector('[data-listing-page]');
+        if (!listingRoot) return;
+
+        const config = LISTING_HEADS[getTipo()];
+        const hostSection = listingRoot.querySelector('.ibero-profile-dynamic-section') || listingRoot.firstElementChild || listingRoot;
+
+        if (!hostSection || hostSection.dataset.listingHeadNormalized === 'true') return;
+
+        const existingInstitutionalHead = hostSection.querySelector('.ibero-profile-section-head');
+        if (existingInstitutionalHead) {
+          existingInstitutionalHead.classList.add('ibero-profile-listing-head');
+          hostSection.dataset.listingHeadNormalized = 'true';
+          return;
+        }
+
+        const plainHeading = Array.from(hostSection.querySelectorAll('h1, h2, h3'))
+          .find(el => el.textContent.trim().toLowerCase() === config.title.toLowerCase());
+
+        const heading = buildHeading(config);
+        if (plainHeading) {
+          plainHeading.replaceWith(heading);
+        } else {
+          hostSection.insertBefore(heading, hostSection.firstChild);
+        }
+
+        hostSection.dataset.listingHeadNormalized = 'true';
+      }
+
+      const observer = new MutationObserver(() => normalizeListingHeading());
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const listingRoot = document.querySelector('[data-listing-page]');
+        if (listingRoot) {
+          observer.observe(listingRoot, { childList: true, subtree: true });
+        }
+        normalizeListingHeading();
+        window.setTimeout(normalizeListingHeading, 250);
+        window.setTimeout(normalizeListingHeading, 900);
+      });
+    })();
+  </script>
 </body>
 </html>

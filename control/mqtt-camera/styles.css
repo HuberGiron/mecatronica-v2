@@ -1,0 +1,54 @@
+body {
+    background-color: #f2f2f2;
+    color: black;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+header {
+    background-color: #E00034; /* Barra roja */
+    padding: 15px 0;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 70vw; /* 70% del ancho de un móvil */
+    max-width: 280px;
+}
+
+h1 {
+    font-size: 1.5em;
+    color: white;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #E00034;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #D32E38;
+}
+
+canvas {
+    background-color: lightgray;
+    width: 100%;
+    max-width: 480px;
+    border: 2px solid #E00034;
+    margin-top: 10px;
+}
+
+#handStatus {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detección de Manos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>Detección de Manos</h1>
+    </header>
+
+    <select id="robotSelector">
+        <option value="R1">Robot 0</option>
+        <option value="R2">Robot 1</option>
+        <option value="R3">Robot 2</option>
+        <option value="R4">Robot 3</option>
+    </select>
+
+    <button id="toggleCameraButton">Conectar a MQTT</button>
+    <p id="handStatus">Esperando conexión MQTT...</p>
+
+    <div class="camera-container">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <!-- Carga de librerías externas -->
+    <script src="https://unpkg.com/paho-mqtt@1.0.3/mqttws31.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils"></script>
+
+    <!-- Código principal -->
+    <script src="script.js" defer></script>
+</body>
+</html>

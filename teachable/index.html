@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+  <title>Visión por computadora - Teachable Machine</title>
+  <link rel="icon" type="image/png" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Encabezado con logo -->
+  <header>
+    <img src="logo.png" alt="Logo IBERO" class="logo" />
+    <h1>Visión por Computadora</h1>
+  </header>
+
+  <div class="container">
+    <div class="note">
+      Crea y entrena tus modelos en 
+      <a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener">Teachable Machine</a>.
+      Al publicar, copia la URL del enlace para compartir y pégala aquí.
+    </div>
+
+    <!-- Errores -->
+    <div id="errorBox"></div>
+
+    <!-- Formulario URL -->
+    <div id="modelForm">
+      <p>Pega la liga de tu modelo de Teachable Machine:</p>
+      <input type="text" id="modelURL" placeholder="https://teachablemachine.withgoogle.com/models/XXXX/" autocomplete="off">
+      <button class="btn primary" id="btnLoad">Cargar modelo</button>
+      <button class="btn" id="btnDemo" title="Rellenar con un modelo de ejemplo">Prueba Gato-Perro</button>
+    </div>
+
+    <!-- App -->
+    <div id="app">
+      <div class="topbar">
+        <button class="btn secondary" id="btnReset" style="display:none;">Cambiar modelo</button>
+      </div>
+
+      <div class="controls">
+        <details open>
+          <summary>Seleccionar cámara</summary>
+          <div class="row">
+            <select id="cameraSelect" title="Cámaras disponibles"></select>
+            <button class="btn primary" id="btnFront">Frontal</button>
+            <button class="btn secondary" id="btnBack">Trasera</button>
+          </div>
+        </details>
+      </div>
+
+      <video id="video" autoplay playsinline muted></video>
+      <div id="label-container"></div>
+    </div>
+  </div>
+
+  <!-- Librerías externas -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.21.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@3.21.0/dist/tfjs-backend-wasm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+
+  <!-- Script principal -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -5,8 +5,7 @@
     personaId: '',
     dataBaseUrl: '/data',
     homeLimit: 3,
-    listingPage: 'mas-contenido.html',
-    detalleBaseUrl: '/academia/detalle.html'
+    listingPage: 'mas-contenido.html'
   };
 
   const PROFILE = Object.assign({}, DEFAULT_CONFIG, window.PROFILE_CONFIG || {});
@@ -57,6 +56,7 @@
       .profile-participant-initial{display:inline-flex;align-items:center;justify-content:center;background:#8c1d40;color:#fff;font-size:.75rem;font-weight:700}
       .profile-participant strong{display:block;font-size:.78rem;line-height:1.05}
       .profile-participant small{display:block;font-size:.68rem;color:#666;line-height:1.1}
+      .profile-content-link-disabled{pointer-events:none;opacity:.6}
     `;
     document.head.appendChild(style);
   }
@@ -170,17 +170,23 @@
     </div>`;
   }
 
-  function detailUrl(tipo, item) {
-    const config = CONTENT_CONFIG[tipo];
-    if (item.url && item.habilitado !== false) return item.url;
-    return `${PROFILE.detalleBaseUrl}?coleccion=${encodeURIComponent(config.coleccion)}&id=${encodeURIComponent(item.id)}`;
+  function itemUrl(item) {
+    if (item.habilitado === false || !item.url) return '';
+    return item.url;
+  }
+
+  function isExternalUrl(url) {
+    return /^https?:\/\//i.test(url);
   }
 
   function buildCard(tipo, item, personasMap) {
     const image = item.imagen || item.image || FALLBACK_IMAGE;
-    const href = detailUrl(tipo, item);
-    const external = item.url && item.habilitado !== false;
+    const href = itemUrl(item);
+    const external = isExternalUrl(href);
     const footerText = item.fechaTexto || item.autor || '';
+    const action = href
+      ? `<a class="btn btn-primary" href="${escapeHtml(href)}" ${external ? 'target="_blank" rel="noopener noreferrer"' : ''}>${escapeHtml(item.botonTexto || 'Más información')}</a>`
+      : '<span class="btn btn-primary profile-content-link-disabled" aria-disabled="true">Próximamente</span>';
     return `
       <article class="card dynamic-content-card">
         <div class="dynamic-card-media">
@@ -191,7 +197,7 @@
           <h3 class="card-title dynamic-card-title">${escapeHtml(item.titulo || 'Sin título')}</h3>
           <p class="card-text dynamic-card-text">${escapeHtml(item.descripcion || '')}</p>
           <div class="dynamic-card-actions">
-            <a class="btn btn-primary" href="${escapeHtml(href)}" ${external ? 'target="_blank" rel="noopener noreferrer"' : ''}>${escapeHtml(item.botonTexto || 'Más información')}</a>
+            ${action}
           </div>
         </div>
         <div class="card-footer">
@@ -267,6 +273,7 @@
           <div class="ibero-section-kicker">Contenido académico</div>
           <h2 class="ibero-section-title">${escapeHtml(config.titulo)}</h2>
         </div>
+        <p>Listado completo del perfil académico, cargado desde el catálogo institucional.</p>
       </div>
       <div class="row g-4">
         ${filtered.map(item => `<div class="col-md-6 col-xl-4">${buildCard(tipo, item, map)}</div>`).join('')}

@@ -132,6 +132,13 @@
   background: var(--ibero-red, #e00034);
   color: #fff;
 }
+.catalog-link-disabled,
+.catalog-link-disabled:hover {
+  border-color: #d7d7d7;
+  background: #f4f4f4;
+  color: #777;
+  cursor: not-allowed;
+}
 .catalog-empty {
   border: 1px solid var(--ibero-border, #d9d9d9);
   background: #fff;

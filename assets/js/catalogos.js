@@ -4,28 +4,23 @@
   const CONFIG = {
     cursos: {
       archivo: '/data/cursos.json',
-      titulo: 'Cursos',
-      detalleBase: '/academia/detalle.html?coleccion=cursos&id='
+      titulo: 'Cursos'
     },
     proyectos_investigacion: {
       archivo: '/data/proyectos_investigacion.json',
-      titulo: 'Proyectos · Investigación',
-      detalleBase: '/academia/detalle.html?coleccion=proyectos_investigacion&id='
+      titulo: 'Proyectos · Investigación'
     },
     publicaciones: {
       archivo: '/data/publicaciones.json',
-      titulo: 'Publicaciones',
-      detalleBase: '/academia/detalle.html?coleccion=publicaciones&id='
+      titulo: 'Publicaciones'
     },
     recursos: {
       archivo: '/data/recursos.json',
-      titulo: 'Lecciones y recursos',
-      detalleBase: '/academia/detalle.html?coleccion=recursos&id='
+      titulo: 'Lecciones y recursos'
     },
     alumnos_proyectos: {
       archivo: '/data/alumnos_proyectos.json',
-      titulo: 'Proyectos de alumnos',
-      detalleBase: '/vida_universitaria/alumnos/proyecto.html?id='
+      titulo: 'Proyectos de alumnos'
     }
   };
 
@@ -151,8 +146,13 @@
     return asArray(item.lineas)[0] || 'sin-linea';
   }
 
-  function detailUrl(collection, item) {
-    return CONFIG[collection].detalleBase + encodeURIComponent(item.id);
+  function itemUrl(item) {
+    if (item.habilitado === false || !item.url) return '';
+    return item.url;
+  }
+
+  function isExternalUrl(url) {
+    return /^https?:\/\//i.test(url);
   }
 
   function buildBadges(item) {
@@ -161,8 +161,9 @@
   }
 
   function buildCard(collection, item, personaMap) {
-    const disabled = item.habilitado === false;
-    const href = detailUrl(collection, item);
+    const href = itemUrl(item);
+    const disabled = !href;
+    const externalAttrs = isExternalUrl(href) ? ' target="_blank" rel="noopener noreferrer"' : '';
     const fecha = item.fechaTexto ? escapeHtml(item.fechaTexto) : '';
     return `
       <article class="catalog-card">
@@ -174,7 +175,9 @@
           <div class="catalog-card-footer">
             ${fecha ? `<div class="catalog-date">${fecha}</div>` : ''}
             ${buildParticipantChips(item, personaMap, true)}
-            <a class="catalog-link" href="${href}">${disabled ? 'Ver ficha' : 'Más información'} →</a>
+            ${disabled
+              ? '<span class="catalog-link catalog-link-disabled" aria-disabled="true">Próximamente</span>'
+              : `<a class="catalog-link" href="${escapeHtml(href)}"${externalAttrs}>Más información →</a>`}
           </div>
         </div>
       </article>`;

@@ -193,41 +193,7 @@
       ...asArray(item.lineas)
     ].join(' ').toLowerCase();
     const qOk = !filters.q || haystack.includes(filters.q.toLowerCase());
-    const lineaOk = !filters.linea || asArray(item.lineas).includes(filters.linea);
-    const tipoOk = !filters.tipo || item.tipoEtiqueta === filters.tipo || asArray(item.categorias).includes(filters.tipo);
-    return qOk && lineaOk && tipoOk;
-  }
-
-  function groupByLinea(items, lineaMap) {
-    const groups = new Map();
-    items.forEach(item => {
-      const key = firstLineaId(item);
-      if (!groups.has(key)) groups.set(key, []);
-      groups.get(key).push(item);
-    });
-    return [...groups.entries()].sort((a, b) => {
-      const la = lineaMap.get(a[0]);
-      const lb = lineaMap.get(b[0]);
-      return (la?.orden ?? 9999) - (lb?.orden ?? 9999);
-    });
-  }
-
-  function fillSelects(items, lineas, page) {
-    const lineaSelect = page.querySelector('[data-filter-linea]');
-    const tipoSelect = page.querySelector('[data-filter-tipo]');
-    const usedLineas = new Set(items.flatMap(item => asArray(item.lineas)));
-    if (lineaSelect) {
-      const options = lineas.filter(l => usedLineas.has(l.id)).sort((a, b) => (a.orden ?? 999) - (b.orden ?? 999));
-      lineaSelect.innerHTML = '<option value="">Todas las líneas</option>' + options.map(l => `<option value="${escapeHtml(l.id)}">${escapeHtml(l.nombre)}</option>`).join('');
-    }
-    if (tipoSelect) {
-      const tipos = new Set();
-      items.forEach(item => {
-        if (item.tipoEtiqueta) tipos.add(item.tipoEtiqueta);
-        asArray(item.categorias).forEach(cat => tipos.add(cat));
-      });
-      tipoSelect.innerHTML = '<option value="">Todas las categorías</option>' + [...tipos].sort().map(t => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('');
-    }
+    return qOk;
   }
 
   async function renderListingPage() {
@@ -237,21 +203,15 @@
     const grid = page.querySelector('[data-catalog-grid]');
     const summary = page.querySelector('[data-catalog-summary]');
     const search = page.querySelector('[data-filter-search]');
-    const lineaSelect = page.querySelector('[data-filter-linea]');
-    const tipoSelect = page.querySelector('[data-filter-tipo]');
 
     try {
       const { items, lineas, personas } = await loadCatalogData(collection);
       const personaMap = getPersonaMap(personas);
-      const lineaMap = getLineaMap(lineas);
       const published = sortByDateDesc(items.filter(item => item.visible !== false && item.habilitado !== false));
-      fillSelects(published, lineas, page);
 
       function render() {
         const filters = {
-          q: search?.value.trim() || '',
-          linea: lineaSelect?.value || '',
-          tipo: tipoSelect?.value || ''
+          q: search?.value.trim() || ''
         };
         const filtered = published.filter(item => itemMatches(item, filters, personaMap));
         if (summary) summary.textContent = `${filtered.length} elemento${filtered.length === 1 ? '' : 's'} encontrado${filtered.length === 1 ? '' : 's'}.`;
@@ -259,22 +219,13 @@
           grid.innerHTML = '<div class="catalog-empty">No hay elementos que coincidan con el filtro seleccionado.</div>';
           return;
         }
-        const groups = groupByLinea(filtered, lineaMap);
-        grid.innerHTML = groups.map(([lineaId, groupItems]) => {
-          const linea = lineaMap.get(lineaId);
-          const title = linea?.nombre || 'Otros contenidos';
-          return `
-            <section class="catalog-line-section">
-              <h2 class="catalog-line-title">${escapeHtml(title)}</h2>
-              <div class="catalog-grid">
-                ${groupItems.map(item => buildCard(collection, item, personaMap)).join('')}
-              </div>
-            </section>`;
-        }).join('');
+        grid.innerHTML = `
+          <div class="catalog-grid">
+            ${filtered.map(item => buildCard(collection, item, personaMap)).join('')}
+          </div>`;
       }
 
-      [search, lineaSelect, tipoSelect].forEach(el => el?.addEventListener('input', render));
-      [lineaSelect, tipoSelect].forEach(el => el?.addEventListener('change', render));
+      search?.addEventListener('input', render);
       render();
     } catch (error) {
       console.error(error);

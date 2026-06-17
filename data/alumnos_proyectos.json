@@ -3,7 +3,7 @@
     "id": "robot-clasificador-residuos-2026",
     "titulo": "Robot clasificador de residuos",
     "descripcion": "Robot móvil para recolectar residuos y clasificarlos automáticamente en vidrio, latas y envases Tetra Pak mediante visión artificial, sistemas embebidos, servicios en la nube e interfaz de usuario.",
-    "imagen": "/assets/img/home/video-preview.png",
+    "imagen": "/assets/img/alumnos/ur.png",
     "alt": "Documentación del robot clasificador de residuos",
     "categorias": [
       "Robótica",
@@ -63,7 +63,7 @@
     "id": "planchado-express-2026",
     "titulo": "Planchado Express",
     "descripcion": "Sistema ciberfísico para automatizar el proceso de planchado de prendas textiles mediante interfaz web, clasificación con inteligencia artificial, robot colaborativo UR3, PLC, ESP32, Firebase y backend Flask.",
-    "imagen": "/assets/img/home/video-preview.png",
+    "imagen": "/assets/img/alumnos/banda.jpeg",
     "alt": "Documentación técnica del proyecto Planchado Express",
     "categorias": [
       "Automatización",
@@ -144,7 +144,7 @@
     "id": "practicas-sistemas-ciberfisicos-martha-valdes-2026",
     "titulo": "Prácticas de Sistemas Ciberfísicos",
     "descripcion": "Portafolio de prácticas del curso con documentación de sistemas embebidos, PCB, protocolos de comunicación, interfaces web, Flask, servicios en red y control de actuadores con ESP32.",
-    "imagen": "/assets/img/home/video-preview.png",
+    "imagen": "/assets/img/alumnos/martha.png",
     "alt": "Portafolio de prácticas de Sistemas Ciberfísicos",
     "categorias": [
       "Prácticas",
@@ -189,7 +189,7 @@
     "id": "portafolio-sistemas-ciberfisicos-camila-2026",
     "titulo": "Portafolio de proyectos de Sistemas Ciberfísicos",
     "descripcion": "Sitio de documentación estudiantil con prácticas de HTML, CSS, JavaScript, sistemas embebidos, servicios web y proyecto final, organizado como portafolio técnico del curso.",
-    "imagen": "/assets/img/home/video-preview.png",
+    "imagen": "/assets/img/alumnos/camila.png",
     "alt": "Portafolio de proyectos de Sistemas Ciberfísicos",
     "categorias": [
       "Portafolio",
@@ -234,7 +234,7 @@
     "id": "practicas-sistemas-ciberfisicos-luis-cortes-2026",
     "titulo": "Prácticas de Sistemas Ciberfísicos",
     "descripcion": "Portafolio de prácticas del curso con documentación de equipo de cómputo, sistemas embebidos, PCB, comunicación, servicios web, API, despliegue, bases de datos, PLC-Python y proyecto final.",
-    "imagen": "/assets/img/home/video-preview.png",
+    "imagen": "/assets/img/alumnos/luis.png",
     "alt": "Portafolio de prácticas de Sistemas Ciberfísicos",
     "categorias": [
       "Prácticas",
@@ -280,7 +280,7 @@
     "id": "teleoperacion-movil-manipulador-logistica-inclusiva-2026",
     "titulo": "Teleoperación móvil-manipulador para logística inclusiva",
     "descripcion": "Sistema robótico móvil-manipulador teleoperado para tareas logísticas, con interfaz centrada en el usuario, realidad mixta, comunicación ZMQ, control en Python y ESP32-C3 con MicroPython.",
-    "imagen": "/assets/img/home/video-preview.png",
+    "imagen": "/assets/img/alumnos/teleop.png",
     "alt": "Documentación del sistema móvil-manipulador teleoperado para logística inclusiva",
     "categorias": [
       "Robótica",

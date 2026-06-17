@@ -49,20 +49,6 @@
     const style = document.createElement('style');
     style.id = 'profile-content-loader-styles';
     style.textContent = `
-      .profile-content-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:1rem}
-      .profile-content-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(0,0,0,.08);border-radius:1rem;background:#fff;box-shadow:0 12px 32px rgba(0,0,0,.06);height:100%}
-      .profile-content-card img{width:100%;height:170px;object-fit:cover;background:#f6f6f6}
-      .profile-content-card-body{display:flex;flex-direction:column;gap:.7rem;padding:1rem;flex:1}
-      .profile-content-meta{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}
-      .profile-content-badge{display:inline-flex;align-items:center;border:1px solid rgba(0,0,0,.12);border-radius:999px;padding:.22rem .55rem;font-size:.75rem;background:#fafafa;color:#333}
-      .profile-content-type{background:#8c1d40;color:#fff;border-color:#8c1d40}
-      .profile-content-card h3{font-size:1.05rem;margin:0;line-height:1.25}
-      .profile-content-card p{margin:0;color:#4b4b4b;font-size:.93rem;line-height:1.45}
-      .profile-content-footer{display:flex;justify-content:space-between;gap:.8rem;align-items:center;margin-top:auto;padding-top:.5rem;border-top:1px solid rgba(0,0,0,.07)}
-      .profile-content-date{font-size:.82rem;color:#666}
-      .profile-content-link{font-weight:700;color:#8c1d40;text-decoration:none;white-space:nowrap}
-      .profile-content-link:hover{text-decoration:underline}
-      .profile-content-more{display:inline-flex;margin-top:1rem;color:#8c1d40;font-weight:700;text-decoration:none}
       .profile-content-empty,.profile-content-error{padding:1rem;border-radius:.75rem;background:#f8f8f8;color:#555}
       .profile-participants{display:flex;flex-wrap:wrap;gap:.45rem}
       .profile-participant{display:inline-flex;align-items:center;gap:.4rem;max-width:100%;padding:.25rem .48rem;border:1px solid rgba(0,0,0,.1);border-radius:999px;text-decoration:none;color:inherit;background:#fff}
@@ -159,7 +145,7 @@
 
   function buildBadges(item) {
     const tags = [item.tipoEtiqueta || 'Contenido', ...asArray(item.categorias).slice(0, 2)];
-    return tags.map((tag, index) => `<span class="profile-content-badge ${index === 0 ? 'profile-content-type' : ''}">${escapeHtml(tag)}</span>`).join('');
+    return tags.map((tag, index) => `<span class="badge ${index === 0 ? 'bg-primary bg-gradient' : 'bg-primary'}">${escapeHtml(tag)}</span>`).join('');
   }
 
   function buildParticipants(item, personasMap) {
@@ -194,17 +180,24 @@
     const image = item.imagen || item.image || FALLBACK_IMAGE;
     const href = detailUrl(tipo, item);
     const external = item.url && item.habilitado !== false;
+    const footerText = item.fechaTexto || item.autor || '';
     return `
-      <article class="profile-content-card">
-        <img src="${escapeHtml(image)}" alt="${escapeHtml(item.alt || item.titulo || 'Contenido')}" loading="lazy" onerror="this.src='${FALLBACK_IMAGE}'">
-        <div class="profile-content-card-body">
-          <div class="profile-content-meta">${buildBadges(item)}</div>
-          <h3>${escapeHtml(item.titulo || 'Sin título')}</h3>
-          <p>${escapeHtml(item.descripcion || '')}</p>
-          ${buildParticipants(item, personasMap)}
-          <div class="profile-content-footer">
-            <span class="profile-content-date">${escapeHtml(item.fechaTexto || '')}</span>
-            <a class="profile-content-link" href="${escapeHtml(href)}" ${external ? 'target="_blank" rel="noopener noreferrer"' : ''}>${escapeHtml(item.botonTexto || 'Más información')} →</a>
+      <article class="card dynamic-content-card">
+        <div class="dynamic-card-media">
+          <img src="${escapeHtml(image)}" alt="${escapeHtml(item.alt || item.titulo || 'Contenido')}" loading="lazy" onerror="this.src='${FALLBACK_IMAGE}'">
+        </div>
+        <div class="card-body">
+          <div class="dynamic-card-badges">${buildBadges(item)}</div>
+          <h3 class="card-title dynamic-card-title">${escapeHtml(item.titulo || 'Sin título')}</h3>
+          <p class="card-text dynamic-card-text">${escapeHtml(item.descripcion || '')}</p>
+          <div class="dynamic-card-actions">
+            <a class="btn btn-primary" href="${escapeHtml(href)}" ${external ? 'target="_blank" rel="noopener noreferrer"' : ''}>${escapeHtml(item.botonTexto || 'Más información')}</a>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="small w-100">
+            ${footerText ? `<div class="mb-2">${escapeHtml(footerText)}</div>` : ''}
+            ${buildParticipants(item, personasMap)}
           </div>
         </div>
       </article>`;
@@ -237,10 +230,10 @@
     }
 
     mount.innerHTML = `
-      <div class="profile-content-grid">
-        ${visible.map(item => buildCard(tipo, item, map)).join('')}
+      <div class="row g-4">
+        ${visible.map(item => `<div class="col-md-6 col-xl-4">${buildCard(tipo, item, map)}</div>`).join('')}
       </div>
-      <a class="profile-content-more" href="${escapeHtml(moreUrl(tipo))}">${escapeHtml(config.masTexto)} →</a>
+      <a class="btn btn-ibero btn-ibero-outline mt-4" href="${escapeHtml(moreUrl(tipo))}">${escapeHtml(config.masTexto)}</a>
     `;
   }
 
@@ -269,9 +262,15 @@
     }
 
     page.innerHTML = `
-      <h2>${escapeHtml(config.titulo)}</h2>
-      <div class="profile-content-grid">
-        ${filtered.map(item => buildCard(tipo, item, map)).join('')}
+      <div class="ibero-profile-listing-head">
+        <div>
+          <div class="ibero-section-kicker">Contenido académico</div>
+          <h2 class="ibero-section-title">${escapeHtml(config.titulo)}</h2>
+        </div>
+        <p>Listado completo del perfil académico, cargado desde el catálogo institucional.</p>
+      </div>
+      <div class="row g-4">
+        ${filtered.map(item => `<div class="col-md-6 col-xl-4">${buildCard(tipo, item, map)}</div>`).join('')}
       </div>
       <p class="mt-4"><a href="index.html">Regresar al perfil del académico</a></p>
     `;
@@ -291,5 +290,9 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', safeRender);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', safeRender);
+  } else {
+    safeRender();
+  }
 })();

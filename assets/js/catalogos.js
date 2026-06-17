@@ -1,0 +1,350 @@
+(function () {
+  'use strict';
+
+  const CONFIG = {
+    cursos: {
+      archivo: '/data/cursos.json',
+      titulo: 'Cursos',
+      detalleBase: '/academia/detalle.html?coleccion=cursos&id='
+    },
+    proyectos_investigacion: {
+      archivo: '/data/proyectos_investigacion.json',
+      titulo: 'Proyectos · Investigación',
+      detalleBase: '/academia/detalle.html?coleccion=proyectos_investigacion&id='
+    },
+    publicaciones: {
+      archivo: '/data/publicaciones.json',
+      titulo: 'Publicaciones',
+      detalleBase: '/academia/detalle.html?coleccion=publicaciones&id='
+    },
+    recursos: {
+      archivo: '/data/recursos.json',
+      titulo: 'Lecciones y recursos',
+      detalleBase: '/academia/detalle.html?coleccion=recursos&id='
+    },
+    alumnos_proyectos: {
+      archivo: '/data/alumnos_proyectos.json',
+      titulo: 'Proyectos de alumnos',
+      detalleBase: '/vida_universitaria/alumnos/proyecto.html?id='
+    }
+  };
+
+  const FALLBACK_IMAGE = '/assets/img/home/video-preview.png';
+
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function asArray(value) {
+    return Array.isArray(value) ? value : [];
+  }
+
+  function imageSrc(item) {
+    return item.imagen || item.image || FALLBACK_IMAGE;
+  }
+
+  async function fetchJson(path) {
+    const response = await fetch(path, { cache: 'no-store' });
+    if (!response.ok) throw new Error('No se pudo cargar ' + path);
+    return response.json();
+  }
+
+  async function loadCatalogData(collection) {
+    const config = CONFIG[collection];
+    if (!config) throw new Error('Colección inválida: ' + collection);
+    const [items, lineas, personas] = await Promise.all([
+      fetchJson(config.archivo),
+      fetchJson('/data/lineas_investigacion.json'),
+      fetchJson('/data/personas.json')
+    ]);
+    return { config, items: asArray(items), lineas: asArray(lineas), personas: asArray(personas) };
+  }
+
+  function sortByDateDesc(items) {
+    return [...items].sort((a, b) => new Date(b.fechaISO || 0) - new Date(a.fechaISO || 0));
+  }
+
+  function getLineaMap(lineas) {
+    return new Map(lineas.map(linea => [linea.id, linea]));
+  }
+
+  function getPersonaMap(personas) {
+    return new Map(personas.map(persona => [persona.id, persona]));
+  }
+
+  function getParticipantes(item) {
+    if (Array.isArray(item.participantes) && item.participantes.length) return item.participantes;
+    // Compatibilidad temporal con datos anteriores.
+    if (Array.isArray(item.responsables) && item.responsables.length) {
+      return item.responsables.map((r, index) => ({
+        personaId: r.personaId,
+        rol: r.rol || 'responsable',
+        rolTexto: r.rolTexto || 'Responsable',
+        orden: r.orden || index + 1
+      }));
+    }
+    if (Array.isArray(item.autores) && item.autores.length) {
+      return item.autores.map((a, index) => ({
+        personaId: a.personaId,
+        rol: a.rol || 'autor',
+        rolTexto: a.rolTexto || 'Autor',
+        orden: a.orden || index + 1
+      }));
+    }
+    return [];
+  }
+
+  function hydrateParticipantes(item, personaMap) {
+    return getParticipantes(item)
+      .map((participacion, index) => {
+        const persona = personaMap.get(participacion.personaId);
+        if (!persona && !participacion.nombre) return null;
+        return {
+          ...participacion,
+          orden: participacion.orden || index + 1,
+          persona
+        };
+      })
+      .filter(Boolean)
+      .sort((a, b) => (a.orden || 9999) - (b.orden || 9999));
+  }
+
+  function getParticipantesTexto(item, personaMap) {
+    const participantes = hydrateParticipantes(item, personaMap);
+    if (participantes.length) {
+      return participantes
+        .map(p => p.persona?.nombre || p.nombre || p.personaId)
+        .filter(Boolean)
+        .join(', ');
+    }
+    return item.autor || '';
+  }
+
+  function buildParticipantChips(item, personaMap, compact = true) {
+    const participantes = hydrateParticipantes(item, personaMap);
+    if (!participantes.length) return item.autor ? `<div class="catalog-author">${escapeHtml(item.autor)}</div>` : '';
+
+    return `<div class="catalog-participants ${compact ? 'catalog-participants-compact' : ''}">
+      ${participantes.map(p => {
+        const persona = p.persona || {};
+        const nombre = persona.nombre || p.nombre || p.personaId;
+        const foto = persona.foto || persona.imagen || p.foto || '';
+        const url = persona.urlPerfil || p.urlPerfil || '';
+        const rol = p.rolTexto || p.rol || '';
+        const inner = `
+          ${foto ? `<img src="${escapeHtml(foto)}" alt="${escapeHtml(nombre)}" loading="lazy">` : `<span class="catalog-participant-initial">${escapeHtml(nombre.charAt(0))}</span>`}
+          <span><strong>${escapeHtml(nombre)}</strong>${rol ? `<small>${escapeHtml(rol)}</small>` : ''}</span>
+        `;
+        return url
+          ? `<a class="catalog-participant" href="${escapeHtml(url)}">${inner}</a>`
+          : `<span class="catalog-participant">${inner}</span>`;
+      }).join('')}
+    </div>`;
+  }
+
+  function firstLineaId(item) {
+    return asArray(item.lineas)[0] || 'sin-linea';
+  }
+
+  function detailUrl(collection, item) {
+    return CONFIG[collection].detalleBase + encodeURIComponent(item.id);
+  }
+
+  function buildBadges(item) {
+    const tags = [item.tipoEtiqueta || 'Contenido', ...asArray(item.categorias).slice(0, 3)];
+    return tags.map((tag, index) => `<span class="catalog-badge ${index === 0 ? 'catalog-type' : ''}">${escapeHtml(tag)}</span>`).join('');
+  }
+
+  function buildCard(collection, item, personaMap) {
+    const disabled = item.habilitado === false;
+    const href = detailUrl(collection, item);
+    return `
+      <article class="catalog-card">
+        <img class="catalog-card-img" src="${escapeHtml(imageSrc(item))}" alt="${escapeHtml(item.alt || item.titulo)}" loading="lazy" onerror="this.src='${FALLBACK_IMAGE}'">
+        <div class="catalog-card-body">
+          <div class="catalog-card-meta">${buildBadges(item)}</div>
+          <h3 class="catalog-card-title">${escapeHtml(item.titulo)}</h3>
+          <p class="catalog-card-desc">${escapeHtml(item.descripcion)}</p>
+          ${buildParticipantChips(item, personaMap, true)}
+          <div class="catalog-card-footer">
+            <div class="catalog-author">${item.fechaTexto ? escapeHtml(item.fechaTexto) : escapeHtml(getParticipantesTexto(item, personaMap))}</div>
+            <a class="catalog-link" href="${href}">${disabled ? 'Ver ficha' : 'Más información'} →</a>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  function itemMatches(item, filters, personaMap) {
+    const participantesTexto = getParticipantesTexto(item, personaMap);
+    const haystack = [
+      item.titulo,
+      item.descripcion,
+      item.autor,
+      participantesTexto,
+      item.fechaTexto,
+      item.tipoEtiqueta,
+      ...asArray(item.categorias),
+      ...asArray(item.lineas)
+    ].join(' ').toLowerCase();
+    const qOk = !filters.q || haystack.includes(filters.q.toLowerCase());
+    const lineaOk = !filters.linea || asArray(item.lineas).includes(filters.linea);
+    const tipoOk = !filters.tipo || item.tipoEtiqueta === filters.tipo || asArray(item.categorias).includes(filters.tipo);
+    return qOk && lineaOk && tipoOk;
+  }
+
+  function groupByLinea(items, lineaMap) {
+    const groups = new Map();
+    items.forEach(item => {
+      const key = firstLineaId(item);
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(item);
+    });
+    return [...groups.entries()].sort((a, b) => {
+      const la = lineaMap.get(a[0]);
+      const lb = lineaMap.get(b[0]);
+      return (la?.orden ?? 9999) - (lb?.orden ?? 9999);
+    });
+  }
+
+  function fillSelects(items, lineas, page) {
+    const lineaSelect = page.querySelector('[data-filter-linea]');
+    const tipoSelect = page.querySelector('[data-filter-tipo]');
+    const usedLineas = new Set(items.flatMap(item => asArray(item.lineas)));
+    if (lineaSelect) {
+      const options = lineas.filter(l => usedLineas.has(l.id)).sort((a, b) => (a.orden ?? 999) - (b.orden ?? 999));
+      lineaSelect.innerHTML = '<option value="">Todas las líneas</option>' + options.map(l => `<option value="${escapeHtml(l.id)}">${escapeHtml(l.nombre)}</option>`).join('');
+    }
+    if (tipoSelect) {
+      const tipos = new Set();
+      items.forEach(item => {
+        if (item.tipoEtiqueta) tipos.add(item.tipoEtiqueta);
+        asArray(item.categorias).forEach(cat => tipos.add(cat));
+      });
+      tipoSelect.innerHTML = '<option value="">Todas las categorías</option>' + [...tipos].sort().map(t => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('');
+    }
+  }
+
+  async function renderListingPage() {
+    const page = document.querySelector('[data-catalog-page]');
+    if (!page) return;
+    const collection = page.getAttribute('data-collection');
+    const grid = page.querySelector('[data-catalog-grid]');
+    const summary = page.querySelector('[data-catalog-summary]');
+    const search = page.querySelector('[data-filter-search]');
+    const lineaSelect = page.querySelector('[data-filter-linea]');
+    const tipoSelect = page.querySelector('[data-filter-tipo]');
+
+    try {
+      const { items, lineas, personas } = await loadCatalogData(collection);
+      const personaMap = getPersonaMap(personas);
+      const lineaMap = getLineaMap(lineas);
+      const published = sortByDateDesc(items.filter(item => item.visible !== false && item.habilitado !== false));
+      fillSelects(published, lineas, page);
+
+      function render() {
+        const filters = {
+          q: search?.value.trim() || '',
+          linea: lineaSelect?.value || '',
+          tipo: tipoSelect?.value || ''
+        };
+        const filtered = published.filter(item => itemMatches(item, filters, personaMap));
+        if (summary) summary.textContent = `${filtered.length} elemento${filtered.length === 1 ? '' : 's'} encontrado${filtered.length === 1 ? '' : 's'}.`;
+        if (!filtered.length) {
+          grid.innerHTML = '<div class="catalog-empty">No hay elementos que coincidan con el filtro seleccionado.</div>';
+          return;
+        }
+        const groups = groupByLinea(filtered, lineaMap);
+        grid.innerHTML = groups.map(([lineaId, groupItems]) => {
+          const linea = lineaMap.get(lineaId);
+          const title = linea?.nombre || 'Otros contenidos';
+          return `
+            <section class="catalog-line-section">
+              <h2 class="catalog-line-title">${escapeHtml(title)}</h2>
+              <div class="catalog-grid">
+                ${groupItems.map(item => buildCard(collection, item, personaMap)).join('')}
+              </div>
+            </section>`;
+        }).join('');
+      }
+
+      [search, lineaSelect, tipoSelect].forEach(el => el?.addEventListener('input', render));
+      [lineaSelect, tipoSelect].forEach(el => el?.addEventListener('change', render));
+      render();
+    } catch (error) {
+      console.error(error);
+      grid.innerHTML = '<div class="catalog-empty">No fue posible cargar el catálogo. Revisa que los archivos JSON estén publicados en /data.</div>';
+    }
+  }
+
+  function definition(label, value) {
+    if (!value) return '';
+    return `<dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd>`;
+  }
+
+  function buildDetail(item, collection, personaMap, lineaMap) {
+    const lineas = asArray(item.lineas).map(id => lineaMap.get(id)?.nombre || id).join(', ');
+    const categorias = asArray(item.categorias).join(', ');
+    const external = item.url && item.habilitado !== false
+      ? `<a class="btn btn-ibero btn-ibero-red mt-3" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">Abrir recurso externo</a>`
+      : `<span class="btn btn-ibero btn-ibero-outline mt-3 disabled" aria-disabled="true">Próximamente</span>`;
+    return `
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-7">
+          <img class="catalog-detail-cover" src="${escapeHtml(imageSrc(item))}" alt="${escapeHtml(item.alt || item.titulo)}" onerror="this.src='${FALLBACK_IMAGE}'">
+        </div>
+        <div class="col-lg-5">
+          <div class="catalog-detail-panel">
+            <div class="catalog-card-meta">${buildBadges(item)}</div>
+            <h1 class="ibero-section-title mb-3">${escapeHtml(item.titulo)}</h1>
+            <p class="ibero-text-lg">${escapeHtml(item.descripcion)}</p>
+            ${external}
+            <hr class="my-4">
+            <h2 class="h5 mb-3">Participantes</h2>
+            ${buildParticipantChips(item, personaMap, false)}
+            <hr class="my-4">
+            <dl>
+              ${definition('Fecha', item.fechaTexto)}
+              ${definition('Líneas', lineas)}
+              ${definition('Categorías', categorias)}
+              ${definition('ID interno', item.id)}
+            </dl>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  async function renderDetailPage() {
+    const mount = document.querySelector('[data-catalog-detail]');
+    if (!mount) return;
+    const params = new URLSearchParams(window.location.search);
+    const collection = mount.getAttribute('data-collection') || params.get('coleccion') || 'proyectos_investigacion';
+    const id = params.get('id');
+    if (!id) {
+      mount.innerHTML = '<div class="catalog-empty">No se recibió el identificador del contenido.</div>';
+      return;
+    }
+    try {
+      const { items, lineas, personas } = await loadCatalogData(collection);
+      const item = items.find(entry => entry.id === id);
+      if (!item) {
+        mount.innerHTML = '<div class="catalog-empty">No se encontró el contenido solicitado.</div>';
+        return;
+      }
+      document.title = `${item.titulo} | Mecatrónica IBERO`;
+      mount.innerHTML = buildDetail(item, collection, getPersonaMap(personas), getLineaMap(lineas));
+    } catch (error) {
+      console.error(error);
+      mount.innerHTML = '<div class="catalog-empty">No fue posible cargar la ficha.</div>';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    renderListingPage();
+    renderDetailPage();
+  });
+})();

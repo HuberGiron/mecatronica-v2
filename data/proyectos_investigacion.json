@@ -1,0 +1,235 @@
+[
+  {
+    "id": "proyecto-dxf",
+    "titulo": "Herramienta web para DXF",
+    "descripcion": "Proyecto orientado a la visualización y trabajo con archivos DXF para apoyar procesos de diseño, documentación técnica y preparación de piezas para fabricación digital.",
+    "imagen": "/huber-giron/assets/dxf.png",
+    "alt": "Herramienta web para DXF",
+    "categorias": [
+      "DXF",
+      "Fabricación digital"
+    ],
+    "lineas": [
+      "fabricacion-digital",
+      "educacion-tecnologia"
+    ],
+    "autor": "Dr. Huber Girón Nieto",
+    "avatar": "/assets/img/team/huber.png",
+    "fechaISO": "2026-02-15",
+    "fechaTexto": "15 Febrero 2026",
+    "tipoEtiqueta": "Proyecto",
+    "botonTexto": "Más información",
+    "url": "https://mecatronica-ibero.mx/dxf/",
+    "habilitado": true,
+    "origen": "huber-giron-mecatronica/data",
+    "participantes": [
+      {
+        "personaId": "huber-giron",
+        "rol": "responsable",
+        "rolTexto": "Responsable",
+        "orden": 1
+      }
+    ],
+    "visible": true
+  },
+  {
+    "id": "proyecto-stl",
+    "titulo": "Herramienta web para STL",
+    "descripcion": "Aplicación enfocada en el trabajo con modelos STL para visualización, exploración y apoyo a flujos de prototipado, manufactura digital y documentación de diseño.",
+    "imagen": "/huber-giron/assets/stl.png",
+    "alt": "Herramienta web para STL",
+    "categorias": [
+      "STL",
+      "3D"
+    ],
+    "lineas": [
+      "fabricacion-digital",
+      "educacion-tecnologia"
+    ],
+    "autor": "Dr. Huber Girón Nieto",
+    "avatar": "/assets/img/team/huber.png",
+    "fechaISO": "2025-11-10",
+    "fechaTexto": "10 Noviembre 2025",
+    "tipoEtiqueta": "Proyecto",
+    "botonTexto": "Más información",
+    "url": "https://mecatronica-ibero.mx/stl/",
+    "habilitado": true,
+    "origen": "huber-giron-mecatronica/data",
+    "participantes": [
+      {
+        "personaId": "huber-giron",
+        "rol": "responsable",
+        "rolTexto": "Responsable",
+        "orden": 1
+      }
+    ],
+    "visible": true
+  },
+  {
+    "id": "sitio-mqtt",
+    "titulo": "Broker MQTT Ibero",
+    "descripcion": "Servicio MQTT para proyectos de robótica, automatización, IoT, sistemas ciberfísicos, interfaces web, agentes LLM y backends de experimentación.",
+    "imagen": "https://mecatronica.ibero.mx/mqtt/assets/mqtt_latency_wss443_20260425_193513.png",
+    "alt": "Broker MQTT Ibero",
+    "categorias": [
+      "IOT",
+      "CPS"
+    ],
+    "lineas": [
+      "iot-embebidos",
+      "sistemas-ciberfisicos",
+      "robotica-movil"
+    ],
+    "autor": "Dr. Huber Girón Nieto",
+    "avatar": "/assets/img/team/huber.png",
+    "fechaISO": "2026-06-01",
+    "fechaTexto": "1 de Junio 2026",
+    "tipoEtiqueta": "Proyecto",
+    "botonTexto": "Más información",
+    "url": "https://mecatronica.ibero.mx/mqtt/",
+    "habilitado": true,
+    "origen": "huber-giron-mecatronica/data",
+    "participantes": [
+      {
+        "personaId": "huber-giron",
+        "rol": "responsable",
+        "rolTexto": "Responsable",
+        "orden": 1
+      }
+    ],
+    "visible": true
+  },
+  {
+    "id": "proyecto-teachable",
+    "titulo": "Plataforma educativa Teachable",
+    "descripcion": "Entorno digital para visualizar y probar modelos de Teachable Machine.",
+    "imagen": "/huber-giron/assets/teachable.png",
+    "alt": "Plataforma educativa Teachable",
+    "categorias": [
+      "Educación",
+      "Plataforma"
+    ],
+    "lineas": [
+      "inteligencia-artificial",
+      "educacion-tecnologia"
+    ],
+    "autor": "Dr. Huber Girón Nieto",
+    "avatar": "/assets/img/team/huber.png",
+    "fechaISO": "2025-08-01",
+    "fechaTexto": "1 Agosto 2025",
+    "tipoEtiqueta": "Proyecto",
+    "botonTexto": "Más información",
+    "url": "https://mecatronica-ibero.mx/teachable/",
+    "habilitado": true,
+    "origen": "huber-giron-mecatronica/data",
+    "participantes": [
+      {
+        "personaId": "huber-giron",
+        "rol": "responsable",
+        "rolTexto": "Responsable",
+        "orden": 1
+      }
+    ],
+    "visible": true
+  },
+  {
+    "id": "proyecto-robot",
+    "titulo": "Modelo Cinemático Robot Móvil",
+    "descripcion": "Esta simulación ilustra la cinemática de robots móviles.",
+    "imagen": "/huber-giron/assets/robot-movil.png",
+    "alt": "Modelo Cinemático Robot Móvil",
+    "categorias": [
+      "Robótica"
+    ],
+    "lineas": [
+      "robotica-movil",
+      "control-distribuido"
+    ],
+    "autor": "Dr. Huber Girón Nieto",
+    "avatar": "/assets/img/team/huber.png",
+    "fechaISO": "2025-03-02",
+    "fechaTexto": "2 Marzo 2025",
+    "tipoEtiqueta": "Proyecto",
+    "botonTexto": "Más información",
+    "url": "https://hubergiron.github.io/Robot-convergencia/",
+    "habilitado": true,
+    "origen": "huber-giron-mecatronica/data",
+    "participantes": [
+      {
+        "personaId": "huber-giron",
+        "rol": "responsable",
+        "rolTexto": "Responsable",
+        "orden": 1
+      }
+    ],
+    "visible": true
+  },
+  {
+    "id": "proyecto-mqtt1",
+    "titulo": "Control Robot por MQTT",
+    "descripcion": "Control remoto para robots móviles por MQTT en test.mosquitto.org en topic huber/R1.",
+    "imagen": "/huber-giron/assets/mqtt.png",
+    "alt": "Control Robot por MQTT",
+    "categorias": [
+      "Robótica",
+      "IOT"
+    ],
+    "lineas": [
+      "robotica-movil",
+      "iot-embebidos",
+      "sistemas-ciberfisicos"
+    ],
+    "autor": "Dr. Huber Girón Nieto",
+    "avatar": "/assets/img/team/huber.png",
+    "fechaISO": "2025-06-02",
+    "fechaTexto": "2 Junio 2025",
+    "tipoEtiqueta": "Proyecto",
+    "botonTexto": "Más información",
+    "url": "https://mecatronica.ibero.mx/control-robot-mqtt/",
+    "habilitado": true,
+    "origen": "huber-giron-mecatronica/data",
+    "participantes": [
+      {
+        "personaId": "huber-giron",
+        "rol": "responsable",
+        "rolTexto": "Responsable",
+        "orden": 1
+      }
+    ],
+    "visible": true
+  },
+  {
+    "id": "proyecto-mqtt2",
+    "titulo": "Control Robot y Visión por computadora",
+    "descripcion": "Control remoto para robots móviles por MQTT y detección de manos con visión por computadora.",
+    "imagen": "/huber-giron/assets/mqtt2.png",
+    "alt": "Control Robot y Visión por computadora",
+    "categorias": [
+      "Robótica",
+      "IOT"
+    ],
+    "lineas": [
+      "robotica-movil",
+      "iot-embebidos",
+      "vision-computadora"
+    ],
+    "autor": "Dr. Huber Girón Nieto",
+    "avatar": "/assets/img/team/huber.png",
+    "fechaISO": "2025-06-02",
+    "fechaTexto": "2 Junio 2025",
+    "tipoEtiqueta": "Proyecto",
+    "botonTexto": "Más información",
+    "url": "https://mecatronica.ibero.mx/camera-robot-mqtt/",
+    "habilitado": true,
+    "origen": "huber-giron-mecatronica/data",
+    "participantes": [
+      {
+        "personaId": "huber-giron",
+        "rol": "responsable",
+        "rolTexto": "Responsable",
+        "orden": 1
+      }
+    ],
+    "visible": true
+  }
+]

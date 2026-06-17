@@ -1,0 +1,92 @@
+[
+  {
+    "id": "robotica-movil",
+    "nombre": "Robótica móvil y sistemas multi-robot",
+    "descripcion": "Modelado, control, coordinación y validación experimental de robots móviles y plataformas autónomas.",
+    "orden": 10
+  },
+  {
+    "id": "sistemas-ciberfisicos",
+    "nombre": "Sistemas ciberfísicos",
+    "descripcion": "Integración entre cómputo, comunicación, sensores, actuadores, control y entornos físicos instrumentados.",
+    "orden": 20
+  },
+  {
+    "id": "control-distribuido",
+    "nombre": "Control distribuido y comunicación en red",
+    "descripcion": "Estrategias de coordinación, estabilidad, retardos de comunicación y arquitecturas distribuidas.",
+    "orden": 30
+  },
+  {
+    "id": "automatizacion-industrial",
+    "nombre": "Automatización industrial",
+    "descripcion": "PLCs, instrumentación, monitoreo, adquisición de datos y sistemas de control aplicados.",
+    "orden": 40
+  },
+  {
+    "id": "iot-embebidos",
+    "nombre": "IoT, redes y sistemas embebidos",
+    "descripcion": "Microcontroladores, protocolos de comunicación, adquisición de datos y conectividad para prototipos experimentales.",
+    "orden": 50
+  },
+  {
+    "id": "inteligencia-artificial",
+    "nombre": "Inteligencia artificial aplicada",
+    "descripcion": "Modelos de IA, aprendizaje automático, LLM, clasificación, percepción y toma de decisiones asistida.",
+    "orden": 60
+  },
+  {
+    "id": "vision-computadora",
+    "nombre": "Visión por computadora y percepción",
+    "descripcion": "Procesamiento de imagen, detección, reconocimiento de objetos y percepción para sistemas inteligentes.",
+    "orden": 70
+  },
+  {
+    "id": "fabricacion-digital",
+    "nombre": "Fabricación digital y prototipado",
+    "descripcion": "CNC, impresión 3D, documentación técnica, diseño de prototipos y herramientas digitales abiertas.",
+    "orden": 80
+  },
+  {
+    "id": "tecnologia-asistiva",
+    "nombre": "Tecnología asistiva y rehabilitación",
+    "descripcion": "Dispositivos, prótesis, sistemas de apoyo funcional y tecnología orientada al bienestar humano y animal.",
+    "orden": 90
+  },
+  {
+    "id": "salud-biotecnologia",
+    "nombre": "Salud, sensores biomédicos y biotecnología",
+    "descripcion": "Sensores, wearables, monitoreo fisiológico y aplicaciones de ingeniería en salud.",
+    "orden": 100
+  },
+  {
+    "id": "educacion-tecnologia",
+    "nombre": "Educación tecnológica y recursos abiertos",
+    "descripcion": "Materiales didácticos, plataformas de enseñanza, guías, repositorios y experiencias de aprendizaje activo.",
+    "orden": 110
+  },
+  {
+    "id": "ciberseguridad",
+    "nombre": "Ciberseguridad y análisis de datos",
+    "descripcion": "Detección de anomalías, tráfico de red, seguridad informática y aprendizaje automático aplicado.",
+    "orden": 120
+  },
+  {
+    "id": "agricultura-tecnologia",
+    "nombre": "Agricultura tecnológica y monitoreo ambiental",
+    "descripcion": "Sensores, monitoreo de cultivos, sistemas de alerta y adquisición de datos ambientales.",
+    "orden": 130
+  },
+  {
+    "id": "materiales-sistemas",
+    "nombre": "Materiales inteligentes y sistemas autónomos",
+    "descripcion": "Aplicaciones de materiales funcionales, energía, sensores y sistemas autónomos.",
+    "orden": 140
+  },
+  {
+    "id": "microelectronica",
+    "nombre": "Microelectrónica y circuitos integrados",
+    "descripcion": "Diseño, análisis y publicación de circuitos analógicos y sistemas integrados.",
+    "orden": 150
+  }
+]

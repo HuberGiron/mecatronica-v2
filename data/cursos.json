@@ -1,0 +1,106 @@
+[
+  {
+    "id": "curso-cps-lab",
+    "titulo": "Sistemas Ciberfísicos de Automatización y Laboratorio",
+    "descripcion": "Asignatura orientada al análisis e implementación de sistemas ciberfísicos para automatización industrial, integrando control, adquisición de datos, monitoreo remoto y redes de PLCs con distintos protocolos y topologías.",
+    "imagen": "/huber-giron/assets/cps.png",
+    "alt": "Sistemas Ciberfísicos de Automatización y Laboratorio",
+    "categorias": [
+      "CPS",
+      "Automatización",
+      "PLCs",
+      "IoT"
+    ],
+    "lineas": [
+      "sistemas-ciberfisicos",
+      "automatizacion-industrial",
+      "iot-embebidos"
+    ],
+    "autor": "Dr. Huber Girón Nieto",
+    "avatar": "/assets/img/team/huber.png",
+    "fechaISO": "2025-08-01",
+    "fechaTexto": "Primavera 2026",
+    "tipoEtiqueta": "Curso",
+    "botonTexto": "Más información",
+    "url": "/huber-giron/cps/",
+    "habilitado": true,
+    "origen": "huber-giron-mecatronica/data",
+    "participantes": [
+      {
+        "personaId": "huber-giron",
+        "rol": "responsable",
+        "rolTexto": "Responsable",
+        "orden": 1
+      }
+    ],
+    "visible": true
+  },
+  {
+    "id": "curso-pensamiento-ingenieria",
+    "titulo": "Pensamiento de Ingeniería",
+    "descripcion": "Primer acercamiento a los estudios universitarios y al pensamiento de ingeniería, abordando plan de estudios, procesos administrativos, técnicas de estudio, resiliencia y herramientas de pensamiento sistémico para modelar problemas complejos.",
+    "imagen": "/huber-giron/assets/cps.png",
+    "alt": "Pensamiento de Ingeniería",
+    "categorias": [
+      "Ingeniería",
+      "Sistemas",
+      "Prototipado"
+    ],
+    "lineas": [
+      "educacion-tecnologia",
+      "fabricacion-digital"
+    ],
+    "autor": "Dr. Huber Girón Nieto",
+    "avatar": "/assets/img/team/huber.png",
+    "fechaISO": "2025-01-15",
+    "fechaTexto": "Primavera 2026",
+    "tipoEtiqueta": "Curso",
+    "botonTexto": "Próximamente",
+    "url": "",
+    "habilitado": false,
+    "origen": "huber-giron-mecatronica/data",
+    "participantes": [
+      {
+        "personaId": "huber-giron",
+        "rol": "responsable",
+        "rolTexto": "Responsable",
+        "orden": 1
+      }
+    ],
+    "visible": false
+  },
+  {
+    "id": "curso-proyecto-terminal",
+    "titulo": "Proyecto Terminal de Ingeniería",
+    "descripcion": "Curso enfocado en formular, evaluar y ejecutar soluciones a problemas reales mediante análisis de contexto, delimitación de alcances, validación de alternativas y selección de propuestas viables con enfoque en el usuario.",
+    "imagen": "/huber-giron/assets/cps.png",
+    "alt": "Proyecto Terminal de Ingeniería",
+    "categorias": [
+      "Proyectos",
+      "Innovación"
+    ],
+    "lineas": [
+      "educacion-tecnologia",
+      "fabricacion-digital",
+      "sistemas-ciberfisicos"
+    ],
+    "autor": "Dr. Huber Girón Nieto",
+    "avatar": "/assets/img/team/huber.png",
+    "fechaISO": "2024-08-01",
+    "fechaTexto": "Primavera 2026",
+    "tipoEtiqueta": "Curso",
+    "botonTexto": "Próximamente",
+    "url": "",
+    "habilitado": false,
+    "origen": "huber-giron-mecatronica/data",
+    "participantes": [
+      {
+        "personaId": "huber-giron",
+        "rol": "responsable",
+        "rolTexto": "Responsable",
+        "orden": 1
+      }
+    ],
+    "visible": false
+  }
+]

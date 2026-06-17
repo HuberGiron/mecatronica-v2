@@ -1,0 +1,208 @@
+[
+  {
+    "id": "huber-giron",
+    "nombre": "Dr. Huber Girón Nieto",
+    "rol": "Coordinador del programa en Ingeniería Mecatrónica y Sistemas Ciberfísicos",
+    "tipo": "coordinacion",
+    "email": "huber.giron@ibero.mx",
+    "ubicacion": "Edificio F, Segundo Piso",
+    "foto": "/assets/img/team/huber.png",
+    "urlPerfil": "/huber-giron/",
+    "lineas": [
+      "robotica-movil",
+      "sistemas-ciberfisicos",
+      "control-distribuido",
+      "iot-embebidos",
+      "inteligencia-artificial",
+      "fabricacion-digital"
+    ],
+    "activo": true
+  },
+  {
+    "id": "concepcion-ramirez",
+    "nombre": "María Concepción Ramírez Miranda",
+    "rol": "Asistente",
+    "tipo": "gestion",
+    "email": "concepcion.ramirez@ibero.mx",
+    "ubicacion": "Edificio G, Segundo Piso",
+    "foto": "/assets/img/team/cone.jpg",
+    "urlPerfil": "",
+    "lineas": [],
+    "activo": true
+  },
+  {
+    "id": "josue-mayoral",
+    "nombre": "Lic. Josué Román Mayoral Espina",
+    "rol": "Asistente de Fortalecimiento de la Calidad Académica",
+    "tipo": "gestion",
+    "email": "josue.mayoral@ibero.mx",
+    "ubicacion": "Edificio F, Segundo Piso",
+    "foto": "/assets/img/team/josue.png",
+    "urlPerfil": "",
+    "lineas": [],
+    "activo": true
+  },
+  {
+    "id": "guillermo-gomez",
+    "nombre": "Mtro. Guillermo Gómez Abascal",
+    "rol": "Académico de Tiempo Completo",
+    "tipo": "academico",
+    "email": "guillermo.gomez@ibero.mx",
+    "ubicacion": "Edificio F, Segundo Piso",
+    "foto": "/assets/img/team/guillermo.jpg",
+    "urlPerfil": "https://perfiles.ibero.mx/",
+    "lineas": [
+      "automatizacion-industrial",
+      "sistemas-ciberfisicos"
+    ],
+    "activo": true
+  },
+  {
+    "id": "luis-martinez",
+    "nombre": "Dr. Luis Miguel Martínez Cervantes",
+    "rol": "Académico de Tiempo Completo",
+    "tipo": "academico",
+    "email": "luism.martinez@ibero.mx",
+    "ubicacion": "Edificio F, Segundo Piso",
+    "foto": "/assets/img/team/luis.jpg",
+    "urlPerfil": "https://perfiles.ibero.mx/",
+    "lineas": [
+      "automatizacion-industrial",
+      "robotica-movil"
+    ],
+    "activo": true
+  },
+  {
+    "id": "juan-camilo-tejada",
+    "nombre": "Mtro. Juan Camilo Tejada Orjuela",
+    "rol": "Académico de Tiempo Completo",
+    "tipo": "academico",
+    "email": "juan.tejada@ibero.mx",
+    "ubicacion": "Edificio F, Segundo Piso",
+    "foto": "/assets/img/team/camilo.jpeg",
+    "urlPerfil": "https://perfiles.ibero.mx/",
+    "lineas": [
+      "sistemas-ciberfisicos",
+      "iot-embebidos"
+    ],
+    "activo": true
+  },
+  {
+    "id": "eduardo-hernandez",
+    "nombre": "Dr. Eduardo G. Hernández Martínez",
+    "rol": "Director de División de Ciencia Arte y Tecnología",
+    "tipo": "academico",
+    "email": "eduardo.gamaliel@ibero.mx",
+    "ubicacion": "",
+    "foto": "/assets/img/team/gama.jpg",
+    "urlPerfil": "https://perfiles.ibero.mx/",
+    "lineas": [
+      "robotica-movil",
+      "control-distribuido"
+    ],
+    "activo": true
+  },
+  {
+    "id": "andres-molano",
+    "nombre": "Dr. Andres Guillermo Molano Jiménez",
+    "rol": "Director del Dpto. de Estudios en Ingeniería para la Innovación",
+    "tipo": "academico",
+    "email": "andres.molano@ibero.mx",
+    "ubicacion": "",
+    "foto": "/assets/img/team/andres.jpg",
+    "urlPerfil": "https://perfiles.ibero.mx/",
+    "lineas": [
+      "sistemas-ciberfisicos",
+      "automatizacion-industrial"
+    ],
+    "activo": true
+  },
+  {
+    "id": "alexandro-lopez",
+    "nombre": "Dr. Alexandro López González",
+    "rol": "Coordinador de Ing. en Inteligencia Artificial",
+    "tipo": "academico",
+    "email": "alexandro.lopez@ibero.mx",
+    "ubicacion": "",
+    "foto": "/assets/img/team/alexandro.jpg",
+    "urlPerfil": "https://perfiles.ibero.mx/",
+    "lineas": [
+      "inteligencia-artificial",
+      "vision-computadora"
+    ],
+    "activo": true
+  },
+  {
+    "id": "mario-ramirez",
+    "nombre": "Dr. Mario Ramírez Neria",
+    "rol": "Académico de Tiempo Completo INIAT",
+    "tipo": "academico",
+    "email": "mario.ramirez@ibero.mx",
+    "ubicacion": "",
+    "foto": "/assets/img/team/mario.webp",
+    "urlPerfil": "https://perfiles.ibero.mx/",
+    "lineas": [
+      "inteligencia-artificial",
+      "salud-biotecnologia"
+    ],
+    "activo": true
+  },
+  {
+    "id": "alma-deleon",
+    "nombre": "Dra. Alma Delhi De León Hernández",
+    "rol": "Investigadora Asociada INIAT",
+    "tipo": "academico",
+    "email": "alma.deleon@ibero.mx",
+    "ubicacion": "",
+    "foto": "/assets/img/team/ALMA.webp",
+    "urlPerfil": "https://perfiles.ibero.mx/",
+    "lineas": [
+      "inteligencia-artificial",
+      "salud-biotecnologia"
+    ],
+    "activo": true
+  },
+  {
+    "id": "adriana-martinez",
+    "nombre": "Dra. Adriana Martínez Hernández",
+    "rol": "Académica de Tiempo Completo INIAT",
+    "tipo": "academico",
+    "email": "adriana.martinez@ibero.mx",
+    "ubicacion": "",
+    "foto": "/assets/img/team/Adriana.webp",
+    "urlPerfil": "https://perfiles.ibero.mx/",
+    "lineas": [
+      "sistemas-ciberfisicos",
+      "iot-embebidos"
+    ],
+    "activo": true
+  },
+  {
+    "id": "janet-lopez",
+    "nombre": "Mtra. Janet Carolina López Romero",
+    "rol": "Académica PSPD",
+    "tipo": "academico",
+    "email": "P41922@correo.uia.mx",
+    "ubicacion": "",
+    "foto": "/assets/img/team/JANET.webp",
+    "urlPerfil": "https://scholar.google.com/",
+    "lineas": [
+      "automatizacion-industrial"
+    ],
+    "activo": true
+  },
+  {
+    "id": "julio-caballero",
+    "nombre": "Mtro. Julio Antonio Caballero Mora",
+    "rol": "Académico PSPD",
+    "tipo": "academico",
+    "email": "P42522@correo.uia.mx",
+    "ubicacion": "",
+    "foto": "/assets/img/team/JULIO.jpg",
+    "urlPerfil": "https://scholar.google.com/",
+    "lineas": [
+      "robotica-movil"
+    ],
+    "activo": true
+  }
+]

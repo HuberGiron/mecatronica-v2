@@ -1,0 +1,32 @@
+[
+  {
+    "id": "proyecto-alumno-ejemplo-2026",
+    "titulo": "Título del proyecto estudiantil",
+    "descripcion": "Resumen breve del proyecto, problema que atiende, tecnología utilizada y resultado esperado.",
+    "imagen": "/assets/img/proyectos/alumnos/proyecto-ejemplo.jpg",
+    "alt": "Imagen descriptiva del proyecto estudiantil",
+    "categorias": [
+      "Robótica",
+      "IoT",
+      "Prototipo"
+    ],
+    "lineas": [
+      "robotica-movil",
+      "iot-embebidos"
+    ],
+    "alumnos": [
+      "Nombre Alumna 1",
+      "Nombre Alumno 2"
+    ],
+    "asesores": [
+      "huber-giron"
+    ],
+    "cursoRelacionado": "Sistemas Ciberfísicos de Automatización y Laboratorio",
+    "semestre": "Primavera 2026",
+    "fechaISO": "2026-05-01",
+    "fechaTexto": "Primavera 2026",
+    "tipoEtiqueta": "Proyecto de alumnos",
+    "url": "",
+    "habilitado": false
+  }
+]

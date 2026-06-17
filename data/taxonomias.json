@@ -1,0 +1,95 @@
+{
+  "colecciones": [
+    {
+      "id": "cursos",
+      "nombre": "Cursos",
+      "archivo": "/data/cursos.json",
+      "detalle": "/academia/detalle.html?coleccion=cursos&id="
+    },
+    {
+      "id": "proyectos_investigacion",
+      "nombre": "Proyectos · Investigación",
+      "archivo": "/data/proyectos_investigacion.json",
+      "detalle": "/academia/detalle.html?coleccion=proyectos_investigacion&id="
+    },
+    {
+      "id": "publicaciones",
+      "nombre": "Publicaciones",
+      "archivo": "/data/publicaciones.json",
+      "detalle": "/academia/detalle.html?coleccion=publicaciones&id="
+    },
+    {
+      "id": "recursos",
+      "nombre": "Lecciones y recursos",
+      "archivo": "/data/recursos.json",
+      "detalle": "/academia/detalle.html?coleccion=recursos&id="
+    },
+    {
+      "id": "alumnos_proyectos",
+      "nombre": "Proyectos de alumnos",
+      "archivo": "/data/alumnos_proyectos.json",
+      "detalle": "/vida_universitaria/alumnos/proyecto.html?id="
+    }
+  ],
+  "tipos": [
+    "Curso",
+    "Proyecto",
+    "Publicación",
+    "Recurso",
+    "Proyecto de alumnos"
+  ],
+  "camposComunes": [
+    "id",
+    "titulo",
+    "descripcion",
+    "imagen",
+    "categorias",
+    "lineas",
+    "participantes",
+    "fechaISO",
+    "fechaTexto",
+    "tipoEtiqueta",
+    "url",
+    "habilitado",
+    "visible"
+  ],
+  "rolesParticipacion": [
+    {
+      "id": "responsable",
+      "nombre": "Responsable"
+    },
+    {
+      "id": "coordinador",
+      "nombre": "Coordinador"
+    },
+    {
+      "id": "docente",
+      "nombre": "Docente"
+    },
+    {
+      "id": "asesor",
+      "nombre": "Asesor académico"
+    },
+    {
+      "id": "autor",
+      "nombre": "Autor"
+    },
+    {
+      "id": "coautor",
+      "nombre": "Coautor"
+    },
+    {
+      "id": "alumno",
+      "nombre": "Alumno participante"
+    },
+    {
+      "id": "colaborador",
+      "nombre": "Colaborador"
+    },
+    {
+      "id": "externo",
+      "nombre": "Colaborador externo"
+    }
+  ],
+  "modeloRelacional": "Cada elemento usa participantes[] con personaId, rol, rolTexto y orden. personas.json es el catálogo único de profesores, alumnos y colaboradores."
+}

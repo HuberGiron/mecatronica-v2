@@ -267,7 +267,6 @@
           <div class="ibero-section-kicker">Contenido académico</div>
           <h2 class="ibero-section-title">${escapeHtml(config.titulo)}</h2>
         </div>
-        <p>Listado completo del perfil académico, cargado desde el catálogo institucional.</p>
       </div>
       <div class="row g-4">
         ${filtered.map(item => `<div class="col-md-6 col-xl-4">${buildCard(tipo, item, map)}</div>`).join('')}

@@ -90,37 +90,37 @@
     ],
     "participantes": [
       {
-        "nombre": "Luis Cortés Muñoz",
+        "nombre": "Luis Cortés",
         "rol": "alumno",
         "rolTexto": "Alumno",
         "orden": 1
       },
       {
-        "nombre": "Emmanuel Iturbide Rebolledo",
+        "nombre": "Emmanuel Iturbide",
         "rol": "alumno",
         "rolTexto": "Alumno",
         "orden": 2
       },
       {
-        "nombre": "Alexander Moncada Rivas",
+        "nombre": "Alexander Moncada",
         "rol": "alumno",
         "rolTexto": "Alumno",
         "orden": 3
       },
       {
-        "nombre": "Martha Valdés Cruz",
+        "nombre": "Martha Valdés",
         "rol": "alumna",
         "rolTexto": "Alumna",
         "orden": 4
       },
       {
-        "nombre": "Renata Badillo Cabrera",
+        "nombre": "Renata Badillo",
         "rol": "alumna",
         "rolTexto": "Alumna",
         "orden": 5
       },
       {
-        "nombre": "Camila Sánchez Guevara",
+        "nombre": "Camila Sánchez",
         "rol": "alumna",
         "rolTexto": "Alumna",
         "orden": 6
@@ -171,10 +171,16 @@
         "orden": 1
       },
       {
+        "nombre": "Renata Badillo",
+        "rol": "alumna",
+        "rolTexto": "Alumna",
+        "orden": 2
+      },
+      {
         "personaId": "huber-giron",
         "rol": "asesor",
         "rolTexto": "Asesor",
-        "orden": 2
+        "orden": 3
       }
     ],
     "cursoRelacionado": "Sistemas Ciberfísicos de Automatización y Laboratorio",
@@ -214,6 +220,12 @@
         "rol": "alumna",
         "rolTexto": "Alumna",
         "orden": 1
+      },
+      {
+        "nombre": "Alexander Moncada",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 3
       },
       {
         "personaId": "huber-giron",
@@ -260,6 +272,12 @@
         "rol": "alumno",
         "rolTexto": "Alumno",
         "orden": 1
+      },
+      {
+        "nombre": "Emmanuel Iturbide",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 2
       },
       {
         "personaId": "huber-giron",

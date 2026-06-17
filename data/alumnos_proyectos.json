@@ -78,23 +78,58 @@
       "iot-embebidos"
     ],
     "alumnos": [
-      "Martha Valdés"
+      "Luis Cortés Muñoz",
+      "Emmanuel Iturbide Rebolledo",
+      "Alexander Moncada Rivas",
+      "Martha Valdés Cruz",
+      "Renata Badillo Cabrera",
+      "Camila Sánchez Guevara"
     ],
     "asesores": [
       "huber-giron"
     ],
     "participantes": [
       {
-        "nombre": "Martha Valdés",
+        "nombre": "Luis Cortés Muñoz",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 1
+      },
+      {
+        "nombre": "Emmanuel Iturbide Rebolledo",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 2
+      },
+      {
+        "nombre": "Alexander Moncada Rivas",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 3
+      },
+      {
+        "nombre": "Martha Valdés Cruz",
         "rol": "alumna",
         "rolTexto": "Alumna",
-        "orden": 1
+        "orden": 4
+      },
+      {
+        "nombre": "Renata Badillo Cabrera",
+        "rol": "alumna",
+        "rolTexto": "Alumna",
+        "orden": 5
+      },
+      {
+        "nombre": "Camila Sánchez Guevara",
+        "rol": "alumna",
+        "rolTexto": "Alumna",
+        "orden": 6
       },
       {
         "personaId": "huber-giron",
         "rol": "asesor",
         "rolTexto": "Asesor",
-        "orden": 2
+        "orden": 7
       }
     ],
     "cursoRelacionado": "Sistemas Ciberfísicos de Automatización y Laboratorio",
@@ -239,6 +274,52 @@
     "fechaTexto": "Primavera 2026",
     "tipoEtiqueta": "Proyecto de alumnos",
     "url": "https://luiscortesmunoz.github.io/Practicas_Sistemas_Ciberfisicos/",
+    "habilitado": true
+  },
+  {
+    "id": "teleoperacion-movil-manipulador-logistica-inclusiva-2026",
+    "titulo": "Teleoperación móvil-manipulador para logística inclusiva",
+    "descripcion": "Sistema robótico móvil-manipulador teleoperado para tareas logísticas, con interfaz centrada en el usuario, realidad mixta, comunicación ZMQ, control en Python y ESP32-C3 con MicroPython.",
+    "imagen": "/assets/img/home/video-preview.png",
+    "alt": "Documentación del sistema móvil-manipulador teleoperado para logística inclusiva",
+    "categorias": [
+      "Robótica",
+      "Teleoperación",
+      "Realidad mixta",
+      "Sistemas embebidos"
+    ],
+    "lineas": [
+      "robotica-movil",
+      "sistemas-ciberfisicos",
+      "tecnologia-asistiva",
+      "iot-embebidos"
+    ],
+    "alumnos": [
+      "Sebastián Méndez"
+    ],
+    "asesores": [
+      "huber-giron"
+    ],
+    "participantes": [
+      {
+        "nombre": "Sebastián Méndez",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 1
+      },
+      {
+        "personaId": "huber-giron",
+        "rol": "asesor",
+        "rolTexto": "Asesor",
+        "orden": 2
+      }
+    ],
+    "cursoRelacionado": "Sistemas Ciberfísicos de Automatización y Laboratorio",
+    "semestre": "Primavera 2026",
+    "fechaISO": "2026-05-01",
+    "fechaTexto": "Primavera 2026",
+    "tipoEtiqueta": "Proyecto de alumnos",
+    "url": "https://sebas30073007.github.io/teleop-mobile-manipulator/",
     "habilitado": true
   }
 ]

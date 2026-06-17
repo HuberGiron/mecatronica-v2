@@ -13,32 +13,46 @@
   <link rel="stylesheet" href="/assets/css/catalogos.css">
 </head>
 <body class="ibero-home ibero-page">
-  <nav id="mainNav" class="navbar navbar-expand-xl ibero-main-nav" aria-label="Navegación principal">
+  <nav class="navbar navbar-expand-xl ibero-main-nav" id="mainNav" aria-label="Navegación principal">
     <div class="container-fluid px-4 px-lg-5">
-      <a class="ibero-logo" href="/">
+      <a class="ibero-logo navbar-brand" href="/" aria-label="Inicio IBERO Mecatrónica">
         <span class="ibero-logo-stack">
-          <img class="logo-white" src="/assets/img/logos/ibero-logo-white.svg" alt="IBERO Ciudad de México">
-          <img class="logo-red" src="/assets/img/logos/ibero-logo-red.svg" alt="IBERO Ciudad de México">
+          <img class="logo-red" src="/assets/img/logos/ibero-logo-red.svg" alt="IBERO Ciudad de México rojo">
+          <img class="logo-white" src="/assets/img/logos/ibero-logo-white.svg" alt="IBERO Ciudad de México blanco">
         </span>
         <span class="ibero-program-mark">Mecatrónica y<br>Sistemas Ciberfísicos</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Abrir navegación">
-        <span class="hamburger-lines"><span></span><span></span><span></span></span>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Mostrar menú">
+        <span class="hamburger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ms-auto mb-2 mb-xl-0">
-          <li class="nav-item"><a class="nav-link fw-bold" href="https://preuniversitarios.ibero.mx/" target="_blank" rel="noopener noreferrer">Admisiones</a></li>
+        <ul class="navbar-nav ms-auto">
+           <!-- Admisiones-->
+          <li class="nav-item"><a class="nav-link fw-bold" href="https://preuniversitarios.ibero.mx/">Admisiones</a></li>
+
+            <!-- Vida universitaria-->
           <li class="nav-item dropdown">
-            <a class="nav-link fw-bold dropdown-toggle" href="#" id="vidaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Vida universitaria</a>
+            <a class="nav-link fw-bold dropdown-toggle" href="#" id="vidaDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Vida universitaria
+            </a>
             <ul class="dropdown-menu" aria-labelledby="vidaDropdown">
               <li><a class="dropdown-item" href="/vida_universitaria/plan_estudios.html">Plan de estudios</a></li>
               <li><a class="dropdown-item" href="/vida_universitaria/materias.html">Cursos</a></li>
               <li><a class="dropdown-item" href="/vida_universitaria/grupos_estudiantiles.html">Grupos estudiantiles</a></li>
-              <li><a class="dropdown-item" href="/vida_universitaria/alumnos/">Proyectos Alumnos</a></li>
+              <li><a class="dropdown-item" href="/vida_universitaria/alumnos">Proyectos Alumnos</a></li>
+              <!-- <li><a class="dropdown-item" href="#">Logros estudiantiles</a></li> -->
             </ul>
           </li>
+
+            <!-- Academia-->
           <li class="nav-item dropdown">
-            <a class="nav-link fw-bold dropdown-toggle" href="#" id="academiaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Academia e investigación</a>
+            <a class="nav-link fw-bold dropdown-toggle" href="#" id="academiaDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Academia e investigación
+            </a>
             <ul class="dropdown-menu" aria-labelledby="academiaDropdown">
               <li><a class="dropdown-item" href="/academia/academicos.html">Académicos</a></li>
               <li><a class="dropdown-item" href="/academia/proyectos_investigacion.html">Proyectos · Investigación</a></li>
@@ -46,7 +60,23 @@
               <li><a class="dropdown-item" href="/academia/recursos.html">Lecciones y recursos</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link fw-bold" href="https://laboratorios.ibero.mx/" target="_blank" rel="noopener noreferrer">Instalaciones</a></li>
+
+            <!-- Instalaciones y Laboratorios-->
+          <li class="nav-item dropdown">
+            <a class="nav-link fw-bold dropdown-toggle" href="#" id="instalacionesDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Instalaciones
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="instalacionesDropdown">
+              <li><a class="dropdown-item" href="https://laboratorios.ibero.mx/laboratorios/?acp=23">Laboratorios</a></li>
+              <!-- <li><a class="dropdown-item" href="instalaciones/equipo.html">Equipo</a></li>
+              <li><a class="dropdown-item" href="instalaciones/reglamentos.html">Reglamentos</a></li> -->
+            </ul>
+          </li>
+
+            <!-- Vinculación-->
+          <!-- <li class="nav-item"><a class="nav-link fw-bold" href="empleabilidad.html">Empleabilidad</a></li> -->
+        
         </ul>
       </div>
     </div>

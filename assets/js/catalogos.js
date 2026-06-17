@@ -163,6 +163,7 @@
   function buildCard(collection, item, personaMap) {
     const disabled = item.habilitado === false;
     const href = detailUrl(collection, item);
+    const fecha = item.fechaTexto ? escapeHtml(item.fechaTexto) : '';
     return `
       <article class="catalog-card">
         <img class="catalog-card-img" src="${escapeHtml(imageSrc(item))}" alt="${escapeHtml(item.alt || item.titulo)}" loading="lazy" onerror="this.src='${FALLBACK_IMAGE}'">
@@ -170,9 +171,9 @@
           <div class="catalog-card-meta">${buildBadges(item)}</div>
           <h3 class="catalog-card-title">${escapeHtml(item.titulo)}</h3>
           <p class="catalog-card-desc">${escapeHtml(item.descripcion)}</p>
-          ${buildParticipantChips(item, personaMap, true)}
           <div class="catalog-card-footer">
-            <div class="catalog-author">${item.fechaTexto ? escapeHtml(item.fechaTexto) : escapeHtml(getParticipantesTexto(item, personaMap))}</div>
+            ${fecha ? `<div class="catalog-date">${fecha}</div>` : ''}
+            ${buildParticipantChips(item, personaMap, true)}
             <a class="catalog-link" href="${href}">${disabled ? 'Ver ficha' : 'Más información'} →</a>
           </div>
         </div>

@@ -212,7 +212,7 @@
     "tipo": "alumno",
     "email": "",
     "ubicacion": "",
-    "foto": "/assets/img/team/avatar-placeholder.png",
+    "foto": "",
     "urlPerfil": "",
     "lineas": [
       "control-inteligente",
@@ -228,7 +228,7 @@
     "tipo": "alumno",
     "email": "",
     "ubicacion": "",
-    "foto": "/assets/img/team/avatar-placeholder.png",
+    "foto": "",
     "urlPerfil": "",
     "lineas": [
       "control-inteligente",
@@ -244,7 +244,7 @@
     "tipo": "alumno",
     "email": "",
     "ubicacion": "",
-    "foto": "/assets/img/team/avatar-placeholder.png",
+    "foto": "",
     "urlPerfil": "https://elias-papu.github.io/proyecto_inteligente_primavera2026/",
     "lineas": [
       "control-inteligente",
@@ -260,7 +260,7 @@
     "tipo": "alumno",
     "email": "",
     "ubicacion": "",
-    "foto": "/assets/img/team/avatar-placeholder.png",
+    "foto": "",
     "urlPerfil": "https://sebas30073007.github.io/mecatronica-gear-designer/",
     "lineas": [
       "fabricacion-digital",

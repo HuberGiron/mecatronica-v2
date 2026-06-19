@@ -132,7 +132,9 @@
         const url = persona.urlPerfil || p.urlPerfil || '';
         const rol = p.rolTexto || p.rol || '';
         const inner = `
-          ${foto ? `<img src="${escapeHtml(foto)}" alt="${escapeHtml(nombre)}" loading="lazy">` : `<span class="catalog-participant-initial">${escapeHtml(nombre.charAt(0))}</span>`}
+          ${foto
+            ? `<img src="${escapeHtml(foto)}" alt="${escapeHtml(nombre)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';"><span class="catalog-participant-initial" style="display:none;">${escapeHtml(nombre.charAt(0))}</span>`
+            : `<span class="catalog-participant-initial">${escapeHtml(nombre.charAt(0))}</span>`}
           <span><strong>${escapeHtml(nombre)}</strong>${rol ? `<small>${escapeHtml(rol)}</small>` : ''}</span>
         `;
         return url
@@ -172,13 +174,13 @@
           <div class="catalog-card-meta">${buildBadges(item)}</div>
           <h3 class="catalog-card-title">${escapeHtml(item.titulo)}</h3>
           <p class="catalog-card-desc">${escapeHtml(item.descripcion)}</p>
-          <div class="catalog-card-footer">
-            ${fecha ? `<div class="catalog-date">${fecha}</div>` : ''}
-            ${buildParticipantChips(item, personaMap, true)}
-            ${disabled
-              ? '<span class="catalog-link catalog-link-disabled" aria-disabled="true">Próximamente</span>'
-              : `<a class="catalog-link" href="${escapeHtml(href)}"${externalAttrs}>Más información →</a>`}
-          </div>
+          ${disabled
+            ? '<span class="catalog-link catalog-link-disabled" aria-disabled="true">Próximamente</span>'
+            : `<a class="catalog-link" href="${escapeHtml(href)}"${externalAttrs}>Más información</a>`}
+        </div>
+        <div class="catalog-card-footer">
+          ${fecha ? `<div class="catalog-date">${fecha}</div>` : ''}
+          ${buildParticipantChips(item, personaMap, true)}
         </div>
       </article>`;
   }

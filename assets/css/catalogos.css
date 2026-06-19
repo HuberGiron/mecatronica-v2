@@ -44,11 +44,10 @@
   border-radius: 0;
   overflow: hidden;
   box-shadow: none;
-  transition: border-color .18s ease, transform .18s ease;
+  transition: border-color .18s ease;
 }
 .catalog-card:hover {
   border-color: var(--ibero-red, #e00034);
-  transform: translateY(-2px);
 }
 .catalog-card-img {
   width: 100%;
@@ -61,6 +60,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: 330px;
   padding: 1.5rem;
 }
 .catalog-card-meta {
@@ -101,9 +101,11 @@
   margin-bottom: 1rem;
 }
 .catalog-card-footer {
+  flex: 0 0 auto;
   margin-top: auto;
-  padding-top: 1.1rem;
+  padding: 1.25rem 1.5rem 1.35rem;
   border-top: 1px solid #eeeeee;
+  background: #fafafa;
 }
 .catalog-date,
 .catalog-author {
@@ -114,22 +116,26 @@
   margin-bottom: .7rem;
 }
 .catalog-card-footer .catalog-participants {
-  margin: 0 0 1rem;
+  margin: 0;
 }
 .catalog-link {
   display: inline-flex;
   align-items: center;
   border: 1px solid var(--ibero-red, #e00034);
   border-radius: 999px;
-  color: var(--ibero-red, #e00034);
+  background: var(--ibero-red, #e00034);
+  color: #fff;
   font-size: .88rem;
   font-weight: 800;
   letter-spacing: .02em;
   padding: .55rem .9rem;
+  margin-top: auto;
+  align-self: flex-start;
   text-decoration: none;
 }
 .catalog-link:hover {
-  background: var(--ibero-red, #e00034);
+  border-color: #b90025;
+  background: #b90025;
   color: #fff;
 }
 .catalog-link-disabled,
@@ -196,8 +202,8 @@
 .catalog-participant {
   display: inline-flex;
   align-items: center;
-  gap: .45rem;
-  padding: .32rem .55rem;
+  gap: .42rem;
+  padding: .24rem .62rem .24rem .24rem;
   border: 1px solid rgba(0,0,0,.09);
   border-radius: 999px;
   background: #fff;
@@ -213,11 +219,11 @@
 
 .catalog-participant img,
 .catalog-participant-initial {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   object-fit: cover;
-  flex: 0 0 28px;
+  flex: 0 0 26px;
 }
 
 .catalog-participant-initial {
@@ -227,12 +233,13 @@
   background: #8c1d40;
   color: #fff;
   font-weight: 700;
-  font-size: .85rem;
+  font-size: .72rem;
 }
 
 .catalog-participant strong {
   display: block;
   font-size: .82rem;
+  font-weight: 500;
   line-height: 1.05;
 }
 

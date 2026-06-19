@@ -119,13 +119,13 @@
   },
   {
     "id": "alexandro-lopez",
-    "nombre": "Dr. Alexandro López González",
+    "nombre": "Dr. Alexandro López",
     "rol": "Coordinador de Ing. en Inteligencia Artificial",
     "tipo": "academico",
     "email": "alexandro.lopez@ibero.mx",
     "ubicacion": "",
     "foto": "/assets/img/team/alexandro.jpg",
-    "urlPerfil": "https://perfiles.ibero.mx/",
+    "urlPerfil": "https://perfiles.ibero.mx/es/persons/alexandro-l%C3%B3pez-gonz%C3%A1lez/",
     "lineas": [
       "inteligencia-artificial",
       "vision-computadora"
@@ -193,13 +193,13 @@
   },
   {
     "id": "julio-caballero",
-    "nombre": "Mtro. Julio Antonio Caballero Mora",
+    "nombre": "Mtro. Julio Caballero",
     "rol": "Académico PSPD",
     "tipo": "academico",
     "email": "P42522@correo.uia.mx",
     "ubicacion": "",
     "foto": "/assets/img/team/JULIO.jpg",
-    "urlPerfil": "https://scholar.google.com/",
+    "urlPerfil": "https://scholar.google.com/citations?user=OusMKjsAAAAJ&hl=es",
     "lineas": [
       "robotica-movil"
     ],
@@ -239,7 +239,7 @@
   },
   {
     "id": "elias-santiago-jimenez-hernandez",
-    "nombre": "Elías Santiago Jiménez Hernández",
+    "nombre": "Elías Jiménez",
     "rol": "Estudiante",
     "tipo": "alumno",
     "email": "",

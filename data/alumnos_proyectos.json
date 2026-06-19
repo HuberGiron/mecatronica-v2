@@ -14,8 +14,7 @@
     "lineas": [
       "robotica-movil",
       "vision-computadora",
-      "iot-embebidos",
-      "sistemas-ciberfisicos"
+      "iot-embebidos"
     ],
     "alumnos": [
       "Haili Avila",
@@ -68,14 +67,14 @@
     "categorias": [
       "Automatización",
       "Robótica",
-      "Inteligencia artificial",
+      "IA",
       "IoT"
     ],
     "lineas": [
       "sistemas-ciberfisicos",
       "automatizacion-industrial",
-      "inteligencia-artificial",
-      "iot-embebidos"
+      "IA",
+      "iot"
     ],
     "alumnos": [
       "Luis Cortés Muñoz",
@@ -149,8 +148,7 @@
     "categorias": [
       "Robótica",
       "Teleoperación",
-      "Realidad mixta",
-      "Sistemas embebidos"
+      "XR"
     ],
     "lineas": [
       "robotica-movil",
@@ -195,10 +193,7 @@
     "categorias": [
       "Control inteligente",
       "Aprendizaje por refuerzo",
-      "Deep Q-Learning",
-      "Sim-to-Real",
-      "MATLAB",
-      "Arduino"
+      "Deep Q-Learning"
     ],
     "lineas": [
       "control-inteligente",
@@ -264,10 +259,7 @@
     "categorias": [
       "Diseño mecánico",
       "Engranes",
-      "Fabricación digital",
-      "Web interactiva",
-      "React",
-      "TypeScript"
+      "Fabricación digital"
     ],
     "lineas": [
       "fabricacion-digital",

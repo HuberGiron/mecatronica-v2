@@ -186,11 +186,11 @@
     "url": "https://sebas30073007.github.io/teleop-mobile-manipulator/",
     "habilitado": true
   },
-    {
+  {
     "id": "pendulo-invertido-dqn-sim-to-real-2026",
     "titulo": "Péndulo invertido con Deep Q-Learning",
     "descripcion": "Proyecto estudiantil de control inteligente para diseñar, construir y controlar un péndulo invertido físico mediante Deep Q-Learning. El agente se entrena en simulación y la política aprendida se transfiere al prototipo real mediante un enfoque Sim-to-Real.",
-    "imagen": "/assets/img/proyectos/alumnos/pendulo.png",
+    "imagen": "/assets/img/alumnos/pendulo.png",
     "alt": "Prototipo de péndulo invertido controlado con aprendizaje por refuerzo",
     "categorias": [
       "Control inteligente",
@@ -215,6 +215,38 @@
       "alexandro-lopez",
       "julio-caballero"
     ],
+    "participantes": [
+      {
+        "personaId": "andrick-millan",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 1
+      },
+      {
+        "personaId": "jesus-velazquez",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 2
+      },
+      {
+        "personaId": "elias-santiago-jimenez-hernandez",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 3
+      },
+      {
+        "personaId": "alexandro-lopez",
+        "rol": "asesor",
+        "rolTexto": "Asesor",
+        "orden": 4
+      },
+      {
+        "personaId": "julio-caballero",
+        "rol": "asesor",
+        "rolTexto": "Asesor",
+        "orden": 5
+      }
+    ],
     "cursoRelacionado": "Control Inteligente",
     "semestre": "Primavera 2026",
     "fechaISO": "2026-05-05",
@@ -227,7 +259,7 @@
     "id": "mecatronica-gear-designer-2026",
     "titulo": "Diseñador paramétrico de engranes",
     "descripcion": "Herramienta web estudiantil para el diseño paramétrico de engranes. Permite explorar geometrías de engranes mediante una interfaz interactiva desarrollada con Vite, React y TypeScript, orientada a fabricación digital y diseño mecatrónico.",
-    "imagen": "/assets/img/proyectos/alumnos/engranes.png",
+    "imagen": "/assets/img/alumnos/engranes.png",
     "alt": "Interfaz web para diseño paramétrico de engranes",
     "categorias": [
       "Diseño mecánico",
@@ -247,6 +279,20 @@
     ],
     "asesores": [
       "huber-giron"
+    ],
+    "participantes": [
+      {
+        "personaId": "sebastian-mendez",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 1
+      },
+      {
+        "personaId": "huber-giron",
+        "rol": "asesor",
+        "rolTexto": "Asesor",
+        "orden": 2
+      }
     ],
     "cursoRelacionado": "Sistemas Ciberfísicos de Automatización y Laboratorio",
     "semestre": "Primavera 2026",

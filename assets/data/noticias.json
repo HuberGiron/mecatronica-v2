@@ -1,11 +1,5 @@
 [
-  {
-  "titulo": "Copa FutBotMX 2026 impulsa talento estudiantil IBERO en robótica e IA",
-  "fecha": "Lun, 8 Jun 2026",
-  "resumen": "La IBERO fue escenario de la Copa FutBotMX 2026, donde estudiantes desarrollaron algoritmos en Python para controlar robots RoboMaster con desplazamiento omnidireccional, visión artificial, navegación autónoma e inteligencia artificial aplicada al futbol robótico.",
-  "url": "https://prensa.ibero.mx/es-MX/nota/copa-fut-bot-mx-2026-impulsa-talento-estudiantil-ibero-en-robotica-e-ia",
-  "imagen": "https://prensaadmin.ibero.mx/uploads/Copa_Fut_Bot_MX_2026_8b2c27ff7a.jpg"
-  },
+  
   {
   "titulo": "Recién egresadas IBERO crean app para elegir productos que cuidan la piel",
   "fecha": "Mar, 16 Jun 2026",
@@ -13,6 +7,13 @@
   "url": "https://prensa.ibero.mx/es-MX/nota/recien-egresadas-ibero-crean-app-para-elegir-productos-que-cuidan-la-piel-1",
   "imagen": "https://prensaadmin.ibero.mx/uploads/skyny_app_ibero_000b48fce9.jpg"
 },
+  {
+  "titulo": "Copa FutBotMX 2026 impulsa talento estudiantil IBERO en robótica e IA",
+  "fecha": "Lun, 8 Jun 2026",
+  "resumen": "La IBERO fue escenario de la Copa FutBotMX 2026, donde estudiantes desarrollaron algoritmos en Python para controlar robots RoboMaster con desplazamiento omnidireccional, visión artificial, navegación autónoma e inteligencia artificial aplicada al futbol robótico.",
+  "url": "https://prensa.ibero.mx/es-MX/nota/copa-fut-bot-mx-2026-impulsa-talento-estudiantil-ibero-en-robotica-e-ia",
+  "imagen": "https://prensaadmin.ibero.mx/uploads/Copa_Fut_Bot_MX_2026_8b2c27ff7a.jpg"
+  },
   {
     "titulo": "Tras ganar 2º lugar con coche autónomo en Francia, estudiantes IBERO siguen creyendo en tecnología para el bien común",
     "fecha": "Mié, 3 Jun 2026",

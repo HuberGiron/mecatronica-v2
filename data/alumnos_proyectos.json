@@ -192,8 +192,7 @@
     "alt": "Prototipo de péndulo invertido controlado con aprendizaje por refuerzo",
     "categorias": [
       "Control inteligente",
-      "Aprendizaje por refuerzo",
-      "Deep Q-Learning"
+      "Aprendizaje por refuerzo"
     ],
     "lineas": [
       "control-inteligente",

@@ -45,19 +45,19 @@
     }
 
     .home-preview-card {
+      display: flex;
+      flex-direction: column;
       height: 100%;
       overflow: hidden;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      border-radius: 1.25rem;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 0;
       background: #fff;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.06);
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+      box-shadow: none;
+      transition: border-color .18s ease;
     }
 
     .home-preview-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(225, 0, 45, 0.24);
-      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.09);
+      border-color: #e1002d;
     }
 
     .home-preview-card .catalog-card__image-wrap {
@@ -78,7 +78,8 @@
     .home-preview-card .catalog-card__body {
       display: flex;
       flex-direction: column;
-      min-height: 340px;
+      flex: 1 1 auto;
+      min-height: 365px;
       padding: 1.65rem;
     }
 
@@ -119,34 +120,59 @@
     }
 
     .home-preview-card .catalog-card__description {
-      flex: 1 1 auto;
       margin: 0 0 1.25rem;
       color: #454b55;
       font-size: 1rem;
       line-height: 1.65;
     }
 
-    .home-preview-card .catalog-card__date {
+    .home-preview-card .btn-ibero {
       margin-top: auto;
-      padding-top: 1.1rem;
+      align-self: flex-start;
+      border-color: #e1002d;
+      background: #e1002d;
+      color: #fff;
+      border-radius: 999px;
+      padding: .62rem 1.35rem;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .home-preview-card .btn-ibero:hover,
+    .home-preview-card .btn-ibero:focus {
+      border-color: #b90025;
+      background: #b90025;
+      color: #fff;
+    }
+
+    .home-preview-card .catalog-card__footer {
+      margin-top: auto;
+      padding: 1.25rem 1.65rem 1.35rem;
       border-top: 1px solid rgba(0, 0, 0, 0.08);
+      background: #fafafa;
+    }
+
+    .home-preview-card .catalog-card__date {
+      margin: 0 0 .75rem;
+      padding: 0;
+      border: 0;
       color: #747474;
-      font-size: .96rem;
+      font-size: .9rem;
     }
 
     .home-preview-participants {
       display: flex;
       flex-wrap: wrap;
-      gap: .45rem;
-      margin: .65rem 0 1rem;
+      gap: .45rem .55rem;
+      margin: 0;
     }
 
     .home-participant-pill {
       display: inline-flex;
       align-items: center;
-      gap: .45rem;
+      gap: .42rem;
       max-width: 100%;
-      padding: .28rem .68rem .28rem .28rem;
+      padding: .24rem .62rem .24rem .24rem;
       border: 1px solid rgba(0, 0, 0, 0.08);
       border-radius: 999px;
       background: #fff;
@@ -154,8 +180,8 @@
 
     .home-participant-avatar,
     .home-participant-initials {
-      width: 1.85rem;
-      height: 1.85rem;
+      width: 1.65rem;
+      height: 1.65rem;
       border-radius: 999px;
       flex: 0 0 auto;
       overflow: hidden;
@@ -165,7 +191,7 @@
       background: #9f1744;
       color: #fff;
       font-weight: 800;
-      font-size: .78rem;
+      font-size: .7rem;
       line-height: 1;
     }
 
@@ -178,15 +204,15 @@
 
     .home-participant-name {
       display: block;
-      font-size: .92rem;
-      font-weight: 600;
+      font-size: .82rem;
+      font-weight: 500;
       line-height: 1.1;
       color: #202020;
     }
 
     .home-participant-role {
       display: block;
-      font-size: .76rem;
+      font-size: .72rem;
       line-height: 1.1;
       color: #6c757d;
     }
@@ -448,18 +474,18 @@
       </div>
     </section>
 
-    <section class="ibero-section" id="investigacion-labs">
+    <section class="ibero-section ibero-red-band" id="investigacion-labs">
       <div class="container-fluid px-4 px-lg-5">
         <div class="row g-5 align-items-center justify-content-center">
           <div class="col-lg-5 col-xxl-4">
-            <div class="ibero-section-kicker">Academia e investigación</div>
-            <h2 class="ibero-section-title">Académicos, laboratorios y proyectos.</h2>
+            <div class="ibero-eyebrow text-white">Academia e investigación</div>
+            <h2>Académicos, laboratorios y proyectos.</h2>
           </div>
           <div class="col-lg-7 col-xxl-6">
-            <p class="ibero-text-lg mb-4">Explora al profesorado, los espacios de laboratorio y las líneas de trabajo que articulan docencia, investigación aplicada y desarrollo tecnológico en robótica, automatización y sistemas ciberfísicos.</p>
+            <p>Explora al profesorado, los espacios de laboratorio y las líneas de trabajo que articulan docencia, investigación aplicada y desarrollo tecnológico en robótica, automatización y sistemas ciberfísicos.</p>
             <div class="d-flex flex-wrap gap-3">
-              <a href="/academia/academicos.html" class="btn btn-ibero btn-ibero-red">Académicos</a>
-              <a href="https://laboratorios.ibero.mx/laboratorios/?acp=23" class="btn btn-ibero btn-ibero-outline">Laboratorios</a>
+              <a href="/academia/academicos.html" class="btn btn-ibero btn-red-band-outline">Académicos</a>
+              <a href="https://laboratorios.ibero.mx/laboratorios/?acp=23" class="btn btn-ibero btn-red-band-outline">Laboratorios</a>
             </div>
           </div>
         </div>
@@ -626,11 +652,13 @@
               <div class="catalog-card__badges">${badges}</div>
               <h3 class="catalog-card__title">${title}</h3>
               <p class="catalog-card__description">${description}</p>
+              <a class="btn btn-ibero" href="${href}" ${isExternalUrl(href) ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+                Más información
+              </a>
+            </div>
+            <div class="catalog-card__footer">
               ${date ? `<div class="catalog-card__date">${date}</div>` : ''}
               ${participants}
-              <a class="btn btn-ibero btn-ibero-outline mt-auto align-self-start" href="${href}" ${isExternalUrl(href) ? 'target="_blank" rel="noopener noreferrer"' : ''}>
-                Más información <span aria-hidden="true">→</span>
-              </a>
             </div>
           </article>
         `;

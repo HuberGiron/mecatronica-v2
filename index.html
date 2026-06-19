@@ -15,6 +15,110 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://use.typekit.net/jov3nat.css">
   <link href="/assets/css/ibero-site.css" rel="stylesheet">
+  <link href="/assets/css/catalogos.css" rel="stylesheet">
+  <style>
+    .home-catalog-preview .home-preview-heading {
+      margin-bottom: 2rem;
+    }
+
+    .home-catalog-preview .home-preview-heading p {
+      max-width: 760px;
+    }
+
+    .home-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .home-preview-empty {
+      padding: 1.25rem;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 1rem;
+      background: #fff;
+      color: #6c757d;
+    }
+
+    .home-preview-card {
+      height: 100%;
+    }
+
+    .home-preview-card .catalog-card__body {
+      display: flex;
+      flex-direction: column;
+      min-height: 340px;
+    }
+
+    .home-preview-card .catalog-card__description {
+      flex: 1 1 auto;
+    }
+
+    .home-preview-participants {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: .75rem 0 1rem;
+    }
+
+    .home-participant-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      max-width: 100%;
+      padding: .35rem .75rem .35rem .35rem;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 999px;
+      background: #fff;
+    }
+
+    .home-participant-avatar,
+    .home-participant-initials {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      flex: 0 0 auto;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #9f1744;
+      color: #fff;
+      font-weight: 800;
+      font-size: .82rem;
+      line-height: 1;
+    }
+
+    .home-participant-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .home-participant-name {
+      display: block;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #202020;
+    }
+
+    .home-participant-role {
+      display: block;
+      font-size: .78rem;
+      line-height: 1.1;
+      color: #6c757d;
+    }
+
+    @media (max-width: 991.98px) {
+      .home-preview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .home-preview-card .catalog-card__body {
+        min-height: auto;
+      }
+    }
+  </style>
 </head>
 
 <body id="page-top" class="ibero-home">
@@ -153,6 +257,30 @@
       </div>
     </section>
 
+    <section class="ibero-section ibero-news-section" id="noticias">
+      <div class="container-fluid px-4 px-lg-5">
+        <div class="ibero-news-header">
+          <h2 class="ibero-news-title">Entérate de las últimas noticias.</h2>
+          <div class="ibero-news-controls" aria-label="Controles de noticias">
+            <button class="ibero-news-arrow" type="button" data-bs-target="#iberoNewsCarousel" data-bs-slide="prev" aria-label="Noticias anteriores">
+              <i class="bi bi-arrow-left"></i>
+            </button>
+            <button class="ibero-news-arrow" type="button" data-bs-target="#iberoNewsCarousel" data-bs-slide="next" aria-label="Noticias siguientes">
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div id="iberoNewsCarousel" class="carousel slide ibero-news-carousel" data-bs-ride="carousel" data-bs-interval="5600" data-bs-pause="hover">
+          <div class="carousel-inner" id="iberoNewsInner">
+            <div class="carousel-item active">
+              <div class="ibero-news-loading">Cargando noticias...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="ibero-section" id="comrob-2026">
       <div class="container-fluid px-4 px-lg-5">
         <div class="row g-5 align-items-center justify-content-center">
@@ -196,32 +324,42 @@
           </div>
           <div class="col-lg-4 d-flex flex-column gap-3">
             <a href="/vida_universitaria/plan_estudios.html" class="btn btn-ibero btn-red-band-outline">Plan de estudios</a>
+            <a href="/vida_universitaria/materias.html" class="btn btn-ibero btn-red-band-outline">Cursos</a>
             <a href="/vida_universitaria/grupos_estudiantiles.html" class="btn btn-ibero btn-red-band-outline">Grupos estudiantiles</a>
+            <a href="/vida_universitaria/alumnos/" class="btn btn-ibero btn-red-band-outline">Proyectos de alumnos</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="ibero-section ibero-news-section" id="noticias">
+    <section class="ibero-section ibero-section-soft home-catalog-preview" id="proyectos-alumnos-preview">
       <div class="container-fluid px-4 px-lg-5">
-        <div class="ibero-news-header">
-          <h2 class="ibero-news-title">Entérate de las últimas noticias.</h2>
-          <div class="ibero-news-controls" aria-label="Controles de noticias">
-            <button class="ibero-news-arrow" type="button" data-bs-target="#iberoNewsCarousel" data-bs-slide="prev" aria-label="Noticias anteriores">
-              <i class="bi bi-arrow-left"></i>
-            </button>
-            <button class="ibero-news-arrow" type="button" data-bs-target="#iberoNewsCarousel" data-bs-slide="next" aria-label="Noticias siguientes">
-              <i class="bi bi-arrow-right"></i>
-            </button>
+        <div class="home-preview-heading d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3">
+          <div>
+            <div class="ibero-section-kicker">Vida universitaria</div>
+            <h2 class="ibero-section-title mb-3">Proyectos de alumnos</h2>
+            <p class="ibero-text-lg mb-0">Explora prototipos, interfaces, robots y sistemas ciberfísicos desarrollados por estudiantes de Mecatrónica y Sistemas Ciberfísicos.</p>
           </div>
+          <a href="/vida_universitaria/alumnos/" class="btn btn-ibero btn-ibero-outline">Ver todos</a>
         </div>
+        <div class="home-preview-grid" data-home-preview="alumnos_proyectos" data-preview-limit="3" data-preview-fallback-url="/vida_universitaria/alumnos/">
+          <div class="home-preview-empty">Cargando proyectos de alumnos...</div>
+        </div>
+      </div>
+    </section>
 
-        <div id="iberoNewsCarousel" class="carousel slide ibero-news-carousel" data-bs-ride="carousel" data-bs-interval="5600" data-bs-pause="hover">
-          <div class="carousel-inner" id="iberoNewsInner">
-            <div class="carousel-item active">
-              <div class="ibero-news-loading">Cargando noticias...</div>
-            </div>
+    <section class="ibero-section home-catalog-preview" id="proyectos-investigacion-preview">
+      <div class="container-fluid px-4 px-lg-5">
+        <div class="home-preview-heading d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3">
+          <div>
+            <div class="ibero-section-kicker">Academia e investigación</div>
+            <h2 class="ibero-section-title mb-3">Proyectos de investigación</h2>
+            <p class="ibero-text-lg mb-0">Conoce plataformas experimentales, herramientas, prototipos y desarrollos aplicados vinculados con docencia, investigación y transferencia tecnológica.</p>
           </div>
+          <a href="/academia/proyectos_investigacion.html" class="btn btn-ibero btn-ibero-outline">Ver todos</a>
+        </div>
+        <div class="home-preview-grid" data-home-preview="proyectos_investigacion" data-preview-limit="3" data-preview-fallback-url="/academia/proyectos_investigacion.html">
+          <div class="home-preview-empty">Cargando proyectos de investigación...</div>
         </div>
       </div>
     </section>
@@ -238,8 +376,43 @@
             <div class="d-flex flex-wrap gap-3">
               <a href="/academia/academicos.html" class="btn btn-ibero btn-ibero-red">Académicos</a>
               <a href="https://laboratorios.ibero.mx/laboratorios/?acp=23" class="btn btn-ibero btn-ibero-outline">Laboratorios</a>
+              <a href="/academia/proyectos_investigacion.html" class="btn btn-ibero btn-ibero-outline">Proyectos de investigación</a>
+              <a href="/academia/publicaciones.html" class="btn btn-ibero btn-ibero-outline">Publicaciones</a>
+              <a href="/academia/recursos.html" class="btn btn-ibero btn-ibero-outline">Lecciones y recursos</a>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ibero-section ibero-section-soft home-catalog-preview" id="publicaciones-preview">
+      <div class="container-fluid px-4 px-lg-5">
+        <div class="home-preview-heading d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3">
+          <div>
+            <div class="ibero-section-kicker">Producción académica</div>
+            <h2 class="ibero-section-title mb-3">Publicaciones</h2>
+            <p class="ibero-text-lg mb-0">Consulta artículos, trabajos académicos y resultados de investigación asociados con las líneas del programa.</p>
+          </div>
+          <a href="/academia/publicaciones.html" class="btn btn-ibero btn-ibero-outline">Ver todas</a>
+        </div>
+        <div class="home-preview-grid" data-home-preview="publicaciones" data-preview-limit="3" data-preview-fallback-url="/academia/publicaciones.html">
+          <div class="home-preview-empty">Cargando publicaciones...</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ibero-section home-catalog-preview" id="recursos-preview">
+      <div class="container-fluid px-4 px-lg-5">
+        <div class="home-preview-heading d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3">
+          <div>
+            <div class="ibero-section-kicker">Lecciones y recursos</div>
+            <h2 class="ibero-section-title mb-3">Material para aprender y construir</h2>
+            <p class="ibero-text-lg mb-0">Revisa recursos, guías, lecciones y materiales didácticos para profundizar en robótica, IA, sistemas embebidos, automatización y fabricación digital.</p>
+          </div>
+          <a href="/academia/recursos.html" class="btn btn-ibero btn-ibero-outline">Ver todos</a>
+        </div>
+        <div class="home-preview-grid" data-home-preview="recursos" data-preview-limit="3" data-preview-fallback-url="/academia/recursos.html">
+          <div class="home-preview-empty">Cargando lecciones y recursos...</div>
         </div>
       </div>
     </section>
@@ -282,5 +455,251 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="/assets/js/site-config.js"></script>
   <script src="/assets/js/ibero-navbar.js"></script>
+  <script>
+    (function () {
+      const DATA_BASE = '/data';
+      const DETAIL_BASE = '/academia/detalle.html';
+      const COLLECTION_FILES = {
+        alumnos_proyectos: 'alumnos_proyectos.json',
+        proyectos_investigacion: 'proyectos_investigacion.json',
+        publicaciones: 'publicaciones.json',
+        recursos: 'recursos.json'
+      };
+
+      document.addEventListener('DOMContentLoaded', initHomeCatalogPreviews);
+
+      async function initHomeCatalogPreviews() {
+        const grids = Array.from(document.querySelectorAll('[data-home-preview]'));
+        if (!grids.length) return;
+
+        try {
+          const personas = await fetchJson(`${DATA_BASE}/personas.json`).catch(() => []);
+          const personasMap = new Map((Array.isArray(personas) ? personas : []).map((persona) => [persona.id, persona]));
+
+          await Promise.all(grids.map((grid) => renderPreviewGrid(grid, personasMap)));
+        } catch (error) {
+          console.error('No se pudieron cargar las vistas previas del catálogo', error);
+          grids.forEach((grid) => {
+            grid.innerHTML = '<div class="home-preview-empty">No se pudo cargar esta sección.</div>';
+          });
+        }
+      }
+
+      async function renderPreviewGrid(grid, personasMap) {
+        const collection = grid.dataset.homePreview;
+        const file = COLLECTION_FILES[collection];
+        const limit = Number.parseInt(grid.dataset.previewLimit || '3', 10);
+        const fallbackUrl = grid.dataset.previewFallbackUrl || '/';
+
+        if (!file) {
+          grid.innerHTML = '<div class="home-preview-empty">Colección no configurada.</div>';
+          return;
+        }
+
+        try {
+          const data = await fetchJson(`${DATA_BASE}/${file}`);
+          const items = (Array.isArray(data) ? data : [])
+            .filter((item) => item && item.habilitado !== false)
+            .sort((a, b) => String(b.fechaISO || '').localeCompare(String(a.fechaISO || '')))
+            .slice(0, limit);
+
+          if (!items.length) {
+            grid.innerHTML = '<div class="home-preview-empty">Aún no hay contenido publicado en esta sección.</div>';
+            return;
+          }
+
+          grid.innerHTML = items.map((item) => renderPreviewCard(item, collection, personasMap, fallbackUrl)).join('');
+        } catch (error) {
+          console.error(`No se pudo cargar ${collection}`, error);
+          grid.innerHTML = '<div class="home-preview-empty">No se pudo cargar esta sección.</div>';
+        }
+      }
+
+      async function fetchJson(url) {
+        const response = await fetch(url, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`Error al cargar ${url}`);
+        return response.json();
+      }
+
+      function renderPreviewCard(item, collection, personasMap, fallbackUrl) {
+        const title = escapeHtml(item.titulo || 'Sin título');
+        const description = escapeHtml(item.descripcion || '');
+        const image = escapeHtml(item.imagen || '/assets/img/home/video-preview.png');
+        const alt = escapeHtml(item.alt || item.titulo || 'Imagen del proyecto');
+        const date = escapeHtml(item.fechaTexto || item.semestre || '');
+        const tag = escapeHtml(item.tipoEtiqueta || getCollectionLabel(collection));
+        const categories = Array.isArray(item.categorias) ? item.categorias.slice(0, 4) : [];
+        const badges = [tag, ...categories].filter(Boolean).map((category, index) => {
+          const className = index === 0 ? 'catalog-pill catalog-pill-primary' : 'catalog-pill';
+          return `<span class="${className}">${escapeHtml(category)}</span>`;
+        }).join('');
+        const participants = renderParticipants(item, personasMap);
+        const href = getItemUrl(item, collection, fallbackUrl);
+
+        return `
+          <article class="catalog-card home-preview-card">
+            <div class="catalog-card__image-wrap">
+              <img src="${image}" alt="${alt}" class="catalog-card__image" loading="lazy">
+            </div>
+            <div class="catalog-card__body">
+              <div class="catalog-card__badges">${badges}</div>
+              <h3 class="catalog-card__title">${title}</h3>
+              <p class="catalog-card__description">${description}</p>
+              ${date ? `<div class="catalog-card__date">${date}</div>` : ''}
+              ${participants}
+              <a class="btn btn-ibero btn-ibero-outline mt-auto align-self-start" href="${href}" ${isExternalUrl(href) ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+                Más información <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        `;
+      }
+
+      function renderParticipants(item, personasMap) {
+        const participants = normalizeParticipants(item, personasMap).slice(0, 6);
+        if (!participants.length) return '';
+
+        return `
+          <div class="home-preview-participants" aria-label="Participantes">
+            ${participants.map(renderParticipantPill).join('')}
+          </div>
+        `;
+      }
+
+      function normalizeParticipants(item, personasMap) {
+        if (Array.isArray(item.participantes) && item.participantes.length) {
+          return item.participantes
+            .map((participant) => mergeParticipant(participant, personasMap))
+            .filter(Boolean)
+            .sort((a, b) => (a.orden || 999) - (b.orden || 999));
+        }
+
+        const fallbackParticipants = [];
+
+        if (Array.isArray(item.alumnos)) {
+          item.alumnos.forEach((nombre, index) => {
+            fallbackParticipants.push({
+              nombre,
+              rolTexto: 'Alumno',
+              orden: index + 1
+            });
+          });
+        }
+
+        if (Array.isArray(item.asesores)) {
+          item.asesores.forEach((personaId, index) => {
+            fallbackParticipants.push(mergeParticipant({
+              personaId,
+              rolTexto: 'Asesor',
+              orden: 100 + index
+            }, personasMap));
+          });
+        }
+
+        if (Array.isArray(item.responsables)) {
+          item.responsables.forEach((responsable, index) => {
+            fallbackParticipants.push(mergeParticipant({
+              ...responsable,
+              rolTexto: responsable.rolTexto || responsable.rol || 'Responsable',
+              orden: 200 + index
+            }, personasMap));
+          });
+        }
+
+        if (Array.isArray(item.autores)) {
+          item.autores.forEach((autor, index) => {
+            fallbackParticipants.push(mergeParticipant({
+              ...autor,
+              rolTexto: autor.rolTexto || autor.rol || 'Autor',
+              orden: 300 + index
+            }, personasMap));
+          });
+        }
+
+        return fallbackParticipants.filter(Boolean);
+      }
+
+      function mergeParticipant(participant, personasMap) {
+        if (!participant) return null;
+        const persona = participant.personaId ? personasMap.get(participant.personaId) : null;
+        const nombre = participant.nombre || persona?.nombre || '';
+        if (!nombre) return null;
+
+        return {
+          nombre,
+          rolTexto: participant.rolTexto || persona?.rol || participant.rol || '',
+          foto: participant.foto || persona?.foto || '',
+          urlPerfil: participant.urlPerfil || persona?.urlPerfil || '',
+          orden: participant.orden || 999
+        };
+      }
+
+      function renderParticipantPill(participant) {
+        const name = escapeHtml(participant.nombre);
+        const role = escapeHtml(participant.rolTexto || '');
+        const initials = escapeHtml(getInitials(participant.nombre));
+        const foto = participant.foto ? escapeHtml(participant.foto) : '';
+        const avatar = foto
+          ? `<span class="home-participant-avatar">
+               <img src="${foto}" alt="" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+               <span class="home-participant-initials" style="display:none;">${initials}</span>
+             </span>`
+          : `<span class="home-participant-initials">${initials}</span>`;
+        const content = `
+          ${avatar}
+          <span>
+            <span class="home-participant-name">${name}</span>
+            ${role ? `<span class="home-participant-role">${role}</span>` : ''}
+          </span>
+        `;
+
+        if (participant.urlPerfil) {
+          const href = escapeHtml(participant.urlPerfil);
+          return `<a class="home-participant-pill text-decoration-none" href="${href}" ${isExternalUrl(href) ? 'target="_blank" rel="noopener noreferrer"' : ''}>${content}</a>`;
+        }
+
+        return `<span class="home-participant-pill">${content}</span>`;
+      }
+
+      function getItemUrl(item, collection, fallbackUrl) {
+        if (item.url) return escapeHtml(item.url);
+        if (!item.id) return escapeHtml(fallbackUrl);
+        return `${DETAIL_BASE}?tipo=${encodeURIComponent(collection)}&id=${encodeURIComponent(item.id)}`;
+      }
+
+      function getCollectionLabel(collection) {
+        const labels = {
+          alumnos_proyectos: 'Proyecto de alumnos',
+          proyectos_investigacion: 'Proyecto de investigación',
+          publicaciones: 'Publicación',
+          recursos: 'Lección'
+        };
+        return labels[collection] || 'Contenido';
+      }
+
+      function getInitials(name) {
+        return String(name || '')
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean)
+          .slice(0, 2)
+          .map((part) => part.charAt(0).toUpperCase())
+          .join('') || '•';
+      }
+
+      function isExternalUrl(url) {
+        return /^https?:\/\//i.test(String(url || ''));
+      }
+
+      function escapeHtml(value) {
+        return String(value ?? '')
+          .replaceAll('&', '&amp;')
+          .replaceAll('<', '&lt;')
+          .replaceAll('>', '&gt;')
+          .replaceAll('"', '&quot;')
+          .replaceAll("'", '&#039;');
+      }
+    })();
+  </script>
 </body>
 </html>

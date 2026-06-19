@@ -204,5 +204,69 @@
       "robotica-movil"
     ],
     "activo": true
+  },
+  {
+    "id": "andrick-millan",
+    "nombre": "Andrick Millán",
+    "rol": "Estudiante",
+    "tipo": "alumno",
+    "email": "",
+    "ubicacion": "",
+    "foto": "/assets/img/team/avatar-placeholder.png",
+    "urlPerfil": "",
+    "lineas": [
+      "control-inteligente",
+      "inteligencia-artificial",
+      "sistemas-ciberfisicos"
+    ],
+    "activo": true
+  },
+  {
+    "id": "jesus-velazquez",
+    "nombre": "Jesús Velázquez",
+    "rol": "Estudiante",
+    "tipo": "alumno",
+    "email": "",
+    "ubicacion": "",
+    "foto": "/assets/img/team/avatar-placeholder.png",
+    "urlPerfil": "",
+    "lineas": [
+      "control-inteligente",
+      "inteligencia-artificial",
+      "sistemas-ciberfisicos"
+    ],
+    "activo": true
+  },
+  {
+    "id": "elias-santiago-jimenez-hernandez",
+    "nombre": "Elías Santiago Jiménez Hernández",
+    "rol": "Estudiante",
+    "tipo": "alumno",
+    "email": "",
+    "ubicacion": "",
+    "foto": "/assets/img/team/avatar-placeholder.png",
+    "urlPerfil": "https://elias-papu.github.io/proyecto_inteligente_primavera2026/",
+    "lineas": [
+      "control-inteligente",
+      "inteligencia-artificial",
+      "sistemas-ciberfisicos"
+    ],
+    "activo": true
+  },
+  {
+    "id": "sebastian-gear-designer",
+    "nombre": "Sebastián",
+    "rol": "Estudiante",
+    "tipo": "alumno",
+    "email": "",
+    "ubicacion": "",
+    "foto": "/assets/img/team/avatar-placeholder.png",
+    "urlPerfil": "https://sebas30073007.github.io/mecatronica-gear-designer/",
+    "lineas": [
+      "fabricacion-digital",
+      "diseno-mecatronico",
+      "prototipado"
+    ],
+    "activo": true
   }
 ]

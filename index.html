@@ -18,7 +18,12 @@
   <link href="/assets/css/catalogos.css" rel="stylesheet">
   <style>
     .home-catalog-preview .home-preview-heading {
-      margin-bottom: 2rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .home-catalog-preview {
+      padding-top: clamp(2.75rem, 4.5vw, 4.25rem);
+      padding-bottom: clamp(2.75rem, 4.5vw, 4.25rem);
     }
 
     .home-catalog-preview .home-preview-heading p {
@@ -132,16 +137,16 @@
     .home-preview-participants {
       display: flex;
       flex-wrap: wrap;
-      gap: .5rem;
-      margin: .75rem 0 1rem;
+      gap: .45rem;
+      margin: .65rem 0 1rem;
     }
 
     .home-participant-pill {
       display: inline-flex;
       align-items: center;
-      gap: .5rem;
+      gap: .45rem;
       max-width: 100%;
-      padding: .35rem .75rem .35rem .35rem;
+      padding: .28rem .68rem .28rem .28rem;
       border: 1px solid rgba(0, 0, 0, 0.08);
       border-radius: 999px;
       background: #fff;
@@ -149,8 +154,8 @@
 
     .home-participant-avatar,
     .home-participant-initials {
-      width: 2rem;
-      height: 2rem;
+      width: 1.85rem;
+      height: 1.85rem;
       border-radius: 999px;
       flex: 0 0 auto;
       overflow: hidden;
@@ -160,7 +165,7 @@
       background: #9f1744;
       color: #fff;
       font-weight: 800;
-      font-size: .82rem;
+      font-size: .78rem;
       line-height: 1;
     }
 
@@ -173,14 +178,15 @@
 
     .home-participant-name {
       display: block;
-      font-weight: 700;
+      font-size: .92rem;
+      font-weight: 600;
       line-height: 1.1;
       color: #202020;
     }
 
     .home-participant-role {
       display: block;
-      font-size: .78rem;
+      font-size: .76rem;
       line-height: 1.1;
       color: #6c757d;
     }

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Plan de estudios | Ingeniería Mecatrónica y Sistemas Ciberfísicos | IBERO Ciudad de México</title>
-  <meta name="description" content="Plan ideal de estudios de Ingeniería Mecatrónica y Sistemas Ciberfísicos de la IBERO Ciudad de México.">
+  <title>Consulta de avance | Ingeniería Mecatrónica y Sistemas Ciberfísicos | IBERO Ciudad de México</title>
+  <meta name="description" content="Consulta de avance curricular de Ingeniería Mecatrónica y Sistemas Ciberfísicos de la IBERO Ciudad de México.">
   <link rel="icon" type="image/png" href="/assets/favicon.ico">
 
   <link rel="stylesheet" href="/assets/bootstrap.min.css">
@@ -13,7 +13,7 @@
   <link href="/assets/css/ibero-site.css" rel="stylesheet">
   <link href="/assets/css/plan-estudios-manresa.css?v=5" rel="stylesheet">
 </head>
-<body id="page-top" class="ibero-home ibero-inner-page">
+<body id="page-top" class="ibero-home ibero-inner-page" data-page="avance">
   <nav class="navbar navbar-expand-xl ibero-main-nav" id="mainNav" aria-label="Navegación principal">
     <div class="container-fluid px-4 px-lg-5">
       <a class="ibero-logo navbar-brand" href="/" aria-label="Inicio IBERO Mecatrónica">
@@ -83,20 +83,22 @@
     </div>
   </nav>
   <main class="ibero-page">
+
     <section class="ibero-internal-hero">
       <div class="container-fluid px-4 px-lg-5">
         <div class="row justify-content-center">
           <div class="col-12 col-xxl-11">
             <nav class="ibero-breadcrumbs" aria-label="Ruta de navegación">
-              <a href="/">Inicio</a> <span class="separator" aria-hidden="true">›</span> <span>Vida universitaria</span> <span class="separator" aria-hidden="true">›</span> <span>Plan de estudios</span>
+              <a href="/">Inicio</a> <span class="separator" aria-hidden="true">›</span> <span>Vida universitaria</span> <span class="separator" aria-hidden="true">›</span> <span>Consulta de avance</span>
             </nav>
             <div class="row g-5 align-items-start">
               <div class="col-lg-6">
                 <div class="ibero-eyebrow">Vida universitaria</div>
-                <h1 class="ibero-internal-title">Plan de estudios</h1>
+                <h1 class="ibero-internal-title">Revisa tu avance curricular</h1>
               </div>
               <div class="col-lg-6 pt-lg-5">
-                <p class="ibero-internal-lead">Explora el plan ideal de la carrera, consulta el detalle de cada materia, revisa las electivas y ARU y descarga reportes del plan de estudios.</p>
+                <p class="ibero-internal-lead">Carga tu histórico académico en PDF para visualizar materias acreditadas, pendientes, no acreditadas y avance de créditos contra el plan MANRESA.</p>
+                <p class="ibero-internal-lead">Solicita tu  histórico académico en PDF al coordinador: huber.giron@ibero.mx</p>
               </div>
             </div>
           </div>
@@ -104,48 +106,58 @@
       </div>
     </section>
 
-    <section>
-      <!-- Descargas -->
-      <div class="d-flex justify-content-center gap-3 flex-wrap my-4 plan-download-actions">
-
-        <a 
-          class="btn btn-ibero btn-ibero-red plan-download-btn" 
-          href="/assets/pdf/ingenieria-en-mecatronica-y-sistemas-ciberfisicos.pdf"
-          target="_blank"
-          rel="noopener noreferrer">
-          <i class="bi bi-download me-2"></i>Folleto de la carrera
-        </a>
-
-        <a 
-          class="btn btn-ibero btn-ibero-red plan-download-btn" 
-          href="/assets/pdf/plan_de_estudios_mecatronica_ibero.pdf"
-          target="_blank"
-          rel="noopener noreferrer">
-          <i class="bi bi-download me-2"></i>Plan de estudios
-        </a>
-
-      </div>
-    </section>
-
-
     <section class="ibero-plan-integration">
       <div class="container-fluid px-4 px-lg-5">
-        <div class="manresa-app" id="manresaPlanApp">
+        <div class="manresa-app" id="manresaAvanceApp">
           <main>
             <div class="manresa-app-actions">
-              <a class="btn ghost" href="/vida_universitaria/avance_curricular.html">Consulta tu avance</a>
-              <button class="btn" id="clearBtn" type="button">Limpiar selección</button>
+              <a class="btn ghost" href="/vida_universitaria/plan_estudios.html">Ver plan general</a>
+              <button class="btn" id="clearProgressBtn" type="button">Limpiar avance</button>
             </div>
 
-            <section class="stats-grid" id="statsGrid" aria-label="Resumen rápido"></section>
+            <section id="avance" class="section advance-first">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Histórico académico</p>
+                  <h2>Carga tu PDF</h2>
+                </div>
+              </div>
+
+              <div class="advance-card">
+                <div class="upload-row">
+                  <label class="pdf-upload">
+                    <span>PDF del histórico</span>
+                    <input id="pdfInput" type="file" accept="application/pdf" />
+                  </label>
+                </div>
+                <div id="pdfStatus" class="pdf-status muted">Sin histórico cargado.</div>
+              </div>
+            </section>
+
+            <section id="reporte" class="section">
+              <div class="section-heading compact-heading">
+                <div>
+                  <p class="eyebrow">Resultado</p>
+                  <h2>Resumen y materias faltantes</h2>
+                </div>
+                <div class="section-actions">
+                  <button class="btn ghost" id="exportReportPdfBtn" type="button">Exportar resumen PDF</button>
+                </div>
+              </div>
+              <div id="studentReport" class="student-report empty-report">
+                <div class="empty-state">Carga tu histórico en PDF para ver tu avance.</div>
+              </div>
+            </section>
 
             <section id="plan" class="section">
               <div class="section-heading">
                 <div>
                   <p class="eyebrow">Mapa curricular</p>
-                  <h2>Plan gráfico por semestre</h2>
+                  <h2>Plan con calificaciones</h2>
                 </div>
-                <div class="section-actions"><button class="btn ghost" id="exportPlanPngBtn" type="button">Exportar plan PNG</button></div>
+                <div class="section-actions">
+                  <button class="btn ghost" id="exportPlanPngBtn" type="button">Exportar plan PNG</button>
+                </div>
               </div>
 
               <div class="plan-shell">
@@ -162,28 +174,6 @@
                   </div>
                 </div>
               </div>
-            </section>
-
-            <section id="bloques" class="section">
-              <div class="section-heading">
-                <div>
-                  <p class="eyebrow">Electivas y ARU</p>
-                  <h2>Electivas y ARU</h2>
-                </div>
-              </div>
-              <div id="electiveBlocks" class="blocks-grid"></div>
-            </section>
-
-            <section id="resumen" class="section">
-              <div class="section-heading">
-                <div>
-                  <p class="eyebrow">Créditos requeridos</p>
-                  <h2>Resumen por coordinación</h2>
-                </div>
-                <div class="section-actions"><button class="btn ghost" id="exportReportPdfBtn" type="button">Exportar resumen PDF</button></div>
-              </div>
-              <div id="coordSummary" class="summary-grid"></div>
-              <div id="missingContentBox" class="quality-box"></div>
             </section>
           </main>
 
@@ -232,6 +222,7 @@
 </footer>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="/assets/data/plan-enriquecido.js?v=5"></script>

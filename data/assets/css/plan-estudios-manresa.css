@@ -1,0 +1,1571 @@
+.manresa-app {
+  --ibero-red: #c8102e;
+  --ink: #111827;
+  --muted: #667085;
+  --line: #d7dde7;
+  --soft: #f5f7fb;
+  --paper: #ffffff;
+  --shadow: 0 18px 48px rgba(15, 23, 42, .14);
+  --radius: 22px;
+  --card-w: 182px;
+  --sigla-w: 42px;
+  --desktop-sigla-w: clamp(28px, 2.15vw, 38px);
+}
+
+.manresa-app * { box-sizing: border-box; }
+.manresa-app { scroll-behavior: smooth; }
+.manresa-app {
+  margin: 0;
+  color: var(--ink);
+  background: linear-gradient(180deg, #fafafa 0%, #f3f5f9 100%);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.manresa-app button, .manresa-app input { font: inherit; }
+.manresa-app h1, .manresa-app h2, .manresa-app h3, .manresa-app h4, .manresa-app p { margin-top: 0; }
+
+.manresa-app .site-header {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.manresa-app .brand-bar {
+  height: 10px;
+  background: linear-gradient(90deg, var(--ibero-red), #111827 42%, #111827);
+}
+.manresa-app .hero {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 26px clamp(12px, 1.6vw, 28px) 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+}
+.manresa-app .eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ibero-red);
+}
+.manresa-app h1 {
+  margin-bottom: 8px;
+  font-size: clamp(30px, 4vw, 54px);
+  line-height: 1.02;
+  letter-spacing: -.04em;
+}
+.manresa-app h2 {
+  margin-bottom: 0;
+  font-size: clamp(24px, 2.4vw, 38px);
+  letter-spacing: -.035em;
+}
+.manresa-app #programSubtitle {
+  color: var(--muted);
+  font-size: 18px;
+  margin-bottom: 0;
+}
+.manresa-app .hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.manresa-app .btn {
+  border: 1px solid #111827;
+  background: #111827;
+  color: #fff;
+  border-radius: 14px;
+  padding: 12px 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.manresa-app .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 26px rgba(15, 23, 42, .18); }
+.manresa-app .btn.ghost { color: #111827; background: #fff; }
+
+.manresa-app main {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 24px clamp(12px, 1.6vw, 28px) 60px;
+}
+.manresa-app .toolbar-card, .manresa-app .plan-shell, .manresa-app .block-card, .manresa-app .summary-card, .manresa-app .quality-box {
+  background: rgba(255, 255, 255, .96);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, .06);
+}
+.manresa-app .toolbar-card {
+  padding: 18px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+}
+.manresa-app .toolbar-top, .manresa-app .toolbar-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.manresa-app .toolbar-bottom { margin-top: 14px; justify-content: flex-start; }
+.manresa-app .tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.manresa-app .tab {
+  color: #344054;
+  text-decoration: none;
+  font-weight: 800;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 999px;
+}
+.manresa-app .tab:hover, .manresa-app .tab.is-active { color: #fff; border-color: var(--ibero-red); background: var(--ibero-red); }
+.manresa-app .search-box {
+  min-width: min(100%, 440px);
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+.manresa-app .search-box input {
+  width: 100%;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  outline: none;
+  background: #fff;
+}
+.manresa-app .search-box input:focus { border-color: var(--ibero-red); }
+.manresa-app .muted, .manresa-app .hint { color: var(--muted); }
+.manresa-app .hint { margin-bottom: 0; max-width: 680px; }
+
+.manresa-app .stats-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(190px, 1fr));
+  gap: 14px;
+}
+.manresa-app .stat {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+}
+.manresa-app .stat strong { display: block; font-size: 32px; letter-spacing: -.04em; margin-bottom: 4px; }
+.manresa-app .stat span { color: var(--muted); font-weight: 700; }
+.manresa-app .section { margin-top: 38px; }
+.manresa-app .section-heading {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 18px;
+  align-items: end;
+  justify-content: space-between;
+}
+.manresa-app .section-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+.manresa-app .plan-shell { overflow: hidden; }
+.manresa-app .public-plan-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: end;
+  margin: 18px 18px 0;
+  border-bottom: 4px solid #111;
+  padding-bottom: 8px;
+}
+.manresa-app .plan-badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 4px 9px;
+  background: var(--ibero-red);
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 900;
+  letter-spacing: .02em;
+}
+.manresa-app .public-plan-title h3 {
+  margin: 5px 0 0;
+  font-size: 1.28rem;
+  text-transform: uppercase;
+}
+.manresa-app .plan-totals {
+  text-align: right;
+  color: #374151;
+  font-size: .86rem;
+  line-height: 1.35;
+}
+.manresa-app .plan-scroll {
+  overflow: visible;
+  padding: 10px clamp(8px, 1vw, 18px) 18px;
+  max-height: none;
+  background: #fff;
+}
+.manresa-app .map-canvas {
+  width: 100%;
+  min-width: 0;
+  padding-bottom: 10px;
+  background: #fff;
+}
+.manresa-app .curriculum-map {
+  display: grid;
+  grid-template-columns: repeat(var(--semesters, 10), minmax(0, 1fr));
+  gap: clamp(4px, .55vw, 8px);
+  align-items: start;
+}
+.manresa-app .semester-column {
+  width: auto;
+  min-width: 0;
+  min-height: 420px;
+  border: 2px solid #111;
+  background: #f5f7fb;
+}
+.manresa-app .semester-header {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  padding: 6px 3px;
+  border-bottom: 2px solid #111;
+  background: #fff;
+  color: #111;
+  text-align: center;
+  font-size: clamp(.56rem, .72vw, .78rem);
+  font-weight: 900;
+}
+.manresa-app .semester-header small { display: none; }
+.manresa-app .semester-body {
+  display: grid;
+  gap: clamp(5px, .55vw, 8px);
+  padding: clamp(5px, .55vw, 8px) clamp(3px, .45vw, 6px);
+}
+.manresa-app .course-card {
+  --accent: #94a3b8;
+  width: 100%;
+  min-height: clamp(96px, 8.5vw, 116px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--desktop-sigla-w);
+  grid-template-rows: minmax(clamp(70px, 6.4vw, 86px), auto) clamp(22px, 1.75vw, 26px);
+  overflow: hidden;
+  border: 2px solid #111;
+  background: #fff;
+  cursor: pointer;
+  break-inside: avoid;
+  position: relative;
+  transition: outline .12s ease, transform .12s ease, opacity .12s ease, filter .12s ease;
+}
+.manresa-app .course-card:hover { outline: 3px solid rgba(200, 16, 46, .28); }
+.manresa-app .course-card.is-selected { outline: 4px solid rgba(200, 16, 46, .42); box-shadow: 0 0 0 2px var(--ibero-red); }
+.manresa-app .course-card.is-prereq { outline: 4px solid rgba(245, 158, 11, .36); box-shadow: 0 0 0 2px #f59e0b; }
+.manresa-app .course-card.is-dependent { outline: 4px solid rgba(16, 185, 129, .24); box-shadow: 0 0 0 2px #10b981; }
+.manresa-app .course-card.is-search-dim { opacity: .22; filter: grayscale(.3); }
+.manresa-app .course-card.phantom { border-style: dashed; }
+.manresa-app .course-card.catalog { width: 182px; min-height: 124px; grid-template-columns: minmax(0, 1fr) var(--sigla-w); grid-template-rows: minmax(94px, auto) 28px; }
+.manresa-app .course-title {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(5px, .55vw, 9px) clamp(3px, .45vw, 7px);
+  text-align: center;
+  line-height: 1.02;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  text-wrap: balance;
+  font-size: clamp(.48rem, .53vw, .66rem);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.manresa-app .course-side {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-rows: clamp(22px, 1.75vw, 26px) 1fr;
+  border-left: 2px solid #111;
+  background: #fff;
+}
+.manresa-app .course-hours {
+  display: grid;
+  place-items: center;
+  border-bottom: 2px solid #111;
+  font-size: clamp(.50rem, .54vw, .66rem);
+  font-weight: 800;
+}
+.manresa-app .course-sigla {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0;
+  color: #111;
+  background: var(--accent, #dfe5ee);
+  overflow: hidden;
+}
+.manresa-app .course-sigla-text {
+  display: inline-block;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  white-space: nowrap;
+  line-height: 1;
+  font-size: clamp(.50rem, .56vw, .70rem);
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+.manresa-app .course-key {
+  grid-column: 1;
+  grid-row: 2;
+  overflow: hidden;
+  border-top: 2px solid #111;
+  padding: 5px clamp(4px, .45vw, 7px);
+  background: var(--accent, #dfe5ee);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: clamp(.52rem, .58vw, .70rem);
+  font-weight: 800;
+}
+.manresa-app .course-credits {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  place-items: center;
+  border-top: 2px solid #111;
+  border-left: 2px solid #111;
+  font-size: clamp(.52rem, .58vw, .70rem);
+  font-weight: 800;
+  background: #fff;
+}
+.manresa-app .blocks-grid, .manresa-app .summary-grid { display: grid; gap: 16px; }
+.manresa-app .summary-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); align-items: start; }
+.manresa-app .block-card { padding: 20px; }
+.manresa-app .block-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+.manresa-app .block-title h3 { font-size: 26px; margin: 0 0 4px; }
+.manresa-app .credit-pill {
+  min-width: 132px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 12px 14px;
+  text-align: center;
+  background: #fff;
+  font-weight: 900;
+  color: #166534;
+}
+.manresa-app .credit-pill strong { display: block; font-size: 28px; line-height: 1; }
+.manresa-app .block-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+.manresa-app .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #344054;
+  border-radius: 999px;
+  padding: 7px 10px;
+  font-size: 13px;
+  font-weight: 800;
+}
+.manresa-app .chip.clickable { cursor: pointer; }
+.manresa-app .chip.clickable:hover { color: #fff; border-color: var(--ibero-red); background: var(--ibero-red); }
+.manresa-app .option-grid { display: flex; gap: 12px; flex-wrap: wrap; }
+.manresa-app .empty-state { border: 1px dashed #aeb8c7; border-radius: 16px; padding: 16px; color: var(--muted); background: #f9fafb; }
+
+.manresa-app .summary-card { overflow: hidden; border-radius: 16px; }
+.manresa-app .summary-toggle {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  align-items: start;
+  text-align: left;
+  background: #fff;
+  border: 0;
+  padding: 12px 14px;
+  cursor: pointer;
+}
+.manresa-app .summary-toggle h3 {
+  margin: 0;
+  font-size: .92rem;
+  line-height: 1.15;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+}
+.manresa-app .summary-numbers { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-start; }
+.manresa-app .summary-card .chip { padding: 5px 8px; font-size: .72rem; }
+.manresa-app .summary-body { display: none; border-top: 1px solid var(--line); padding: 10px 12px 12px; }
+.manresa-app .summary-card.is-open .summary-body { display: block; }
+.manresa-app .requirement-list { display: grid; gap: 6px; }
+.manresa-app .requirement-item {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr);
+  gap: 6px 8px;
+  align-items: center;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 9px;
+  cursor: pointer;
+  font-size: .78rem;
+}
+.manresa-app .requirement-item:hover { border-color: var(--ibero-red); }
+.manresa-app .requirement-item strong { color: #111827; }
+.manresa-app .requirement-item span:first-of-type {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.manresa-app .requirement-item span:nth-of-type(2), .manresa-app .requirement-item span:nth-of-type(3) {
+  color: var(--muted);
+  font-size: .72rem;
+}
+.manresa-app .quality-box { margin-top: 16px; padding: 18px; color: #344054; }
+.manresa-app .quality-box details { margin-top: 10px; }
+
+.manresa-app .course-panel { position: fixed; inset: 0; z-index: 100; display: none; }
+.manresa-app .course-panel.is-open { display: block; }
+.manresa-app .panel-backdrop { position: absolute; inset: 0; background: rgba(15, 23, 42, .45); }
+.manresa-app .panel-card {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  bottom: 18px;
+  width: min(760px, calc(100vw - 36px));
+  overflow: auto;
+  background: #fff;
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+  padding: 26px;
+}
+.manresa-app .panel-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 999px;
+  background: #111827;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+.manresa-app .detail-hero { display: grid; grid-template-columns: 220px 1fr; gap: 22px; align-items: start; }
+.manresa-app .detail-mini .course-card { transform: none; box-shadow: none; cursor: default; }
+.manresa-app .detail-title h2 { font-size: 34px; margin-bottom: 10px; }
+.manresa-app .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 14px 0; }
+.manresa-app .detail-field { border: 1px solid var(--line); border-radius: 14px; padding: 11px 12px; background: #f9fafb; }
+.manresa-app .detail-field span { display: block; color: var(--muted); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
+.manresa-app .detail-field strong { font-size: 17px; }
+.manresa-app .detail-section { margin-top: 24px; }
+.manresa-app .detail-section h3 { font-size: 21px; margin-bottom: 10px; }
+.manresa-app .bullet-list { margin: 0; padding-left: 20px; line-height: 1.5; }
+.manresa-app .bullet-list li { margin-bottom: 7px; }
+.manresa-app .description-text { line-height: 1.56; color: #344054; }
+.manresa-app .panel-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+@media (min-width: 901px) {
+  .manresa-app #resumen .section-heading {
+    align-items: center;
+  }
+  .manresa-app #resumen .hint {
+    max-width: 520px;
+    font-size: .92rem;
+  }
+  .manresa-app #coordSummary {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .manresa-app .quality-box {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .manresa-app .plan-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .manresa-app .map-canvas {
+    width: max-content;
+    min-width: 100%;
+  }
+  .manresa-app .curriculum-map {
+    grid-template-columns: repeat(var(--semesters, 10), var(--card-w));
+    gap: 8px;
+  }
+  .manresa-app .semester-column {
+    width: var(--card-w);
+  }
+  .manresa-app .semester-header {
+    font-size: .78rem;
+    padding: 6px;
+  }
+  .manresa-app .semester-body {
+    gap: 8px;
+    padding: 8px 6px;
+  }
+  .manresa-app .course-card {
+    min-height: 124px;
+    grid-template-columns: minmax(0, 1fr) var(--sigla-w);
+    grid-template-rows: minmax(94px, auto) 28px;
+  }
+  .manresa-app .course-title {
+    font-size: .66rem;
+    padding: 8px 6px;
+    line-height: 1.04;
+    font-weight: 700;
+  }
+  .manresa-app .course-hours { font-size: .66rem; }
+  .manresa-app .course-sigla { font-size: .70rem; }
+  .manresa-app .course-key, .manresa-app .course-credits { font-size: .70rem; }
+}
+
+@media (max-width: 900px) {
+  .manresa-app .hero, .manresa-app .section-heading, .manresa-app .block-header, .manresa-app .detail-hero, .manresa-app .public-plan-title { display: block; }
+  .manresa-app .hero-actions { margin-top: 18px; justify-content: flex-start; }
+  .manresa-app .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .manresa-app .panel-card { inset: 10px; width: auto; padding: 18px; }
+  .manresa-app .detail-mini { display: none; }
+  .manresa-app .requirement-item { grid-template-columns: 1fr; }
+  .manresa-app .plan-totals { text-align: left; margin-top: 8px; }
+}
+@media (max-width: 560px) {
+  .manresa-app main, .manresa-app .hero { padding-left: 14px; padding-right: 14px; }
+  .manresa-app .stats-grid { grid-template-columns: 1fr; }
+}
+@media print {
+  .manresa-app .toolbar-card, .manresa-app .hero-actions, .manresa-app .course-panel, .manresa-app .site-header .brand-bar { display: none !important; }
+  .manresa-app { background: #fff; }
+  .manresa-app main, .manresa-app .hero { max-width: none; padding: 0; }
+  .manresa-app .plan-scroll { max-height: none; overflow: visible; }
+  .manresa-app .plan-shell, .manresa-app .block-card, .manresa-app .summary-card { box-shadow: none; }
+}
+
+
+.manresa-app {
+  --ok: #157347;
+  --ok-soft: #e8f5ee;
+  --warn: #b45309;
+  --warn-soft: #fff7ed;
+  --bad: #991b1b;
+  --bad-soft: #fee2e2;
+}
+
+.manresa-app .total-summary-card, .manresa-app .advance-card {
+  background: rgba(255, 255, 255, .96);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, .06);
+}
+
+.manresa-app .total-summary-card {
+  margin-bottom: 16px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.manresa-app .total-summary-card strong {
+  display: block;
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1.05;
+  letter-spacing: -.035em;
+}
+.manresa-app .total-summary-card p {
+  margin: 0;
+  max-width: 680px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.manresa-app .advance-card { padding: 18px; }
+.manresa-app .upload-row {
+  display: flex;
+  gap: 14px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+.manresa-app .pdf-upload {
+  display: grid;
+  gap: 8px;
+  min-width: min(100%, 440px);
+  color: var(--muted);
+  font-weight: 900;
+  font-size: .85rem;
+}
+.manresa-app .pdf-upload input {
+  border: 2px dashed var(--line);
+  border-radius: 16px;
+  padding: 12px;
+  background: #fff;
+}
+.manresa-app .pdf-status { margin-top: 12px; font-weight: 700; }
+
+.manresa-app .course-card.progress-approved::before, .manresa-app .course-card.progress-partial::before, .manresa-app .course-card.progress-attempted::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  z-index: 2;
+}
+.manresa-app .course-card.progress-approved::before { background: var(--ok); }
+.manresa-app .course-card.progress-partial::before { background: var(--warn); }
+.manresa-app .course-card.progress-attempted::before { background: var(--bad); }
+.manresa-app .course-card.progress-approved { box-shadow: inset 0 0 0 3px rgba(21, 115, 71, .22); }
+.manresa-app .course-card.progress-partial { box-shadow: inset 0 0 0 3px rgba(180, 83, 9, .20); }
+.manresa-app .course-card.progress-attempted { box-shadow: inset 0 0 0 3px rgba(153, 27, 27, .18); }
+.manresa-app .progress-badge {
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  z-index: 5;
+  min-width: 24px;
+  height: 20px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--ok);
+  color: #fff;
+  border: 1px solid #fff;
+  font-size: .60rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.manresa-app .progress-badge.partial { background: var(--warn); }
+.manresa-app .progress-badge.attempted { background: var(--bad); }
+.manresa-app .chip.ok { border-color: rgba(21, 115, 71, .22); background: var(--ok-soft); color: var(--ok); }
+
+.manresa-app .progress-detail.approved { border-color: rgba(21, 115, 71, .28); background: var(--ok-soft); }
+.manresa-app .progress-detail.partial { border-color: rgba(180, 83, 9, .28); background: var(--warn-soft); }
+.manresa-app .progress-detail.attempted { border-color: rgba(153, 27, 27, .25); background: var(--bad-soft); }
+.manresa-app .progress-detail.pending { background: #f9fafb; }
+
+.manresa-app .student-report { margin-top: 16px; }
+.manresa-app .student-overview {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  background: #fff;
+}
+.manresa-app .student-overview h3 {
+  margin: 0 0 4px;
+  font-size: clamp(22px, 2vw, 30px);
+  letter-spacing: -.035em;
+}
+.manresa-app .student-overview p { margin: 0; }
+.manresa-app .student-score {
+  min-width: 220px;
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: #111827;
+  color: #fff;
+  text-align: right;
+}
+.manresa-app .student-score strong {
+  display: block;
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1;
+}
+.manresa-app .student-score span { color: rgba(255,255,255,.78); font-weight: 800; }
+
+.manresa-app .report-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+.manresa-app .report-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px;
+  background: #fff;
+}
+.manresa-app .report-card.wide { grid-column: span 2; }
+.manresa-app .report-card h4 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  letter-spacing: -.015em;
+}
+.manresa-app .mini-stats {
+  display: grid;
+  gap: 8px;
+}
+.manresa-app .mini-stats span {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #eef1f6;
+  padding-bottom: 7px;
+  color: var(--muted);
+  font-weight: 700;
+}
+.manresa-app .mini-stats strong { color: var(--ink); }
+.manresa-app .compact-table { display: grid; gap: 6px; }
+.manresa-app .compact-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid #edf0f5;
+  border-radius: 12px;
+  padding: 8px 10px;
+  font-size: .82rem;
+}
+.manresa-app .compact-row span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.manresa-app .compact-row em {
+  color: var(--muted);
+  font-style: normal;
+}
+.manresa-app .pending-list {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  max-height: 260px;
+  overflow: auto;
+  padding-right: 4px;
+}
+.manresa-app .pending-chip {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 10px;
+  background: #fff;
+  color: #344054;
+  font-size: .78rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: left;
+}
+.manresa-app .pending-chip:hover { color: #fff; background: var(--ibero-red); border-color: var(--ibero-red); }
+.manresa-app .pending-chip.neutral { cursor: default; background: #f9fafb; }
+.manresa-app .pending-chip.neutral:hover { color: #344054; background: #f9fafb; border-color: var(--line); }
+
+.manresa-app .requirement-item.ok { border-color: rgba(21, 115, 71, .22); background: var(--ok-soft); }
+.manresa-app .requirement-item.partial { border-color: rgba(180, 83, 9, .24); background: var(--warn-soft); }
+.manresa-app .requirement-item.pending { background: #fff; }
+
+@media (max-width: 1100px) {
+  .manresa-app .total-summary-card, .manresa-app .student-overview { display: block; }
+  .manresa-app .total-summary-card p, .manresa-app .student-score { margin-top: 12px; text-align: left; }
+  .manresa-app .report-grid { grid-template-columns: 1fr; }
+  .manresa-app .report-card.wide { grid-column: auto; }
+  .manresa-app .compact-row { grid-template-columns: 1fr; gap: 4px; }
+}
+
+@media print {
+  .manresa-app #avance, .manresa-app .progress-badge { display: none !important; }
+  .manresa-app .course-card.progress-approved, .manresa-app .course-card.progress-partial, .manresa-app .course-card.progress-attempted { box-shadow: none; }
+}
+
+
+.manresa-app a.btn { text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+.manresa-app .advance-first { margin-top: 24px; }
+.manresa-app .compact-heading { margin-bottom: 10px; }
+.manresa-app .empty-report { margin-top: 0; }
+
+
+.manresa-app .course-card.progress-approved .course-title {
+  background: var(--ok-soft);
+  color: #0f5132;
+}
+.manresa-app .course-card.progress-attempted .course-title {
+  background: var(--bad-soft);
+  color: #7f1d1d;
+}
+.manresa-app .course-card.progress-partial .course-title {
+  background: var(--warn-soft);
+  color: #7c2d12;
+}
+.manresa-app .course-card.progress-approved {
+  box-shadow: inset 0 0 0 3px rgba(21, 115, 71, .28);
+}
+.manresa-app .course-card.progress-attempted {
+  box-shadow: inset 0 0 0 3px rgba(153, 27, 27, .26);
+}
+.manresa-app .course-card.progress-partial {
+  box-shadow: inset 0 0 0 3px rgba(180, 83, 9, .25);
+}
+.manresa-app .report-card.bad {
+  border-color: rgba(153, 27, 27, .22);
+  background: #fffafa;
+}
+.manresa-app .pending-chip.bad {
+  border-color: rgba(153, 27, 27, .24);
+  background: var(--bad-soft);
+  color: var(--bad);
+}
+.manresa-app .pending-chip.bad:hover {
+  background: var(--bad);
+  border-color: var(--bad);
+  color: #fff;
+}
+@media print {
+  body[data-page="avance"] .manresa-app #avance, body[data-page="avance"] .manresa-app .toolbar-card, body[data-page="avance"] .manresa-app .hero-actions {
+    display: none !important;
+  }
+}
+
+
+.manresa-app {
+  --ok-strong: #a7dfb7;
+  --ok-ink: #064e2a;
+  --bad-strong: #f4a7a7;
+  --bad-ink: #7f1d1d;
+  --partial-strong: #fde08a;
+  --partial-ink: #713f12;
+}
+
+.manresa-app .course-title {
+  font-weight: 650;
+  letter-spacing: .005em;
+}
+.manresa-app .course-title-main {
+  display: block;
+}
+.manresa-app .course-progress-note {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 4px;
+  padding: 3px 5px;
+  border-radius: 6px;
+  background: rgba(255,255,255,.64);
+  color: var(--ok-ink);
+  font-size: .78em;
+  font-weight: 800;
+  line-height: 1.08;
+  text-transform: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.manresa-app .course-progress-note.attempted { color: var(--bad-ink); }
+.manresa-app .course-progress-note.partial { color: var(--partial-ink); }
+
+.manresa-app .course-card.progress-approved .course-title {
+  background: var(--ok-strong);
+  color: var(--ok-ink);
+}
+.manresa-app .course-card.progress-attempted .course-title {
+  background: var(--bad-strong);
+  color: var(--bad-ink);
+}
+.manresa-app .course-card.progress-partial .course-title {
+  background: var(--partial-strong);
+  color: var(--partial-ink);
+}
+.manresa-app .course-card.progress-approved { box-shadow: inset 0 0 0 4px rgba(6, 78, 42, .28); }
+.manresa-app .course-card.progress-attempted { box-shadow: inset 0 0 0 4px rgba(127, 29, 29, .30); }
+.manresa-app .course-card.progress-partial { box-shadow: inset 0 0 0 4px rgba(113, 63, 18, .28); }
+.manresa-app .course-card.progress-approved::before, .manresa-app .course-card.progress-partial::before, .manresa-app .course-card.progress-attempted::before {
+  width: 7px;
+}
+.manresa-app .progress-badge {
+  min-width: 28px;
+  height: 22px;
+  font-size: .66rem;
+}
+
+.manresa-app .panel-card {
+  width: min(980px, calc(100vw - 36px));
+  padding: 28px;
+}
+.manresa-app .detail-hero {
+  grid-template-columns: minmax(220px, 260px) 1fr;
+  gap: 26px;
+}
+.manresa-app .detail-mini .course-card {
+  width: 100%;
+  min-height: 156px;
+  grid-template-columns: minmax(0, 1fr) 48px;
+  grid-template-rows: minmax(112px, auto) 32px;
+}
+.manresa-app .detail-mini .course-title {
+  font-size: .82rem;
+  line-height: 1.08;
+  padding: 12px 10px;
+}
+.manresa-app .detail-mini .course-hours, .manresa-app .detail-mini .course-sigla, .manresa-app .detail-mini .course-key, .manresa-app .detail-mini .course-credits {
+  font-size: .82rem;
+}
+.manresa-app .detail-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.manresa-app .detail-field {
+  min-height: 70px;
+  display: grid;
+  align-content: center;
+}
+.manresa-app .description-text.compact {
+  margin-bottom: 10px;
+}
+.manresa-app .elective-option-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;
+}
+.manresa-app .elective-option-card {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .15s ease, transform .15s ease, background .15s ease;
+}
+.manresa-app .elective-option-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--ibero-red);
+}
+.manresa-app .elective-option-card strong, .manresa-app .elective-option-card span, .manresa-app .elective-option-card small {
+  display: block;
+}
+.manresa-app .elective-option-card strong {
+  margin-bottom: 5px;
+  line-height: 1.12;
+  font-size: .94rem;
+}
+.manresa-app .elective-option-card span {
+  margin-bottom: 6px;
+  color: #344054;
+  font-weight: 800;
+  font-size: .78rem;
+}
+.manresa-app .elective-option-card small {
+  color: var(--muted);
+  line-height: 1.35;
+  font-size: .78rem;
+}
+.manresa-app .elective-option-card.progress-approved {
+  background: #effaf2;
+  border-color: rgba(6, 78, 42, .26);
+}
+.manresa-app .elective-option-card.progress-attempted {
+  background: #fff0f0;
+  border-color: rgba(127, 29, 29, .24);
+}
+
+@media (max-width: 900px) {
+  .manresa-app .detail-grid { grid-template-columns: 1fr; }
+  .manresa-app .detail-field { min-height: auto; }
+  .manresa-app .elective-option-list { grid-template-columns: 1fr; }
+}
+.manresa-app .course-title { flex-direction: column; }
+
+
+
+
+
+
+.manresa-app .compact-heading {align-items:center;}
+.manresa-app .quality-box:empty {display:none;}
+.manresa-app .section-actions {display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+
+
+
+.manresa-app .option-card-wrap {
+  display: grid;
+  gap: 6px;
+  width: 182px;
+  align-content: start;
+}
+.manresa-app .block-lab-list {
+  display: grid;
+  gap: 5px;
+}
+.manresa-app .lab-chip {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #344054;
+  padding: 6px 7px;
+  text-align: left;
+  font-size: .70rem;
+  font-weight: 800;
+  line-height: 1.15;
+  cursor: pointer;
+}
+.manresa-app .lab-chip:hover {
+  color: #fff;
+  border-color: var(--ibero-red);
+  background: var(--ibero-red);
+}
+
+
+
+.manresa-app .toolbar-card { display: none !important; }
+.manresa-app .section { scroll-margin-top: 22px; }
+.manresa-app .table-card {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(255,255,255,.98);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, .045);
+}
+.manresa-app .table-scroll { width: 100%; overflow-x: auto; }
+.manresa-app .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: .9rem;
+}
+.manresa-app .data-table th, .manresa-app .data-table td {
+  border-bottom: 1px solid #edf0f5;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.manresa-app .data-table th {
+  background: #f5f7fb;
+  color: #344054;
+  font-size: .76rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-weight: 900;
+}
+.manresa-app .data-table tr:last-child td { border-bottom: 0; }
+.manresa-app .data-table td.num, .manresa-app .data-table th.num { text-align: right; white-space: nowrap; }
+.manresa-app .data-table td.center, .manresa-app .data-table th.center { text-align: center; white-space: nowrap; }
+.manresa-app .table-btn {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+  font-weight: 900;
+}
+.manresa-app .table-btn:hover { color: var(--ibero-red); }
+.manresa-app .table-row-clickable { cursor: pointer; }
+.manresa-app .table-row-clickable:hover td { background: #fff7f8; }
+.manresa-app .detail-table-cell { background: #fbfcfe; padding: 12px !important; }
+.manresa-app .nested-table { font-size: .82rem; border: 1px solid #edf0f5; border-radius: 12px; overflow: hidden; }
+.manresa-app .nested-table th { font-size: .70rem; }
+.manresa-app .status-ok { color: var(--ok); font-weight: 900; }
+.manresa-app .status-bad { color: var(--bad); font-weight: 900; }
+.manresa-app .status-muted { color: var(--muted); }
+.manresa-app .report-grid.table-report-grid {
+  grid-template-columns: minmax(280px, .7fr) minmax(420px, 1.3fr);
+}
+.manresa-app .report-card .table-card { box-shadow: none; border-radius: 14px; }
+.manresa-app .report-card .data-table { font-size: .84rem; }
+.manresa-app .report-card .data-table th, .manresa-app .report-card .data-table td { padding: 8px 9px; }
+.manresa-app .report-card.full { grid-column: 1 / -1; }
+.manresa-app .empty-cell { color: var(--muted); font-weight: 700; padding: 12px; }
+.manresa-app .summary-grid { display: block; }
+@media (max-width: 900px) {
+  .manresa-app .report-grid.table-report-grid { grid-template-columns: 1fr; }
+  .manresa-app .data-table { font-size: .82rem; }
+  .manresa-app .data-table th, .manresa-app .data-table td { padding: 8px; }
+}
+
+
+/* Integración en mecatronica.ibero.mx */
+.manresa-app {
+  width: 100%;
+  color: var(--ink);
+  font-family: var(--ibero-sans, Arial, Helvetica, sans-serif);
+}
+.manresa-app main {
+  padding-left: 0;
+  padding-right: 0;
+}
+.manresa-app .manresa-app-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 18px;
+}
+.manresa-app .btn { text-decoration: none; }
+@media (max-width: 900px) {
+  .manresa-app .manresa-app-actions { justify-content: flex-start; }
+}
+
+
+/* Ajustes de integración v2 */
+.plan-download-actions { margin-top: 1.75rem !important; margin-bottom: 2.25rem !important; }
+.plan-download-actions .plan-download-btn { min-width: 260px; padding: 1rem 1.45rem !important; border-radius: 999px !important; font-size: 1.08rem !important; font-weight: 800 !important; letter-spacing: .01em; box-shadow: 0 12px 28px rgba(200,16,46,.18); }
+.plan-download-actions .plan-download-btn .bi, .plan-download-actions .plan-download-btn i { font-size: 1.15em; }
+.manresa-app .plan-totals div:last-child { display: none; }
+.manresa-app .panel-card { top: clamp(86px, 8vh, 104px); right: 16px; bottom: 14px; width: min(690px, calc(100vw - 32px)); padding: 18px 20px 20px; border-radius: 20px; }
+.manresa-app .panel-close { width: 36px; height: 36px; font-size: 24px; }
+.manresa-app .detail-hero { grid-template-columns: 150px minmax(0, 1fr); gap: 16px; align-items: start; }
+.manresa-app .detail-mini .course-card { min-height: 112px; grid-template-columns: minmax(0, 1fr) 36px; grid-template-rows: minmax(78px, auto) 26px; }
+.manresa-app .detail-mini .course-title { font-size: .62rem; line-height: 1.04; padding: 8px 6px; }
+.manresa-app .detail-mini .course-hours, .manresa-app .detail-mini .course-sigla, .manresa-app .detail-mini .course-key, .manresa-app .detail-mini .course-credits { font-size: .62rem; }
+.manresa-app .detail-title h2 { font-size: clamp(1.55rem, 2.2vw, 2.15rem); line-height: 1.06; margin-bottom: 8px; }
+.manresa-app .detail-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 10px 0; }
+.manresa-app .detail-field { min-height: 0; padding: 8px 10px; border-radius: 12px; }
+.manresa-app .detail-field span { font-size: 10px; letter-spacing: .07em; margin-bottom: 3px; }
+.manresa-app .detail-field strong { font-size: .92rem; line-height: 1.28; }
+.manresa-app .detail-section { margin-top: 16px; }
+.manresa-app .detail-section h3 { font-size: 1.25rem; margin-bottom: 7px; }
+.manresa-app .description-text { line-height: 1.45; margin-bottom: 0; }
+.manresa-app .bullet-list { line-height: 1.35; }
+.manresa-app .bullet-list li { margin-bottom: 4px; }
+.manresa-app .block-title .muted, .manresa-app .block-card .block-meta .chip.extra-plan-credits { display: none; }
+.manresa-app .block-card h4 { margin-top: 12px; margin-bottom: 8px; }
+.manresa-app .block-header { margin-bottom: 10px; padding-bottom: 10px; }
+.manresa-app .credit-pill { padding: 9px 12px; }
+.manresa-app .credit-pill strong { font-size: 24px; }
+@media (max-width: 900px) { .manresa-app .panel-card { inset: 86px 10px 10px; width: auto; padding: 16px; } .manresa-app .detail-hero { display: block; } .manresa-app .detail-mini { display: none; } .manresa-app .detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .plan-download-actions .plan-download-btn { width: 100%; min-width: 0; } .manresa-app .detail-grid { grid-template-columns: 1fr; } }
+
+
+/* Ajustes de integración v3: fondos alineados al sitio Mecatrónica */
+.ibero-plan-integration {
+  background: #fff;
+  padding: 0 0 5rem;
+}
+.ibero-plan-integration > .container-fluid {
+  background: transparent;
+}
+.manresa-app {
+  background: transparent !important;
+  color: var(--ibero-black, #1f1f24);
+}
+.manresa-app main {
+  background: transparent !important;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.manresa-app .section {
+  background: transparent;
+}
+.manresa-app .stats-grid {
+  margin-top: 0;
+}
+.manresa-app .plan-shell,
+.manresa-app .block-card,
+.manresa-app .summary-card,
+.manresa-app .table-card,
+.manresa-app .student-overview,
+.manresa-app .report-card,
+.manresa-app .advance-card {
+  background: #fff !important;
+  border-color: var(--ibero-border, #d9d9d9);
+  box-shadow: none;
+}
+.manresa-app .stat,
+.manresa-app .detail-field,
+.manresa-app .empty-state,
+.manresa-app .pdf-upload input {
+  background: #fff;
+  border-color: var(--ibero-border, #d9d9d9);
+}
+.manresa-app .semester-column,
+.manresa-app .semester-body,
+.manresa-app .plan-scroll,
+.manresa-app .map-canvas {
+  background: #fff;
+}
+.manresa-app .semester-column {
+  background: #fafafa;
+}
+.manresa-app .course-card {
+  background: #fff;
+}
+.manresa-app .panel-card {
+  background: #fff;
+}
+.manresa-app .btn.ghost {
+  background: #fff;
+}
+.manresa-app .public-plan-title {
+  background: #fff;
+}
+.manresa-app .summary-card {
+  border-radius: 0;
+}
+.manresa-app .summary-toggle {
+  border-radius: 0;
+}
+.ibero-inner-page .ibero-footer {
+  background: var(--ibero-soft, #f3f3f1);
+  margin-top: 0;
+}
+@media (max-width: 900px) {
+  .ibero-plan-integration { padding-bottom: 3.5rem; }
+}
+
+
+/* Ajustes de integración v4: botones y tipografía alineados al sitio Mecatrónica */
+.manresa-app {
+  --manresa-red: #E00034;
+  --manresa-red-dark: #B00028;
+  --ink: var(--ibero-black, #1f1f24);
+  --muted: #5f6673;
+  --line: var(--ibero-border, #d9d9d9);
+  --soft: var(--ibero-soft, #f3f3f1);
+  --radius: 0;
+  font-family: var(--ibero-sans, praxis-next, Arial, sans-serif) !important;
+  color: var(--ibero-black, #1f1f24);
+}
+
+/* Títulos como el resto de páginas internas */
+.manresa-app h1,
+.manresa-app h2,
+.manresa-app .section-heading h2,
+.manresa-app .detail-title h2 {
+  font-family: var(--ibero-serif, alverata, Georgia, "Times New Roman", serif) !important;
+  color: var(--ibero-black, #1f1f24);
+  font-weight: 500 !important;
+  line-height: .98;
+  letter-spacing: -.04em;
+}
+.manresa-app .section-heading h2 {
+  font-size: clamp(2.45rem, 4.2vw, 4.8rem);
+}
+.manresa-app .detail-title h2 {
+  font-size: clamp(1.9rem, 2.5vw, 2.65rem) !important;
+  line-height: 1;
+}
+.manresa-app h3,
+.manresa-app h4,
+.manresa-app p,
+.manresa-app span,
+.manresa-app button,
+.manresa-app input,
+.manresa-app table,
+.manresa-app .chip,
+.manresa-app .stat,
+.manresa-app .course-card {
+  font-family: var(--ibero-sans, praxis-next, Arial, sans-serif);
+}
+.manresa-app .eyebrow {
+  color: var(--ibero-red);
+  font-family: var(--ibero-sans, praxis-next, Arial, sans-serif);
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+.manresa-app .muted,
+.manresa-app .hint,
+.manresa-app .plan-totals,
+.manresa-app .data-table td,
+.manresa-app .detail-field strong,
+.manresa-app .description-text {
+  color: #35393e;
+  font-weight: 400;
+}
+
+/* Botones del módulo con el mismo lenguaje visual del sitio */
+.manresa-app .btn,
+.plan-download-actions .plan-download-btn {
+  min-width: 210px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  border: 2px solid var(--ibero-red) !important;
+  border-radius: 999px !important;
+  background: var(--ibero-red) !important;
+  color: #fff !important;
+  padding: .9rem 1.55rem !important;
+  font-family: var(--ibero-sans, praxis-next, Arial, sans-serif) !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  line-height: 1.1;
+  letter-spacing: .01em;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  transition: background .18s ease, border-color .18s ease, color .18s ease;
+}
+.manresa-app .btn:hover,
+.manresa-app .btn:focus,
+.plan-download-actions .plan-download-btn:hover,
+.plan-download-actions .plan-download-btn:focus {
+  transform: none !important;
+  background: var(--manresa-red-dark) !important;
+  border-color: var(--manresa-red-dark) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+.manresa-app .btn.ghost {
+  background: #fff !important;
+  color: var(--ibero-red) !important;
+  border-color: var(--ibero-red) !important;
+}
+.manresa-app .btn.ghost:hover,
+.manresa-app .btn.ghost:focus {
+  background: var(--ibero-red) !important;
+  color: #fff !important;
+  border-color: var(--ibero-red) !important;
+}
+
+/* Los botones principales de descarga quedan grandes, pero sobrios */
+.plan-download-actions {
+  gap: 1rem !important;
+  margin-top: 1.7rem !important;
+  margin-bottom: 2.3rem !important;
+}
+.plan-download-actions .plan-download-btn {
+  min-width: 250px;
+  padding: 1rem 1.7rem !important;
+  font-size: 1.04rem !important;
+}
+.plan-download-actions .plan-download-btn .bi,
+.plan-download-actions .plan-download-btn i {
+  font-size: 1.08em;
+}
+
+/* Tarjetas y tablas menos “dashboard” y más editoriales */
+.manresa-app .stat,
+.manresa-app .plan-shell,
+.manresa-app .block-card,
+.manresa-app .summary-card,
+.manresa-app .table-card,
+.manresa-app .student-overview,
+.manresa-app .report-card,
+.manresa-app .advance-card {
+  border-radius: 0 !important;
+  border-color: var(--ibero-border, #d9d9d9) !important;
+  box-shadow: none !important;
+}
+.manresa-app .stat strong,
+.manresa-app .student-score strong,
+.manresa-app .credit-pill strong {
+  font-family: var(--ibero-serif, alverata, Georgia, "Times New Roman", serif);
+  font-weight: 500;
+  letter-spacing: -.03em;
+}
+.manresa-app .stat span,
+.manresa-app .chip,
+.manresa-app .summary-numbers,
+.manresa-app .data-table th {
+  font-weight: 700;
+}
+.manresa-app .data-table {
+  font-size: .95rem;
+}
+.manresa-app .data-table th {
+  background: var(--ibero-soft, #f3f3f1);
+  color: var(--ibero-black, #1f1f24);
+  letter-spacing: .04em;
+}
+.manresa-app .table-btn {
+  font-weight: 700;
+}
+
+/* Panel lateral: más compacto y legible */
+.manresa-app .panel-card {
+  width: min(620px, calc(100vw - 32px)) !important;
+  top: 92px !important;
+  bottom: 16px !important;
+  padding: 16px 18px 18px !important;
+  border-radius: 0 !important;
+  border: 1px solid var(--ibero-border, #d9d9d9);
+  box-shadow: 0 18px 40px rgba(0,0,0,.16) !important;
+}
+.manresa-app .detail-hero {
+  grid-template-columns: 132px minmax(0, 1fr) !important;
+  gap: 14px !important;
+}
+.manresa-app .detail-mini .course-card {
+  min-height: 98px !important;
+  grid-template-columns: minmax(0, 1fr) 34px !important;
+  grid-template-rows: minmax(70px, auto) 24px !important;
+}
+.manresa-app .detail-mini .course-title {
+  font-size: .56rem !important;
+  line-height: 1.02 !important;
+  padding: 7px 5px !important;
+}
+.manresa-app .detail-mini .course-hours,
+.manresa-app .detail-mini .course-sigla,
+.manresa-app .detail-mini .course-key,
+.manresa-app .detail-mini .course-credits {
+  font-size: .56rem !important;
+}
+.manresa-app .detail-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+  margin: 8px 0 10px !important;
+}
+.manresa-app .detail-field {
+  padding: 7px 9px !important;
+  border-radius: 0 !important;
+  min-height: 58px !important;
+  background: #fff !important;
+}
+.manresa-app .detail-field span {
+  color: #6f7680;
+  font-weight: 700;
+  font-size: 9px !important;
+  letter-spacing: .08em;
+}
+.manresa-app .detail-field strong {
+  font-size: .9rem !important;
+  line-height: 1.22;
+}
+.manresa-app .detail-section {
+  margin-top: 12px !important;
+}
+.manresa-app .detail-section h3 {
+  font-family: var(--ibero-serif, alverata, Georgia, "Times New Roman", serif) !important;
+  font-weight: 500 !important;
+  font-size: 1.45rem !important;
+  line-height: 1.05;
+  margin-bottom: 6px !important;
+}
+.manresa-app .description-text,
+.manresa-app .bullet-list {
+  font-size: .96rem;
+  line-height: 1.38;
+}
+.manresa-app .bullet-list li {
+  margin-bottom: 3px;
+}
+.manresa-app .chip,
+.manresa-app .pending-chip,
+.manresa-app .lab-chip {
+  border-radius: 999px;
+  font-weight: 700;
+}
+.manresa-app .public-plan-title h3,
+.manresa-app .semester-header,
+.manresa-app .course-title,
+.manresa-app .course-key,
+.manresa-app .course-credits,
+.manresa-app .course-hours,
+.manresa-app .course-sigla-text {
+  font-family: var(--ibero-sans, praxis-next, Arial, sans-serif) !important;
+}
+
+/* Evita que el módulo parezca una aplicación separada */
+.manresa-app .manresa-app-actions,
+.manresa-app .section-actions {
+  align-items: center;
+}
+.manresa-app .section {
+  margin-top: 3.25rem;
+}
+.manresa-app .stats-grid {
+  margin-bottom: 2.25rem;
+}
+.manresa-app .plan-badge {
+  background: var(--ibero-red);
+  border-radius: 999px;
+  font-family: var(--ibero-sans, praxis-next, Arial, sans-serif);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .manresa-app .section-heading {
+    align-items: flex-start;
+  }
+  .manresa-app .btn,
+  .plan-download-actions .plan-download-btn {
+    min-width: 0;
+  }
+  .manresa-app .panel-card {
+    inset: 86px 10px 10px !important;
+    width: auto !important;
+    padding: 14px !important;
+  }
+  .manresa-app .detail-hero {
+    display: block !important;
+  }
+  .manresa-app .detail-mini {
+    display: none !important;
+  }
+  .manresa-app .detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 575.98px) {
+  .manresa-app .btn,
+  .plan-download-actions .plan-download-btn {
+    width: 100%;
+  }
+  .manresa-app .detail-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* v5: corrección de botones visibles dentro del sitio Mecatrónica */
+.manresa-app .btn,
+.manresa-app button.btn,
+.manresa-app a.btn,
+.plan-download-actions .plan-download-btn,
+.plan-download-actions a.plan-download-btn,
+.plan-download-actions .btn-ibero-red {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 210px;
+  padding: .88rem 1.55rem !important;
+  border: 2px solid #E00034 !important;
+  border-radius: 999px !important;
+  background-color: #E00034 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-family: var(--ibero-sans, praxis-next, Arial, sans-serif) !important;
+  font-weight: 700 !important;
+  line-height: 1.12 !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+.manresa-app .btn.ghost,
+.manresa-app button.btn.ghost,
+.manresa-app a.btn.ghost {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #E00034 !important;
+  border-color: #E00034 !important;
+}
+
+.manresa-app .btn:hover,
+.manresa-app .btn:focus,
+.plan-download-actions .plan-download-btn:hover,
+.plan-download-actions .plan-download-btn:focus {
+  background-color: #B00028 !important;
+  border-color: #B00028 !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.manresa-app .btn.ghost:hover,
+.manresa-app .btn.ghost:focus {
+  background-color: #E00034 !important;
+  border-color: #E00034 !important;
+  color: #ffffff !important;
+}
+
+.plan-download-actions .plan-download-btn {
+  min-width: 270px;
+  padding: 1.05rem 1.85rem !important;
+  font-size: 1.08rem !important;
+}

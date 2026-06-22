@@ -33,3 +33,20 @@ Dependencias externas cargadas por CDN en las páginas:
 - Se corrigió la transparencia de los botones del módulo MANRESA y de las descargas.
 - Se reemplazó el uso circular de variables CSS por colores explícitos para evitar que el navegador descartara el fondo de los botones.
 - Cache busting actualizado a `?v=5`.
+
+
+## v6
+- Correcciones específicas para móvil: tablas apiladas, panel de materia a ancho completo, control de overflow horizontal y plan con scroll lateral contenido.
+- Ajustes de carga de PDF, tarjetas de electivas y reportes para evitar cortes en pantallas pequeñas.
+
+
+## v7
+- En móvil, las tarjetas de electivas/ARU usan el mismo ancho compacto del mapa curricular y se navegan con scroll horizontal interno.
+- Se evita que las electivas ocupen todo el ancho de pantalla dentro de su sección.
+- Cache busting actualizado a `?v=7`.
+
+
+## v8
+- En móvil, las tarjetas de Electivas y ARU conservan el ancho de las tarjetas del plan, pero ahora bajan a una nueva línea cuando no caben.
+- Las tablas móviles se convierten en fichas verticales para evitar cortes laterales, especialmente en laboratorios asociados, avance por coordinación y materias pendientes.
+- Cache busting actualizado a `?v=8`.

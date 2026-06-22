@@ -1569,3 +1569,546 @@
   padding: 1.05rem 1.85rem !important;
   font-size: 1.08rem !important;
 }
+
+
+/* v6: depuración móvil */
+.ibero-plan-integration,
+.ibero-plan-integration .container-fluid,
+.manresa-app,
+.manresa-app main {
+  max-width: 100%;
+}
+.manresa-app {
+  overflow-x: clip;
+}
+.manresa-app .table-card,
+.manresa-app .report-card,
+.manresa-app .block-card,
+.manresa-app .summary-card,
+.manresa-app .advance-card,
+.manresa-app .student-overview,
+.manresa-app .plan-shell {
+  max-width: 100%;
+}
+.manresa-app .table-scroll {
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.manresa-app .data-table {
+  table-layout: auto;
+}
+.manresa-app .data-table td,
+.manresa-app .data-table th {
+  overflow-wrap: anywhere;
+}
+.manresa-app .pdf-upload,
+.manresa-app .upload-row {
+  width: 100%;
+  max-width: 100%;
+}
+.manresa-app .pdf-upload input[type="file"] {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+.manresa-app .panel-card,
+.manresa-app .panel-card * {
+  max-width: 100%;
+}
+.manresa-app .panel-card {
+  overflow-x: hidden !important;
+}
+.manresa-app .detail-title,
+.manresa-app .detail-title h2,
+.manresa-app .detail-field,
+.manresa-app .detail-field strong,
+.manresa-app .description-text,
+.manresa-app .bullet-list,
+.manresa-app .elective-option-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 767.98px) {
+  .ibero-plan-integration {
+    padding-bottom: 2.5rem;
+  }
+  .ibero-plan-integration > .container-fluid {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+  .manresa-app {
+    --card-w: 168px;
+    --sigla-w: 38px;
+  }
+  .manresa-app main {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .manresa-app .manresa-app-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .7rem;
+  }
+  .manresa-app .btn,
+  .manresa-app a.btn,
+  .manresa-app button.btn,
+  .plan-download-actions .plan-download-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: .88rem 1rem !important;
+    font-size: .98rem !important;
+    white-space: normal;
+    text-align: center;
+  }
+  .plan-download-actions {
+    width: 100%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .manresa-app .stats-grid {
+    display: none;
+  }
+  .manresa-app .section {
+    margin-top: 2.65rem !important;
+  }
+  .manresa-app .section-heading {
+    display: block !important;
+    margin-bottom: 1rem;
+  }
+  .manresa-app .section-heading h2 {
+    font-size: clamp(2.15rem, 12vw, 3.25rem) !important;
+    line-height: .96 !important;
+    max-width: 100%;
+  }
+  .manresa-app .section-actions {
+    margin-top: .85rem;
+    width: 100%;
+  }
+  .manresa-app .eyebrow {
+    font-size: .72rem;
+    letter-spacing: .16em;
+  }
+  .manresa-app .plan-shell {
+    border-left: 1px solid var(--ibero-border, #d9d9d9) !important;
+    border-right: 1px solid var(--ibero-border, #d9d9d9) !important;
+    overflow: hidden !important;
+  }
+  .manresa-app .public-plan-title {
+    display: block !important;
+    margin: 1rem 1rem 0;
+  }
+  .manresa-app .public-plan-title h3 {
+    font-size: 1rem;
+    line-height: 1.28;
+  }
+  .manresa-app .plan-totals {
+    text-align: left !important;
+    font-size: .82rem;
+    margin-top: .5rem;
+  }
+  .manresa-app .plan-scroll {
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    max-width: 100%;
+    padding: .75rem .85rem 1rem !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .manresa-app .map-canvas {
+    width: max-content !important;
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+  .manresa-app .curriculum-map {
+    grid-template-columns: repeat(var(--semesters, 10), var(--card-w)) !important;
+    gap: 7px !important;
+  }
+  .manresa-app .semester-column {
+    width: var(--card-w) !important;
+    min-width: var(--card-w) !important;
+  }
+  .manresa-app .course-card {
+    min-height: 118px !important;
+    grid-template-columns: minmax(0, 1fr) var(--sigla-w) !important;
+    grid-template-rows: minmax(88px, auto) 28px !important;
+  }
+  .manresa-app .course-title {
+    font-size: .62rem !important;
+  }
+  .manresa-app .course-key,
+  .manresa-app .course-credits,
+  .manresa-app .course-hours,
+  .manresa-app .course-sigla-text {
+    font-size: .64rem !important;
+  }
+  .manresa-app .option-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+  .manresa-app .option-card-wrap,
+  .manresa-app .course-card.catalog {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .manresa-app .course-card.catalog {
+    min-height: 112px;
+  }
+  .manresa-app .block-card {
+    padding: 1rem !important;
+  }
+  .manresa-app .block-header {
+    display: block !important;
+  }
+  .manresa-app .block-title h3 {
+    font-size: 1.45rem;
+  }
+  .manresa-app .credit-pill {
+    width: 100%;
+    margin-top: .75rem;
+    text-align: left;
+  }
+  .manresa-app .chip {
+    max-width: 100%;
+    white-space: normal;
+  }
+  .manresa-app .lab-chip {
+    border-radius: 0;
+    font-size: .76rem;
+  }
+  .manresa-app .report-card,
+  .manresa-app .advance-card,
+  .manresa-app .student-overview {
+    padding: 1rem !important;
+  }
+  .manresa-app .student-overview h3 {
+    font-size: 1.65rem;
+    line-height: 1.08;
+  }
+  .manresa-app .student-score {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .manresa-app .pdf-upload input[type="file"] {
+    font-size: .82rem !important;
+  }
+  .manresa-app .empty-state {
+    border-radius: 0;
+    padding: 1rem;
+  }
+
+  /* Tablas legibles en móvil: cada fila se convierte en ficha vertical. */
+  .manresa-app .table-scroll {
+    overflow-x: visible !important;
+  }
+  .manresa-app .data-table,
+  .manresa-app .data-table thead,
+  .manresa-app .data-table tbody,
+  .manresa-app .data-table tr,
+  .manresa-app .data-table th,
+  .manresa-app .data-table td {
+    display: block;
+    width: 100%;
+  }
+  .manresa-app .data-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .manresa-app .data-table tr {
+    border-bottom: 1px solid #e6e6e6;
+    padding: .55rem 0;
+  }
+  .manresa-app .data-table tr:last-child {
+    border-bottom: 0;
+  }
+  .manresa-app .data-table tr[hidden] {
+    display: none !important;
+  }
+  .manresa-app .data-table td {
+    display: grid;
+    grid-template-columns: minmax(7rem, .44fr) minmax(0, 1fr);
+    gap: .75rem;
+    align-items: start;
+    border: 0 !important;
+    padding: .35rem .75rem !important;
+    text-align: left !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    font-size: .92rem;
+  }
+  .manresa-app .data-table td::before {
+    content: attr(data-label);
+    color: #6f7680;
+    font-size: .68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    line-height: 1.25;
+  }
+  .manresa-app .data-table td[data-label=""]::before,
+  .manresa-app .detail-table-cell::before {
+    display: none !important;
+    content: none !important;
+  }
+  .manresa-app .detail-table-cell {
+    display: block !important;
+    padding: .5rem !important;
+  }
+  .manresa-app .nested-table {
+    border: 0 !important;
+  }
+
+  /* Panel de materia en móvil */
+  .manresa-app .course-panel {
+    z-index: 2000 !important;
+  }
+  .manresa-app .panel-card {
+    top: 72px !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 1.15rem 1.25rem 2rem !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+  }
+  .manresa-app .panel-close {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 23px !important;
+  }
+  .manresa-app .detail-title h2 {
+    font-size: clamp(2.05rem, 10.5vw, 2.9rem) !important;
+    line-height: .96 !important;
+    margin-right: 2.4rem;
+  }
+  .manresa-app .detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: .65rem !important;
+  }
+  .manresa-app .detail-field {
+    min-height: 0 !important;
+    padding: .8rem .85rem !important;
+  }
+  .manresa-app .detail-field strong {
+    font-size: 1rem !important;
+    line-height: 1.35 !important;
+  }
+  .manresa-app .detail-section h3 {
+    font-size: 1.55rem !important;
+  }
+  .manresa-app .description-text,
+  .manresa-app .bullet-list {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .ibero-plan-integration > .container-fluid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .manresa-app {
+    --card-w: 160px;
+    --sigla-w: 36px;
+  }
+  .manresa-app .section-heading h2 {
+    font-size: clamp(2rem, 12vw, 2.75rem) !important;
+  }
+  .manresa-app .data-table td {
+    grid-template-columns: minmax(6.1rem, .42fr) minmax(0, 1fr);
+    font-size: .88rem;
+    gap: .55rem;
+    padding-left: .55rem !important;
+    padding-right: .55rem !important;
+  }
+  .manresa-app .panel-card {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+
+/* v7: electivas móviles con el mismo ancho visual del mapa curricular. */
+@media (max-width: 767.98px) {
+  .manresa-app .block-card .option-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 7px !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    max-width: 100% !important;
+    padding: 0 0 .75rem 0 !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+  }
+
+  .manresa-app .block-card .option-card-wrap {
+    flex: 0 0 var(--card-w) !important;
+    width: var(--card-w) !important;
+    min-width: var(--card-w) !important;
+    max-width: var(--card-w) !important;
+    scroll-snap-align: start;
+  }
+
+  .manresa-app .block-card .course-card.catalog {
+    width: var(--card-w) !important;
+    min-width: var(--card-w) !important;
+    max-width: var(--card-w) !important;
+    min-height: 118px !important;
+    grid-template-columns: minmax(0, 1fr) var(--sigla-w) !important;
+    grid-template-rows: minmax(88px, auto) 28px !important;
+  }
+
+  .manresa-app .block-card .course-card.catalog .course-title {
+    font-size: .62rem !important;
+  }
+
+  .manresa-app .block-card .block-lab-list {
+    width: var(--card-w) !important;
+    min-width: 0 !important;
+  }
+
+  .manresa-app .block-card .lab-chip {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    text-align: left !important;
+    line-height: 1.15 !important;
+    padding: .45rem .5rem !important;
+    overflow-wrap: anywhere;
+  }
+}
+
+
+/* v8: ajuste móvil para electivas y tablas sin cortes laterales */
+@media (max-width: 767.98px) {
+  /* Las materias disponibles se comportan como tarjetas del mapa,
+     pero pueden bajar a la siguiente línea cuando ya no caben. */
+  .manresa-app .block-card .option-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    overflow: visible !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    scroll-snap-type: none !important;
+  }
+
+  .manresa-app .block-card .option-card-wrap {
+    flex: 0 0 var(--card-w) !important;
+    width: var(--card-w) !important;
+    min-width: var(--card-w) !important;
+    max-width: var(--card-w) !important;
+    scroll-snap-align: none !important;
+  }
+
+  .manresa-app .block-card .course-card.catalog {
+    width: var(--card-w) !important;
+    min-width: var(--card-w) !important;
+    max-width: var(--card-w) !important;
+  }
+
+  .manresa-app .block-card .block-lab-list {
+    width: var(--card-w) !important;
+    min-width: var(--card-w) !important;
+    max-width: var(--card-w) !important;
+  }
+
+  /* Tablas móviles como fichas verticales. Evita columnas estrechas
+     y texto cortado en laboratorios, avance y materias pendientes. */
+  .manresa-app .table-card,
+  .manresa-app .table-scroll {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .manresa-app .data-table,
+  .manresa-app .data-table tbody {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .manresa-app .data-table tr {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 .75rem !important;
+    padding: .65rem .8rem !important;
+    border: 1px solid #dedede !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+  }
+
+  .manresa-app .data-table tr:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .manresa-app .data-table td {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: .35rem 0 !important;
+    border: 0 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+  }
+
+  .manresa-app .data-table td::before {
+    display: block !important;
+    margin: 0 0 .14rem !important;
+    color: #6f7680 !important;
+    font-size: .68rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: .06em !important;
+    line-height: 1.2 !important;
+  }
+
+  .manresa-app .data-table td[data-label=""]::before,
+  .manresa-app .detail-table-cell::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  .manresa-app .data-table td.num,
+  .manresa-app .data-table td.center {
+    text-align: left !important;
+  }
+
+  .manresa-app .block-lab-table td,
+  .manresa-app .block-lab-table td * {
+    overflow-wrap: anywhere !important;
+    white-space: normal !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .manresa-app .block-card .option-grid {
+    gap: 8px !important;
+  }
+
+  .manresa-app .block-card .option-card-wrap,
+  .manresa-app .block-card .course-card.catalog,
+  .manresa-app .block-card .block-lab-list {
+    flex-basis: var(--card-w) !important;
+    width: var(--card-w) !important;
+    min-width: var(--card-w) !important;
+    max-width: var(--card-w) !important;
+  }
+}

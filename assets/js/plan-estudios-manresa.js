@@ -721,25 +721,25 @@
         const statusClass = status?.status === 'approved' ? 'status-ok' : (status?.status === 'partial' ? 'status-muted' : '');
         return `
           <tr class="table-row-clickable" data-open-course="${escapeHTML(s.id)}">
-            <td class="center">${escapeHTML(s.semestre)}°</td>
-            <td>${escapeHTML(displayKey(s))}</td>
-            <td>${escapeHTML(displayName)}</td>
-            <td class="num">${escapeHTML(creditsText)}</td>
-            ${hasProgress ? `<td class="${statusClass}">${escapeHTML(statusText)}</td>` : ''}
+            <td data-label="Sem." class="center">${escapeHTML(s.semestre)}°</td>
+            <td data-label="Clave">${escapeHTML(displayKey(s))}</td>
+            <td data-label="Materia / espacio">${escapeHTML(displayName)}</td>
+            <td data-label="Créditos" class="num">${escapeHTML(creditsText)}</td>
+            ${hasProgress ? `<td data-label="Estado" class="${statusClass}">${escapeHTML(statusText)}</td>` : ''}
           </tr>
         `;
       }).join('');
 
       return `
         <tr class="table-row-clickable" data-toggle-summary="${escapeHTML(index)}">
-          <td><button class="table-btn" type="button">${escapeHTML(row.coordinacion)}</button></td>
+          <td data-label="Área / Coordinación"><button class="table-btn" type="button">${escapeHTML(row.coordinacion)}</button></td>
           ${hasProgress
-            ? `<td class="num"><strong>${escapeHTML(approvedCredits)}</strong> / ${escapeHTML(row.creditos)} cr.</td><td class="num">${escapeHTML(pendingCredits)} cr.</td>`
-            : `<td class="num">${escapeHTML(row.creditos)} cr.</td>`}
-          <td class="num">${escapeHTML(row.materias)}</td>
+            ? `<td data-label="Avance" class="num"><strong>${escapeHTML(approvedCredits)}</strong> / ${escapeHTML(row.creditos)} cr.</td><td data-label="Pendientes" class="num">${escapeHTML(pendingCredits)} cr.</td>`
+            : `<td data-label="Créditos" class="num">${escapeHTML(row.creditos)} cr.</td>`}
+          <td data-label="Materias / espacios" class="num">${escapeHTML(row.materias)}</td>
         </tr>
         <tr class="coord-detail-row" data-summary-detail="${escapeHTML(index)}" hidden>
-          <td colspan="${hasProgress ? 4 : 3}" class="detail-table-cell">
+          <td data-label="" colspan="${hasProgress ? 4 : 3}" class="detail-table-cell">
             <div class="table-scroll">
               <table class="data-table nested-table">
                 <thead>
@@ -1876,7 +1876,7 @@
               <tr>${headers.map(h => `<th class="${escapeHTML(h.className || '')}">${escapeHTML(h.label || h)}</th>`).join('')}</tr>
             </thead>
             <tbody>
-              ${rows.map(row => `<tr class="${escapeHTML(row.className || '')}" ${row.attrs || ''}>${row.cells.map((cell, idx) => `<td class="${escapeHTML(headers[idx]?.className || '')}">${cell}</td>`).join('')}</tr>`).join('')}
+              ${rows.map(row => `<tr class="${escapeHTML(row.className || '')}" ${row.attrs || ''}>${row.cells.map((cell, idx) => `<td data-label="${escapeHTML(headers[idx]?.label || headers[idx] || '')}" class="${escapeHTML(headers[idx]?.className || '')}">${cell}</td>`).join('')}</tr>`).join('')}
             </tbody>
           </table>
         </div>
@@ -2082,7 +2082,7 @@
 
     const wrapper = document.createElement('section');
     wrapper.setAttribute('aria-hidden', 'true');
-    wrapper.style.cssText = 'position:fixed; left:-10000px; top:0; width:1600px; padding:28px; background:#ffffff; color:#111827; z-index:-1;';
+    wrapper.style.cssText = 'position:fixed; left:-10000px; top:0; width:1800px; padding:28px; background:#ffffff; color:#111827; z-index:-1;';
 
     const title = document.createElement('div');
     title.style.cssText = 'display:flex; justify-content:space-between; gap:20px; align-items:flex-start; margin-bottom:18px;';
@@ -2138,20 +2138,10 @@
     const planClone = planShell ? planShell.cloneNode(true) : document.createElement('div');
     planClone.style.boxShadow = 'none';
     planClone.style.border = '0';
+    forceDesktopPlanLayout(planClone);
     const scroll = planClone.querySelector('.plan-scroll');
     if (scroll) {
-      scroll.style.overflow = 'visible';
-      scroll.style.maxHeight = 'none';
-      scroll.style.padding = '10px 0 0';
-    }
-    const canvas = planClone.querySelector('.map-canvas');
-    if (canvas) {
-      canvas.style.width = '100%';
-      canvas.style.overflow = 'visible';
-    }
-    const map = planClone.querySelector('.curriculum-map');
-    if (map) {
-      map.style.width = '100%';
+      setImportantStyle(scroll, 'padding', '10px 0 0');
     }
     mapSection.appendChild(planClone);
 
@@ -2162,21 +2152,108 @@
     return wrapper;
   }
 
+  function setImportantStyle(element, property, value) {
+    if (!element) return;
+    element.style.setProperty(property, value, 'important');
+  }
+
+  function forceDesktopPlanLayout(root) {
+    if (!root) return;
+    setImportantStyle(root, 'width', '100%');
+    setImportantStyle(root, 'max-width', 'none');
+    setImportantStyle(root, 'overflow', 'visible');
+
+    const title = root.querySelector('.public-plan-title');
+    if (title) {
+      setImportantStyle(title, 'display', 'flex');
+      setImportantStyle(title, 'justify-content', 'space-between');
+      setImportantStyle(title, 'align-items', 'flex-start');
+      setImportantStyle(title, 'gap', '16px');
+      setImportantStyle(title, 'margin', '0');
+    }
+
+    const scroll = root.querySelector('.plan-scroll');
+    if (scroll) {
+      setImportantStyle(scroll, 'overflow', 'visible');
+      setImportantStyle(scroll, 'overflow-x', 'visible');
+      setImportantStyle(scroll, 'overflow-y', 'visible');
+      setImportantStyle(scroll, 'max-height', 'none');
+      setImportantStyle(scroll, 'max-width', 'none');
+      setImportantStyle(scroll, 'padding', '10px 12px 18px');
+      setImportantStyle(scroll, 'width', '100%');
+    }
+
+    const canvasWrap = root.querySelector('.map-canvas');
+    if (canvasWrap) {
+      setImportantStyle(canvasWrap, 'width', '100%');
+      setImportantStyle(canvasWrap, 'min-width', '0');
+      setImportantStyle(canvasWrap, 'max-width', 'none');
+      setImportantStyle(canvasWrap, 'overflow', 'visible');
+      setImportantStyle(canvasWrap, 'display', 'block');
+    }
+
+    const map = root.querySelector('.curriculum-map');
+    if (map) {
+      setImportantStyle(map, 'display', 'grid');
+      setImportantStyle(map, 'width', '100%');
+      setImportantStyle(map, 'grid-template-columns', `repeat(${Math.max(1, Number(data.meta?.semestres || 10))}, minmax(0, 1fr))`);
+      setImportantStyle(map, 'gap', '8px');
+      setImportantStyle(map, 'align-items', 'start');
+    }
+
+    root.querySelectorAll('.semester-column').forEach((column) => {
+      setImportantStyle(column, 'width', 'auto');
+      setImportantStyle(column, 'min-width', '0');
+      setImportantStyle(column, 'max-width', 'none');
+    });
+
+    root.querySelectorAll('.semester-header').forEach((header) => {
+      setImportantStyle(header, 'font-size', '.78rem');
+      setImportantStyle(header, 'padding', '6px 4px');
+    });
+
+    root.querySelectorAll('.semester-body').forEach((body) => {
+      setImportantStyle(body, 'gap', '7px');
+      setImportantStyle(body, 'padding', '7px 5px');
+    });
+
+    root.querySelectorAll('.course-card').forEach((card) => {
+      setImportantStyle(card, 'width', '100%');
+      setImportantStyle(card, 'min-height', '112px');
+      setImportantStyle(card, 'grid-template-columns', 'minmax(0, 1fr) var(--desktop-sigla-w)');
+      setImportantStyle(card, 'grid-template-rows', 'minmax(82px, auto) 26px');
+    });
+
+    root.querySelectorAll('.course-card.catalog').forEach((card) => {
+      setImportantStyle(card, 'width', '182px');
+      setImportantStyle(card, 'min-height', '124px');
+      setImportantStyle(card, 'grid-template-columns', 'minmax(0, 1fr) var(--sigla-w)');
+      setImportantStyle(card, 'grid-template-rows', 'minmax(94px, auto) 28px');
+    });
+
+    root.querySelectorAll('.course-title').forEach((titleNode) => {
+      setImportantStyle(titleNode, 'font-size', '.72rem');
+      setImportantStyle(titleNode, 'padding', '8px 6px');
+      setImportantStyle(titleNode, 'line-height', '1.04');
+    });
+
+    root.querySelectorAll('.course-hours, .course-sigla, .course-key, .course-credits, .course-sigla-text').forEach((node) => {
+      setImportantStyle(node, 'font-size', '.72rem');
+    });
+  }
+
   function buildPlanExportNode() {
     const planSection = document.querySelector('#plan .plan-shell');
     if (!planSection) return null;
     const exportNode = document.createElement('section');
     exportNode.className = 'manresa-app manresa-export-node';
     exportNode.setAttribute('aria-hidden', 'true');
-    exportNode.style.cssText = 'position:fixed; left:-10000px; top:0; width:1600px; padding:28px; background:#ffffff; color:#111827; z-index:-1;';
+    exportNode.style.cssText = 'position:fixed; left:-10000px; top:0; width:2400px; min-width:2400px; padding:28px; background:#ffffff; color:#111827; z-index:-1;';
     exportNode.innerHTML = `<div style="margin-bottom:14px; display:flex; justify-content:space-between; align-items:end; gap:16px;"><div><div style="font-size:12px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:#c8102e; margin-bottom:6px;">Mapa curricular</div><h1 style="margin:0; font-size:40px; line-height:1;">${escapeHTML(document.body.dataset.page === 'avance' ? 'Plan con calificaciones' : 'Plan gráfico por semestre')}</h1><p style="margin:8px 0 0; color:#667085; font-size:18px;">${escapeHTML(data.meta?.carrera || 'Plan MANRESA')} · ${escapeHTML(data.meta?.plan || 'MANRESA')}</p></div><div style="text-align:right; color:#667085; font-size:14px;">${state.studentProgress ? `<div><strong style="color:#111827">${escapeHTML(state.studentProgress.student.name || 'Nombre no detectado')}</strong></div><div>Cuenta: ${escapeHTML(state.studentProgress.student.account || 'No detectada')}</div>` : ''}</div></div>`;
     const clonedPlan = planSection.cloneNode(true);
     clonedPlan.style.boxShadow = 'none';
     clonedPlan.style.border = '1px solid #d7dde7';
-    const scroll = clonedPlan.querySelector('.plan-scroll');
-    if (scroll) { scroll.style.overflow = 'visible'; scroll.style.maxHeight = 'none'; scroll.style.padding = '10px 12px 18px'; }
-    const canvasWrap = clonedPlan.querySelector('.map-canvas');
-    if (canvasWrap) canvasWrap.style.width = '100%';
+    forceDesktopPlanLayout(clonedPlan);
     exportNode.appendChild(clonedPlan);
     return exportNode;
   }
@@ -2186,13 +2263,21 @@
     const exportNode = buildPlanExportNode();
     if (!exportNode) throw new Error('No se encontró el plan para exportar.');
     document.body.appendChild(exportNode);
+    const captureWidth = Math.max(2400, Math.ceil(exportNode.getBoundingClientRect().width || 0), exportNode.scrollWidth || 0, exportNode.offsetWidth || 0);
+    const captureHeight = Math.max(Math.ceil(exportNode.scrollHeight || 0), Math.ceil(exportNode.getBoundingClientRect().height || 0));
+    exportNode.style.width = `${captureWidth}px`;
+    exportNode.style.minWidth = `${captureWidth}px`;
     const canvas = await html2canvas(exportNode, {
       backgroundColor: '#ffffff',
       scale: 2,
       useCORS: true,
       logging: false,
-      windowWidth: exportNode.scrollWidth,
-      windowHeight: exportNode.scrollHeight
+      width: captureWidth,
+      height: captureHeight,
+      windowWidth: captureWidth,
+      windowHeight: captureHeight,
+      scrollX: 0,
+      scrollY: 0
     });
     exportNode.remove();
     return canvas;

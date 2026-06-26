@@ -3130,8 +3130,8 @@ window.PLAN_DATA = {
       "coordinacion": "INGENIERÍA MECATRÓNICA Y SISTEMAS CIBERFÍSICOS",
       "cveCoordinacion": "2320",
       "semestre": 10,
-      "creditos": 10,
-      "horas": "6,4",
+      "creditos": 8,
+      "horas": "4,4",
       "tipo": "optativa_catalogo",
       "tipoLabel": "Materia teórica",
       "optativaGrupo": "opt-mqlxvmk0-hvc269",
@@ -5066,7 +5066,8 @@ window.PLAN_DATA = {
         "ie117-mqlwoyu2-zjw9ow",
         "ie120-mqlwoyu2-ot1z0f",
         "ie118-mqlwoyu2-idz55c",
-        "ie128-mqlwoyu2-x25dow"
+        "ie128-mqlwoyu2-x25dow",
+        "ie121-mqlwoyu2-moh53l"
       ],
       "phantomCredits": 32,
       "optionCount": 8
@@ -5085,8 +5086,7 @@ window.PLAN_DATA = {
         "ie068-mqlwoyu2-szypcw",
         "ie113-mqlwoyu2-nlzbtt",
         "ie116-mqlwoyu2-y4gy59",
-        "ie127-mqlwoyu2-h2jbkx",
-        "ie121-mqlwoyu2-moh53l"
+        "ie127-mqlwoyu2-h2jbkx"
       ],
       "phantomCredits": 20,
       "optionCount": 7
@@ -5336,7 +5336,7 @@ window.PLAN_DATA = {
     "80058": "optblk-mqlxrsky-h94zy2",
     "80059": "optblk-mqlxrsky-h94zy2",
     "80068": "optblk-mqlxrsky-h94zy2",
-    "80069": "optblk-mqlwvtn9-q55mz2",
+    "80069": "optblk-mqlxrsky-h94zy2",
     "80102": "optblk-mqlwvtn9-q55mz2",
     "80103": "optblk-mqlxrsky-h94zy2",
     "80104": "optblk-mqlxrsky-h94zy2"

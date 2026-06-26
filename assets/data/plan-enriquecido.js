@@ -3134,7 +3134,7 @@ window.PLAN_DATA = {
       "horas": "4,4",
       "tipo": "optativa_catalogo",
       "tipoLabel": "Materia teórica",
-      "optativaGrupo": "opt-mqlxvmk0-hvc269",
+      "optativaGrupo": "opt-mqlxrhnn-kcraqk",
       "isPhantom": false,
       "area": "",
       "prerequisitos": [],

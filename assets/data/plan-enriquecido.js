@@ -5065,6 +5065,7 @@ window.PLAN_DATA = {
         "ie114-mqlwoyu2-kxwp72",
         "ie117-mqlwoyu2-zjw9ow",
         "ie120-mqlwoyu2-ot1z0f",
+        "ie118-mqlwoyu2-idz55c",
         "ie128-mqlwoyu2-x25dow"
       ],
       "phantomCredits": 32,
@@ -5085,7 +5086,6 @@ window.PLAN_DATA = {
         "ie113-mqlwoyu2-nlzbtt",
         "ie116-mqlwoyu2-y4gy59",
         "ie127-mqlwoyu2-h2jbkx",
-        "ie118-mqlwoyu2-idz55c",
         "ie121-mqlwoyu2-moh53l"
       ],
       "phantomCredits": 20,

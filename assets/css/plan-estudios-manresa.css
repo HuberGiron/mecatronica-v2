@@ -2112,3 +2112,23 @@
     max-width: var(--card-w) !important;
   }
 }
+
+
+/* v12: descarga de carátulas SUJ */
+.manresa-app .detail-download {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.manresa-app .detail-download .btn {
+  min-width: 220px;
+  padding: .72rem 1.15rem !important;
+  font-size: .92rem !important;
+}
+@media (max-width: 560px) {
+  .manresa-app .detail-download .btn {
+    width: 100%;
+    min-width: 0;
+  }
+}

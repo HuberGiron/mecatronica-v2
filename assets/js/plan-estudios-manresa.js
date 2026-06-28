@@ -362,24 +362,38 @@
   }
 
   function detailHTML(subject) {
+    const blankMissingContent = Boolean(data.meta?.blankMissingContent);
     const prereqChips = (subject.prereqInfo || []).length
       ? (subject.prereqInfo || []).map(pre => {
           const target = pre.visibleId || pre.id || '';
           const extra = target ? ` data-open-course="${escapeHTML(target)}"` : '';
           return `<button class="chip clickable" type="button"${extra}>${escapeHTML(pre.clave)} · ${escapeHTML(pre.nombre)}</button>`;
         }).join('')
-      : '<span class="chip">Sin prerrequisitos registrados</span>';
+      : (blankMissingContent ? '' : '<span class="chip">Sin prerrequisitos registrados</span>');
 
     const labRelation = relationHTML(subject);
     const studentStatus = studentStatusHTML(subject);
+    const caratulaAction = subject.caratulaPdf
+      ? `<div class="detail-download"><a class="btn ghost caratula-download" href="${escapeHTML(subject.caratulaPdf)}" target="_blank" rel="noopener noreferrer" download>Descargar carátula PDF</a></div>`
+      : '';
     const description = subject.descripcion
       ? `<p class="description-text">${escapeHTML(subject.descripcion)}</p>`
-      : `<p class="description-text">Descripción pendiente de cargar.</p>`;
+      : (blankMissingContent ? '' : `<p class="description-text">Descripción pendiente de cargar.</p>`);
 
     const contentItems = splitSyllabus(subject.contenido);
     const content = contentItems.length
       ? `<ul class="bullet-list">${contentItems.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul>`
-      : `<p class="description-text">Contenido pendiente de cargar.</p>`;
+      : (blankMissingContent ? '' : `<p class="description-text">Contenido pendiente de cargar.</p>`);
+
+    const prereqSection = prereqChips
+      ? `<section class="detail-section"><h3>Prerrequisitos</h3><div class="panel-actions">${prereqChips}</div></section>`
+      : '';
+    const descriptionSection = description
+      ? `<section class="detail-section"><h3>¿De qué trata?</h3>${description}</section>`
+      : '';
+    const contentSection = content
+      ? `<section class="detail-section"><h3>Contenido del curso</h3>${content}</section>`
+      : '';
 
     return `
       <div class="detail-hero">
@@ -397,23 +411,13 @@
           </div>
           ${labRelation}
           ${studentStatus}
+          ${caratulaAction}
         </div>
       </div>
 
-      <section class="detail-section">
-        <h3>Prerrequisitos</h3>
-        <div class="panel-actions">${prereqChips}</div>
-      </section>
-
-      <section class="detail-section">
-        <h3>¿De qué trata?</h3>
-        ${description}
-      </section>
-
-      <section class="detail-section">
-        <h3>Contenido del curso</h3>
-        ${content}
-      </section>
+      ${prereqSection}
+      ${descriptionSection}
+      ${contentSection}
 
       ${electiveOptionsHTML(subject)}
     `;
@@ -442,7 +446,7 @@
             const statusText = status?.status === 'approved'
               ? `Acreditada · cal. ${status.grade || 'AC'}`
               : (status?.status === 'attempted' ? `No acreditada · ${attemptSummary(status, option, 1).short}` : `${option.creditos || 0} cr. · sem. ${option.semestre || '—'}`);
-            const desc = option.descripcion || option.contenido || 'Descripción pendiente de cargar.';
+            const desc = option.descripcion || option.contenido || (data.meta?.blankMissingContent ? '' : 'Descripción pendiente de cargar.');
             return `
               <button type="button" class="elective-option-card ${statusClass(status)}" data-open-course="${escapeHTML(option.id)}">
                 <strong>${escapeHTML(option.nombre)}</strong>
@@ -558,26 +562,67 @@
       .filter(Boolean);
   }
 
+  function visibleCardIdFor(subject) {
+    if (!subject) return '';
+    if (visiblePlan.some(item => item.id === subject.id)) return subject.id;
+
+    const hiddenAsLabOf = subject.hiddenAsLabOf ? byId.get(subject.hiddenAsLabOf) : null;
+    if (hiddenAsLabOf && visiblePlan.some(item => item.id === hiddenAsLabOf.id)) return hiddenAsLabOf.id;
+
+    const theory = subject.theorySubjectId ? byId.get(subject.theorySubjectId) : null;
+    if (theory && visiblePlan.some(item => item.id === theory.id)) return theory.id;
+
+    const byKey = subject.clave ? byClave.get(String(subject.clave).trim()) : null;
+    if (byKey && visiblePlan.some(item => item.id === byKey.id)) return byKey.id;
+
+    return subject.id;
+  }
+
+  function prereqVisibleIdsFor(subject) {
+    const ids = new Set();
+    const addSubject = candidate => {
+      const cardId = visibleCardIdFor(candidate);
+      if (cardId) ids.add(cardId);
+    };
+
+    (subject.resolvedPrereqIds || []).forEach(id => addSubject(byId.get(id)));
+
+    (subject.prereqInfo || []).forEach(info => {
+      if (info.visibleId) addSubject(byId.get(info.visibleId));
+      if (info.id) addSubject(byId.get(info.id));
+      if (info.clave) addSubject(byClave.get(String(info.clave).trim()));
+    });
+
+    (subject.prerequisitos || []).forEach(clave => {
+      addSubject(byClave.get(String(clave).trim()));
+    });
+
+    ids.delete(subject.id);
+    ids.delete(visibleCardIdFor(subject));
+    return Array.from(ids);
+  }
+
+  function highlightCardById(id, className) {
+    if (!id || !window.CSS?.escape) return;
+    $$(`.course-card[data-course-id="${CSS.escape(id)}"]`).forEach(el => el.classList.add(className));
+  }
+
   function highlightSelection(subject) {
     $$('.course-card').forEach(card => {
       card.classList.remove('is-selected', 'is-prereq', 'is-dependent');
     });
     state.activeArrowPairs.clear();
 
-    const selected = $(`.course-card[data-course-id="${CSS.escape(subject.id)}"]`);
-    if (selected) selected.classList.add('is-selected');
+    const selectedCardId = visibleCardIdFor(subject);
+    highlightCardById(selectedCardId, 'is-selected');
 
-    (subject.resolvedPrereqIds || []).forEach(preId => {
-      const el = $(`.course-card[data-course-id="${CSS.escape(preId)}"]`);
-      if (el) el.classList.add('is-prereq');
-    });
+    const prereqIds = prereqVisibleIdsFor(subject);
+    prereqIds.forEach(preId => highlightCardById(preId, 'is-prereq'));
 
     visiblePlan.forEach(candidate => {
-      const dependsOnSelected = (candidate.resolvedPrereqIds || []).includes(subject.id);
-      if (dependsOnSelected) {
-        const el = $(`.course-card[data-course-id="${CSS.escape(candidate.id)}"]`);
-        if (el) el.classList.add('is-dependent');
-      }
+      const candidatePrereqs = prereqVisibleIdsFor(candidate);
+      const dependsOnSelected = candidatePrereqs.includes(selectedCardId) || candidatePrereqs.includes(subject.id);
+      if (dependsOnSelected) highlightCardById(candidate.id, 'is-dependent');
     });
   }
 

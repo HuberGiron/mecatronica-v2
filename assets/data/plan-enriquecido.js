@@ -1,14 +1,16 @@
 // Fuente única de datos del plan.
 // Puedes editar el objeto JSON de abajo y conservar la línea "window.PLAN_DATA =".
 window.PLAN_DATA = {
-  "version": "public-1.2",
-  "generatedAt": "2026-06-20T18:56:04",
+  "version": "public-1.3-caratulas-manresa",
+  "generatedAt": "2026-06-28T06:43:55Z",
   "meta": {
     "carrera": "INGENIERÍA MECATRÓNICA Y SISTEMAS CIBERFÍSICOS",
     "plan": "MANRESA",
     "semestres": 10,
     "creditosEsperados": "",
-    "creditosTotales": 443
+    "creditosTotales": 443,
+    "caratulasPath": "/assets/pdf/caratulas/manresa/",
+    "caratulasDisponibles": 109
   },
   "subjects": [
     {
@@ -43,7 +45,10 @@ window.PLAN_DATA = {
       "matchKind": "lab_clave",
       "sourceIndex": 1,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/01_20825_IE012_FUNDAMENTOS_DE_PROGRAM.Y_LABORATORIO.pdf",
+      "caratulaFile": "01_20825_IE012_FUNDAMENTOS_DE_PROGRAM.Y_LABORATORIO.pdf",
+      "caratulaClave": "20825"
     },
     {
       "id": "7117-mqlwoyu2-q97u6s",
@@ -88,7 +93,10 @@ window.PLAN_DATA = {
           "nombre": "Fundamentos de Programación y Laboratorio",
           "visibleId": "ie012-mqlwoyu2-zydi37"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/02_20827_IE014_PROGRAMACION_APLICADA_Y_LABORATORIO.pdf",
+      "caratulaFile": "02_20827_IE014_PROGRAMACION_APLICADA_Y_LABORATORIO.pdf",
+      "caratulaClave": "20827"
     },
     {
       "id": "7121-mqlwoyu2-ueq4wl",
@@ -133,7 +141,10 @@ window.PLAN_DATA = {
           "nombre": "Programación Aplicada y Laboratorio",
           "visibleId": "ie014-mqlwoyu2-vxbr0z"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/03_20831_IE018_SISTEMAS_DE_BASES_DE_DATOS_Y_LABORATORIO.pdf",
+      "caratulaFile": "03_20831_IE018_SISTEMAS_DE_BASES_DE_DATOS_Y_LABORATORIO.pdf",
+      "caratulaClave": "20831"
     },
     {
       "id": "7122-mqlwoyu2-mxqhpk",
@@ -178,7 +189,10 @@ window.PLAN_DATA = {
           "nombre": "Programación Aplicada y Laboratorio",
           "visibleId": "ie014-mqlwoyu2-vxbr0z"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/04_20835_IE022_PROGRAMACION_ORIENTADA_A_OBJETOS_Y_LAB.pdf",
+      "caratulaFile": "04_20835_IE022_PROGRAMACION_ORIENTADA_A_OBJETOS_Y_LAB.pdf",
+      "caratulaClave": "20835"
     },
     {
       "id": "7131-mqlwoyu2-u2b0h3",
@@ -223,7 +237,10 @@ window.PLAN_DATA = {
           "nombre": "Programación Aplicada y Laboratorio",
           "visibleId": "ie014-mqlwoyu2-vxbr0z"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_20841_IE028_FUNDAMENTOS_DE_REDES_DIGITALES_Y_LABORATORIO.pdf",
+      "caratulaFile": "optativas_20841_IE028_FUNDAMENTOS_DE_REDES_DIGITALES_Y_LABORATORIO.pdf",
+      "caratulaClave": "20841"
     },
     {
       "id": "8770-mqlwoyu2-1zlluo",
@@ -268,7 +285,10 @@ window.PLAN_DATA = {
           "nombre": "Programación Orientada a Objetos y Laboratorio",
           "visibleId": "ie022-mqlwoyu2-uvxtnc"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_22258_IE068_APLICACIONES_MOVILES_Y_LABORATORIO.pdf",
+      "caratulaFile": "optativas_22258_IE068_APLICACIONES_MOVILES_Y_LABORATORIO.pdf",
+      "caratulaClave": "22258"
     },
     {
       "id": "8775-mqlwoyu2-5208fn",
@@ -313,7 +333,10 @@ window.PLAN_DATA = {
           "nombre": "Procesamiento de Señales y Laboratorio",
           "visibleId": "ie076-mqlwoyu2-canf95"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/06_22694_IE077_PROCESAMIENTO_DE_IMAGENES_Y_LABORATORIO.pdf",
+      "caratulaFile": "06_22694_IE077_PROCESAMIENTO_DE_IMAGENES_Y_LABORATORIO.pdf",
+      "caratulaClave": "22694"
     },
     {
       "id": "8776-mqlwoyu2-r60myf",
@@ -358,7 +381,10 @@ window.PLAN_DATA = {
           "nombre": "Modelado de Sistemas Lineales y Laboratorio",
           "visibleId": "ie098-mqlwoyu2-7h1qaq"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/05_22684_IE076_PROCESAMIENTO_DE_SENALES_Y_LABORATORIO.pdf",
+      "caratulaFile": "05_22684_IE076_PROCESAMIENTO_DE_SENALES_Y_LABORATORIO.pdf",
+      "caratulaClave": "22684"
     },
     {
       "id": "mt001-mqlwoyu2-o5aiyh",
@@ -392,7 +418,10 @@ window.PLAN_DATA = {
       "matchKind": "clave",
       "sourceIndex": 9,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/01_20048_MT001_CALCULO_I_Y_TALLER.pdf",
+      "caratulaFile": "01_20048_MT001_CALCULO_I_Y_TALLER.pdf",
+      "caratulaClave": "20048"
     },
     {
       "id": "mt010-mqlwoyu2-zq2ihz",
@@ -426,7 +455,10 @@ window.PLAN_DATA = {
       "matchKind": "clave",
       "sourceIndex": 10,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/01_20174_MT010_ALGEBRA_LINEAL.pdf",
+      "caratulaFile": "01_20174_MT010_ALGEBRA_LINEAL.pdf",
+      "caratulaClave": "20174"
     },
     {
       "id": "ie012-mqlwoyu2-zydi37",
@@ -460,7 +492,10 @@ window.PLAN_DATA = {
       "matchKind": "clave",
       "sourceIndex": 11,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/01_20825_IE012_FUNDAMENTOS_DE_PROGRAM.Y_LABORATORIO.pdf",
+      "caratulaFile": "01_20825_IE012_FUNDAMENTOS_DE_PROGRAM.Y_LABORATORIO.pdf",
+      "caratulaClave": "20825"
     },
     {
       "id": "ie014-mqlwoyu2-vxbr0z",
@@ -505,7 +540,10 @@ window.PLAN_DATA = {
           "nombre": "Fundamentos de Programación y Laboratorio",
           "visibleId": "ie012-mqlwoyu2-zydi37"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/02_20827_IE014_PROGRAMACION_APLICADA_Y_LABORATORIO.pdf",
+      "caratulaFile": "02_20827_IE014_PROGRAMACION_APLICADA_Y_LABORATORIO.pdf",
+      "caratulaClave": "20827"
     },
     {
       "id": "ie018-mqlwoyu2-a3hxpa",
@@ -550,7 +588,10 @@ window.PLAN_DATA = {
           "nombre": "Programación Aplicada y Laboratorio",
           "visibleId": "ie014-mqlwoyu2-vxbr0z"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/03_20831_IE018_SISTEMAS_DE_BASES_DE_DATOS_Y_LABORATORIO.pdf",
+      "caratulaFile": "03_20831_IE018_SISTEMAS_DE_BASES_DE_DATOS_Y_LABORATORIO.pdf",
+      "caratulaClave": "20831"
     },
     {
       "id": "ie022-mqlwoyu2-uvxtnc",
@@ -595,7 +636,10 @@ window.PLAN_DATA = {
           "nombre": "Programación Aplicada y Laboratorio",
           "visibleId": "ie014-mqlwoyu2-vxbr0z"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/04_20835_IE022_PROGRAMACION_ORIENTADA_A_OBJETOS_Y_LAB.pdf",
+      "caratulaFile": "04_20835_IE022_PROGRAMACION_ORIENTADA_A_OBJETOS_Y_LAB.pdf",
+      "caratulaClave": "20835"
     },
     {
       "id": "ie028-mqlwoyu2-hxwppq",
@@ -640,7 +684,10 @@ window.PLAN_DATA = {
           "nombre": "Programación Aplicada y Laboratorio",
           "visibleId": "ie014-mqlwoyu2-vxbr0z"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_20841_IE028_FUNDAMENTOS_DE_REDES_DIGITALES_Y_LABORATORIO.pdf",
+      "caratulaFile": "optativas_20841_IE028_FUNDAMENTOS_DE_REDES_DIGITALES_Y_LABORATORIO.pdf",
+      "caratulaClave": "20841"
     },
     {
       "id": "ie068-mqlwoyu2-szypcw",
@@ -685,7 +732,10 @@ window.PLAN_DATA = {
           "nombre": "Programación Orientada a Objetos y Laboratorio",
           "visibleId": "ie022-mqlwoyu2-uvxtnc"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_22258_IE068_APLICACIONES_MOVILES_Y_LABORATORIO.pdf",
+      "caratulaFile": "optativas_22258_IE068_APLICACIONES_MOVILES_Y_LABORATORIO.pdf",
+      "caratulaClave": "22258"
     },
     {
       "id": "ie076-mqlwoyu2-canf95",
@@ -730,7 +780,10 @@ window.PLAN_DATA = {
           "nombre": "Modelado de Sistemas Lineales y Laboratorio",
           "visibleId": "ie098-mqlwoyu2-7h1qaq"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/05_22684_IE076_PROCESAMIENTO_DE_SENALES_Y_LABORATORIO.pdf",
+      "caratulaFile": "05_22684_IE076_PROCESAMIENTO_DE_SENALES_Y_LABORATORIO.pdf",
+      "caratulaClave": "22684"
     },
     {
       "id": "ie077-mqlwoyu2-ge631l",
@@ -775,7 +828,10 @@ window.PLAN_DATA = {
           "nombre": "Procesamiento de Señales y Laboratorio",
           "visibleId": "ie076-mqlwoyu2-canf95"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/06_22694_IE077_PROCESAMIENTO_DE_IMAGENES_Y_LABORATORIO.pdf",
+      "caratulaFile": "06_22694_IE077_PROCESAMIENTO_DE_IMAGENES_Y_LABORATORIO.pdf",
+      "caratulaClave": "22694"
     },
     {
       "id": "ru102-mqlwoyu2-7vujtw",
@@ -809,7 +865,10 @@ window.PLAN_DATA = {
       "matchKind": "clave",
       "sourceIndex": 19,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/05_23908_RU102_LA_PERSONA_EN_SU_ENTORNO_SOCIOAMBIENTAL.pdf",
+      "caratulaFile": "05_23908_RU102_LA_PERSONA_EN_SU_ENTORNO_SOCIOAMBIENTAL.pdf",
+      "caratulaClave": "23908"
     },
     {
       "id": "ru320-mqlwoyu2-1xwy1u",
@@ -843,7 +902,10 @@ window.PLAN_DATA = {
       "matchKind": "",
       "sourceIndex": 20,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/09_23910_RU320_CIUDADANIA_MUNDIAL_Y_MEDIO_AMBIENTE.pdf",
+      "caratulaFile": "09_23910_RU320_CIUDADANIA_MUNDIAL_Y_MEDIO_AMBIENTE.pdf",
+      "caratulaClave": "23910"
     },
     {
       "id": "ru220-mqlwoyu2-cr0bfz",
@@ -877,7 +939,10 @@ window.PLAN_DATA = {
       "matchKind": "",
       "sourceIndex": 21,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/10_23915_RU220_INTERPERSONALIDAD_Y_TRASCENDENCIAS.pdf",
+      "caratulaFile": "10_23915_RU220_INTERPERSONALIDAD_Y_TRASCENDENCIAS.pdf",
+      "caratulaClave": "23915"
     },
     {
       "id": "ru424-mqlwoyu2-fmo5hy",
@@ -911,7 +976,10 @@ window.PLAN_DATA = {
       "matchKind": "",
       "sourceIndex": 22,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/08_23977_RU424_CONSTRUCCION_DE_DEMOCRACIA_Y_SOSTENIBILIDAD.pdf",
+      "caratulaFile": "08_23977_RU424_CONSTRUCCION_DE_DEMOCRACIA_Y_SOSTENIBILIDAD.pdf",
+      "caratulaClave": "23977"
     },
     {
       "id": "le001-mqlwoyu2-upxjn0",
@@ -945,7 +1013,10 @@ window.PLAN_DATA = {
       "matchKind": "clave",
       "sourceIndex": 23,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/01_23981_LE001_TALLER_DE_ESCRITURA_ACADEMICA.pdf",
+      "caratulaFile": "01_23981_LE001_TALLER_DE_ESCRITURA_ACADEMICA.pdf",
+      "caratulaClave": "23981"
     },
     {
       "id": "ss103-mqlwoyu2-h2p8d0",
@@ -979,7 +1050,10 @@ window.PLAN_DATA = {
       "matchKind": "",
       "sourceIndex": 24,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/09_24068_SS103_TALLER_DE_FORMACION_Y_ACCION_SOCIAL.pdf",
+      "caratulaFile": "09_24068_SS103_TALLER_DE_FORMACION_Y_ACCION_SOCIAL.pdf",
+      "caratulaClave": "24068"
     },
     {
       "id": "pfi001-mqlwoyu2-z6po3y",
@@ -1013,7 +1087,10 @@ window.PLAN_DATA = {
       "matchKind": "clave",
       "sourceIndex": 25,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/01_24077_PFI001_TALLER_DE_INTEGRACION_UNIVERSITARIA.pdf",
+      "caratulaFile": "01_24077_PFI001_TALLER_DE_INTEGRACION_UNIVERSITARIA.pdf",
+      "caratulaClave": "24077"
     },
     {
       "id": "ie085-mqlwoyu2-eor5ww",
@@ -1047,7 +1124,10 @@ window.PLAN_DATA = {
       "matchKind": "clave",
       "sourceIndex": 26,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/01_24271_IE085_PENSAMIENTO_DE_INGENIERIA.pdf",
+      "caratulaFile": "01_24271_IE085_PENSAMIENTO_DE_INGENIERIA.pdf",
+      "caratulaClave": "24271"
     },
     {
       "id": "ie086-mqlwoyu2-y0bexe",
@@ -1092,7 +1172,10 @@ window.PLAN_DATA = {
           "nombre": "Pensamiento de Ingeniería",
           "visibleId": "ie085-mqlwoyu2-eor5ww"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/02_24289_IE086_PENSAMIENTO_CREATIVO_E_INNOVACION.pdf",
+      "caratulaFile": "02_24289_IE086_PENSAMIENTO_CREATIVO_E_INNOVACION.pdf",
+      "caratulaClave": "24289"
     },
     {
       "id": "fi048-mqlwoyu2-3xkndh",
@@ -1126,7 +1209,10 @@ window.PLAN_DATA = {
       "matchKind": "clave",
       "sourceIndex": 28,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/02_24370_FI048_FISICA_1.pdf",
+      "caratulaFile": "02_24370_FI048_FISICA_1.pdf",
+      "caratulaClave": "24370"
     },
     {
       "id": "fi049-mqlwoyu2-is426e",
@@ -1160,7 +1246,10 @@ window.PLAN_DATA = {
       "matchKind": "clave",
       "sourceIndex": 29,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/02_24371_FI049_LABORATORIO_DE_FISICA_1.pdf",
+      "caratulaFile": "02_24371_FI049_LABORATORIO_DE_FISICA_1.pdf",
+      "caratulaClave": "24371"
     },
     {
       "id": "fi050-mqlwoyu2-cbsqay",
@@ -1205,7 +1294,10 @@ window.PLAN_DATA = {
           "nombre": "Física I",
           "visibleId": "fi048-mqlwoyu2-3xkndh"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/03_24372_FI050_FISICA_2.pdf",
+      "caratulaFile": "03_24372_FI050_FISICA_2.pdf",
+      "caratulaClave": "24372"
     },
     {
       "id": "in100-mqlwoyu2-inap3p",
@@ -1239,7 +1331,10 @@ window.PLAN_DATA = {
       "matchKind": "clave",
       "sourceIndex": 31,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/04_24563_IN100_DIBUJO_TECNICO_Y_COMUNICACION_GRAFICA.pdf",
+      "caratulaFile": "04_24563_IN100_DIBUJO_TECNICO_Y_COMUNICACION_GRAFICA.pdf",
+      "caratulaClave": "24563"
     },
     {
       "id": "in112-mqlwoyu2-h7cyg8",
@@ -1273,7 +1368,10 @@ window.PLAN_DATA = {
       "matchKind": "clave",
       "sourceIndex": 32,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/05_24683_IN112_SELECCION_DE_MATERIALES.pdf",
+      "caratulaFile": "05_24683_IN112_SELECCION_DE_MATERIALES.pdf",
+      "caratulaClave": "24683"
     },
     {
       "id": "in118-mqlwoyu2-0tbcu6",
@@ -1307,7 +1405,10 @@ window.PLAN_DATA = {
       "matchKind": "clave",
       "sourceIndex": 33,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/06_24710_IN118_DINAMICA_DE_MECANISMOS_Y_ACTUADORES.pdf",
+      "caratulaFile": "06_24710_IN118_DINAMICA_DE_MECANISMOS_Y_ACTUADORES.pdf",
+      "caratulaClave": "24710"
     },
     {
       "id": "ru103-mqlwoyu2-8fe23z",
@@ -1862,7 +1963,10 @@ window.PLAN_DATA = {
           "nombre": "Programación de Modelos en Ecuaciones Diferenciales",
           "visibleId": "mt133-mqlwoyu2-adxw95"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/08_80005_IE088_ANALITICA_DE_DATOS.pdf",
+      "caratulaFile": "08_80005_IE088_ANALITICA_DE_DATOS.pdf",
+      "caratulaClave": "80005"
     },
     {
       "id": "ie089-mqlwoyu2-0w09l6",
@@ -1896,7 +2000,10 @@ window.PLAN_DATA = {
       "matchKind": "clave",
       "sourceIndex": 50,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/02_80012_IE089_INGENIERIA_DE_CIRCUITOS_Y_LABORATORIO.pdf",
+      "caratulaFile": "02_80012_IE089_INGENIERIA_DE_CIRCUITOS_Y_LABORATORIO.pdf",
+      "caratulaClave": "80012"
     },
     {
       "id": "ie090-mqlwoyu2-zwvaof",
@@ -1941,7 +2048,10 @@ window.PLAN_DATA = {
           "nombre": "Ingeniería de Circuitos y Laboratorio",
           "visibleId": "ie089-mqlwoyu2-0w09l6"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/03_80014_IE090_SISTEMAS_ANALOGICOS_Y_DE_POTENCIA_Y_LABORATORIO.pdf",
+      "caratulaFile": "03_80014_IE090_SISTEMAS_ANALOGICOS_Y_DE_POTENCIA_Y_LABORATORIO.pdf",
+      "caratulaClave": "80014"
     },
     {
       "id": "ie091-mqlwoyu2-gfx7cm",
@@ -1986,7 +2096,10 @@ window.PLAN_DATA = {
           "nombre": "Ingeniería de Circuitos y Laboratorio",
           "visibleId": "ie089-mqlwoyu2-0w09l6"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/04_80016_IE091_SISTEMAS_DIGITALES_Y_LABORATORIO.pdf",
+      "caratulaFile": "04_80016_IE091_SISTEMAS_DIGITALES_Y_LABORATORIO.pdf",
+      "caratulaClave": "80016"
     },
     {
       "id": "ie092-mqlwoyu2-3c20t9",
@@ -2039,7 +2152,10 @@ window.PLAN_DATA = {
           "nombre": "Sistemas Digitales y Laboratorio",
           "visibleId": "ie091-mqlwoyu2-gfx7cm"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/05_80017_IE092_SISTEMAS_EMBEBIDOS_Y_LABORATORIO.pdf",
+      "caratulaFile": "05_80017_IE092_SISTEMAS_EMBEBIDOS_Y_LABORATORIO.pdf",
+      "caratulaClave": "80017"
     },
     {
       "id": "ie093-mqlwoyu2-8dk6va",
@@ -2084,7 +2200,10 @@ window.PLAN_DATA = {
           "nombre": "Pensamiento Creativo e Innovación",
           "visibleId": "ie086-mqlwoyu2-y0bexe"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/03_80018_IE093_GESTION_DE_LA_TECNOLOGIA.pdf",
+      "caratulaFile": "03_80018_IE093_GESTION_DE_LA_TECNOLOGIA.pdf",
+      "caratulaClave": "80018"
     },
     {
       "id": "ie094-mqlwoyu2-aufwhp",
@@ -2129,7 +2248,10 @@ window.PLAN_DATA = {
           "nombre": "Gestión de la Tecnología",
           "visibleId": "ie093-mqlwoyu2-8dk6va"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/05_80019_IE094_TECNOLOGIAS_PARA_EL_DESARROLLO_SOSTENIBLE.pdf",
+      "caratulaFile": "05_80019_IE094_TECNOLOGIAS_PARA_EL_DESARROLLO_SOSTENIBLE.pdf",
+      "caratulaClave": "80019"
     },
     {
       "id": "ie095-mqlwoyu2-fm1znf",
@@ -2174,7 +2296,10 @@ window.PLAN_DATA = {
           "nombre": "Sistemas Digitales y Laboratorio",
           "visibleId": "ie091-mqlwoyu2-gfx7cm"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/07_80020_IE095_AUTOMATIZACION_POR_LOGICA_PROGRAMABLE_Y_LABORATORIO.pdf",
+      "caratulaFile": "07_80020_IE095_AUTOMATIZACION_POR_LOGICA_PROGRAMABLE_Y_LABORATORIO.pdf",
+      "caratulaClave": "80020"
     },
     {
       "id": "ie096-mqlwoyu2-iuxux8",
@@ -2227,7 +2352,10 @@ window.PLAN_DATA = {
           "nombre": "Ingeniería de Control y Laboratorio",
           "visibleId": "ie100-mqlwoyu2-z68f9w"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/08_80021_IE096_AUTOMATIZACION_DE_SISTEMAS_PRODUCTIVOS_Y_LABORATORIO.pdf",
+      "caratulaFile": "08_80021_IE096_AUTOMATIZACION_DE_SISTEMAS_PRODUCTIVOS_Y_LABORATORIO.pdf",
+      "caratulaClave": "80021"
     },
     {
       "id": "ie098-mqlwoyu2-7h1qaq",
@@ -2272,7 +2400,10 @@ window.PLAN_DATA = {
           "nombre": "Programación de Modelos en Ecuaciones Diferenciales",
           "visibleId": "mt133-mqlwoyu2-adxw95"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/04_80023_IE098_MODELADO_DE_SISTEMAS_LINEALES_Y_LABORATORIO.pdf",
+      "caratulaFile": "04_80023_IE098_MODELADO_DE_SISTEMAS_LINEALES_Y_LABORATORIO.pdf",
+      "caratulaClave": "80023"
     },
     {
       "id": "ie099-mqlwoyu2-d02zrl",
@@ -2317,7 +2448,10 @@ window.PLAN_DATA = {
           "nombre": "Analítica de Datos",
           "visibleId": "ie088-mqlwoyu2-svmraf"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/09_80027_IE099_APLICACIONES_DE_ANALITICA_DE_DATOS.pdf",
+      "caratulaFile": "09_80027_IE099_APLICACIONES_DE_ANALITICA_DE_DATOS.pdf",
+      "caratulaClave": "80027"
     },
     {
       "id": "ie100-mqlwoyu2-z68f9w",
@@ -2370,7 +2504,10 @@ window.PLAN_DATA = {
           "nombre": "Sistemas Embebidos y Laboratorio",
           "visibleId": "ie092-mqlwoyu2-3c20t9"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/06_80028_IE100_INGENIERIA_DE_CONTROL_Y_LABORATORIO.pdf",
+      "caratulaFile": "06_80028_IE100_INGENIERIA_DE_CONTROL_Y_LABORATORIO.pdf",
+      "caratulaClave": "80028"
     },
     {
       "id": "ie101-mqlwoyu2-t7fhg7",
@@ -2415,7 +2552,10 @@ window.PLAN_DATA = {
           "nombre": "Ingeniería de Control y Laboratorio",
           "visibleId": "ie100-mqlwoyu2-z68f9w"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/07_80029_IE101_CONTROL_AVANZADO_Y_ROBOTICA_Y_LABORATORIO.pdf",
+      "caratulaFile": "07_80029_IE101_CONTROL_AVANZADO_Y_ROBOTICA_Y_LABORATORIO.pdf",
+      "caratulaClave": "80029"
     },
     {
       "id": "ie102-mqlwoyu2-egzc1m",
@@ -2460,7 +2600,10 @@ window.PLAN_DATA = {
           "nombre": "Ingeniería de Control y Laboratorio",
           "visibleId": "ie100-mqlwoyu2-z68f9w"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/07_80030_IE102_CONTROL_INTELIGENTE_Y_LABORATORIO.pdf",
+      "caratulaFile": "07_80030_IE102_CONTROL_INTELIGENTE_Y_LABORATORIO.pdf",
+      "caratulaClave": "80030"
     },
     {
       "id": "ie103-mqlwoyu2-s6d9gw",
@@ -2505,7 +2648,10 @@ window.PLAN_DATA = {
           "nombre": "Automatización de Sistemas Productivos y Laboratorio",
           "visibleId": "ie096-mqlwoyu2-iuxux8"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/09_80031_IE103_SISTEMAS_CIBERFISICOS_DE_AUTOMATIZACION_Y_LABORATORIO.pdf",
+      "caratulaFile": "09_80031_IE103_SISTEMAS_CIBERFISICOS_DE_AUTOMATIZACION_Y_LABORATORIO.pdf",
+      "caratulaClave": "80031"
     },
     {
       "id": "ie104-mqlwoyu2-572tm7",
@@ -2550,7 +2696,10 @@ window.PLAN_DATA = {
           "nombre": "Control Avanzado y Robótica y Laboratorio",
           "visibleId": "ie101-mqlwoyu2-t7fhg7"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/10_80032_IE104_ROBOTICA_MOVIL_Y_MULTIAGENTE_Y_LABORATORIO.pdf",
+      "caratulaFile": "10_80032_IE104_ROBOTICA_MOVIL_Y_MULTIAGENTE_Y_LABORATORIO.pdf",
+      "caratulaClave": "80032"
     },
     {
       "id": "ie106-mqlwoyu2-kerya7",
@@ -2595,7 +2744,10 @@ window.PLAN_DATA = {
           "nombre": "Sistemas Digitales y Laboratorio",
           "visibleId": "ie091-mqlwoyu2-gfx7cm"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/06_80039_IE106_ARQUITECTURA_DE_SISTEMAS_EMBEBIDOS_Y_LABORATORIO.pdf",
+      "caratulaFile": "06_80039_IE106_ARQUITECTURA_DE_SISTEMAS_EMBEBIDOS_Y_LABORATORIO.pdf",
+      "caratulaClave": "80039"
     },
     {
       "id": "ie107-mqlwoyu2-nybe4g",
@@ -2640,7 +2792,10 @@ window.PLAN_DATA = {
           "nombre": "Sistemas Embebidos y Laboratorio",
           "visibleId": "ie092-mqlwoyu2-3c20t9"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/10_80040_IE107_INTERNET_DE_LAS_COSAS.pdf",
+      "caratulaFile": "10_80040_IE107_INTERNET_DE_LAS_COSAS.pdf",
+      "caratulaClave": "80040"
     },
     {
       "id": "ie108-mqlwoyu2-3m0j8u",
@@ -2693,7 +2848,10 @@ window.PLAN_DATA = {
           "nombre": "Sistemas Embebidos y Laboratorio",
           "visibleId": "ie092-mqlwoyu2-3c20t9"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/07_80041_IE108_INTEGRACION_MECATRONICA_Y_LABORATORIO.pdf",
+      "caratulaFile": "07_80041_IE108_INTEGRACION_MECATRONICA_Y_LABORATORIO.pdf",
+      "caratulaClave": "80041"
     },
     {
       "id": "ie111-mqlwoyu2-f8hjqh",
@@ -2738,7 +2896,10 @@ window.PLAN_DATA = {
           "nombre": "Control Inteligente y Laboratorio",
           "visibleId": "ie102-mqlwoyu2-egzc1m"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80052_IE111_AERONAVES_NO_TRIPULADAS_Y_LABORATORIO.pdf",
+      "caratulaFile": "optativas_80052_IE111_AERONAVES_NO_TRIPULADAS_Y_LABORATORIO.pdf",
+      "caratulaClave": "80052"
     },
     {
       "id": "ie112-mqlwoyu2-0g7k0d",
@@ -2783,7 +2944,10 @@ window.PLAN_DATA = {
           "nombre": "Control Avanzado y Robótica y Laboratorio",
           "visibleId": "ie101-mqlwoyu2-t7fhg7"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80053_IE112_VEHICULOS_AUTONOMOS_Y_LABORATORIO.pdf",
+      "caratulaFile": "optativas_80053_IE112_VEHICULOS_AUTONOMOS_Y_LABORATORIO.pdf",
+      "caratulaClave": "80053"
     },
     {
       "id": "ie113-mqlwoyu2-nlzbtt",
@@ -2828,7 +2992,10 @@ window.PLAN_DATA = {
           "nombre": "Control Avanzado y Robótica y Laboratorio",
           "visibleId": "ie101-mqlwoyu2-t7fhg7"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80054_IE113_ROBOTICA_PROBABILISTA_Y_NAVEGACION_Y_LABORATORIO.pdf",
+      "caratulaFile": "optativas_80054_IE113_ROBOTICA_PROBABILISTA_Y_NAVEGACION_Y_LABORATORIO.pdf",
+      "caratulaClave": "80054"
     },
     {
       "id": "ie114-mqlwoyu2-kxwp72",
@@ -2873,7 +3040,10 @@ window.PLAN_DATA = {
           "nombre": "Control Avanzado y Robótica y Laboratorio",
           "visibleId": "ie101-mqlwoyu2-t7fhg7"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80055_IE114_ROBOTICA_DE_SERVICIO_Y_LABORATORIO.pdf",
+      "caratulaFile": "optativas_80055_IE114_ROBOTICA_DE_SERVICIO_Y_LABORATORIO.pdf",
+      "caratulaClave": "80055"
     },
     {
       "id": "ie115-mqlwoyu2-spg4e8",
@@ -2918,7 +3088,10 @@ window.PLAN_DATA = {
           "nombre": "Sistemas Embebidos y Laboratorio",
           "visibleId": "ie092-mqlwoyu2-3c20t9"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80056_IE115_DISPOSITIVOS_DE_TECNOLOGIA_CORPORAL_Y_LABORATORIO.pdf",
+      "caratulaFile": "optativas_80056_IE115_DISPOSITIVOS_DE_TECNOLOGIA_CORPORAL_Y_LABORATORIO.pdf",
+      "caratulaClave": "80056"
     },
     {
       "id": "ie116-mqlwoyu2-y4gy59",
@@ -2963,7 +3136,10 @@ window.PLAN_DATA = {
           "nombre": "Procesamiento de Señales y Laboratorio",
           "visibleId": "ie076-mqlwoyu2-canf95"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80057_IE116_INTRODUCCION_A_LA_BIOMECATRONICA.pdf",
+      "caratulaFile": "optativas_80057_IE116_INTRODUCCION_A_LA_BIOMECATRONICA.pdf",
+      "caratulaClave": "80057"
     },
     {
       "id": "ie117-mqlwoyu2-zjw9ow",
@@ -2997,7 +3173,10 @@ window.PLAN_DATA = {
       "matchKind": "",
       "sourceIndex": 74,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80058_IE117_RAZONAMIENTO_Y_TOMA_DE_DECISIONES_USANDO_INTELIGENCIA_ARTIFICIAL.pdf",
+      "caratulaFile": "optativas_80058_IE117_RAZONAMIENTO_Y_TOMA_DE_DECISIONES_USANDO_INTELIGENCIA_ARTIFICIAL.pdf",
+      "caratulaClave": "80058"
     },
     {
       "id": "ie118-mqlwoyu2-idz55c",
@@ -3031,7 +3210,10 @@ window.PLAN_DATA = {
       "matchKind": "",
       "sourceIndex": 75,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80059_IE118_BUSQUEDA_Y_PLANIFICACION_USANDO_INTELIGENCIA_ARTIFICIAL.pdf",
+      "caratulaFile": "optativas_80059_IE118_BUSQUEDA_Y_PLANIFICACION_USANDO_INTELIGENCIA_ARTIFICIAL.pdf",
+      "caratulaClave": "80059"
     },
     {
       "id": "mt133-mqlwoyu2-adxw95",
@@ -3084,7 +3266,10 @@ window.PLAN_DATA = {
           "nombre": "Programación Aplicada y Laboratorio",
           "visibleId": "ie014-mqlwoyu2-vxbr0z"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/03_80064_MT133_PROGRAMACION_DE_MODELOS_EN_ECUACIONES_DIFERENCIALES.pdf",
+      "caratulaFile": "03_80064_MT133_PROGRAMACION_DE_MODELOS_EN_ECUACIONES_DIFERENCIALES.pdf",
+      "caratulaClave": "80064"
     },
     {
       "id": "ie120-mqlwoyu2-ot1z0f",
@@ -3118,7 +3303,10 @@ window.PLAN_DATA = {
       "matchKind": "",
       "sourceIndex": 77,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80068_IE120_ESPACIO_INTERDISCIPLINAR.pdf",
+      "caratulaFile": "optativas_80068_IE120_ESPACIO_INTERDISCIPLINAR.pdf",
+      "caratulaClave": "80068"
     },
     {
       "id": "ie121-mqlwoyu2-moh53l",
@@ -3152,7 +3340,10 @@ window.PLAN_DATA = {
       "matchKind": "",
       "sourceIndex": 78,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80069_IE121_TALLER_DE_ESPACIO_INTERDISCIPLINAR.pdf",
+      "caratulaFile": "optativas_80069_IE121_TALLER_DE_ESPACIO_INTERDISCIPLINAR.pdf",
+      "caratulaClave": "80069"
     },
     {
       "id": "ie127-mqlwoyu2-h2jbkx",
@@ -3186,7 +3377,10 @@ window.PLAN_DATA = {
       "matchKind": "",
       "sourceIndex": 79,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80102_IE127_PROSPECTIVA_DE_LA_TECNOLOGIA.pdf",
+      "caratulaFile": "optativas_80102_IE127_PROSPECTIVA_DE_LA_TECNOLOGIA.pdf",
+      "caratulaClave": "80102"
     },
     {
       "id": "ie128-mqlwoyu2-x25dow",
@@ -3220,7 +3414,10 @@ window.PLAN_DATA = {
       "matchKind": "",
       "sourceIndex": 80,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80103_IE128_IMPLEMENTACION_DE_LA_TECNOLOGIA.pdf",
+      "caratulaFile": "optativas_80103_IE128_IMPLEMENTACION_DE_LA_TECNOLOGIA.pdf",
+      "caratulaClave": "80103"
     },
     {
       "id": "ie129-mqlwoyu2-9lc9zk",
@@ -3254,7 +3451,10 @@ window.PLAN_DATA = {
       "matchKind": "",
       "sourceIndex": 81,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80104_IE129_TECNOLOGIAS_EMERGENTES.pdf",
+      "caratulaFile": "optativas_80104_IE129_TECNOLOGIAS_EMERGENTES.pdf",
+      "caratulaClave": "80104"
     },
     {
       "id": "ie130-mqlwoyu2-5ji3k2",
@@ -3299,7 +3499,10 @@ window.PLAN_DATA = {
           "nombre": "Modelado de Sistemas Lineales y Laboratorio",
           "visibleId": "ie098-mqlwoyu2-7h1qaq"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/10_80105_IE130_PROYECTO_TERMINAL_DE_INGENIERIA.pdf",
+      "caratulaFile": "10_80105_IE130_PROYECTO_TERMINAL_DE_INGENIERIA.pdf",
+      "caratulaClave": "80105"
     },
     {
       "id": "pfi016-mqlwoyu2-ibvo8n",
@@ -3333,7 +3536,10 @@ window.PLAN_DATA = {
       "matchKind": "",
       "sourceIndex": 83,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80419_PFI016_FORMACION_AMPLIADA_BASICA.pdf",
+      "caratulaFile": "optativas_80419_PFI016_FORMACION_AMPLIADA_BASICA.pdf",
+      "caratulaClave": "80419"
     },
     {
       "id": "pfi017-mqlwoyu2-b9hxpw",
@@ -3367,7 +3573,10 @@ window.PLAN_DATA = {
       "matchKind": "",
       "sourceIndex": 84,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80420_PFI017_FORMACION_AMPLIADA_APLICADA.pdf",
+      "caratulaFile": "optativas_80420_PFI017_FORMACION_AMPLIADA_APLICADA.pdf",
+      "caratulaClave": "80420"
     },
     {
       "id": "pfi018-mqlwoyu2-12hvix",
@@ -3401,7 +3610,10 @@ window.PLAN_DATA = {
       "matchKind": "",
       "sourceIndex": 85,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80421_PFI018_FORMACION_AMPLIADA_SITUADA.pdf",
+      "caratulaFile": "optativas_80421_PFI018_FORMACION_AMPLIADA_SITUADA.pdf",
+      "caratulaClave": "80421"
     },
     {
       "id": "ie089-mqlwoyu2-7rg9s6",
@@ -3435,7 +3647,10 @@ window.PLAN_DATA = {
       "matchKind": "lab_clave",
       "sourceIndex": 86,
       "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "prereqInfo": [],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/02_80012_IE089_INGENIERIA_DE_CIRCUITOS_Y_LABORATORIO.pdf",
+      "caratulaFile": "02_80012_IE089_INGENIERIA_DE_CIRCUITOS_Y_LABORATORIO.pdf",
+      "caratulaClave": "80012"
     },
     {
       "id": "ie090-mqlwoyu2-x4ifgn",
@@ -3480,7 +3695,10 @@ window.PLAN_DATA = {
           "nombre": "Ingeniería de Circuitos y Laboratorio",
           "visibleId": "ie089-mqlwoyu2-0w09l6"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/03_80014_IE090_SISTEMAS_ANALOGICOS_Y_DE_POTENCIA_Y_LABORATORIO.pdf",
+      "caratulaFile": "03_80014_IE090_SISTEMAS_ANALOGICOS_Y_DE_POTENCIA_Y_LABORATORIO.pdf",
+      "caratulaClave": "80014"
     },
     {
       "id": "ie091-mqlwoyu2-9csue7",
@@ -3525,7 +3743,10 @@ window.PLAN_DATA = {
           "nombre": "Ingeniería de Circuitos y Laboratorio",
           "visibleId": "ie089-mqlwoyu2-0w09l6"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/04_80016_IE091_SISTEMAS_DIGITALES_Y_LABORATORIO.pdf",
+      "caratulaFile": "04_80016_IE091_SISTEMAS_DIGITALES_Y_LABORATORIO.pdf",
+      "caratulaClave": "80016"
     },
     {
       "id": "ie092-mqlwoyu2-uee0st",
@@ -3578,7 +3799,10 @@ window.PLAN_DATA = {
           "nombre": "Sistemas Digitales y Laboratorio",
           "visibleId": "ie091-mqlwoyu2-gfx7cm"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/05_80017_IE092_SISTEMAS_EMBEBIDOS_Y_LABORATORIO.pdf",
+      "caratulaFile": "05_80017_IE092_SISTEMAS_EMBEBIDOS_Y_LABORATORIO.pdf",
+      "caratulaClave": "80017"
     },
     {
       "id": "ie106-mqlwoyu2-cc62sw",
@@ -3623,7 +3847,10 @@ window.PLAN_DATA = {
           "nombre": "Sistemas Digitales y Laboratorio",
           "visibleId": "ie091-mqlwoyu2-gfx7cm"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/06_80039_IE106_ARQUITECTURA_DE_SISTEMAS_EMBEBIDOS_Y_LABORATORIO.pdf",
+      "caratulaFile": "06_80039_IE106_ARQUITECTURA_DE_SISTEMAS_EMBEBIDOS_Y_LABORATORIO.pdf",
+      "caratulaClave": "80039"
     },
     {
       "id": "ie115-mqlwoyu2-14g102",
@@ -3668,7 +3895,10 @@ window.PLAN_DATA = {
           "nombre": "Sistemas Embebidos y Laboratorio",
           "visibleId": "ie092-mqlwoyu2-3c20t9"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80056_IE115_DISPOSITIVOS_DE_TECNOLOGIA_CORPORAL_Y_LABORATORIO.pdf",
+      "caratulaFile": "optativas_80056_IE115_DISPOSITIVOS_DE_TECNOLOGIA_CORPORAL_Y_LABORATORIO.pdf",
+      "caratulaClave": "80056"
     },
     {
       "id": "ie116-mqlwoyu2-t20zs8",
@@ -3713,7 +3943,10 @@ window.PLAN_DATA = {
           "nombre": "Procesamiento de Señales y Laboratorio",
           "visibleId": "ie076-mqlwoyu2-canf95"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80057_IE116_INTRODUCCION_A_LA_BIOMECATRONICA.pdf",
+      "caratulaFile": "optativas_80057_IE116_INTRODUCCION_A_LA_BIOMECATRONICA.pdf",
+      "caratulaClave": "80057"
     },
     {
       "id": "ie095-mqlwoyu2-4yktv0",
@@ -3758,7 +3991,10 @@ window.PLAN_DATA = {
           "nombre": "Sistemas Digitales y Laboratorio",
           "visibleId": "ie091-mqlwoyu2-gfx7cm"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/07_80020_IE095_AUTOMATIZACION_POR_LOGICA_PROGRAMABLE_Y_LABORATORIO.pdf",
+      "caratulaFile": "07_80020_IE095_AUTOMATIZACION_POR_LOGICA_PROGRAMABLE_Y_LABORATORIO.pdf",
+      "caratulaClave": "80020"
     },
     {
       "id": "ie096-mqlwoyu2-8g63s5",
@@ -3811,7 +4047,10 @@ window.PLAN_DATA = {
           "nombre": "Ingeniería de Control y Laboratorio",
           "visibleId": "ie100-mqlwoyu2-z68f9w"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/08_80021_IE096_AUTOMATIZACION_DE_SISTEMAS_PRODUCTIVOS_Y_LABORATORIO.pdf",
+      "caratulaFile": "08_80021_IE096_AUTOMATIZACION_DE_SISTEMAS_PRODUCTIVOS_Y_LABORATORIO.pdf",
+      "caratulaClave": "80021"
     },
     {
       "id": "ie100-mqlwoyu2-fnr6wh",
@@ -3864,7 +4103,10 @@ window.PLAN_DATA = {
           "nombre": "Sistemas Embebidos y Laboratorio",
           "visibleId": "ie092-mqlwoyu2-3c20t9"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/06_80028_IE100_INGENIERIA_DE_CONTROL_Y_LABORATORIO.pdf",
+      "caratulaFile": "06_80028_IE100_INGENIERIA_DE_CONTROL_Y_LABORATORIO.pdf",
+      "caratulaClave": "80028"
     },
     {
       "id": "ie101-mqlwoyu2-foirbu",
@@ -3909,7 +4151,10 @@ window.PLAN_DATA = {
           "nombre": "Ingeniería de Control y Laboratorio",
           "visibleId": "ie100-mqlwoyu2-z68f9w"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/07_80029_IE101_CONTROL_AVANZADO_Y_ROBOTICA_Y_LABORATORIO.pdf",
+      "caratulaFile": "07_80029_IE101_CONTROL_AVANZADO_Y_ROBOTICA_Y_LABORATORIO.pdf",
+      "caratulaClave": "80029"
     },
     {
       "id": "ie102-mqlwoyu2-shv0sn",
@@ -3954,7 +4199,10 @@ window.PLAN_DATA = {
           "nombre": "Ingeniería de Control y Laboratorio",
           "visibleId": "ie100-mqlwoyu2-z68f9w"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/07_80030_IE102_CONTROL_INTELIGENTE_Y_LABORATORIO.pdf",
+      "caratulaFile": "07_80030_IE102_CONTROL_INTELIGENTE_Y_LABORATORIO.pdf",
+      "caratulaClave": "80030"
     },
     {
       "id": "ie103-mqlwoyu2-cq6c67",
@@ -3999,7 +4247,10 @@ window.PLAN_DATA = {
           "nombre": "Automatización de Sistemas Productivos y Laboratorio",
           "visibleId": "ie096-mqlwoyu2-iuxux8"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/09_80031_IE103_SISTEMAS_CIBERFISICOS_DE_AUTOMATIZACION_Y_LABORATORIO.pdf",
+      "caratulaFile": "09_80031_IE103_SISTEMAS_CIBERFISICOS_DE_AUTOMATIZACION_Y_LABORATORIO.pdf",
+      "caratulaClave": "80031"
     },
     {
       "id": "ie104-mqlwoyu2-8adba5",
@@ -4044,7 +4295,10 @@ window.PLAN_DATA = {
           "nombre": "Control Avanzado y Robótica y Laboratorio",
           "visibleId": "ie101-mqlwoyu2-t7fhg7"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/10_80032_IE104_ROBOTICA_MOVIL_Y_MULTIAGENTE_Y_LABORATORIO.pdf",
+      "caratulaFile": "10_80032_IE104_ROBOTICA_MOVIL_Y_MULTIAGENTE_Y_LABORATORIO.pdf",
+      "caratulaClave": "80032"
     },
     {
       "id": "ie108-mqlwoyu2-9vrljm",
@@ -4097,7 +4351,10 @@ window.PLAN_DATA = {
           "nombre": "Sistemas Embebidos y Laboratorio",
           "visibleId": "ie092-mqlwoyu2-3c20t9"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/07_80041_IE108_INTEGRACION_MECATRONICA_Y_LABORATORIO.pdf",
+      "caratulaFile": "07_80041_IE108_INTEGRACION_MECATRONICA_Y_LABORATORIO.pdf",
+      "caratulaClave": "80041"
     },
     {
       "id": "ie111-mqlwoyu2-rhhzto",
@@ -4142,7 +4399,10 @@ window.PLAN_DATA = {
           "nombre": "Control Inteligente y Laboratorio",
           "visibleId": "ie102-mqlwoyu2-egzc1m"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80052_IE111_AERONAVES_NO_TRIPULADAS_Y_LABORATORIO.pdf",
+      "caratulaFile": "optativas_80052_IE111_AERONAVES_NO_TRIPULADAS_Y_LABORATORIO.pdf",
+      "caratulaClave": "80052"
     },
     {
       "id": "ie112-mqlwoyu2-86vlvn",
@@ -4187,7 +4447,10 @@ window.PLAN_DATA = {
           "nombre": "Control Avanzado y Robótica y Laboratorio",
           "visibleId": "ie101-mqlwoyu2-t7fhg7"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80053_IE112_VEHICULOS_AUTONOMOS_Y_LABORATORIO.pdf",
+      "caratulaFile": "optativas_80053_IE112_VEHICULOS_AUTONOMOS_Y_LABORATORIO.pdf",
+      "caratulaClave": "80053"
     },
     {
       "id": "ie113-mqlwoyu2-ofj2w2",
@@ -4232,7 +4495,10 @@ window.PLAN_DATA = {
           "nombre": "Control Avanzado y Robótica y Laboratorio",
           "visibleId": "ie101-mqlwoyu2-t7fhg7"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80054_IE113_ROBOTICA_PROBABILISTA_Y_NAVEGACION_Y_LABORATORIO.pdf",
+      "caratulaFile": "optativas_80054_IE113_ROBOTICA_PROBABILISTA_Y_NAVEGACION_Y_LABORATORIO.pdf",
+      "caratulaClave": "80054"
     },
     {
       "id": "ie114-mqlwoyu2-bagaao",
@@ -4277,7 +4543,10 @@ window.PLAN_DATA = {
           "nombre": "Control Avanzado y Robótica y Laboratorio",
           "visibleId": "ie101-mqlwoyu2-t7fhg7"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/optativas_80055_IE114_ROBOTICA_DE_SERVICIO_Y_LABORATORIO.pdf",
+      "caratulaFile": "optativas_80055_IE114_ROBOTICA_DE_SERVICIO_Y_LABORATORIO.pdf",
+      "caratulaClave": "80055"
     },
     {
       "id": "90210-mqlwoyu2-0gu0fj",
@@ -4560,7 +4829,10 @@ window.PLAN_DATA = {
           "nombre": "Cálculo I y Taller",
           "visibleId": "mt001-mqlwoyu2-o5aiyh"
         }
-      ]
+      ],
+      "caratulaPdf": "/assets/pdf/caratulas/manresa/02_2201_MT076_CALCULO_II.pdf",
+      "caratulaFile": "02_2201_MT076_CALCULO_II.pdf",
+      "caratulaClave": "2201"
     },
     {
       "id": "optblk-mqlwpadv-gqyfyu",

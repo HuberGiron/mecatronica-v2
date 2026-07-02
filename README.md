@@ -1,1 +1,0 @@
-# mecatronica-v2

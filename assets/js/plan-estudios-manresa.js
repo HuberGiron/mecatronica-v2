@@ -19,6 +19,17 @@
     studentProgress: null
   };
 
+  const HISTORY_OBSERVATIONS = ['ORDINARIO', 'REVALIDADA'];
+  const HISTORY_OBSERVATION_PATTERN = new RegExp(`\\b(?:${HISTORY_OBSERVATIONS.join('|')})\\b`, 'i');
+
+  function isHistoryObservationLine(value) {
+    return HISTORY_OBSERVATION_PATTERN.test(String(value || ''));
+  }
+
+  function matchHistoryObservation(value) {
+    return String(value || '').match(HISTORY_OBSERVATION_PATTERN);
+  }
+
   const subjects = data.subjects || [];
   const byId = new Map(subjects.map(s => [s.id, s]));
 
@@ -39,6 +50,10 @@
   function shouldKeepLabInBlock(subject) {
     return isHiddenZeroCreditLab(subject)
       && (subject?.tipo === 'optativa_catalogo' || Boolean(subject?.optativaGrupo));
+  }
+
+  function shouldInheritLabState(subject) {
+    return isHiddenZeroCreditLab(subject) && (shouldShowLab(subject) || shouldKeepLabInBlock(subject));
   }
 
   const visiblePlan = subjects.filter(s => s.visibleInPlan || shouldShowLab(s));
@@ -69,7 +84,7 @@
 
   const pairedTheoryById = new Map();
   subjects.forEach(subject => {
-    if (!shouldShowLab(subject)) return;
+    if (!shouldInheritLabState(subject)) return;
     const ownKey = String(subject.clave || '').trim();
     let pair = null;
     if (subject.sigla) {
@@ -139,11 +154,24 @@
     return state.studentProgress.subjectStatus.get(subject.id) || null;
   }
 
-  function statusClass(status) {
-    if (!status) return '';
-    if (status.status === 'approved') return 'progress-approved';
-    if (status.status === 'partial') return 'progress-partial';
-    if (status.status === 'attempted') return 'progress-attempted';
+  function statusClass(status, subject = null) {
+    if (status?.status === 'approved') return 'progress-approved';
+
+    if (state.studentProgress && subject && subject.isPhantom) {
+      const availability = state.studentProgress.availabilityById?.get(subject.id);
+      if (availability === 'available') return 'progress-available';
+      if (availability === 'locked') return 'progress-locked';
+    }
+
+    if (status?.status === 'partial') return 'progress-partial';
+    if (status?.status === 'attempted') return 'progress-attempted';
+
+    if (state.studentProgress && subject && !subject.isPhantom) {
+      const availability = state.studentProgress.availabilityById?.get(subject.id);
+      if (availability === 'available') return 'progress-available';
+      if (availability === 'locked') return 'progress-locked';
+    }
+
     return '';
   }
 
@@ -151,6 +179,72 @@
     const key = String(period || '').toUpperCase();
     const labels = { P: 'Primavera', V: 'Verano', O: 'Otoño' };
     return labels[key] ? `${key} (${labels[key]})` : (key || '—');
+  }
+
+  function academicTermSortValue(period, year) {
+    const cleanYear = Number(year);
+    const cleanPeriod = String(period || '').toUpperCase();
+    if (!Number.isFinite(cleanYear) || !['P', 'O'].includes(cleanPeriod)) return null;
+    return cleanYear * 2 + (cleanPeriod === 'O' ? 1 : 0);
+  }
+
+  function academicTermLabel(term) {
+    if (!term) return 'No detectado';
+    return `${periodLabel(term.period)} ${term.year}`;
+  }
+
+  function computeAcademicSemester(history) {
+    const termMap = new Map();
+    (history?.rows || []).forEach(row => {
+      const value = academicTermSortValue(row.period, row.year);
+      if (value === null) return;
+      const key = `${String(row.period || '').toUpperCase()}-${row.year}`;
+      if (!termMap.has(key)) {
+        termMap.set(key, {
+          period: String(row.period || '').toUpperCase(),
+          year: Number(row.year),
+          value
+        });
+      }
+    });
+
+    const terms = Array.from(termMap.values()).sort((a, b) => a.value - b.value);
+    if (!terms.length) {
+      return {
+        semester: null,
+        first: null,
+        last: null,
+        countedTerms: 0,
+        observedTerms: 0,
+        label: 'No detectado',
+        detail: 'No se encontraron periodos Primavera u Otoño en el histórico.'
+      };
+    }
+
+    const first = terms[0];
+    const last = terms[terms.length - 1];
+    const semester = Math.max(1, last.value - first.value + 1);
+    return {
+      semester,
+      first,
+      last,
+      countedTerms: semester,
+      observedTerms: terms.length,
+      label: `${semester}° semestre`,
+      detail: `${academicTermLabel(first)} a ${academicTermLabel(last)}`
+    };
+  }
+
+  function academicSemesterText(progress) {
+    const info = progress?.academicSemester;
+    if (!info?.semester) return 'No detectado';
+    return `${info.semester}° semestre`;
+  }
+
+  function academicSemesterDetail(progress) {
+    const info = progress?.academicSemester;
+    if (!info?.semester) return info?.detail || 'No se detectaron periodos Primavera u Otoño.';
+    return info.detail || '';
   }
 
   function attemptShort(row, subject) {
@@ -221,7 +315,7 @@
       subject.isPhantom ? 'phantom' : '',
       options.catalog ? 'catalog' : '',
       options.mini ? 'mini' : '',
-      statusClass(progress)
+      statusClass(progress, subject)
     ].filter(Boolean).join(' ');
 
     return `
@@ -448,7 +542,7 @@
               : (status?.status === 'attempted' ? `No acreditada · ${attemptSummary(status, option, 1).short}` : `${option.creditos || 0} cr. · sem. ${option.semestre || '—'}`);
             const desc = option.descripcion || option.contenido || (data.meta?.blankMissingContent ? '' : 'Descripción pendiente de cargar.');
             return `
-              <button type="button" class="elective-option-card ${statusClass(status)}" data-open-course="${escapeHTML(option.id)}">
+              <button type="button" class="elective-option-card ${statusClass(status, option)}" data-open-course="${escapeHTML(option.id)}">
                 <strong>${escapeHTML(option.nombre)}</strong>
                 <span>${escapeHTML(displayKey(option, 'Clave'))} · ${escapeHTML(option.sigla || '—')} · ${escapeHTML(statusText)}</span>
                 <small>${escapeHTML(shortText(desc, 155))}</small>
@@ -578,28 +672,159 @@
     return subject.id;
   }
 
-  function prereqVisibleIdsFor(subject) {
-    const ids = new Set();
+  function extractClaveTokens(value) {
+    return String(value || '')
+      .match(/\b\d{3,6}\b/g) || [];
+  }
+
+  function prereqSubjectsFor(subject) {
+    const items = [];
+    const seen = new Set();
     const addSubject = candidate => {
-      const cardId = visibleCardIdFor(candidate);
-      if (cardId) ids.add(cardId);
+      if (!candidate || seen.has(candidate.id)) return;
+      seen.add(candidate.id);
+      items.push(candidate);
+    };
+    const addClave = value => {
+      extractClaveTokens(value).forEach(clave => {
+        addSubject(byClave.get(String(clave).trim()));
+        addSubject(ownByClave.get(String(clave).trim()));
+      });
     };
 
-    (subject.resolvedPrereqIds || []).forEach(id => addSubject(byId.get(id)));
+    (subject?.resolvedPrereqIds || []).forEach(id => addSubject(byId.get(id)));
 
-    (subject.prereqInfo || []).forEach(info => {
-      if (info.visibleId) addSubject(byId.get(info.visibleId));
+    (subject?.prereqInfo || []).forEach(info => {
       if (info.id) addSubject(byId.get(info.id));
-      if (info.clave) addSubject(byClave.get(String(info.clave).trim()));
+      if (info.visibleId) addSubject(byId.get(info.visibleId));
+      if (info.clave) addClave(info.clave);
     });
 
-    (subject.prerequisitos || []).forEach(clave => {
-      addSubject(byClave.get(String(clave).trim()));
-    });
+    (subject?.prerequisitos || []).forEach(addClave);
 
-    ids.delete(subject.id);
+    const ownVisibleId = visibleCardIdFor(subject);
+    return items.filter(candidate => candidate.id !== subject?.id && visibleCardIdFor(candidate) !== ownVisibleId);
+  }
+
+  function prereqVisibleIdsFor(subject) {
+    const ids = new Set();
+    prereqSubjectsFor(subject).forEach(candidate => {
+      const cardId = visibleCardIdFor(candidate);
+      if (cardId) ids.add(cardId);
+    });
+    ids.delete(subject?.id);
     ids.delete(visibleCardIdFor(subject));
     return Array.from(ids);
+  }
+
+  function prereqKeysFor(subject) {
+    const keys = new Set();
+    prereqSubjectsFor(subject).forEach(candidate => {
+      subjectKeys(candidate).forEach(key => {
+        const clean = String(key || '').trim();
+        if (clean) keys.add(clean);
+      });
+    });
+    return Array.from(keys);
+  }
+
+  function isSubjectApprovedForPrereq(subject, subjectStatus = state.studentProgress?.subjectStatus, approvedClaves = state.studentProgress?.approvedClaves) {
+    if (!subject || !subjectStatus) return false;
+
+    const direct = subjectStatus.get(subject.id);
+    if (direct?.status === 'approved') return true;
+
+    const visibleId = visibleCardIdFor(subject);
+    if (visibleId && visibleId !== subject.id) {
+      const visibleStatus = subjectStatus.get(visibleId);
+      if (visibleStatus?.status === 'approved') return true;
+    }
+
+    return subjectKeys(subject).some(key => approvedClaves?.has(String(key).trim()));
+  }
+
+  function pairedTheoryForAvailability(subject) {
+    if (!subject || subject.isPhantom) return null;
+    if (subject.hiddenAsLabOf && byId.has(subject.hiddenAsLabOf)) return byId.get(subject.hiddenAsLabOf);
+    if (subject.theorySubjectId && byId.has(subject.theorySubjectId)) return byId.get(subject.theorySubjectId);
+    if (shouldInheritLabState(subject)) return pairedTheoryById.get(subject.id) || null;
+    return null;
+  }
+
+  function canTakeSubject(subject, subjectStatus = state.studentProgress?.subjectStatus, approvedClaves = state.studentProgress?.approvedClaves) {
+    if (!subject || !subjectStatus) return false;
+    const prereqSubjects = prereqSubjectsFor(subject);
+    if (!prereqSubjects.length) return true;
+    return prereqSubjects.every(candidate => isSubjectApprovedForPrereq(candidate, subjectStatus, approvedClaves));
+  }
+
+  function availabilityStateForCourse(subject, subjectStatus, approvedClaves = state.studentProgress?.approvedClaves) {
+    if (!subject || !subjectStatus) return 'locked';
+    const status = subjectStatus.get(subject.id);
+    if (status && ['approved', 'partial', 'attempted'].includes(status.status)) return '';
+
+    const delegate = pairedTheoryForAvailability(subject);
+    const baseSubject = delegate && delegate.id !== subject.id ? delegate : subject;
+    return canTakeSubject(baseSubject, subjectStatus, approvedClaves) ? 'available' : 'locked';
+  }
+
+  function isCourseStillPending(subject, subjectStatus) {
+    if (!subject) return false;
+    const status = subjectStatus.get(subject.id);
+    if (status?.status === 'approved') return false;
+    if (status?.status === 'attempted') return false;
+    const required = asNumber(subject.creditos);
+    const covered = coveredCreditsFromStatus(subject, status);
+    return covered < required || (!required && !status);
+  }
+
+  function buildAvailabilityById(subjectStatus, pendingSubjects, approvedClaves = state.studentProgress?.approvedClaves) {
+    const availabilityById = new Map();
+    const availableSubjects = [];
+    const lockedSubjects = [];
+    const visiblePendingIds = new Set((pendingSubjects || []).map(subject => subject.id));
+
+    const electiveOptions = (data.electiveGroups || [])
+      .flatMap(group => group.optionIds || [])
+      .map(id => byId.get(id))
+      .filter(Boolean);
+
+    const directCandidates = new Map();
+    (pendingSubjects || []).filter(subject => !subject.isPhantom).forEach(subject => directCandidates.set(subject.id, subject));
+    electiveOptions.forEach(subject => {
+      if (isCourseStillPending(subject, subjectStatus)) directCandidates.set(subject.id, subject);
+    });
+
+    subjects
+      .filter(subject => shouldInheritLabState(subject) && isCourseStillPending(subject, subjectStatus))
+      .forEach(subject => directCandidates.set(subject.id, subject));
+
+    directCandidates.forEach(subject => {
+      const value = availabilityStateForCourse(subject, subjectStatus, approvedClaves);
+      if (value) availabilityById.set(subject.id, value);
+    });
+
+    subjects.filter(shouldInheritLabState).forEach(lab => {
+      const labStatus = subjectStatus.get(lab.id);
+      if (labStatus && ['approved', 'partial', 'attempted'].includes(labStatus.status)) return;
+      const value = availabilityStateForCourse(lab, subjectStatus, approvedClaves);
+      if (value) availabilityById.set(lab.id, value);
+    });
+
+    (pendingSubjects || []).filter(subject => subject.isPhantom).forEach(phantom => {
+      const group = (data.electiveGroups || []).find(item => item.id === phantom.optativaGrupo);
+      const options = (group?.optionIds || []).map(id => byId.get(id)).filter(Boolean);
+      const hasAvailableOption = options.some(option => availabilityById.get(option.id) === 'available');
+      availabilityById.set(phantom.id, hasAvailableOption ? 'available' : 'locked');
+    });
+
+    (pendingSubjects || []).forEach(subject => {
+      const value = availabilityById.get(subject.id);
+      if (value === 'available') availableSubjects.push(subject);
+      else if (value === 'locked' && visiblePendingIds.has(subject.id)) lockedSubjects.push(subject);
+    });
+
+    return { availabilityById, availableSubjects, lockedSubjects };
   }
 
   function highlightCardById(id, className) {
@@ -650,7 +875,11 @@
   function blockOptionHTML(subject) {
     const labs = labsForBlockOption(subject);
     const labChips = labs.length
-      ? `<div class="block-lab-list">${labs.map(lab => `<button class="lab-chip" type="button" data-open-course="${escapeHTML(lab.id)}">Lab: ${escapeHTML(lab.nombre)} · ${escapeHTML(lab.clave)} · ${escapeHTML(lab.horas || 'Hrs')}</button>`).join('')}</div>`
+      ? `<div class="block-lab-list">${labs.map(lab => {
+          const labStatus = getCourseStatus(lab);
+          const labClasses = ['lab-chip', statusClass(labStatus, lab)].filter(Boolean).join(' ');
+          return `<button class="${escapeHTML(labClasses)}" type="button" data-open-course="${escapeHTML(lab.id)}">Lab: ${escapeHTML(lab.nombre)} · ${escapeHTML(lab.clave)} · ${escapeHTML(lab.horas || 'Hrs')}</button>`;
+        }).join('')}</div>`
       : '';
     return `<div class="option-card-wrap">${cardHTML(subject, { catalog: true })}${labChips}</div>`;
   }
@@ -963,7 +1192,8 @@
       if (!progress.student.account) missing.push('número de cuenta');
       const warning = missing.length ? ` No se detectó ${missing.join(' ni ')}; revisa la consola del navegador.` : ' Diagnóstico disponible en consola.';
 
-      status.textContent = `Histórico cargado: ${progress.student.name || 'Alumno'} · ${progress.history.rows.length} registros leídos.${warning}`;
+      const semesterMsg = progress.academicSemester?.semester ? ` · Semestre estimado: ${progress.academicSemester.semester}°` : '';
+      status.textContent = `Histórico cargado: ${progress.student.name || 'Alumno'} · ${progress.history.rows.length} registros leídos${semesterMsg}.${warning}`;
       renderAll();
       renderStudentReport();
       document.body.classList.add('has-progress');
@@ -1045,8 +1275,8 @@
     const nameInfo = detectStudentName(pdfData, accountInfo, fileName);
     const rowAttempts = pdfData.lines.map((line, index) => ({ index, line, parsed: parseHistoryRow(line) }));
     const rows = rowAttempts.map(item => item.parsed).filter(Boolean);
-    const ordinaryLines = rowAttempts.filter(item => /ORDINARIO\b/i.test(item.line));
-    const failedOrdinaryLines = ordinaryLines.filter(item => !item.parsed).map(item => ({ index: item.index, line: item.line }));
+    const historyLines = rowAttempts.filter(item => isHistoryObservationLine(item.line));
+    const failedHistoryLines = historyLines.filter(item => !item.parsed).map(item => ({ index: item.index, line: item.line }));
 
     return {
       fileName,
@@ -1060,8 +1290,11 @@
         account: accountInfo,
         name: nameInfo,
         headerLines: pdfData.lines.slice(0, 45),
-        ordinaryLineCount: ordinaryLines.length,
-        failedOrdinaryLines
+        historyLineCount: historyLines.length,
+        ordinaryLineCount: historyLines.filter(item => /ORDINARIO\b/i.test(item.line)).length,
+        revalidatedLineCount: historyLines.filter(item => /REVALIDADA\b/i.test(item.line)).length,
+        failedHistoryLines,
+        failedOrdinaryLines: failedHistoryLines
       }
     };
   }
@@ -1365,7 +1598,7 @@
   }
 
   function headerWindowLines(pdfData, accountInfo) {
-    const firstOrdinary = pdfData.lines.findIndex(line => /ORDINARIO\b/i.test(line));
+    const firstOrdinary = pdfData.lines.findIndex(line => isHistoryObservationLine(line));
     const maxEnd = firstOrdinary > 0 ? firstOrdinary : Math.min(pdfData.lines.length, 70);
     const preferredStart = accountInfo.lineIndex >= 0 ? Math.max(0, accountInfo.lineIndex - 10) : 0;
     const preferredEnd = Math.min(maxEnd, Math.max(preferredStart + 35, (accountInfo.lineIndex >= 0 ? accountInfo.lineIndex + 25 : 45)));
@@ -1484,7 +1717,7 @@
     const v = String(value || '').trim();
     if (!v) return false;
     if (v.length < 2 || v.length > 80) return false;
-    if (/ORDINARIO|CR[EÉ]DITOS|PROMEDIO|MATERIA|C[ÁA]LCULO|F[ÍI]SICA|LABORATORIO|TALLER|PROGRAMACI[ÓO]N|SISTEMAS|INGENIER[ÍI]A/i.test(v)) return false;
+    if (/ORDINARIO|REVALIDADA|CR[EÉ]DITOS|PROMEDIO|MATERIA|C[ÁA]LCULO|F[ÍI]SICA|LABORATORIO|TALLER|PROGRAMACI[ÓO]N|SISTEMAS|INGENIER[ÍI]A/i.test(v)) return false;
     if (/[^A-ZÁÉÍÓÚÜÑa-záéíóúüñ\s.'-]/.test(v)) return false;
     return nameWords(v).length >= 1;
   }
@@ -1521,9 +1754,11 @@
 
   function parseHistoryRow(rawLine) {
     const line = String(rawLine || '').replace(/\s+/g, ' ').trim();
-    if (!/ORDINARIO\b/i.test(line)) return null;
+    const observationMatch = matchHistoryObservation(line);
+    if (!observationMatch) return null;
 
-    const main = line.match(/^\s*(\d{3,6})\s+(.+?)\s+ORDINARIO\b/i);
+    const observation = observationMatch[0].toUpperCase();
+    const main = line.match(new RegExp(`^\\s*(\\d{3,6})\\s+(.+?)\\s+${observation}\\b`, 'i'));
     if (!main) return null;
 
     const clave = main[1];
@@ -1576,7 +1811,7 @@
 
     const cleanGrade = String(grade || '').toUpperCase().replace(',', '.');
     const numericGrade = Number(cleanGrade);
-    const approved = cleanGrade === 'AC' || (Number.isFinite(numericGrade) && numericGrade >= 6);
+    const approved = observation === 'REVALIDADA' || cleanGrade === 'AC' || (Number.isFinite(numericGrade) && numericGrade >= 6);
 
     return {
       clave,
@@ -1589,6 +1824,7 @@
       year: asNumber(year),
       group,
       approved,
+      observation,
       raw: line
     };
   }
@@ -1623,6 +1859,7 @@
       creditos: row.credits,
       calificacion: row.grade,
       acreditada: row.approved,
+      observacion: row.observation || '',
       periodo: row.period,
       anio: row.year,
       raw: row.raw
@@ -1633,6 +1870,7 @@
       materiaPDF: row.nombre,
       calificacion: row.grade,
       acreditada: row.approved,
+      observacion: row.observation || '',
       reconocida: row.recognized,
       materiaPlan: row.visibleSubject?.nombre || row.ownSubject?.nombre || ''
     }));
@@ -1660,8 +1898,8 @@
     console.groupCollapsed('Primeros registros comparados contra el plan');
     console.table(recognizedPreview);
     console.groupEnd();
-    if (history.debug?.failedOrdinaryLines?.length) {
-      console.warn('Líneas con ORDINARIO que no se pudieron interpretar:', history.debug.failedOrdinaryLines);
+    if (history.debug?.failedHistoryLines?.length) {
+      console.warn('Líneas con ORDINARIO o REVALIDADA que no se pudieron interpretar:', history.debug.failedHistoryLines);
     }
     if (!history.student.account || !history.student.name) {
       console.warn('No se detectó completamente el encabezado del alumno. Copia de consola history.debug para revisar:', history.debug);
@@ -1695,7 +1933,7 @@
       let attempt = bestAttemptForSubject(subject, bestAttemptByClave, bestAttemptBySigla);
       let attempts = attemptsForSubject(subject, attemptsByClave, attemptsBySigla);
       let inheritedFrom = null;
-      if (!attempt && shouldShowLab(subject)) {
+      if (!attempt && shouldInheritLabState(subject)) {
         inheritedFrom = pairedTheoryById.get(subject.id) || null;
         if (inheritedFrom) {
           attempt = bestAttemptForSubject(inheritedFrom, bestAttemptByClave, bestAttemptBySigla);
@@ -1809,6 +2047,9 @@
       return covered < required;
     });
 
+    const availability = buildAvailabilityById(subjectStatus, pendingSubjects, approvedClaves);
+    const academicSemester = computeAcademicSemester(history);
+
     const rowsWithMatch = history.rows.map(row => {
       const own = ownByClave.get(row.clave) || null;
       const visible = byClave.get(row.clave) || (row.sigla ? bySigla.get(String(row.sigla).toUpperCase()) : null) || null;
@@ -1829,6 +2070,10 @@
       planCreditsApproved,
       planSubjectsApproved,
       pendingSubjects,
+      availabilityById: availability.availabilityById,
+      availableSubjects: availability.availableSubjects,
+      lockedSubjects: availability.lockedSubjects,
+      academicSemester,
       unrecognizedApprovedRows: rowsWithMatch.filter(row => row.approved && !row.recognized)
     };
   }
@@ -1943,6 +2188,8 @@
     const approvedRows = progress.rowsWithMatch.filter(row => row.approved && row.recognized);
     const notApprovedRows = progress.rowsWithMatch.filter(row => !row.approved && row.recognized);
     const pending = progress.pendingSubjects.slice().sort((a, b) => (a.semestre - b.semestre) || String(a.nombre).localeCompare(String(b.nombre), 'es'));
+    const availableSubjects = (progress.availableSubjects || []).slice().sort((a, b) => (a.semestre - b.semestre) || String(a.nombre).localeCompare(String(b.nombre), 'es'));
+    const lockedSubjects = (progress.lockedSubjects || []).slice().sort((a, b) => (a.semestre - b.semestre) || String(a.nombre).localeCompare(String(b.nombre), 'es'));
 
     const coordRows = (data.coordinationSummary || []).map(row => {
       const courses = (row.subjectIds || []).map(id => byId.get(id)).filter(Boolean);
@@ -1956,8 +2203,11 @@
     });
 
     const quickRows = [
+      { cells: ['Semestre estimado', `<strong>${escapeHTML(academicSemesterText(progress))}</strong><br><span class="muted small-text">${escapeHTML(academicSemesterDetail(progress))}</span>`] },
       { cells: ['Materias/espacios cubiertos', `<strong>${escapeHTML(progress.planSubjectsApproved)}</strong>`] },
       { cells: ['Pendientes', `<strong>${escapeHTML(pending.length)}</strong>`] },
+      { cells: ['Disponibles para cursar', `<strong>${escapeHTML(availableSubjects.length)}</strong>`] },
+      { cells: ['Con prerrequisito pendiente', `<strong>${escapeHTML(lockedSubjects.length)}</strong>`] },
       { cells: ['Registros aprobados reconocidos', `<strong>${escapeHTML(approvedRows.length)}</strong>`] },
       { cells: ['Registros no acreditados', `<strong>${escapeHTML(notApprovedRows.length)}</strong>`] }
     ];
@@ -2004,9 +2254,18 @@
           <h3>${escapeHTML(progress.student.name || 'Nombre no detectado')}</h3>
           <p class="muted">Cuenta: ${escapeHTML(progress.student.account || 'No detectada')} · Archivo: ${escapeHTML(progress.history.fileName || 'PDF')}</p>
         </div>
-        <div class="student-score">
-          <strong>${escapeHTML(progress.planCreditsApproved)} / ${escapeHTML(total)}</strong>
-          <span>créditos del plan · ${escapeHTML(percent)}%</span>
+        <div class="student-metrics">
+          <div class="student-score combined-score">
+            <div class="student-score-side student-score-semester">
+              <strong>${escapeHTML(progress.academicSemester?.semester ? `${progress.academicSemester.semester}°` : '—')}</strong>
+              <span>${escapeHTML(progress.academicSemester?.semester ? 'semestres cursados' : 'semestre no detectado')}</span>
+            </div>
+            <div class="student-score-divider" aria-hidden="true"></div>
+            <div class="student-score-side student-score-credits">
+              <strong>${escapeHTML(progress.planCreditsApproved)} / ${escapeHTML(total)}</strong>
+              <span>créditos del plan · ${escapeHTML(percent)}%</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -2123,6 +2382,8 @@
     const approvedCredits = progress.planCreditsApproved || 0;
     const percent = totalCredits ? Math.round((approvedCredits / totalCredits) * 100) : 0;
     const pending = progress.pendingSubjects.slice().sort((a, b) => (a.semestre - b.semestre) || String(a.nombre).localeCompare(String(b.nombre), 'es'));
+    const availableSubjects = (progress.availableSubjects || []).slice().sort((a, b) => (a.semestre - b.semestre) || String(a.nombre).localeCompare(String(b.nombre), 'es'));
+    const lockedSubjects = (progress.lockedSubjects || []).slice().sort((a, b) => (a.semestre - b.semestre) || String(a.nombre).localeCompare(String(b.nombre), 'es'));
     const coordRows = exportSummaryRows(progress);
 
     const wrapper = document.createElement('section');
@@ -2151,8 +2412,11 @@
         <div style="display:grid; gap:8px;">
           <div style="display:flex; justify-content:space-between; gap:10px; padding-bottom:6px; border-bottom:1px solid #eef1f6;"><span>Créditos aprobados</span><strong>${escapeHTML(approvedCredits)} / ${escapeHTML(totalCredits)}</strong></div>
           <div style="display:flex; justify-content:space-between; gap:10px; padding-bottom:6px; border-bottom:1px solid #eef1f6;"><span>Porcentaje</span><strong>${escapeHTML(percent)}%</strong></div>
+          <div style="display:flex; justify-content:space-between; gap:10px; padding-bottom:6px; border-bottom:1px solid #eef1f6;"><span>Semestre estimado</span><strong>${escapeHTML(academicSemesterText(progress))}</strong></div>
           <div style="display:flex; justify-content:space-between; gap:10px; padding-bottom:6px; border-bottom:1px solid #eef1f6;"><span>Materias/espacios cubiertos</span><strong>${escapeHTML(progress.planSubjectsApproved)}</strong></div>
-          <div style="display:flex; justify-content:space-between; gap:10px;"><span>Materias pendientes</span><strong>${escapeHTML(pending.length)}</strong></div>
+          <div style="display:flex; justify-content:space-between; gap:10px; padding-bottom:6px; border-bottom:1px solid #eef1f6;"><span>Materias pendientes</span><strong>${escapeHTML(pending.length)}</strong></div>
+          <div style="display:flex; justify-content:space-between; gap:10px; padding-bottom:6px; border-bottom:1px solid #eef1f6;"><span>Disponibles para cursar</span><strong>${escapeHTML(availableSubjects.length)}</strong></div>
+          <div style="display:flex; justify-content:space-between; gap:10px;"><span>Con prerrequisito pendiente</span><strong>${escapeHTML(lockedSubjects.length)}</strong></div>
         </div>
       </article>
       <article style="border:1px solid #d7dde7; border-radius:18px; padding:16px; background:#fff;">
@@ -2175,7 +2439,7 @@
         <div style="font-size:12px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:#c8102e; margin-bottom:6px;">Mapa curricular</div>
         <h2 style="margin:0; font-size:28px;">Plan con calificaciones</h2>
       </div>
-      <div style="font-size:14px; color:#667085; text-align:right;">Verde: acreditada · Rojo: no acreditada · Blanco: pendiente · Amarillo: optativa parcial</div>`;
+      <div style="font-size:14px; color:#667085; text-align:right;">Verde: acreditada · Rojo: no acreditada · Amarillo: disponible para cursar · Gris: prerrequisito pendiente</div>`;
 
     const mapSection = document.createElement('div');
     mapSection.style.cssText = 'border:1px solid #d7dde7; border-radius:22px; padding:16px; background:#fff;';
@@ -2253,7 +2517,7 @@
     });
 
     root.querySelectorAll('.semester-header').forEach((header) => {
-      setImportantStyle(header, 'font-size', '.78rem');
+      setImportantStyle(header, 'font-size', '1.11rem');
       setImportantStyle(header, 'padding', '6px 4px');
     });
 
@@ -2264,26 +2528,59 @@
 
     root.querySelectorAll('.course-card').forEach((card) => {
       setImportantStyle(card, 'width', '100%');
-      setImportantStyle(card, 'min-height', '112px');
-      setImportantStyle(card, 'grid-template-columns', 'minmax(0, 1fr) var(--desktop-sigla-w)');
-      setImportantStyle(card, 'grid-template-rows', 'minmax(82px, auto) 26px');
+      setImportantStyle(card, 'min-width', '0');
+      setImportantStyle(card, 'min-height', '0');
+      setImportantStyle(card, 'height', 'auto');
+      setImportantStyle(card, 'aspect-ratio', '1.18 / 1');
+      setImportantStyle(card, 'grid-template-columns', 'minmax(0, 1fr) clamp(27px, 1.90vw, 36px)');
+      setImportantStyle(card, 'grid-template-rows', 'minmax(0, 1fr) clamp(21px, 1.50vw, 26px)');
     });
 
     root.querySelectorAll('.course-card.catalog').forEach((card) => {
       setImportantStyle(card, 'width', '182px');
       setImportantStyle(card, 'min-height', '124px');
+      setImportantStyle(card, 'aspect-ratio', 'auto');
       setImportantStyle(card, 'grid-template-columns', 'minmax(0, 1fr) var(--sigla-w)');
       setImportantStyle(card, 'grid-template-rows', 'minmax(94px, auto) 28px');
     });
 
     root.querySelectorAll('.course-title').forEach((titleNode) => {
-      setImportantStyle(titleNode, 'font-size', '.72rem');
-      setImportantStyle(titleNode, 'padding', '8px 6px');
-      setImportantStyle(titleNode, 'line-height', '1.04');
+      setImportantStyle(titleNode, 'font-size', '1.00rem');
+      setImportantStyle(titleNode, 'padding', '7px 6px');
+      setImportantStyle(titleNode, 'line-height', '1.05');
+      setImportantStyle(titleNode, 'font-weight', '400');
+      setImportantStyle(titleNode, 'letter-spacing', '-.012em');
+    });
+
+    root.querySelectorAll('.course-title-main').forEach((titleNode) => {
+      setImportantStyle(titleNode, 'font-weight', '400');
     });
 
     root.querySelectorAll('.course-hours, .course-sigla, .course-key, .course-credits, .course-sigla-text').forEach((node) => {
-      setImportantStyle(node, 'font-size', '.72rem');
+      setImportantStyle(node, 'font-size', '.88rem');
+      setImportantStyle(node, 'font-weight', '700');
+      setImportantStyle(node, 'line-height', '1');
+    });
+
+    root.querySelectorAll('.course-key').forEach((node) => {
+      setImportantStyle(node, 'display', 'flex');
+      setImportantStyle(node, 'align-items', 'center');
+      setImportantStyle(node, 'justify-content', 'center');
+      setImportantStyle(node, 'text-align', 'center');
+      setImportantStyle(node, 'padding', '3px 5px');
+    });
+
+    root.querySelectorAll('.progress-badge').forEach((badge) => {
+      setImportantStyle(badge, 'min-width', '58px');
+      setImportantStyle(badge, 'height', '44px');
+      setImportantStyle(badge, 'padding', '0 12px');
+      setImportantStyle(badge, 'font-size', '1.80rem');
+      setImportantStyle(badge, 'line-height', '1');
+      setImportantStyle(badge, 'font-weight', '900');
+      setImportantStyle(badge, 'border-width', '2px');
+      setImportantStyle(badge, 'top', '7px');
+      setImportantStyle(badge, 'left', '8px');
+      setImportantStyle(badge, 'z-index', '12');
     });
   }
 
@@ -2294,7 +2591,7 @@
     exportNode.className = 'manresa-app manresa-export-node';
     exportNode.setAttribute('aria-hidden', 'true');
     exportNode.style.cssText = 'position:fixed; left:-10000px; top:0; width:2400px; min-width:2400px; padding:28px; background:#ffffff; color:#111827; z-index:-1;';
-    exportNode.innerHTML = `<div style="margin-bottom:14px; display:flex; justify-content:space-between; align-items:end; gap:16px;"><div><div style="font-size:12px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:#c8102e; margin-bottom:6px;">Mapa curricular</div><h1 style="margin:0; font-size:40px; line-height:1;">${escapeHTML(document.body.dataset.page === 'avance' ? 'Plan con calificaciones' : 'Plan gráfico por semestre')}</h1><p style="margin:8px 0 0; color:#667085; font-size:18px;">${escapeHTML(data.meta?.carrera || 'Plan MANRESA')} · ${escapeHTML(data.meta?.plan || 'MANRESA')}</p></div><div style="text-align:right; color:#667085; font-size:14px;">${state.studentProgress ? `<div><strong style="color:#111827">${escapeHTML(state.studentProgress.student.name || 'Nombre no detectado')}</strong></div><div>Cuenta: ${escapeHTML(state.studentProgress.student.account || 'No detectada')}</div>` : ''}</div></div>`;
+    exportNode.innerHTML = `<div style="margin-bottom:14px; display:flex; justify-content:space-between; align-items:end; gap:16px;"><div><div style="font-size:12px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:#c8102e; margin-bottom:6px;">Mapa curricular</div><h1 style="margin:0; font-size:40px; line-height:1;">${escapeHTML(document.body.dataset.page === 'avance' ? 'Plan con calificaciones' : 'Plan gráfico por semestre')}</h1><p style="margin:8px 0 0; color:#667085; font-size:18px;">${escapeHTML(data.meta?.carrera || 'Plan MANRESA')} · ${escapeHTML(data.meta?.plan || 'MANRESA')}</p></div><div style="text-align:right; color:#667085; font-size:14px;">${state.studentProgress ? `<div><strong style="color:#111827">${escapeHTML(state.studentProgress.student.name || 'Nombre no detectado')}</strong></div><div>Cuenta: ${escapeHTML(state.studentProgress.student.account || 'No detectada')}</div><div>${escapeHTML(academicSemesterText(state.studentProgress))}</div>` : ''}</div></div>`;
     const clonedPlan = planSection.cloneNode(true);
     clonedPlan.style.boxShadow = 'none';
     clonedPlan.style.border = '1px solid #d7dde7';
@@ -2503,6 +2800,8 @@
         const approvedCredits = progress.planCreditsApproved || 0;
         const percent = total ? Math.round((approvedCredits / total) * 100) : 0;
         const pending = progress.pendingSubjects.slice().sort((a, b) => (a.semestre - b.semestre) || String(a.nombre).localeCompare(String(b.nombre), 'es'));
+        const availableSubjects = (progress.availableSubjects || []).slice().sort((a, b) => (a.semestre - b.semestre) || String(a.nombre).localeCompare(String(b.nombre), 'es'));
+        const lockedSubjects = (progress.lockedSubjects || []).slice().sort((a, b) => (a.semestre - b.semestre) || String(a.nombre).localeCompare(String(b.nombre), 'es'));
         const notApprovedRows = progress.rowsWithMatch.filter(row => !row.approved && row.recognized);
 
         addTitle('Resumen de avance curricular', `${data.meta?.carrera || 'Plan MANRESA'} · ${data.meta?.plan || 'MANRESA'}`);
@@ -2512,8 +2811,11 @@
         addSection('Avance general');
         addTable(['Indicador', 'Valor'], [
           ['Créditos aprobados', `${approvedCredits} / ${total} (${percent}%)`],
+          ['Semestre estimado', `${academicSemesterText(progress)} · ${academicSemesterDetail(progress)}`],
           ['Materias o espacios cubiertos', progress.planSubjectsApproved],
-          ['Materias pendientes', pending.length]
+          ['Materias pendientes', pending.length],
+          ['Disponibles para cursar', availableSubjects.length],
+          ['Con prerrequisito pendiente', lockedSubjects.length]
         ], [2.5, 1]);
 
         addSection('Avance por coordinación');

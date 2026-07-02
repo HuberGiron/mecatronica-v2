@@ -1,7 +1,7 @@
 // Fuente única de datos del plan.
 // Puedes editar el objeto JSON de abajo y conservar la línea "window.PLAN_DATA =".
 window.PLAN_DATA = {
-  "version": "public-1.3-caratulas-manresa",
+  "version": "public-1.3-caratulas-manresa-aru1-prereq-v29",
   "generatedAt": "2026-06-28T06:43:55Z",
   "meta": {
     "carrera": "INGENIERÍA MECATRÓNICA Y SISTEMAS CIBERFÍSICOS",
@@ -887,7 +887,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxjuzm-68vcl7",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -901,8 +903,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 20,
-      "resolvedPrereqIds": [],
-      "prereqInfo": [],
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ],
       "caratulaPdf": "/assets/pdf/caratulas/manresa/09_23910_RU320_CIUDADANIA_MUNDIAL_Y_MEDIO_AMBIENTE.pdf",
       "caratulaFile": "09_23910_RU320_CIUDADANIA_MUNDIAL_Y_MEDIO_AMBIENTE.pdf",
       "caratulaClave": "23910"
@@ -924,7 +935,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxl5k5-r2z74g",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -938,8 +951,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 21,
-      "resolvedPrereqIds": [],
-      "prereqInfo": [],
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ],
       "caratulaPdf": "/assets/pdf/caratulas/manresa/10_23915_RU220_INTERPERSONALIDAD_Y_TRASCENDENCIAS.pdf",
       "caratulaFile": "10_23915_RU220_INTERPERSONALIDAD_Y_TRASCENDENCIAS.pdf",
       "caratulaClave": "23915"
@@ -961,7 +983,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxhxn0-kfpgso",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -975,8 +999,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 22,
-      "resolvedPrereqIds": [],
-      "prereqInfo": [],
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ],
       "caratulaPdf": "/assets/pdf/caratulas/manresa/08_23977_RU424_CONSTRUCCION_DE_DEMOCRACIA_Y_SOSTENIBILIDAD.pdf",
       "caratulaFile": "08_23977_RU424_CONSTRUCCION_DE_DEMOCRACIA_Y_SOSTENIBILIDAD.pdf",
       "caratulaClave": "23977"
@@ -1461,7 +1494,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxhxn0-kfpgso",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -1475,8 +1510,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 35,
-      "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ]
     },
     {
       "id": "ru222-mqlwoyu2-odsmk2",
@@ -1495,7 +1539,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxhxn0-kfpgso",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -1509,8 +1555,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 36,
-      "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ]
     },
     {
       "id": "ru223-mqlwoyu2-bdiova",
@@ -1529,7 +1584,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxhxn0-kfpgso",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -1543,8 +1600,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 37,
-      "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ]
     },
     {
       "id": "ru224-mqlwoyu2-88ecis",
@@ -1563,7 +1629,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxhxn0-kfpgso",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -1577,8 +1645,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 38,
-      "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ]
     },
     {
       "id": "ru225-mqlwoyu2-sfh3d7",
@@ -1597,7 +1674,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxhxn0-kfpgso",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -1611,8 +1690,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 39,
-      "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ]
     },
     {
       "id": "ru226-mqlwoyu2-2xdmje",
@@ -1631,7 +1719,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxhxn0-kfpgso",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -1645,8 +1735,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 40,
-      "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ]
     },
     {
       "id": "ru321-mqlwoyu2-v1mjdj",
@@ -1665,7 +1764,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxjuzm-68vcl7",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -1679,8 +1780,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 41,
-      "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ]
     },
     {
       "id": "ru322-mqlwoyu2-zbs91f",
@@ -1699,7 +1809,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxjuzm-68vcl7",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -1713,8 +1825,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 42,
-      "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ]
     },
     {
       "id": "ru323-mqlwoyu2-sujvx1",
@@ -1733,7 +1854,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxjuzm-68vcl7",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -1747,8 +1870,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 43,
-      "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ]
     },
     {
       "id": "ru425-mqlwoyu2-5jloj4",
@@ -1767,7 +1899,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxl5k5-r2z74g",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -1781,8 +1915,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 44,
-      "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ]
     },
     {
       "id": "ru426-mqlwoyu2-2cki5z",
@@ -1801,7 +1944,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxl5k5-r2z74g",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -1815,8 +1960,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 45,
-      "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ]
     },
     {
       "id": "ru427-mqlwoyu2-cjnqov",
@@ -1835,7 +1989,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxl5k5-r2z74g",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -1849,8 +2005,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 46,
-      "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ]
     },
     {
       "id": "ru428-mqlwoyu2-ewyr4f",
@@ -1869,7 +2034,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxl5k5-r2z74g",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -1883,8 +2050,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 47,
-      "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ]
     },
     {
       "id": "ru429-mqlwoyu2-sf8iv5",
@@ -1903,7 +2079,9 @@ window.PLAN_DATA = {
       "optativaGrupo": "opt-mqlxl5k5-r2z74g",
       "isPhantom": false,
       "area": "",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "descripcion": "",
       "contenido": "",
       "lab": false,
@@ -1917,8 +2095,17 @@ window.PLAN_DATA = {
       "visibleInCatalog": true,
       "matchKind": "",
       "sourceIndex": 48,
-      "resolvedPrereqIds": [],
-      "prereqInfo": []
+      "resolvedPrereqIds": [
+        "optblk-mqlwpadv-gqyfyu"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqlwpadv-gqyfyu",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqlwpadv-gqyfyu"
+        }
+      ]
     },
     {
       "id": "ie088-mqlwoyu2-svmraf",
@@ -4988,7 +5175,7 @@ window.PLAN_DATA = {
       "isPhantom": true,
       "area": "ARU",
       "prerequisitos": [
-        "23908"
+        "ARU I"
       ],
       "descripcion": "Profundiza en ciudadanía democrática y sostenibilidad, promoviendo la participación informada y el compromiso con el bien común.",
       "contenido": "Consulta las opciones disponibles en la sección de electivas y ARU.",
@@ -5008,9 +5195,9 @@ window.PLAN_DATA = {
       ],
       "prereqInfo": [
         {
-          "clave": "23908",
+          "clave": "ARU I",
           "id": "optblk-mqlwpadv-gqyfyu",
-          "nombre": "ARU I",
+          "nombre": "ARU I acreditada",
           "visibleId": "optblk-mqlwpadv-gqyfyu"
         }
       ]
@@ -5033,7 +5220,7 @@ window.PLAN_DATA = {
       "isPhantom": true,
       "area": "ARU",
       "prerequisitos": [
-        "23908"
+        "ARU I"
       ],
       "descripcion": "Desarrolla conciencia y responsabilidad como ciudadanía global frente a los desafíos ambientales, promoviendo acciones concretas y éticas por la sostenibilidad.",
       "contenido": "Consulta las opciones disponibles en la sección de electivas y ARU.",
@@ -5053,9 +5240,9 @@ window.PLAN_DATA = {
       ],
       "prereqInfo": [
         {
-          "clave": "23908",
+          "clave": "ARU I",
           "id": "optblk-mqlwpadv-gqyfyu",
-          "nombre": "ARU I",
+          "nombre": "ARU I acreditada",
           "visibleId": "optblk-mqlwpadv-gqyfyu"
         }
       ]
@@ -5078,7 +5265,7 @@ window.PLAN_DATA = {
       "isPhantom": true,
       "area": "ARU",
       "prerequisitos": [
-        "23908"
+        "ARU I"
       ],
       "descripcion": "Integra formación y acción social mediante un proyecto de intervención comunitaria con enfoque ético y de aprendizaje-servicio.",
       "contenido": "Consulta las opciones disponibles en la sección de electivas y ARU.",
@@ -5098,9 +5285,9 @@ window.PLAN_DATA = {
       ],
       "prereqInfo": [
         {
-          "clave": "23908",
+          "clave": "ARU I",
           "id": "optblk-mqlwpadv-gqyfyu",
-          "nombre": "ARU I",
+          "nombre": "ARU I acreditada",
           "visibleId": "optblk-mqlwpadv-gqyfyu"
         }
       ]

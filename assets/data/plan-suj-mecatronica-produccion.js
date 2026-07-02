@@ -1,6 +1,8 @@
+// Fuente única de datos del plan.
+// Puedes editar el objeto JSON de abajo y conservar la línea "window.PLAN_DATA =".
 window.PLAN_DATA = {
-  "version": "1.5-web-caratulas",
-  "generatedAt": "2026-06-28T06:38:14Z",
+  "version": "1.6-web-colores-coordinacion-aru1-prereq-v29",
+  "generatedAt": "2026-07-02T05:42:37Z",
   "meta": {
     "carrera": "INGENIERÍA EN MECATRÓNICA Y PRODUCCIÓN",
     "plan": "SUJ",
@@ -2259,7 +2261,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 37,
@@ -2278,14 +2280,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -2311,7 +2313,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 38,
@@ -2330,14 +2332,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -2379,7 +2381,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 39,
@@ -2398,14 +2400,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -2448,7 +2450,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 40,
@@ -2467,14 +2469,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -2500,7 +2502,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 41,
@@ -2519,14 +2521,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -2569,7 +2571,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 42,
@@ -2588,14 +2590,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -2638,7 +2640,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 43,
@@ -2657,14 +2659,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -2707,7 +2709,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 44,
@@ -2726,14 +2728,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -2777,7 +2779,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 45,
@@ -2796,14 +2798,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -2846,7 +2848,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 46,
@@ -2865,14 +2867,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -2916,7 +2918,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 47,
@@ -2935,14 +2937,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -2985,7 +2987,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 48,
@@ -3004,14 +3006,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3055,7 +3057,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 49,
@@ -3074,14 +3076,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3107,7 +3109,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 50,
@@ -3126,14 +3128,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3176,7 +3178,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 51,
@@ -3195,14 +3197,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3228,7 +3230,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 52,
@@ -3247,14 +3249,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3280,7 +3282,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 53,
@@ -3299,14 +3301,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3350,7 +3352,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 54,
@@ -3369,14 +3371,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3419,7 +3421,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 55,
@@ -3438,14 +3440,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3487,7 +3489,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 56,
@@ -3506,14 +3508,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3539,7 +3541,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 57,
@@ -3558,14 +3560,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3607,7 +3609,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 58,
@@ -3626,14 +3628,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3674,7 +3676,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 59,
@@ -3693,14 +3695,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3726,7 +3728,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 60,
@@ -3745,14 +3747,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3794,7 +3796,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 61,
@@ -3813,14 +3815,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3863,7 +3865,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 62,
@@ -3882,14 +3884,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -3930,7 +3932,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 63,
@@ -3949,14 +3951,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4000,7 +4002,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 64,
@@ -4019,14 +4021,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4066,7 +4068,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 65,
@@ -4085,14 +4087,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4118,7 +4120,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 66,
@@ -4137,14 +4139,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4186,7 +4188,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 67,
@@ -4205,14 +4207,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4256,7 +4258,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 68,
@@ -4275,14 +4277,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4326,7 +4328,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 69,
@@ -4345,14 +4347,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4395,7 +4397,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 70,
@@ -4414,14 +4416,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4465,7 +4467,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 71,
@@ -4484,14 +4486,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4517,7 +4519,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 72,
@@ -4536,14 +4538,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4587,7 +4589,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 73,
@@ -4606,14 +4608,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4657,7 +4659,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 74,
@@ -4676,14 +4678,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4709,7 +4711,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 75,
@@ -4728,14 +4730,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4761,7 +4763,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 76,
@@ -4780,14 +4782,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4830,7 +4832,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 77,
@@ -4849,14 +4851,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4882,7 +4884,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 78,
@@ -4901,14 +4903,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4934,7 +4936,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 79,
@@ -4953,14 +4955,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -4986,7 +4988,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 80,
@@ -5005,14 +5007,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5038,7 +5040,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 81,
@@ -5057,14 +5059,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5090,7 +5092,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 82,
@@ -5109,14 +5111,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5159,7 +5161,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 83,
@@ -5178,14 +5180,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5229,7 +5231,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 84,
@@ -5248,14 +5250,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5299,7 +5301,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 85,
@@ -5318,14 +5320,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5367,7 +5369,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 86,
@@ -5386,14 +5388,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5433,7 +5435,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 87,
@@ -5452,14 +5454,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5500,7 +5502,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 88,
@@ -5519,14 +5521,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5569,7 +5571,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 89,
@@ -5588,14 +5590,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5639,7 +5641,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 90,
@@ -5658,14 +5660,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5708,7 +5710,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 91,
@@ -5727,14 +5729,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5779,7 +5781,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 92,
@@ -5798,14 +5800,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5850,7 +5852,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 93,
@@ -5869,14 +5871,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5920,7 +5922,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 94,
@@ -5939,14 +5941,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -5990,7 +5992,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 95,
@@ -6009,14 +6011,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -6059,7 +6061,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 96,
@@ -6078,14 +6080,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -6129,7 +6131,7 @@ window.PLAN_DATA = {
       "tipo": "optativa_catalogo",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
       "prerequisitos": [
-        "20483"
+        "ARU I"
       ],
       "isPhantom": false,
       "sourceIndex": 97,
@@ -6148,14 +6150,14 @@ window.PLAN_DATA = {
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
       "resolvedPrereqIds": [
-        "ru101-mqx8ccs0-tzqzad"
+        "optblk-mqxbreku-0j1l75"
       ],
       "prereqInfo": [
         {
-          "clave": "20483",
-          "nombre": "PERSONA Y HUMANISMO",
-          "id": "ru101-mqx8ccs0-tzqzad",
-          "visibleId": "ru101-mqx8ccs0-tzqzad"
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
         }
       ],
       "visibleInPlan": false,
@@ -9720,7 +9722,9 @@ window.PLAN_DATA = {
       "horas": "",
       "tipo": "optativa_bloque",
       "optativaGrupo": "opt-mqxaogmr-y7rmk7",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "isPhantom": true,
       "sourceIndex": 161,
       "displayClave": "",
@@ -9737,8 +9741,17 @@ window.PLAN_DATA = {
       "theoryNombre": "",
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
-      "resolvedPrereqIds": [],
-      "prereqInfo": [],
+      "resolvedPrereqIds": [
+        "optblk-mqxbreku-0j1l75"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
+        }
+      ],
       "visibleInPlan": true,
       "visibleInCatalog": false
     },
@@ -9754,7 +9767,9 @@ window.PLAN_DATA = {
       "horas": "",
       "tipo": "optativa_bloque",
       "optativaGrupo": "opt-mqxaoa3e-rvb4at",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "isPhantom": true,
       "sourceIndex": 162,
       "displayClave": "",
@@ -9771,8 +9786,17 @@ window.PLAN_DATA = {
       "theoryNombre": "",
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
-      "resolvedPrereqIds": [],
-      "prereqInfo": [],
+      "resolvedPrereqIds": [
+        "optblk-mqxbreku-0j1l75"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
+        }
+      ],
       "visibleInPlan": true,
       "visibleInCatalog": false
     },
@@ -9788,7 +9812,9 @@ window.PLAN_DATA = {
       "horas": "",
       "tipo": "optativa_bloque",
       "optativaGrupo": "opt-mqxao4q1-441jgs",
-      "prerequisitos": [],
+      "prerequisitos": [
+        "ARU I"
+      ],
       "isPhantom": true,
       "sourceIndex": 163,
       "displayClave": "",
@@ -9805,8 +9831,17 @@ window.PLAN_DATA = {
       "theoryNombre": "",
       "theorySubjectId": "",
       "hiddenAsLabOf": "",
-      "resolvedPrereqIds": [],
-      "prereqInfo": [],
+      "resolvedPrereqIds": [
+        "optblk-mqxbreku-0j1l75"
+      ],
+      "prereqInfo": [
+        {
+          "clave": "ARU I",
+          "id": "optblk-mqxbreku-0j1l75",
+          "nombre": "ARU I acreditada",
+          "visibleId": "optblk-mqxbreku-0j1l75"
+        }
+      ],
       "visibleInPlan": true,
       "visibleInCatalog": false
     },
@@ -10190,23 +10225,23 @@ window.PLAN_DATA = {
     }
   ],
   "colors": {
-    "ADMINISTRACIÓN DE EMPRESAS": "#fff176",
-    "COMUNICACIÓN": "#90caf9",
-    "FÍSICA": "#a5d6a7",
-    "HABILIDADES VERBALES": "#ffcc80",
-    "INGENIERÍA BIOMÉDICA": "#ce93d8",
-    "INGENIERÍA ELECTRÓNICA": "#ef9a9a",
-    "INGENIERÍA EN TECNOLOGÍAS DE CÓMPUTO Y TELECOMUNICACIONES": "#80cbc4",
-    "INGENIERÍA INDUSTRIAL": "#f48fb1",
-    "INGENIERÍA MECÁNICA Y ELÉCTRICA": "#b0bec5",
-    "INGENIERÍA MECATRÓNICA Y SISTEMAS CIBERFÍSICOS": "#c5e1a5",
-    "MATEMÁTICAS": "#ffe082",
-    "QUÍMICA": "#9fa8da",
-    "REFLEXIÓN UNIVERSITARIA T1: PERSONA Y HUMANISMO": "#bcaaa4",
-    "REFLEXIÓN UNIVERSITARIA T2: HISTORIA Y SOCIEDAD": "#b39ddb",
-    "REFLEXIÓN UNIVERSITARIA T3: TRASCENDENCIA": "#fff176",
-    "REFLEXIÓN UNIVERSITARIA T4: PERSONA Y PRAXIS": "#90caf9",
-    "SERVICIO SOCIAL": "#a5d6a7",
+    "ADMINISTRACIÓN DE EMPRESAS": "#fde68a",
+    "COMUNICACIÓN": "#bae6fd",
+    "FÍSICA": "#f6dfcc",
+    "HABILIDADES VERBALES": "#dedbc8",
+    "INGENIERÍA BIOMÉDICA": "#ddd6fe",
+    "INGENIERÍA ELECTRÓNICA": "#a7f3d0",
+    "INGENIERÍA EN TECNOLOGÍAS DE CÓMPUTO Y TELECOMUNICACIONES": "#f6f28b",
+    "INGENIERÍA INDUSTRIAL": "#fecdd3",
+    "INGENIERÍA MECÁNICA Y ELÉCTRICA": "#9ebbd8",
+    "INGENIERÍA MECATRÓNICA Y SISTEMAS CIBERFÍSICOS": "#d99393",
+    "MATEMÁTICAS": "#f6dfcc",
+    "QUÍMICA": "#bfdbfe",
+    "REFLEXIÓN UNIVERSITARIA T1: PERSONA Y HUMANISMO": "#dedbc8",
+    "REFLEXIÓN UNIVERSITARIA T2: HISTORIA Y SOCIEDAD": "#dedbc8",
+    "REFLEXIÓN UNIVERSITARIA T3: TRASCENDENCIA": "#dedbc8",
+    "REFLEXIÓN UNIVERSITARIA T4: PERSONA Y PRAXIS": "#dedbc8",
+    "SERVICIO SOCIAL": "#dedbc8",
     "Optativas": "#cfe7b5",
     "ARU": "#dedbc8",
     "TALLER DE INTEGRACIÓN UNIVERSITARIA": "#dedbc8"

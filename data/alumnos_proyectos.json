@@ -432,7 +432,9 @@
       "interfaces-humano-maquina"
     ],
     "alumnos": [
-      "Luis Cortés Muñoz"
+      "Luis Cortés Muñoz",
+      "Sebastián Méndez",
+      "Alexander Moncada Rivas"
     ],
     "asesores": [
       "huber-giron"
@@ -445,10 +447,22 @@
         "orden": 1
       },
       {
+        "personaId": "sebastian-mendez",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 2
+      },
+      {
+        "nombre": "Alexander Moncada Rivas",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 3
+      },
+      {
         "personaId": "huber-giron",
         "rol": "asesor",
         "rolTexto": "Profesor",
-        "orden": 2
+        "orden": 4
       }
     ],
     "cursoRelacionado": "Prospectiva de la Tecnología",

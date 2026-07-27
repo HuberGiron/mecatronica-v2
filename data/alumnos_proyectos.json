@@ -301,15 +301,11 @@
     "alt": "Arquitectura de TORQUE, sistema operativo de IA para talleres mecánicos",
     "categorias": [
       "Inteligencia artificial",
-      "Sistemas multiagente",
-      "Automatización",
+      "LLM",
       "WhatsApp"
     ],
     "lineas": [
-      "inteligencia-artificial",
-      "sistemas-multiagente",
-      "automatizacion-digital",
-      "transformacion-digital"
+      "inteligencia-artificial"
     ],
     "alumnos": [
       "Jose Luis Macedo Escamilla",
@@ -361,7 +357,6 @@
     "alt": "Gemelo digital en realidad mixta para controlar un brazo robótico UR3",
     "categorias": [
       "Robótica",
-      "Gemelo digital",
       "Realidad mixta",
       "IA"
     ],
@@ -422,8 +417,7 @@
     "categorias": [
       "Automatización",
       "PLC",
-      "IA",
-      "Interfaces de voz"
+      "IA"
     ],
     "lineas": [
       "automatizacion-industrial",

@@ -292,5 +292,171 @@
     "tipoEtiqueta": "Proyecto de alumnos",
     "url": "https://sebas30073007.github.io/mecatronica-gear-designer/",
     "habilitado": true
+  },
+  {
+    "id": "torque-sistema-operativo-ia-talleres-2026",
+    "titulo": "TORQUE — Sistema operativo de IA para talleres mecánicos",
+    "descripcion": "Sistema operativo de inteligencia artificial multiagente que administra la operación diaria de un taller mecánico mediante WhatsApp. Procesa texto, voz e imágenes, coordina agentes especializados y ejecuta acciones proactivas sobre inventario, clientes, finanzas y operación.",
+    "imagen": "/assets/img/alumnos/torque.png",
+    "alt": "Arquitectura de TORQUE, sistema operativo de IA para talleres mecánicos",
+    "categorias": [
+      "Inteligencia artificial",
+      "Sistemas multiagente",
+      "Automatización",
+      "WhatsApp"
+    ],
+    "lineas": [
+      "inteligencia-artificial",
+      "sistemas-multiagente",
+      "automatizacion-digital",
+      "transformacion-digital"
+    ],
+    "alumnos": [
+      "Jose Luis Macedo Escamilla",
+      "Fernanda Torres Abaroa",
+      "Alfredo Mérida"
+    ],
+    "asesores": [
+      "huber-giron"
+    ],
+    "participantes": [
+      {
+        "nombre": "Jose Luis Macedo Escamilla",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 1
+      },
+      {
+        "nombre": "Fernanda Torres Abaroa",
+        "rol": "alumna",
+        "rolTexto": "Alumna",
+        "orden": 2
+      },
+      {
+        "nombre": "Alfredo Mérida",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 3
+      },
+      {
+        "personaId": "huber-giron",
+        "rol": "asesor",
+        "rolTexto": "Profesor",
+        "orden": 4
+      }
+    ],
+    "cursoRelacionado": "Prospectiva de la Tecnología",
+    "semestre": "Verano 2026",
+    "fechaISO": "2026-07-03",
+    "fechaTexto": "3 de julio de 2026",
+    "tipoEtiqueta": "Proyecto de alumnos",
+    "url": "https://joseluis0022.github.io/reportes-academicos/Proyecto/TORQUE_Documentacion_Arquitectura.html",
+    "habilitado": true
+  },
+  {
+    "id": "gemelo-digital-ia-realidad-mixta-ur3-2026",
+    "titulo": "Gemelo digital con IA y realidad mixta para brazo UR3",
+    "descripcion": "Sistema de gemelo digital que integra Meta Quest 3, reconocimiento de voz, modelos de inteligencia artificial, visión por computadora y un brazo robótico UR3. El usuario solicita un dibujo en lenguaje natural, lo previsualiza en realidad mixta y autoriza su ejecución física.",
+    "imagen": "/assets/img/alumnos/gemelo-digital-ur3.png",
+    "alt": "Gemelo digital en realidad mixta para controlar un brazo robótico UR3",
+    "categorias": [
+      "Robótica",
+      "Gemelo digital",
+      "Realidad mixta",
+      "IA"
+    ],
+    "lineas": [
+      "sistemas-ciberfisicos",
+      "robotica-industrial",
+      "ia-robotica",
+      "realidad-mixta"
+    ],
+    "alumnos": [
+      "Diego Marquez",
+      "Haili Avila",
+      "José Antonio Reyes"
+    ],
+    "asesores": [
+      "huber-giron"
+    ],
+    "participantes": [
+      {
+        "nombre": "Diego Marquez",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 1
+      },
+      {
+        "nombre": "Haili Avila",
+        "rol": "alumna",
+        "rolTexto": "Alumna",
+        "orden": 2
+      },
+      {
+        "nombre": "José Antonio Reyes",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 3
+      },
+      {
+        "personaId": "huber-giron",
+        "rol": "asesor",
+        "rolTexto": "Profesor",
+        "orden": 4
+      }
+    ],
+    "cursoRelacionado": "Prospectiva de la Tecnología",
+    "semestre": "Verano 2026",
+    "fechaISO": "2026-07-03",
+    "fechaTexto": "3 de julio de 2026",
+    "tipoEtiqueta": "Proyecto de alumnos",
+    "url": "https://oinonta24.github.io/Prospectiva-Tec/pf_pruebasReales/",
+    "habilitado": true
+  },
+  {
+    "id": "laddervoice-lavo-logica-ladder-voz-2026",
+    "titulo": "LadderVoice / LAVO — Generador de lógica Ladder por voz",
+    "descripcion": "Plataforma de automatización industrial que interpreta instrucciones por voz o texto, genera lógica Ladder para PLC, permite visualizarla y validarla, y ejecuta pruebas sobre hardware físico. Incluye manejo de enclavamientos, paro, temporizadores y contadores.",
+    "imagen": "/assets/img/alumnos/laddervoice.png",
+    "alt": "Interfaz de LadderVoice para generar lógica Ladder mediante voz",
+    "categorias": [
+      "Automatización",
+      "PLC",
+      "IA",
+      "Interfaces de voz"
+    ],
+    "lineas": [
+      "automatizacion-industrial",
+      "control-industrial",
+      "inteligencia-artificial",
+      "interfaces-humano-maquina"
+    ],
+    "alumnos": [
+      "Luis Cortés Muñoz"
+    ],
+    "asesores": [
+      "huber-giron"
+    ],
+    "participantes": [
+      {
+        "nombre": "Luis Cortés Muñoz",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 1
+      },
+      {
+        "personaId": "huber-giron",
+        "rol": "asesor",
+        "rolTexto": "Profesor",
+        "orden": 2
+      }
+    ],
+    "cursoRelacionado": "Prospectiva de la Tecnología",
+    "semestre": "Verano 2026",
+    "fechaISO": "2026-07-03",
+    "fechaTexto": "3 de julio de 2026",
+    "tipoEtiqueta": "Proyecto de alumnos",
+    "url": "https://luiscortesmunoz.github.io/Proyecto_Final_Prospectiva_Tecnologia/documentacion.html#resultados",
+    "habilitado": true
   }
 ]

@@ -1,8 +1,8 @@
 // Fuente única de datos del plan.
 // Puedes editar el objeto JSON de abajo y conservar la línea "window.PLAN_DATA =".
 window.PLAN_DATA = {
-  "version": "public-1.3-caratulas-manresa-aru1-prereq-v29",
-  "generatedAt": "2026-06-28T06:43:55Z",
+  "version": "public-1.4-caratulas-manresa-v2-prereq-v31",
+  "generatedAt": "2026-08-20T17:03:51Z",
   "meta": {
     "carrera": "INGENIERÍA MECATRÓNICA Y SISTEMAS CIBERFÍSICOS",
     "plan": "MANRESA",
@@ -10,7 +10,9 @@ window.PLAN_DATA = {
     "creditosEsperados": "",
     "creditosTotales": 443,
     "caratulasPath": "/assets/pdf/caratulas/manresa/",
-    "caratulasDisponibles": 109
+    "caratulasDisponibles": 109,
+    "caratulasV2Path": "/assets/pdf/caratulas/manresa-v2/",
+    "caratulasV2Disponibles": 63
   },
   "subjects": [
     {
@@ -6069,3 +6071,21 @@ window.PLAN_DATA = {
     }
   ]
 };
+
+// Las carátulas v2 provienen de los Word oficiales disponibles. Las materias
+// que todavía no tienen Word conservan su PDF anterior en /manresa/.
+const CARATULAS_MANRESA_V2_CLAVES = new Set([
+  "2201", "20048", "20174", "20825", "20827", "20831", "20835", "20841",
+  "22258", "22684", "22694", "23908", "23910", "23915", "23977", "23981",
+  "24068", "24077", "24271", "24289", "24370", "24371", "24372", "24563",
+  "24683", "24710", "80005", "80012", "80014", "80016", "80017", "80018",
+  "80019", "80020", "80021", "80023", "80027", "80028", "80029", "80030",
+  "80031", "80032", "80039", "80040", "80041", "80052", "80053", "80054",
+  "80055", "80056", "80057", "80058", "80059", "80064", "80068", "80069",
+  "80102", "80103", "80104", "80105", "80419", "80420", "80421"
+]);
+
+window.PLAN_DATA.subjects.forEach(subject => {
+  if (!subject.caratulaFile || !CARATULAS_MANRESA_V2_CLAVES.has(String(subject.caratulaClave))) return;
+  subject.caratulaPdf = `${window.PLAN_DATA.meta.caratulasV2Path}${subject.caratulaFile}`;
+});

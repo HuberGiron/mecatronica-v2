@@ -344,7 +344,7 @@
     "cursoRelacionado": "Prospectiva de la Tecnología",
     "semestre": "Verano 2026",
     "fechaISO": "2026-07-03",
-    "fechaTexto": "3 de julio de 2026",
+    "fechaTexto": "Verano 2026",
     "tipoEtiqueta": "Proyecto de alumnos",
     "url": "https://joseluis0022.github.io/reportes-academicos/Proyecto/TORQUE_Documentacion_Arquitectura.html",
     "habilitado": true
@@ -403,7 +403,7 @@
     "cursoRelacionado": "Prospectiva de la Tecnología",
     "semestre": "Verano 2026",
     "fechaISO": "2026-07-03",
-    "fechaTexto": "3 de julio de 2026",
+    "fechaTexto": "Verano 2026",
     "tipoEtiqueta": "Proyecto de alumnos",
     "url": "https://oinonta24.github.io/Prospectiva-Tec/pf_pruebasReales/",
     "habilitado": true
@@ -462,7 +462,7 @@
     "cursoRelacionado": "Prospectiva de la Tecnología",
     "semestre": "Verano 2026",
     "fechaISO": "2026-07-03",
-    "fechaTexto": "3 de julio de 2026",
+    "fechaTexto": "Verano 2026",
     "tipoEtiqueta": "Proyecto de alumnos",
     "url": "https://luiscortesmunoz.github.io/Proyecto_Final_Prospectiva_Tecnologia/documentacion.html#resultados",
     "habilitado": true
@@ -493,9 +493,9 @@
         "orden": 1
       }
     ],
-    "semestre": "2026",
-    "fechaISO": "2026-01-01",
-    "fechaTexto": "2026",
+    "semestre": "Primavera 2026",
+    "fechaISO": "2026-05-01",
+    "fechaTexto": "Primavera 2026",
     "tipoEtiqueta": "Proyecto de alumnos",
     "url": "https://sebs.mx/#project=projects-structural-mapping-in-mixed-reality-2",
     "habilitado": true
@@ -529,7 +529,7 @@
     ],
     "semestre": "Primavera 2026",
     "fechaISO": "2026-05-01",
-    "fechaTexto": "Mayo 2026",
+    "fechaTexto": "Primavera 2026",
     "tipoEtiqueta": "Proyecto de alumnos",
     "url": "https://sebs.mx/#project=projects-capa-8-network-ai-3",
     "habilitado": true
@@ -567,9 +567,9 @@
         "orden": 2
       }
     ],
-    "semestre": "2026",
-    "fechaISO": "2026-01-01",
-    "fechaTexto": "2026",
+    "semestre": "Verano 2026",
+    "fechaISO": "2026-07-03",
+    "fechaTexto": "Verano 2026",
     "tipoEtiqueta": "Proyecto de alumnos",
     "url": "https://sebs.mx/#project=pcbs-drivers-controller-0",
     "habilitado": true
@@ -607,9 +607,9 @@
         "orden": 2
       }
     ],
-    "semestre": "2026",
-    "fechaISO": "2026-01-01",
-    "fechaTexto": "2026",
+    "semestre": "Verano 2026",
+    "fechaISO": "2026-07-03",
+    "fechaTexto": "Verano 2026",
     "tipoEtiqueta": "Proyecto de alumnos",
     "url": "https://sebs.mx/#project=pcbs-puente-h-1",
     "habilitado": true
@@ -647,9 +647,9 @@
         "orden": 2
       }
     ],
-    "semestre": "2026",
-    "fechaISO": "2026-01-01",
-    "fechaTexto": "2026",
+    "semestre": "Verano 2026",
+    "fechaISO": "2026-07-03",
+    "fechaTexto": "Verano 2026",
     "tipoEtiqueta": "Proyecto de alumnos",
     "url": "https://sebs.mx/#project=pcbs-servo-controller-v2-2",
     "habilitado": true

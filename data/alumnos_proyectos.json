@@ -466,5 +466,174 @@
     "tipoEtiqueta": "Proyecto de alumnos",
     "url": "https://luiscortesmunoz.github.io/Proyecto_Final_Prospectiva_Tecnologia/documentacion.html#resultados",
     "habilitado": true
+  },
+  {
+    "id": "mapeo-estructural-realidad-mixta-2026",
+    "titulo": "Mapeo estructural en realidad mixta",
+    "descripcion": "Proyecto de inspección y registro del entorno mediante realidad mixta, orientado al mapeo estructural y la visualización espacial con herramientas de Unity y realidad aumentada.",
+    "imagen": "/assets/img/alumnos/mapeo-estructural-rm.png",
+    "alt": "Proyecto de mapeo estructural mediante realidad mixta",
+    "categorias": [
+      "Realidad mixta",
+      "Robótica",
+      "Mapeo"
+    ],
+    "lineas": [
+      "sistemas-ciberfisicos",
+      "robotica-movil"
+    ],
+    "alumnos": [
+      "Sebastián Méndez"
+    ],
+    "participantes": [
+      {
+        "personaId": "sebastian-mendez",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 1
+      }
+    ],
+    "semestre": "2026",
+    "fechaISO": "2026-01-01",
+    "fechaTexto": "2026",
+    "tipoEtiqueta": "Proyecto de alumnos",
+    "url": "https://github.com/sebas30073007/mapeo-estructural-en-realidad-mixta",
+    "habilitado": true
+  },
+  {
+    "id": "capa-8-network-ai-2026",
+    "titulo": "Capa 8 — IA aplicada a redes",
+    "descripcion": "Aplicación de inteligencia artificial a redes de computadoras centrada en la llamada capa 8, el factor humano, con generación y representación de topologías basadas en el modelo OSI.",
+    "imagen": "/assets/img/alumnos/capa8.png",
+    "alt": "Interfaz del proyecto Capa 8 de inteligencia artificial aplicada a redes",
+    "categorias": [
+      "Inteligencia artificial",
+      "Redes",
+      "Software"
+    ],
+    "lineas": [
+      "inteligencia-artificial",
+      "iot-embebidos",
+      "ciberseguridad"
+    ],
+    "alumnos": [
+      "Sebastián Méndez"
+    ],
+    "participantes": [
+      {
+        "personaId": "sebastian-mendez",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 1
+      }
+    ],
+    "semestre": "Primavera 2026",
+    "fechaISO": "2026-05-01",
+    "fechaTexto": "Mayo 2026",
+    "tipoEtiqueta": "Proyecto de alumnos",
+    "url": "https://capa8.sebs.mx/",
+    "habilitado": true
+  },
+  {
+    "id": "drivers-controller-pcb-2026",
+    "titulo": "Drivers Controller",
+    "descripcion": "Tarjeta controladora para hasta tres drivers de motores NEMA 17 mediante señales DIR/PULL. Integra etapas con transistores para adaptar la lógica de 3.3 V del ESP32-C3 a pulsos de 5 V y conectividad I2C para encadenar controladores.",
+    "imagen": "/assets/img/alumnos/drivers-controller.png",
+    "alt": "Tarjeta electrónica Drivers Controller diseñada por Sebastián Méndez",
+    "categorias": [
+      "PCB",
+      "Control de motores",
+      "Sistemas embebidos"
+    ],
+    "lineas": [
+      "iot-embebidos",
+      "microelectronica",
+      "fabricacion-digital"
+    ],
+    "alumnos": [
+      "Sebastián Méndez"
+    ],
+    "participantes": [
+      {
+        "personaId": "sebastian-mendez",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 1
+      }
+    ],
+    "semestre": "2026",
+    "fechaISO": "2026-01-01",
+    "fechaTexto": "2026",
+    "tipoEtiqueta": "Proyecto de alumnos",
+    "url": "https://github.com/sebas30073007/portfolio/tree/main/pcbs/Drivers-controller",
+    "habilitado": true
+  },
+  {
+    "id": "puente-h-pcb-2026",
+    "titulo": "Puente H",
+    "descripcion": "Tarjeta de potencia tipo puente H para motores de 12 a 24 V, diseñada para operación estable a 4 A continuos y picos de hasta 8 A. Incorpora optoacopladores para aislar lógica y potencia, además de conectividad I2C.",
+    "imagen": "/assets/img/alumnos/puente-h.png",
+    "alt": "Tarjeta electrónica Puente H diseñada por Sebastián Méndez",
+    "categorias": [
+      "PCB",
+      "Electrónica de potencia",
+      "Control de motores"
+    ],
+    "lineas": [
+      "microelectronica",
+      "iot-embebidos",
+      "fabricacion-digital"
+    ],
+    "alumnos": [
+      "Sebastián Méndez"
+    ],
+    "participantes": [
+      {
+        "personaId": "sebastian-mendez",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 1
+      }
+    ],
+    "semestre": "2026",
+    "fechaISO": "2026-01-01",
+    "fechaTexto": "2026",
+    "tipoEtiqueta": "Proyecto de alumnos",
+    "url": "https://github.com/sebas30073007/portfolio/tree/main/pcbs/PuenteH",
+    "habilitado": true
+  },
+  {
+    "id": "servo-controller-v2-pcb-2026",
+    "titulo": "Servo Controller v2",
+    "descripcion": "Tarjeta educativa basada en ESP32-C3 SuperMini para un pequeño vehículo de dos servomotores de rotación continua. Integra pantalla OLED y circuito de carga para baterías LiPo y Li-ion.",
+    "imagen": "/assets/img/alumnos/servo-controller-v2.png",
+    "alt": "Tarjeta electrónica Servo Controller v2 diseñada por Sebastián Méndez",
+    "categorias": [
+      "PCB",
+      "ESP32-C3",
+      "Sistemas embebidos"
+    ],
+    "lineas": [
+      "iot-embebidos",
+      "microelectronica",
+      "fabricacion-digital"
+    ],
+    "alumnos": [
+      "Sebastián Méndez"
+    ],
+    "participantes": [
+      {
+        "personaId": "sebastian-mendez",
+        "rol": "alumno",
+        "rolTexto": "Alumno",
+        "orden": 1
+      }
+    ],
+    "semestre": "2026",
+    "fechaISO": "2026-01-01",
+    "fechaTexto": "2026",
+    "tipoEtiqueta": "Proyecto de alumnos",
+    "url": "https://github.com/sebas30073007/portfolio/tree/main/pcbs/Servo-controller",
+    "habilitado": true
   }
 ]

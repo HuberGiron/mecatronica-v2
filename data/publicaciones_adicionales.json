@@ -4,8 +4,16 @@
     "titulo": "UR3 Collaborative Robot Inverse Kinematics Using Metaheuristic Optimization: A Unified Comparative and Experimental Evaluation",
     "descripcion": "Estudio comparativo y experimental de cinemática inversa para un robot colaborativo UR3 mediante cinco algoritmos metaheurísticos y un método determinista de referencia, con evaluación estadística, validación en RoboDK y pruebas físicas.",
     "alt": "UR3 Collaborative Robot Inverse Kinematics Using Metaheuristic Optimization: A Unified Comparative and Experimental Evaluation",
-    "categorias": ["MDPI", "Applied System Innovation", "Journal Article"],
-    "lineas": ["robotica-movil", "sistemas-ciberfisicos", "control-distribuido"],
+    "categorias": [
+      "MDPI",
+      "Applied System Innovation",
+      "Journal Article"
+    ],
+    "lineas": [
+      "robotica-movil",
+      "sistemas-ciberfisicos",
+      "control-distribuido"
+    ],
     "autor": "Dr. Huber Girón Nieto",
     "avatar": "/assets/img/team/huber.png",
     "fechaISO": "2026-07-01",
@@ -15,7 +23,14 @@
     "url": "https://doi.org/10.3390/asi9070140",
     "habilitado": true,
     "origen": "Applied System Innovation / MDPI",
-    "participantes": [{"personaId": "huber-giron", "rol": "autor", "rolTexto": "Autor", "orden": 1}],
+    "participantes": [
+      {
+        "personaId": "huber-giron",
+        "rol": "autor",
+        "rolTexto": "Autor",
+        "orden": 1
+      }
+    ],
     "visible": true
   },
   {
@@ -23,18 +38,33 @@
     "titulo": "Biofabrication of Chitosan-Hydroxyapatite hydrogel via 3D Printing for Tissue Engineering Applications",
     "descripcion": "Trabajo de biofabricación mediante impresión 3D de un hidrogel de quitosano e hidroxiapatita para aplicaciones de ingeniería de tejidos, presentado en IEEE BNM 2024.",
     "alt": "Biofabrication of Chitosan-Hydroxyapatite hydrogel via 3D Printing for Tissue Engineering Applications",
-    "categorias": ["IEEE", "BNM 2024", "Conference Paper"],
-    "lineas": ["salud-biotecnologia", "fabricacion-digital", "materiales-sistemas"],
+    "categorias": [
+      "IEEE",
+      "BNM 2024",
+      "Conference Paper"
+    ],
+    "lineas": [
+      "salud-biotecnologia",
+      "fabricacion-digital",
+      "materiales-sistemas"
+    ],
     "autor": "Dr. Huber Girón Nieto",
     "avatar": "/assets/img/team/huber.png",
     "fechaISO": "2024-12-02",
     "fechaTexto": "Diciembre 2024",
     "tipoEtiqueta": "Publicación",
     "botonTexto": "Leer más",
-    "url": "https://bnm.embs.org/2024/wp-content/uploads/sites/109/2024/11/BNM2024_Programme_Final.pdf",
+    "url": "https://ieeexplore.ieee.org/abstract/document/11643672",
     "habilitado": true,
     "origen": "2024 IEEE Conference on Bionanotechnology and BioMEMS (BNM)",
-    "participantes": [{"personaId": "huber-giron", "rol": "autor", "rolTexto": "Autor", "orden": 1}],
+    "participantes": [
+      {
+        "personaId": "huber-giron",
+        "rol": "autor",
+        "rolTexto": "Autor",
+        "orden": 1
+      }
+    ],
     "visible": true
   }
 ]

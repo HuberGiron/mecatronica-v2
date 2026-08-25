@@ -1,5 +1,38 @@
 [
   {
+    "id": "recurso-kicad-basics-2026",
+    "titulo": "KiCad Basics",
+    "descripcion": "Curso introductorio de KiCad para aprender fundamentos de captura esquemática, uso de símbolos, cableado y configuración de proyectos electrónicos.",
+    "imagen": "https://sebs.mx/courses/KiCad/kicad-basics.png",
+    "alt": "Curso KiCad Basics desarrollado por Sebastián Méndez",
+    "categorias": [
+      "KiCad",
+      "Diseño de PCB",
+      "Electrónica"
+    ],
+    "lineas": [
+      "microelectronica",
+      "fabricacion-digital"
+    ],
+    "autor": "Sebastián Méndez",
+    "fechaISO": "2026-09-01",
+    "fechaTexto": "Septiembre 2026",
+    "tipoEtiqueta": "Curso",
+    "botonTexto": "Abrir curso",
+    "url": "https://sebs.mx/#project=courses-kicad-basics-0",
+    "habilitado": true,
+    "origen": "sebs.mx",
+    "participantes": [
+      {
+        "personaId": "sebastian-mendez",
+        "rol": "instructor",
+        "rolTexto": "Instructor",
+        "orden": 1
+      }
+    ],
+    "visible": true
+  },
+  {
     "id": "recurso-html-css-js",
     "titulo": "HTML, CSS y JavaScript",
     "descripcion": "Lección introductoria para aprender a construir páginas web y publicar contenidos académicos, documentación técnica y proyectos en línea.",

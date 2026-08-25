@@ -3,6 +3,7 @@
     "id": "pub-ur3-inverse-kinematics-metaheuristic-2026",
     "titulo": "UR3 Collaborative Robot Inverse Kinematics Using Metaheuristic Optimization: A Unified Comparative and Experimental Evaluation",
     "descripcion": "Estudio comparativo y experimental de cinemática inversa para un robot colaborativo UR3 mediante cinco algoritmos metaheurísticos y un método determinista de referencia, con evaluación estadística, validación en RoboDK y pruebas físicas.",
+    "imagen": "/assets/img/publicaciones/ur3-optimization.png",
     "alt": "UR3 Collaborative Robot Inverse Kinematics Using Metaheuristic Optimization: A Unified Comparative and Experimental Evaluation",
     "categorias": [
       "MDPI",
@@ -37,6 +38,7 @@
     "id": "pub-biofabrication-chitosan-hydroxyapatite-2024",
     "titulo": "Biofabrication of Chitosan-Hydroxyapatite hydrogel via 3D Printing for Tissue Engineering Applications",
     "descripcion": "Trabajo de biofabricación mediante impresión 3D de un hidrogel de quitosano e hidroxiapatita para aplicaciones de ingeniería de tejidos, presentado en IEEE BNM 2024.",
+    "imagen": "/assets/img/publicaciones/biofabrication.png",
     "alt": "Biofabrication of Chitosan-Hydroxyapatite hydrogel via 3D Printing for Tissue Engineering Applications",
     "categorias": [
       "IEEE",

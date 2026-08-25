@@ -12,6 +12,7 @@
     },
     publicaciones: {
       archivo: '/data/publicaciones.json',
+      archivoAdicional: '/data/publicaciones_adicionales.json',
       titulo: 'Publicaciones'
     },
     recursos: {
@@ -52,12 +53,18 @@
   async function loadCatalogData(collection) {
     const config = CONFIG[collection];
     if (!config) throw new Error('Colección inválida: ' + collection);
-    const [items, lineas, personas] = await Promise.all([
-      fetchJson(config.archivo),
+
+    const itemRequests = [fetchJson(config.archivo)];
+    if (config.archivoAdicional) itemRequests.push(fetchJson(config.archivoAdicional));
+
+    const [itemSources, lineas, personas] = await Promise.all([
+      Promise.all(itemRequests),
       fetchJson('/data/lineas_investigacion.json'),
       fetchJson('/data/personas.json')
     ]);
-    return { config, items: asArray(items), lineas: asArray(lineas), personas: asArray(personas) };
+
+    const items = itemSources.flatMap(asArray);
+    return { config, items, lineas: asArray(lineas), personas: asArray(personas) };
   }
 
   function sortByDateDesc(items) {

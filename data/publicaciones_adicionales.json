@@ -2,12 +2,11 @@
   {
     "id": "pub-ur3-inverse-kinematics-metaheuristic-2026",
     "titulo": "UR3 Collaborative Robot Inverse Kinematics Using Metaheuristic Optimization: A Unified Comparative and Experimental Evaluation",
-    "descripcion": "Estudio comparativo y experimental de cinemática inversa para un robot colaborativo UR3 mediante cinco algoritmos metaheurísticos y un método determinista de referencia, con evaluación estadística, validación en RoboDK y pruebas físicas.",
+    "descripcion": "",
     "imagen": "/assets/img/publicaciones/ur3-optimization.png",
     "alt": "UR3 Collaborative Robot Inverse Kinematics Using Metaheuristic Optimization: A Unified Comparative and Experimental Evaluation",
     "categorias": [
       "MDPI",
-      "Applied System Innovation",
       "Journal Article"
     ],
     "lineas": [

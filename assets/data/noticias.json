@@ -1,5 +1,68 @@
 [
   {
+    "titulo": "El peligro de la IA no es que se rebele contra los humanos, sino que dejemos de supervisarla: especialistas IBERO",
+    "fecha": "Jue, 24 Sep 2026",
+    "resumen": "Especialistas de la IBERO analizaron los riesgos reales de los sistemas de inteligencia artificial cada vez más autónomos y señalaron que el debate debe centrarse en la supervisión humana, la responsabilidad, la transparencia, la regulación y los límites a la automatización.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/el-peligro-de-la-ia-no-es-que-se-rebele-contra-los-humanos-sino-que-dejemos-de-supervisarla-especialistas-ibero",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/IA_HUMANOS_3706d51e62.jpg"
+  },
+  {
+    "titulo": "IBERO convierte la IA en prototipos durante Claude Mexico City Build Day: 102 participantes y 61 proyectos",
+    "fecha": "Vie, 18 Sep 2026",
+    "resumen": "La IBERO fue sede del Claude Mexico City Build Day, encuentro en el que 102 participantes desarrollaron 61 proyectos con inteligencia artificial, incluyendo tutoría para lengua de señas, videojuegos educativos, análisis de congestión del Metro y un laboratorio de impresión 3D operado con IA.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/ibero-convierte-la-ia-en-prototipos-durante-claude-mexico-city-build-day-102-participantes-y-61-proyectos",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/ingenieria_ibero_6084a1bc10.jpg"
+  },
+  {
+    "titulo": "¿Debe dar miedo que una IA resuelva en horas uno de los problemas del milenio?: Especialista IBERO analiza caso de OpenAI",
+    "fecha": "Vie, 18 Sep 2026",
+    "resumen": "El Dr. José Antonio Pardo Olaguez analiza el caso de OpenAI y el problema de existencia y regularidad de Navier-Stokes, planteando que la inteligencia artificial no debe generar miedo, sino obligar a replantear la investigación, la enseñanza y el uso de herramientas capaces de acelerar el trabajo intelectual.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/debe-dar-miedo-que-una-ia-resuelva-en-horas-uno-de-los-problemas-del-milenio-especialista-ibero-analiza-caso-de-open-ai",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/Debe_dar_miedo_que_una_IA_resuelva_en_horas_lo_que_tomo_decadas_Especialista_IBERO_analiza_caso_matematico_de_Open_AI_db3b1823a5.jpg"
+  },
+  {
+    "titulo": "Investigación IBERO desarrolla sistema para transportar objetos con robots de mayor precisión",
+    "fecha": "Jue, 17 Sep 2026",
+    "resumen": "Investigadores de la IBERO desarrollaron un sistema de control para que dos robots móviles coordinen sus movimientos, sujeten y transporten objetos sin depender de una estructura rígida o de un controlador central, combinando robótica suave, funciones fraccionales y un gemelo digital.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/investigacion-ibero-desarrolla-sistema-para-transportar-objetos-con-robots-de-mayor-precision",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/Investigacion_IBERO_desarrolla_sistema_para_transportar_objetos_con_robots_de_mayor_precision_fea382ef43.jpg"
+  },
+  {
+    "titulo": "IBERO desarrolla tecnología para operar desde México un brazo robótico ubicado en Suecia",
+    "fecha": "Mié, 9 Sep 2026",
+    "resumen": "La IBERO desarrolla, junto con la Universidad de Linneo, una aplicación de realidad extendida que utiliza un gemelo digital y gafas HoloLens 2 para programar, validar y operar desde México los movimientos de un brazo robótico ubicado en Suecia.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/ibero-desarrolla-tecnologia-para-operar-desde-mexico-un-brazo-robotico-ubicado-en-suecia",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/Whats_App_Image_2026_09_09_at_10_08_14_AM_f341b68440.jpeg"
+  },
+  {
+    "titulo": "Estudiante de Doctorado en Ciencias de la Ingeniería representará a la IBERO en Concurso Nacional de Tesis",
+    "fecha": "Mié, 2 Sep 2026",
+    "resumen": "Janet Carolina López Romero, estudiante del Doctorado en Ciencias de la Ingeniería, representará a la IBERO en el Concurso Nacional 3MT 2026 con una tesis enfocada en el desarrollo de robots suaves como juguetes multisensoriales y educativos para apoyar el desarrollo cognitivo infantil.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/estudiante-de-doctorado-en-ciencias-de-la-ingenieria-representara-a-la-ibero-en-concurso-nacional-de-tesis",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/Posgrados_Ciencias_de_la_Ingenieria_e22a8c10b8.jpg"
+  },
+  {
+    "titulo": "Cyber safety, la nueva defensa contra los riesgos de Internet: Estudiante IBERO",
+    "fecha": "Mar, 1 Sep 2026",
+    "resumen": "Mario Ureña García, estudiante de Ciencia de Datos e Ingeniería Artificial, explica la importancia del cyber safety frente a riesgos digitales como la clonación de voces, la generación de imágenes y videos para suplantación de identidad, y la necesidad de educar a niñas, niños y adolescentes en el uso seguro de la tecnología.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/cyber-safety-la-nueva-defensa-contra-los-riesgos-de-internet-estudiante-ibero",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/Cyber_safety_la_nueva_defensa_contra_los_riesgos_de_Internet_Estudiante_IBERO_ddff5dc795.jpg"
+  },
+  {
+    "titulo": "Lenguas indígenas, fugas de agua y obesidad infantil: así usará la IBERO su nueva infraestructura de IA",
+    "fecha": "Lun, 17 Ago 2026",
+    "resumen": "La IBERO utilizará su nueva infraestructura de inteligencia artificial para desarrollar modelos de lenguaje para lenguas indígenas, detectar fugas en redes de agua urbanas, estudiar obesidad infantil, crear gemelos digitales y avanzar en robótica colaborativa, con una capacidad agregada de 2.3 TB de memoria de video.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/lenguas-indigenas-fugas-de-agua-y-obesidad-infantil-asi-usara-la-ibero-su-nueva-infraestructura-de-ia",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/NVIDIA_2_c8a5f3d7af.jpg"
+  },
+  {
+    "titulo": "IBERO será sede del primer encuentro en CDMX dedicado a ingeniería de IA con Claude",
+    "fecha": "Jue, 13 Ago 2026",
+    "resumen": "La IBERO será sede de Claude for AI Engineering, primer encuentro en la Ciudad de México dedicado a ingeniería de IA con Claude, que combinará conferencias técnicas y talleres prácticos sobre sistemas de inteligencia artificial, arquitecturas multiagente, context engineering, MCP, evaluación y observabilidad de LLM.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/ibero-sera-sede-del-primer-encuentro-en-cdmx-dedicado-a-ingenieria-de-ia-con-claude",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/ia_claude_78be1232ae.jpg"
+  },
+  {
   "titulo": "Estudiantes IBERO ganan 1er lugar mundial de Huawei en China con innovador prototipo robot con IA para la agricultura",
   "fecha": "Lun, 6 Jul 2026",
   "resumen": "El equipo Jada Robotics, integrado por estudiantes de Ingeniería en Mecatrónica y Sistemas Ciberfísicos de la IBERO, obtuvo el primer lugar mundial en el Huawei Innovation Competition 2025 en Shenzhen, China, con Plague-Bot VR: un prototipo que integra robótica, inteligencia artificial y realidad virtual para detectar plagas, enfermedades y madurez de frutos en invernaderos de tomate.",

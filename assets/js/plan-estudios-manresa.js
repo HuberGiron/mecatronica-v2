@@ -515,12 +515,13 @@
         </div>
       </div>
 
-      ${window.ManresaFichaHorarios ? '<section class="detail-section horarios-ficha" data-horarios-ficha></section>' : ''}
       ${prereqSection}
       ${descriptionSection}
       ${contentSection}
 
       ${electiveOptionsHTML(subject)}
+
+      ${window.ManresaFichaHorarios ? '<section class="detail-section horarios-ficha" data-horarios-ficha></section>' : ''}
     `;
   }
 

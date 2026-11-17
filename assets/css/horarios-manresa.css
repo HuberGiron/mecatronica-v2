@@ -1,0 +1,255 @@
+.horarios-hero {
+  padding-bottom: clamp(1.8rem, 4vw, 3rem);
+}
+
+.horarios-hero .horarios-intro {
+  margin-bottom: .7rem;
+}
+
+.horarios-plan-link,
+.horarios-source-link {
+  color: #a91225;
+  font-weight: 600;
+  text-underline-offset: .2em;
+}
+
+.horarios-section {
+  --horarios-red: #a91225;
+  --horarios-border: #e6dedc;
+  --horarios-muted: #575354;
+  padding: 2rem 0 clamp(2.5rem, 6vw, 4.5rem);
+  background: #f8f6f5;
+  border-top: 1px solid var(--horarios-border);
+}
+
+.horarios-status,
+.horarios-filters,
+.horarios-sources,
+.horarios-card,
+.horarios-empty {
+  background: #fff;
+  border: 1px solid var(--horarios-border);
+  border-radius: 14px;
+}
+
+.horarios-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border-left: 4px solid var(--horarios-red);
+}
+
+.horarios-status-info,
+.horarios-status-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: .7rem;
+}
+
+.horarios-status-actions {
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.horarios-status-dot {
+  flex: 0 0 .62rem;
+  height: .62rem;
+  margin-top: .57rem;
+  border-radius: 50%;
+  background: #a66a00;
+}
+
+.horarios-status-dot[data-state="ok"] { background: #217147; }
+.horarios-status-dot[data-state="error"] { background: var(--horarios-red); }
+
+.horarios-status h2 {
+  margin: 0 0 .32rem;
+  font-family: var(--ibero-serif);
+  font-size: clamp(1.25rem, 3vw, 1.8rem);
+  line-height: 1.15;
+}
+
+.horarios-status p,
+.horarios-results-bar p {
+  margin: 0;
+}
+
+.horarios-status time,
+.horarios-meta,
+.horarios-source-period {
+  color: var(--horarios-muted);
+  font-size: .92rem;
+}
+
+.horarios-section .btn-ibero {
+  width: auto;
+  min-width: 0;
+  min-height: 2.5rem;
+  padding: .5rem 1rem;
+  font-size: .95rem;
+}
+
+.horarios-secondary {
+  border: 1px solid #d3c9c7;
+  border-radius: 30px;
+  color: #252123;
+  background: #fff;
+  font-weight: 600;
+  font-size: .95rem;
+  padding: .46rem .87rem;
+}
+
+.horarios-secondary:hover {
+  color: var(--horarios-red);
+  border-color: var(--horarios-red);
+  background: #fff7f8;
+}
+
+.horarios-section :is(button, input, select, summary, a):focus-visible {
+  outline: 2px solid var(--horarios-red);
+  outline-offset: 3px;
+}
+
+.horarios-sources {
+  margin-top: .75rem;
+  padding: .7rem 1rem;
+}
+
+.horarios-sources summary {
+  width: fit-content;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.horarios-sources ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: .7rem 1.2rem;
+  margin: .85rem 0 .3rem;
+  padding-left: 1.2rem;
+}
+
+.horarios-sources p { margin: .1rem 0 0; }
+.horarios-source-error { color: var(--horarios-red); }
+
+.horarios-filters {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .7rem 1rem;
+  margin-top: 1.2rem;
+  padding: clamp(1rem, 3vw, 1.35rem);
+}
+
+.horarios-filters label { font-weight: 600; }
+.horarios-search { grid-column: 1 / -1; }
+
+.horarios-filters :is(.form-control, .form-select) {
+  margin-top: .35rem;
+  border-color: #d3c9c7;
+  min-width: 0;
+}
+
+.horarios-results-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: .65rem;
+  padding: 1rem 0;
+}
+
+.horarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
+  align-items: start;
+  gap: 1rem;
+}
+
+.horarios-card {
+  min-width: 0;
+  padding: clamp(1rem, 3vw, 1.25rem);
+}
+
+.horarios-card h3 {
+  margin: .35rem 0;
+  font-family: var(--ibero-serif);
+  font-size: 1.34rem;
+  line-height: 1.25;
+}
+
+.horarios-key {
+  margin: 0;
+  color: var(--horarios-red);
+  font-size: .91rem;
+  font-weight: 700;
+}
+
+.horarios-card .horarios-meta { margin: 0 0 .6rem; }
+
+.horarios-groups summary {
+  color: var(--horarios-red);
+  width: fit-content;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.horarios-group {
+  padding: .65rem .75rem;
+  margin-top: .6rem;
+  background: #f8f6f5;
+  border-radius: 8px;
+}
+
+.horarios-group h4 {
+  margin: 0;
+  font-size: .98rem;
+  font-weight: 700;
+}
+
+.horarios-group > p {
+  margin: .2rem 0 0;
+  font-size: .93rem;
+}
+
+.horarios-sessions {
+  margin: .5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.horarios-sessions li {
+  display: grid;
+  grid-template-columns: minmax(4.9rem, .8fr) minmax(5.5rem, 1.1fr) minmax(0, 1.25fr);
+  gap: .55rem;
+  padding: .34rem 0;
+  border-top: 1px solid var(--horarios-border);
+  overflow-wrap: anywhere;
+  font-size: .9rem;
+}
+
+.horarios-group .horarios-note {
+  margin-top: .5rem;
+  padding: .45rem .55rem;
+  border-left: 2px solid #b58325;
+  background: #fff8e9;
+}
+
+.horarios-empty {
+  grid-column: 1 / -1;
+  padding: 1rem 1.25rem;
+  margin: 0;
+}
+
+@media (max-width: 799px) {
+  .horarios-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 374px) {
+  .horarios-sessions li {
+    grid-template-columns: 1fr;
+    gap: .1rem;
+  }
+}

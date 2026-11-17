@@ -443,7 +443,13 @@
       }
     }
 
-    $('#panelContent').innerHTML = detailHTML(subject);
+    const panelContent = $('#panelContent');
+    panelContent.innerHTML = detailHTML(subject);
+    const horarios = $('[data-horarios-ficha]', panelContent);
+    if (horarios) {
+      const lab = subject.labClave ? ownByClave.get(String(subject.labClave).trim()) : null;
+      window.ManresaFichaHorarios.show(horarios, subject, lab);
+    }
     $('#coursePanel').classList.add('is-open');
     $('#coursePanel').setAttribute('aria-hidden', 'false');
 
@@ -509,6 +515,7 @@
         </div>
       </div>
 
+      ${window.ManresaFichaHorarios ? '<section class="detail-section horarios-ficha" data-horarios-ficha></section>' : ''}
       ${prereqSection}
       ${descriptionSection}
       ${contentSection}

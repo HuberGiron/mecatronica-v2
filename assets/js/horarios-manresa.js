@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const API = "/api/horarios/manresa";
+  const { fetchOffers, subjectKey, periodLabel, element, groupCard } = window.ManresaHorarios;
   const SOURCE_URL = "https://enlinea.uia.mx/Consulta_Horarios/horarios.cfm";
   const ACTIVE_TYPES = new Set(["obligatoria", "optativa_catalogo"]);
   const DAYS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
@@ -34,6 +34,7 @@
   };
 
   const plan = window.PLAN_DATA;
+  const simulator = window.startManresaSimulator();
   const catalogue = new Map();
   const expectedSources = new Map();
   const openCards = new Set();
@@ -43,19 +44,11 @@
   let activeRequest = null;
   let consultationFailed = false;
 
-  const subjectKey = (coordination, subject) => `${coordination}:${subject}`;
   const compare = (a, b) => COLLATOR.compare(a, b);
   const unique = (items) => [...new Set(items)];
 
   function normalize(input) {
     return String(input ?? "").normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase().trim();
-  }
-
-  function element(tag, text, className = "") {
-    const node = document.createElement(tag);
-    if (text) node.textContent = text;
-    if (className) node.className = className;
-    return node;
   }
 
   function countLabel(count, singular, plural) {
@@ -64,11 +57,6 @@
 
   function semesterLabel(semester) {
     return `Semestre ${semester}`;
-  }
-
-  function periodLabel(period) {
-    const value = period.toLocaleLowerCase("es-MX");
-    return value.charAt(0).toLocaleUpperCase("es-MX") + value.slice(1);
   }
 
   function loadCatalogue() {
@@ -89,6 +77,9 @@
       catalogue.set(subjectKey(coordination, code), {
         name: subject.nombre,
         sigla: subject.sigla,
+        credits: Number(subject.creditos) || 0,
+        independentHours: Number(String(subject.horas).split(",")[1]) || 0,
+        labKey: subject.labClave ? subjectKey(coordination, subject.labClave) : "",
         elective: elective?.name || "",
         semesters: unique(semesters.map(Number).filter((number) => number > 0)).sort((a, b) => a - b)
       });
@@ -190,37 +181,10 @@
     );
   }
 
-  function groupCard(group) {
-    const block = element("section", "", "horarios-group");
-    block.append(
-      element("h4", [`Grupo ${group.grupo}`, group.modalidad].filter(Boolean).join(" · ")),
-      element("p", group.profesores.length ? group.profesores.join(" / ") : "Docente por confirmar")
-    );
-
-    if (group.sesiones.length) {
-      const sessions = element("ul", "", "horarios-sessions");
-      for (const session of group.sesiones) {
-        const row = element("li");
-        row.append(
-          element("strong", session.dia || "Día por confirmar"),
-          element("span", session.horario || "Hora por confirmar"),
-          element("span", session.salon || "Salón por confirmar")
-        );
-        sessions.append(row);
-      }
-      block.append(sessions);
-    } else {
-      block.append(element("p", "Horario por confirmar"));
-    }
-
-    for (const note of group.notas) block.append(element("p", note, "horarios-note"));
-    return block;
-  }
-
   function courseCard(course, groups, showPeriod) {
     const card = element("article", "", "horarios-card");
     const sigla = groups.find((group) => group.sigla)?.sigla || course.sigla;
-    const meta = [course.source.nombre];
+    const meta = [course.source.nombre, countLabel(course.credits, "crédito", "créditos")];
     if (course.elective) meta.push(course.elective);
     if (course.semesters.length) {
       meta.push(course.semesters.length === 1
@@ -234,7 +198,12 @@
     details.append(element("summary", countLabel(groups.length, "grupo", "grupos")));
     // Los grupos de una materia se crean al abrirla para mantener ágil el filtro.
     function showGroups() {
-      if (details.childElementCount === 1) details.append(...groups.map(groupCard));
+      if (details.childElementCount > 1) return;
+      for (const group of groups) {
+        const card = groupCard(group);
+        card.append(simulator.createGroupButton(course, group));
+        details.append(card);
+      }
     }
     if (details.open) showGroups();
     details.addEventListener("toggle", () => {
@@ -305,19 +274,11 @@
     ui.results.setAttribute("aria-busy", "true");
     ui.results.replaceChildren();
     setStatus("loading", "Consultando las fuentes oficiales…");
+    simulator.setOffers([], [], true);
 
-    const timeout = window.setTimeout(() => controller.abort(), 28_000);
     try {
-      const response = await fetch(API, {
-        cache: "no-store",
-        headers: { Accept: "application/json" },
-        signal: controller.signal
-      });
-      const result = await response.json();
+      const result = await fetchOffers(controller);
       if (activeRequest !== controller) return;
-      if (!Array.isArray(result?.fuentes) || !Number.isFinite(Date.parse(result.consultadoEn))) {
-        throw new Error("Respuesta inválida");
-      }
 
       const bySource = new Map(result.fuentes.map((source) => [source.id, source]));
       sources = [...expectedSources.values()].map((expected) => bySource.get(expected.id) || {
@@ -325,7 +286,7 @@
       });
       const available = sources.filter((source) => !source.error);
       const periods = unique(available.map((source) => source.periodo));
-      consultationFailed = !response.ok || !available.length;
+      consultationFailed = !result.ok || !available.length;
       checkedAt = result.consultadoEn;
       displaySources();
 
@@ -354,11 +315,11 @@
       setStatus("error", "El servicio de consulta está temporalmente indisponible.");
       showEmpty("Vuelve a intentar con Actualizar consulta.", true);
     } finally {
-      window.clearTimeout(timeout);
       if (activeRequest === controller) {
         activeRequest = null;
         ui.refresh.disabled = false;
         ui.results.setAttribute("aria-busy", "false");
+        simulator.setOffers(courses, unique(sources.filter((source) => !source.error).map((source) => source.periodo)), false);
         render();
       }
     }
@@ -369,7 +330,7 @@
       consultadoEn: checkedAt,
       plan: "MANRESA",
       fuentes: sources.map(({ grupos, ...source }) => source),
-      materias: courses.map(({ source, groups, key, ...course }) => ({
+      materias: courses.map(({ source, groups, key, labKey, ...course }) => ({
         ...course,
         coordinacion: source.id,
         periodo: source.periodo,
@@ -389,6 +350,7 @@
     setStatus("error", "No se pudo leer el catálogo del plan MANRESA.");
     showEmpty("Recarga la página para volver a cargar el plan de estudios.", true);
     ui.refresh.disabled = true;
+    simulator.setOffers([], [], false);
     ui.results.setAttribute("aria-busy", "false");
     return;
   }

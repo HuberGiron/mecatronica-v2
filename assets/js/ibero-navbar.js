@@ -1,4 +1,6 @@
-(function () {
+(async function () {
+  if (window.IBERO_LAYOUT_READY) await window.IBERO_LAYOUT_READY;
+
   const nav = document.getElementById('mainNav');
   const collapse = document.getElementById('navbarResponsive');
   const videoTrigger = document.getElementById('videoTrigger');

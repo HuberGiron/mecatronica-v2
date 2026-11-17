@@ -253,3 +253,174 @@
     gap: .1rem;
   }
 }
+
+.horarios-ficha {
+  --horarios-red: #a91225;
+  --horarios-border: #e6dedc;
+}
+
+.horarios-ficha-oferta + .horarios-ficha-oferta {
+  border-top: 1px solid var(--horarios-border);
+  margin-top: .85rem;
+  padding-top: .8rem;
+}
+
+.horarios-ficha-periodo {
+  color: var(--horarios-red);
+  font-weight: 700;
+  margin: .15rem 0 .35rem;
+}
+
+.horarios-ficha .btn { margin-top: .7rem; }
+
+.horarios-sim {
+  scroll-margin-top: 6.4rem;
+  margin-top: .85rem;
+  border: 1px solid var(--horarios-border);
+  border-left: 4px solid var(--horarios-red);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.horarios-sim > summary {
+  cursor: pointer;
+  color: var(--ibero-black);
+  font-family: var(--ibero-serif);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  padding: .85rem 1rem;
+}
+
+#simCantidad {
+  display: inline-block;
+  margin-inline-start: .4rem;
+  padding: .22rem .57rem;
+  border-radius: 20px;
+  background: #f9edef;
+  color: var(--horarios-red);
+  font: 650 .87rem var(--ibero-sans);
+  vertical-align: middle;
+}
+
+.horarios-sim-body { padding: 0 clamp(.85rem, 3vw, 1.25rem) 1.25rem; }
+
+.horarios-sim-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: .6rem 1rem;
+  padding: .7rem 0;
+}
+
+.horarios-sim-controls p { margin: 0; }
+.horarios-sim-controls label,
+.horarios-sim-cost label { font-weight: 650; }
+.horarios-sim-controls select,
+.horarios-sim-cost input { margin-top: .28rem; }
+
+.horarios-sim-totals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: .6rem;
+  margin: .55rem 0 .8rem;
+}
+
+.horarios-sim-totals > div {
+  padding: .65rem .8rem;
+  border-radius: 8px;
+  background: #f8f6f5;
+}
+
+.horarios-sim-totals dt { font-size: .93rem; }
+.horarios-sim-totals dd {
+  margin: .12rem 0 0;
+  color: var(--horarios-red);
+  font-size: 1.34rem;
+  font-weight: 700;
+}
+
+.horarios-sim-status:empty { display: none; }
+
+.horarios-sim-conflicts {
+  border-radius: 8px;
+  background: #fff2e8;
+  color: #753410;
+  padding: .65rem 1rem .65rem 2rem;
+}
+
+.horarios-sim h3 {
+  margin: 1rem 0 .55rem;
+  font-family: var(--ibero-serif);
+  font-size: 1.2rem;
+}
+
+.horarios-sim-week {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.8rem), 1fr));
+  align-items: start;
+  gap: .56rem;
+}
+
+.horarios-sim-day {
+  min-width: 0;
+  padding: .55rem;
+  border: 1px solid var(--horarios-border);
+  border-radius: 8px;
+}
+
+.horarios-sim-day h4,
+.horarios-sim-day p {
+  margin: 0;
+  font-size: .9rem;
+}
+
+.horarios-sim-day h4 { font-weight: 750; }
+.horarios-sim-day p { color: var(--horarios-muted); }
+
+.horarios-sim-slot {
+  display: grid;
+  gap: .1rem;
+  margin: .4rem 0 0;
+  padding: .35rem .44rem;
+  overflow-wrap: anywhere;
+  border-left: 2px solid var(--horarios-red);
+  border-radius: 3px;
+  background: #f8eeee;
+  font-size: .84rem;
+}
+
+.horarios-sim-slot.has-conflict {
+  background: #fff2e8;
+  border-color: #ae551a;
+}
+
+.horarios-sim-selected {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.horarios-sim-selected li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .75rem;
+  padding: .4rem 0;
+  border-bottom: 1px solid var(--horarios-border);
+}
+
+.horarios-sim-selected span { display: block; font-size: .88rem; }
+
+.horarios-sim-cost {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: .55rem 1.5rem;
+  margin-top: 1.1rem;
+}
+
+.horarios-sim-cost input { max-width: 15rem; }
+.horarios-sim-cost output { display: block; font-size: 1.25rem; font-weight: 750; }
+.horarios-sim-cost p { flex-basis: 100%; margin: 0; color: var(--horarios-muted); font-size: .9rem; }
+.horarios-sim-add { margin-top: .5rem; }
+.horarios-sim-add.is-selected { background: #f9edef; border-color: var(--horarios-red); color: var(--horarios-red); }

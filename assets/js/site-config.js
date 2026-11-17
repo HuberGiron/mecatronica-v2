@@ -2,8 +2,8 @@
  * site-config.js
  * -------------------------------------------------------------
  * Configuración editable del sitio Mecatrónica IBERO.
- * Para cambiar redes sociales, edita SOLO este archivo.
- * No necesitas modificar cada página HTML.
+ * La plantilla compartida aporta sus enlaces. La configuración
+ * conserva soporte para páginas que todavía usan un pie propio.
  * ============================================================= */
 
 (function () {
@@ -58,13 +58,14 @@
     }
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  function applySocialLinks(layoutMounted) {
     const config = window.IBERO_SITE_CONFIG || {};
     const socialLinks = config.socialLinks || {};
 
     document.querySelectorAll("a[data-social]").forEach(function (link) {
       const key = link.getAttribute("data-social");
-      const safeHref = getSafeSocialUrl(socialLinks[key]);
+      const value = layoutMounted === true ? link.getAttribute("href") : socialLinks[key];
+      const safeHref = getSafeSocialUrl(value);
 
       if (!safeHref) {
         link.removeAttribute("href");
@@ -77,5 +78,11 @@
       link.setAttribute("target", "_blank");
       link.setAttribute("rel", "noopener noreferrer");
     });
-  });
+  }
+
+  if (window.IBERO_LAYOUT_READY) {
+    window.IBERO_LAYOUT_READY.then(applySocialLinks);
+  } else {
+    document.addEventListener("DOMContentLoaded", applySocialLinks, { once: true });
+  }
 })();

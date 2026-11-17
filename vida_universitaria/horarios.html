@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://use.typekit.net/jov3nat.css">
   <link href="/assets/css/ibero-site.css" rel="stylesheet">
-  <link href="/assets/css/horarios-manresa.css?v=2" rel="stylesheet">
+  <link href="/assets/css/horarios-manresa.css?v=3" rel="stylesheet">
 </head>
 <body id="page-top" class="ibero-home ibero-inner-page">
   <div data-site-nav></div>
@@ -71,6 +71,9 @@
                     Periodo
                     <select class="form-select" id="simPeriodo"></select>
                   </label>
+                </div>
+                <div class="horarios-sim-print-actions">
+                  <button id="simImprimir" class="btn horarios-secondary" type="button" disabled>Imprimir / guardar PDF</button>
                 </div>
                 <dl class="horarios-sim-totals">
                   <div><dt>Créditos</dt><dd id="simCreditos">0</dd></div>
@@ -148,13 +151,14 @@
 
     <div data-site-footer></div>
   </main>
+  <section id="simPropuestaPdf" class="horarios-print" aria-label="Propuesta de horario para imprimir"></section>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" defer></script>
   <script src="/assets/js/site-layout.js?v=1" defer></script>
   <script src="/assets/js/site-config.js?v=2" defer></script>
   <script src="/assets/js/ibero-navbar.js?v=2" defer></script>
   <script src="/assets/data/plan-enriquecido.js?v=31" defer></script>
   <script src="/assets/js/horarios-manresa-datos.js?v=1" defer></script>
-  <script src="/assets/js/horarios-simulador.js?v=1" defer></script>
-  <script src="/assets/js/horarios-manresa.js?v=2" defer></script>
+  <script src="/assets/js/horarios-simulador.js?v=2" defer></script>
+  <script src="/assets/js/horarios-manresa.js?v=3" defer></script>
 </body>
 </html>

@@ -424,3 +424,98 @@
 .horarios-sim-cost p { flex-basis: 100%; margin: 0; color: var(--horarios-muted); font-size: .9rem; }
 .horarios-sim-add { margin-top: .5rem; }
 .horarios-sim-add.is-selected { background: #f9edef; border-color: var(--horarios-red); color: var(--horarios-red); }
+
+.horarios-prerrequisitos {
+  color: #793719;
+  background: #fff2e8;
+  border-left: 2px solid #ae551a;
+  border-radius: 4px;
+  padding: .3rem .55rem;
+  margin: 0 0 .55rem;
+  font-size: .88rem;
+}
+
+.horarios-sim-selected .horarios-prerrequisitos {
+  margin: .25rem 0 0;
+}
+
+.horarios-sim-error {
+  margin: .38rem 0 0;
+  padding: .38rem .55rem;
+  border-left: 3px solid var(--horarios-red);
+  background: #faebee;
+  color: #841128;
+  font-size: .89rem;
+  font-weight: 650;
+}
+
+.horarios-sim-error:empty { margin: 0; padding: 0; border: 0; }
+
+.horarios-sim-print-actions {
+  display: flex;
+  justify-content: end;
+  margin: .22rem 0 .55rem;
+}
+
+.horarios-print { display: none; }
+
+@page horario-manresa {
+  size: letter;
+  margin: 14mm;
+}
+
+@media print {
+  body.horarios-printing {
+    color: #161616;
+    background: white;
+    margin: 0;
+    padding: 0;
+    font: 10pt/1.38 Arial, sans-serif;
+  }
+
+  body.horarios-printing > :not(.horarios-print) {
+    display: none !important;
+  }
+
+  body.horarios-printing > .horarios-print {
+    display: block;
+    page: horario-manresa;
+  }
+
+  .horarios-print h1 {
+    font: bold 23pt/1.13 Georgia, serif;
+    margin: 0 0 5pt;
+  }
+
+  .horarios-print h2 {
+    font: bold 14pt/1.2 Georgia, serif;
+    margin: 14pt 0 5pt;
+    break-after: avoid;
+  }
+
+  .horarios-print .horarios-print-period { margin-bottom: 8pt; }
+
+  .horarios-print-totals {
+    padding: 6pt 0;
+    border-block: 1px solid #aaa;
+    font-weight: 700;
+  }
+
+  .horarios-print table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .horarios-print thead { display: table-header-group; }
+  .horarios-print tr { break-inside: avoid; }
+
+  .horarios-print :is(th, td) {
+    padding: 4pt;
+    border: 1px solid #aaa;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  .horarios-print :is(th, td):nth-child(2) { white-space: nowrap; }
+  .horarios-print-footer { margin-top: 11pt; }
+}

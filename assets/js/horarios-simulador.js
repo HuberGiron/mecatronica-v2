@@ -35,7 +35,7 @@
     return `${clock(start)}–${clock(end)}`;
   }
 
-  function buildWeek(enrolled) {
+  function buildWeek(enrolled, checkKey) {
     const week = new Map(DAYS.map((day) => [day, []]));
     let minutes = 0;
     let incomplete = 0;
@@ -68,6 +68,7 @@
         for (let j = i + 1; j < slots.length && slots[j].start < first.end; j++) {
           const second = slots[j];
           if (first.course.key === second.course.key) continue;
+          if (checkKey && first.course.key !== checkKey && second.course.key !== checkKey) continue;
           first.conflict = second.conflict = true;
           const range = slotLabel(second.start, Math.min(first.end, second.end));
           conflicts.add(`${day} ${range} · ${first.course.name} y ${second.course.name}`);
@@ -75,6 +76,23 @@
       }
     }
     return { week, minutes, incomplete, conflicts };
+  }
+
+  function printTable(headers, rows) {
+    const table = element("table");
+    const headerRow = element("tr");
+    for (const label of headers) {
+      const cell = element("th", label);
+      cell.scope = "col";
+      headerRow.append(cell);
+    }
+    table.createTHead().append(headerRow);
+    const body = table.createTBody();
+    for (const row of rows) {
+      const tr = body.insertRow();
+      for (const value of row) tr.append(element("td", String(value)));
+    }
+    return table;
   }
 
   function startSimulator() {
@@ -95,9 +113,12 @@
       selectionPanel: byId("simSeleccionPanel"),
       selections: byId("simSeleccion"),
       rate: byId("simTarifa"),
-      price: byId("simCosto")
+      price: byId("simCosto"),
+      print: byId("simImprimir"),
+      printPage: byId("simPropuestaPdf")
     };
 
+    const pageTitle = document.title;
     const selections = new Map();
     const rates = new Map();
     let liveCourses = new Map();
@@ -142,28 +163,61 @@
     }
 
     function updateButtons() {
-      for (const button of document.querySelectorAll("button[data-sim-group]")) updateGroupButton(button);
+      for (const button of document.querySelectorAll("button[data-sim-group]")) {
+        updateGroupButton(button);
+        button.nextElementSibling.textContent = "";
+      }
     }
 
-    function updateChoice(period, key, group) {
+    function resolveChoice(period, key, groupCode) {
+      const course = liveCourses.get(key);
+      const group = course?.source.periodo === period
+        ? course.groups.find(({ grupo }) => grupo === groupCode)
+        : undefined;
+      return { key, groupCode, course, group };
+    }
+
+    function resolvedChoices(period) {
+      return [...(selections.get(period) || [])].map(([key, group]) => resolveChoice(period, key, group));
+    }
+
+    function updateChoice(period, key, groupCode) {
       const chosen = selectionFor(period);
-      if (group && chosen.get(key) !== group) chosen.set(key, group);
-      else chosen.delete(key);
+      if (groupCode && chosen.get(key) !== groupCode) {
+        const candidate = resolveChoice(period, key, groupCode);
+        if (!candidate.group) return "El grupo ya no está disponible en este periodo.";
+
+        const others = resolvedChoices(period).filter((item) => item.key !== key && item.group);
+        const { conflicts } = buildWeek([...others, candidate], key);
+        if (conflicts.size) {
+          return `Cruce de horario. ${[...conflicts].join(" / ")}. Elige otro grupo.`;
+        }
+        chosen.set(key, groupCode);
+      } else {
+        chosen.delete(key);
+      }
       activePeriod = period;
       saveChoices();
       render();
       updateButtons();
+      return "";
     }
 
     function createGroupButton(course, group) {
+      const action = element("div", "", "horarios-sim-action");
       const button = element("button", "", "btn horarios-secondary horarios-sim-add");
+      const error = element("p", "", "horarios-sim-error");
+      error.setAttribute("role", "alert");
       button.type = "button";
       button.dataset.simPeriod = course.source.periodo;
       button.dataset.simCourse = course.key;
       button.dataset.simGroup = group.grupo;
-      button.addEventListener("click", () => updateChoice(course.source.periodo, course.key, group.grupo));
+      button.addEventListener("click", () => {
+        error.textContent = updateChoice(course.source.periodo, course.key, group.grupo);
+      });
       updateGroupButton(button);
-      return button;
+      action.append(button, error);
+      return action;
     }
 
     function renderDays(week) {
@@ -197,6 +251,10 @@
       remove.addEventListener("click", () => updateChoice(activePeriod, key));
       const text = element("div");
       text.append(courseTitle, detail);
+      if (course?.prerequisites.length) {
+        const requirements = course.prerequisites.map(({ label }) => label).join(" / ");
+        text.append(element("span", `Seriada · Requiere ${requirements}`, "horarios-prerrequisitos"));
+      }
       row.append(text, remove);
       return row;
     }
@@ -210,24 +268,17 @@
       ui.period.value = activePeriod;
       ui.rate.value = rates.get(activePeriod) || "";
 
-      const chosen = selections.get(activePeriod) || new Map();
-      const selected = [];
-      const rows = [];
-      for (const [key, groupCode] of chosen) {
-        const course = liveCourses.get(key);
-        const group = course?.source.periodo === activePeriod
-          ? course.groups.find(({ grupo }) => grupo === groupCode)
-          : null;
-        if (group) selected.push({ course, group });
-        rows.push(selectionRow(key, groupCode, course, group));
-      }
+      const choices = resolvedChoices(activePeriod);
+      const selected = choices.filter(({ group }) => group);
+      const rows = choices.map(({ key, groupCode, course, group }) => selectionRow(key, groupCode, course, group));
       ui.selections.replaceChildren(...rows);
       ui.selectionPanel.hidden = !rows.length;
-      ui.amount.textContent = chosen.size === 1 ? "1 grupo" : `${chosen.size} grupos`;
+      ui.amount.textContent = choices.length === 1 ? "1 grupo" : `${choices.length} grupos`;
 
       const { week, minutes, incomplete, conflicts } = buildWeek(selected);
       const hours = minutes / 60;
-      const unresolved = chosen.size - selected.length;
+      const unresolved = choices.length - selected.length;
+      ui.print.disabled = loading || !selected.length || conflicts.size > 0;
       ui.credits.textContent = DECIMAL.format(selected.reduce((total, { course }) => total + course.credits, 0));
       ui.hours.textContent = `${DECIMAL.format(hours)} h`;
       ui.independent.textContent = `${DECIMAL.format(selected.reduce((total, { course }) => total + course.independentHours, 0))} h`;
@@ -240,17 +291,77 @@
       else {
         if (unresolved) messages.push(`Grupos sin verificar: ${unresolved}. Los totales usan los grupos confirmados.`);
         if (incomplete) messages.push(`Grupos con hora por confirmar: ${incomplete}. Se muestran las horas publicadas.`);
-        if (!chosen.size) messages.push("Aún no has agregado grupos a este periodo.");
+        if (!choices.length) messages.push("Aún no has agregado grupos a este periodo.");
       }
       const labsToAdd = selected
         .map(({ course }) => course.labKey)
-        .filter((key) => key && !chosen.has(key) && liveCourses.get(key)?.source.periodo === activePeriod);
+        .filter((key) => key && !selections.get(activePeriod)?.has(key) && liveCourses.get(key)?.source.periodo === activePeriod);
       if (labsToAdd.length) messages.push(`Laboratorios por agregar: ${labsToAdd.map((key) => liveCourses.get(key).name).join("; ")}.`);
-      if (conflicts.size) messages.push(conflicts.size === 1 ? "Hay 1 cruce de horario." : `Hay ${conflicts.size} cruces de horario.`);
+      const selectedCodes = new Set(selected.map(({ course }) => course.code));
+      const simultaneous = selected
+        .filter(({ course }) => course.prerequisites.some(({ code }) => selectedCodes.has(code)))
+        .map(({ course }) => course.name);
+      if (simultaneous.length) {
+        messages.push(`Hay prerrequisitos elegidos en el mismo periodo para ${simultaneous.join(", ")}. Verifica que estén acreditados.`);
+      }
+      if (conflicts.size) messages.push("Resuelve los cruces de los grupos seleccionados para imprimir.");
       ui.status.textContent = messages.join(" ");
       chargeHours = selected.length && !incomplete && !unresolved ? hours : null;
       renderPrice();
     }
+
+    function printProposal() {
+      if (ui.print.disabled) return;
+
+      const choices = resolvedChoices(activePeriod);
+      const { week } = buildWeek(choices.filter(({ group }) => group));
+      const agenda = [...week].flatMap(([day, slots]) =>
+        slots.map(({ start, end, course, group, room }) => [
+          day, slotLabel(start, end), course.name, group.grupo, room || "Por confirmar"
+        ])
+      );
+      const subjects = choices.map(({ key, groupCode, course, group }) => [
+        `${key.split(":").at(-1)} · ${course?.name || "Materia sin verificar"}`,
+        group ? groupCode : `${groupCode} · Sin verificar`,
+        group ? course.credits : "—",
+        course?.prerequisites.map(({ label }) => label).join(" / ") || "—"
+      ]);
+      const period = periodLabel(activePeriod);
+      const totals = [
+        `${ui.credits.textContent} créditos`,
+        `${ui.hours.textContent} inscritas por semana`,
+        `${ui.independent.textContent} de trabajo independiente por semana`
+      ];
+      if (ui.price.value !== "—") totals.push(`Costo estimado: ${ui.price.value} MXN`);
+
+      ui.printPage.replaceChildren(
+        element("h1", "Propuesta de horario MANRESA"),
+        element("p", `${period} · Ingeniería Mecatrónica y Sistemas Ciberfísicos`, "horarios-print-period"),
+        element("p", totals.join(" · "), "horarios-print-totals")
+      );
+      if (ui.status.textContent) ui.printPage.append(element("p", ui.status.textContent));
+      ui.printPage.append(
+        element("h2", "Agenda semanal"),
+        agenda.length
+          ? printTable(["Día", "Hora", "Materia", "Grupo", "Salón"], agenda)
+          : element("p", "Horarios por confirmar."),
+        element("h2", "Grupos elegidos"),
+        printTable(["Materia", "Grupo", "Créditos", "Prerrequisitos"], subjects),
+        element("p", "Simulación académica · IBERO Ciudad de México", "horarios-print-footer")
+      );
+
+      document.title = `Propuesta de horario MANRESA - ${period}`;
+      document.body.classList.add("horarios-printing");
+      window.print();
+    }
+
+    ui.print.addEventListener("click", printProposal);
+    window.addEventListener("afterprint", () => {
+      if (document.body.classList.contains("horarios-printing")) {
+        document.body.classList.remove("horarios-printing");
+        document.title = pageTitle;
+      }
+    });
 
     ui.open.addEventListener("click", () => {
       ui.root.open = true;

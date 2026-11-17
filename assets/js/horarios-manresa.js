@@ -59,10 +59,35 @@
     return `Semestre ${semester}`;
   }
 
+  function getPrerequisites(subject, byId, byCode) {
+    const prerequisites = new Map();
+    const add = (code, name) => {
+      const key = String(code ?? "").trim();
+      if (!key || key === String(subject.clave) || prerequisites.has(key)) return;
+      const label = name && /^\d+$/.test(key) ? `${key} · ${name}` : name || key;
+      prerequisites.set(key, { code: key, label });
+    };
+
+    for (const item of subject.prereqInfo || []) {
+      add(item.clave, item.nombre || byId.get(item.id || item.visibleId)?.nombre);
+    }
+    for (const code of subject.prerequisitos || []) {
+      add(code, byCode.get(String(code))?.nombre);
+    }
+    if (!prerequisites.size) {
+      for (const id of subject.resolvedPrereqIds || []) {
+        const requirement = byId.get(id);
+        if (requirement) add(requirement.clave || requirement.nombre, requirement.nombre);
+      }
+    }
+    return [...prerequisites.values()];
+  }
+
   function loadCatalogue() {
     if (plan?.meta?.plan !== "MANRESA" || !Array.isArray(plan?.subjects)) return;
 
     const bySubjectId = new Map(plan.subjects.map((subject) => [subject.id, subject]));
+    const bySubjectCode = new Map(plan.subjects.filter(({ clave }) => clave).map((subject) => [String(subject.clave), subject]));
     const electiveGroups = new Map((plan.electiveGroups || []).map((group) => [group.id, group]));
     for (const subject of plan.subjects) {
       const { cveCoordinacion: coordination, clave: code } = subject;
@@ -78,6 +103,7 @@
         name: subject.nombre,
         sigla: subject.sigla,
         credits: Number(subject.creditos) || 0,
+        prerequisites: getPrerequisites(subject, bySubjectId, bySubjectCode),
         independentHours: Number(String(subject.horas).split(",")[1]) || 0,
         labKey: subject.labClave ? subjectKey(coordination, subject.labClave) : "",
         elective: elective?.name || "",
@@ -219,9 +245,12 @@
     card.append(
       element("p", [course.code, sigla].filter(Boolean).join(" · "), "horarios-key"),
       element("h3", course.name),
-      element("p", meta.join(" · "), "horarios-meta"),
-      details
+      element("p", meta.join(" · "), "horarios-meta")
     );
+    if (course.prerequisites.length) {
+      card.append(element("p", `Seriada · Requiere ${course.prerequisites.map(({ label }) => label).join(" / ")}`, "horarios-prerrequisitos"));
+    }
+    card.append(details);
     return card;
   }
 

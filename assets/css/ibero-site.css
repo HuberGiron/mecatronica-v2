@@ -12,16 +12,42 @@
    1. Base, tema, navbar, home, cards, noticias, footer
    -------------------------------------------------------------------------- */
 
+/* Valores compartidos: marca, lectura, componentes y espaciado. */
 :root {
   --ibero-red: #E00034;
-  --ibero-red-dark: #c9002e;
+  --ibero-red-rgb: 224, 0, 52;
+  --ibero-red-dark: #b00028;
+  --ibero-red-soft: #fff1f4;
   --ibero-black: #1f1f24;
   --ibero-gray: #82786F;
+  --ibero-muted: #5e6267;
+  --ibero-text: #34373b;
   --ibero-soft: #f3f3f1;
+  --ibero-surface: #ffffff;
   --ibero-border: #d9d9d9;
   --ibero-serif: alverata, Georgia, "Times New Roman", serif;
-  --ibero-sans: praxis-next, Arial, sans-serif;
+  --ibero-sans: praxis-next, Arial, Helvetica, sans-serif;
+  --ibero-size-body: 1rem;
+  --ibero-size-small: .875rem;
+  --ibero-size-meta: .8125rem;
+  --ibero-size-home: clamp(2.85rem, 6.25vw, 6.4rem);
+  --ibero-size-page: clamp(2.5rem, 5.4vw, 5.65rem);
+  --ibero-size-section: clamp(2rem, 3.9vw, 4.25rem);
+  --ibero-size-card: clamp(1.35rem, 1.6vw, 1.65rem);
+  --ibero-size-lead: clamp(1.0625rem, 1.5vw, 1.375rem);
+  --ibero-card-padding: 1.5rem;
+  --ibero-card-gap: 1.5rem;
+  --ibero-control-size: 1rem;
+  --ibero-control-height: 2.75rem;
+  --ibero-control-padding: .75rem 1.35rem;
+  --ibero-radius-button: 999px;
+  --ibero-hero-padding: 4.4rem 0 3.4rem;
+  --bs-body-font-family: var(--ibero-sans);
+  --bs-body-color: var(--ibero-black);
+  --bs-primary: var(--ibero-red);
+  --bs-primary-rgb: var(--ibero-red-rgb);
 }
+
 html { scroll-behavior: smooth; }
 body.ibero-home {
   font-family: var(--ibero-sans);
@@ -365,11 +391,25 @@ body.ibero-home {
   margin-top: 2.1rem;
 }
 .btn-ibero {
-  --bs-btn-padding-x: 2.15rem;
-  --bs-btn-padding-y: .9rem;
+  --bs-btn-padding-x: 1.35rem;
+  --bs-btn-padding-y: .75rem;
   --bs-btn-border-radius: 999px;
   --bs-btn-font-weight: 700;
-  --bs-btn-font-size: 1rem;
+  --bs-btn-font-size: var(--ibero-control-size);
+  --bs-btn-border-width: 1px;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--ibero-red);
+  --bs-btn-border-color: var(--ibero-red);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--ibero-red-dark);
+  --bs-btn-hover-border-color: var(--ibero-red-dark);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--ibero-red-dark);
+  --bs-btn-active-border-color: var(--ibero-red-dark);
+  min-height: var(--ibero-control-height);
+  line-height: 1.25;
+  white-space: normal;
+  text-decoration: none;
 }
 .btn-ibero-red {
   --bs-btn-color: #fff;
@@ -385,6 +425,10 @@ body.ibero-home {
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: var(--ibero-red);
   --bs-btn-hover-border-color: var(--ibero-red);
+  --bs-btn-bg: transparent;
+  --bs-btn-active-bg: var(--ibero-red);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-border-color: var(--ibero-red);
 }
 
 
@@ -1029,7 +1073,7 @@ body.ibero-home #mainNav.ibero-main-nav {
   margin-bottom: 1.1rem !important;
   color: var(--ibero-red) !important;
   font-size: .95rem !important;
-  font-weight: 800 !important;
+  font-weight: 300 !important;
   letter-spacing: .18em !important;
   text-transform: uppercase !important;
 }
@@ -1075,7 +1119,7 @@ body.ibero-home #mainNav.ibero-main-nav {
 .ibero-red-band .btn-light {
   color: #fff !important;
   background: transparent !important;
-  border: 2px solid #fff !important;
+  border: 1px solid #fff !important;
   box-shadow: none !important;
 }
 .ibero-red-band .btn:hover,
@@ -1302,6 +1346,8 @@ body.ibero-inner-page {
   margin-top: auto;
   min-width: 160px;
   padding-block: .72rem;
+  padding: var(--ibero-control-padding);
+  font-size: var(--ibero-control-size);
 }
 
 /* Grupos estudiantiles */
@@ -1569,62 +1615,27 @@ body.ibero-inner-page .ibero-person-role {
 }
 
 
-/* ========================================================================== 
-   Ajuste tipográfico institucional · Adobe Fonts
-   --------------------------------------------------------------------------
-   Requiere en el <head>:
-   <link rel="stylesheet" href="https://use.typekit.net/jov3nat.css">
-
-   - Eyebrows / kickers: Praxis Next, peso 300.
-   - Títulos: Alverata, peso 300, con escala ligeramente menor.
-   - Cuerpos de texto: Praxis Next.
-   ========================================================================== */
-:root {
-  --ibero-serif: alverata, Georgia, "Times New Roman", serif;
-  --ibero-sans: praxis-next, Arial, Helvetica, sans-serif;
-  --bs-body-font-family: var(--ibero-sans);
-}
-
+/* Tipografía compartida. Las tarjetas y módulos consumen la misma escala. */
 body.ibero-home {
   font-family: var(--ibero-sans);
+  font-size: var(--ibero-size-body);
   font-weight: 300;
+  line-height: 1.55;
 }
 
-body.ibero-home p,
-body.ibero-home li,
-body.ibero-home .ibero-home-lead,
-body.ibero-home .ibero-internal-lead,
-body.ibero-home .ibero-academic-lead,
-body.ibero-home .ibero-text-lg,
-body.ibero-home .ibero-news-summary,
-body.ibero-home .ibero-group-body p,
-body.ibero-home .ibero-footer p,
-body.ibero-home .ibero-footer-contact-simple p,
-body.ibero-home .ibero-footer-contact-card .ibero-contact-role,
-body.ibero-home .course-card {
+body.ibero-home :is(p, li, input, select, textarea, button),
+.ibero-main-nav .nav-link,
+.ibero-main-nav .dropdown-item,
+.ibero-program-mark,
+.btn-ibero,
+.ibero-card-link,
+.ibero-news-link,
+.ibero-footer-links a {
   font-family: var(--ibero-sans);
-  font-weight: 300;
 }
 
-.ibero-home-title,
-.ibero-section-title,
-.ibero-red-band h2,
-.ibero-video-title,
-.ibero-card-title,
-.ibero-news-title,
-.ibero-academic-title,
-.ibero-news-card-title,
-.ibero-internal-title,
-.ibero-person-name,
-.ibero-group-title,
-.ibero-plan-shell .section-heading,
-body.ibero-inner-page .ibero-academic-title,
-.ibero-stat-card .value,
-.ibero-footer-contact-card h4,
-body.ibero-home h1,
-body.ibero-home h2,
-body.ibero-home h3,
-body.ibero-home h4 {
+body.ibero-home :is(h1, h2, h3, h4),
+.ibero-stat-card .value {
   font-family: var(--ibero-serif);
   font-weight: 300;
 }
@@ -1634,94 +1645,85 @@ body.ibero-home h4 {
 .ibero-card-date,
 .ibero-news-date,
 .ibero-footer h3,
-.ibero-footer-contact-card h3,
 .ibero-footer-contact-simple h3,
-.ibero-contact-list .contact-label,
 .ibero-stat-card .label {
-  font-family: var(--ibero-sans) !important;
-  font-weight: 300 !important;
+  font-family: var(--ibero-sans);
+  font-weight: 300;
 }
 
 .ibero-home-title {
-  font-size: clamp(3.2rem, 6.25vw, 6.4rem);
-  line-height: .96;
-  letter-spacing: -.04em;
-}
-
-.ibero-internal-title {
-  font-size: clamp(3rem, 5.4vw, 5.65rem);
-  line-height: .96;
-  letter-spacing: -.04em;
-}
-
-.ibero-section-title,
-.ibero-red-band h2,
-.ibero-plan-shell .section-heading {
-  font-size: clamp(2.45rem, 4.15vw, 4.55rem);
-  line-height: 1;
-  letter-spacing: -.035em;
-}
-
-.ibero-news-title,
-.ibero-academic-title,
-body.ibero-inner-page .ibero-academic-title {
-  font-size: clamp(2.3rem, 3.9vw, 4.25rem);
+  font-size: var(--ibero-size-home);
   line-height: .98;
   letter-spacing: -.04em;
 }
 
-.ibero-card-title,
-.ibero-news-card-title {
-  font-size: clamp(1.55rem, 2vw, 2.2rem);
-  line-height: 1.08;
+.ibero-internal-title {
+  font-size: var(--ibero-size-page);
+  line-height: 1.02;
+  letter-spacing: -.04em;
+  overflow-wrap: anywhere;
 }
 
+.ibero-section-title,
+.ibero-news-title,
+.ibero-academic-title,
+body.ibero-inner-page .ibero-academic-title,
+.ibero-red-band h2,
+.ibero-plan-shell .section-heading {
+  font-size: var(--ibero-size-section);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -.035em;
+}
+
+.ibero-card-title,
+.ibero-news-card-title,
 .ibero-group-title {
-  font-size: clamp(1.75rem, 2.5vw, 2.65rem);
+  font-size: var(--ibero-size-card);
+  line-height: 1.2;
+  letter-spacing: -.025em;
 }
 
 .ibero-person-name {
-  font-size: clamp(1rem, 1.9vw, 1.2rem);
-}
-
-.ibero-footer-contact-card h4 {
-  font-size: clamp(1.75rem, 2.75vw, 2.85rem);
+  font-size: 1.25rem;
+  line-height: 1.2;
 }
 
 .ibero-home-lead,
 .ibero-internal-lead,
 .ibero-text-lg,
-.ibero-red-band p,
-.ibero-group-body p {
+.ibero-red-band p {
+  font-size: var(--ibero-size-lead);
   font-weight: 300;
+  line-height: 1.55;
 }
 
-.ibero-main-nav .nav-link,
-.ibero-main-nav .dropdown-item,
-.ibero-program-mark,
-.btn-ibero,
-.ibero-card-link,
-.ibero-news-link,
-.ibero-contact-list a,
-.ibero-footer-links a {
-  font-family: var(--ibero-sans);
+.ibero-internal-hero { padding: var(--ibero-hero-padding); }
+.ibero-news-summary,
+.ibero-group-body p { font-size: var(--ibero-size-body); line-height: 1.55; }
+.ibero-person-email { font-size: var(--ibero-size-small); }
+.ibero-person-role { font-size: var(--ibero-size-small); line-height: 1.4; }
+.ibero-person-location { color: var(--ibero-muted); font-size: var(--ibero-size-small); }
+
+.ibero-home :is(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--ibero-red);
+  outline-offset: 3px;
+}
+.ibero-main-nav :is(a, button):focus-visible,
+.ibero-red-band :is(a, button):focus-visible { outline-color: currentColor; }
+body.ibero-home #mainNav.ibero-main-nav #navbarResponsive .dropdown-item[aria-current="page"] {
+  color: var(--ibero-red) !important;
+  background: var(--ibero-red-soft) !important;
 }
 
+@media (max-width: 991.98px) {
+  :root { --ibero-hero-padding: 3rem 0 2.3rem; }
+}
 @media (max-width: 575.98px) {
-  .ibero-home-title,
-  .ibero-internal-title {
-    font-size: 2.85rem;
-  }
-
-  .ibero-section-title,
-  .ibero-red-band h2,
-  .ibero-plan-shell .section-heading,
-  .ibero-news-title,
-  .ibero-academic-title,
-  body.ibero-inner-page .ibero-academic-title {
-    font-size: 2.45rem;
-  }
+  :root { --ibero-card-padding: 1.25rem; }
+  .ibero-breadcrumbs { font-size: var(--ibero-size-small); gap: .65rem; }
 }
+
 /* --------------------------------------------------------------------------
    Hover sobrio para tarjetas de académicos
    -------------------------------------------------------------------------- */

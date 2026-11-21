@@ -264,7 +264,7 @@
         <div class="col-lg-5">
           <div class="catalog-detail-panel">
             <div class="catalog-card-meta">${buildBadges(item)}</div>
-            <h1 class="ibero-section-title mb-3">${escapeHtml(item.titulo)}</h1>
+            <h1 class="ibero-detail-title mb-3">${escapeHtml(item.titulo)}</h1>
             <p class="ibero-text-lg">${escapeHtml(item.descripcion)}</p>
             ${external}
             <hr class="my-4">

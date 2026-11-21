@@ -8,17 +8,17 @@
 
 .horarios-plan-link,
 .horarios-source-link {
-  color: #a91225;
+  color: var(--ibero-red);
   font-weight: 600;
   text-underline-offset: .2em;
 }
 
 .horarios-section {
-  --horarios-red: #a91225;
-  --horarios-border: #e6dedc;
-  --horarios-muted: #575354;
+  --horarios-red: var(--ibero-red);
+  --horarios-border: var(--ibero-border);
+  --horarios-muted: var(--ibero-muted);
   padding: 2rem 0 clamp(2.5rem, 6vw, 4.5rem);
-  background: #f8f6f5;
+  background: var(--ibero-soft);
   border-top: 1px solid var(--horarios-border);
 }
 
@@ -29,7 +29,7 @@
 .horarios-empty {
   background: #fff;
   border: 1px solid var(--horarios-border);
-  border-radius: 14px;
+  border-radius: 0;
 }
 
 .horarios-status {
@@ -87,25 +87,31 @@
 .horarios-section .btn-ibero {
   width: auto;
   min-width: 0;
-  min-height: 2.5rem;
-  padding: .5rem 1rem;
-  font-size: .95rem;
+  min-height: var(--ibero-control-height);
+  padding: var(--ibero-control-padding);
+  font-size: var(--ibero-control-size);
+  line-height: 1.25;
+  font-family: var(--ibero-sans);
+  border-radius: var(--ibero-radius-button);
 }
 
 .horarios-secondary {
-  border: 1px solid #d3c9c7;
-  border-radius: 30px;
-  color: #252123;
+  border: 1px solid var(--ibero-border);
+  border-radius: var(--ibero-radius-button);
+  color: var(--ibero-black);
   background: #fff;
   font-weight: 600;
-  font-size: .95rem;
-  padding: .46rem .87rem;
+  font-size: var(--ibero-control-size);
+  padding: var(--ibero-control-padding);
+  min-height: var(--ibero-control-height);
+  line-height: 1.25;
+  font-family: var(--ibero-sans);
 }
 
 .horarios-secondary:hover {
   color: var(--horarios-red);
   border-color: var(--horarios-red);
-  background: #fff7f8;
+  background: var(--ibero-red-soft);
 }
 
 .horarios-section :is(button, input, select, summary, a):focus-visible {
@@ -148,7 +154,7 @@
 
 .horarios-filters :is(.form-control, .form-select) {
   margin-top: .35rem;
-  border-color: #d3c9c7;
+  border-color: var(--ibero-border);
   min-width: 0;
 }
 
@@ -176,8 +182,9 @@
 .horarios-card h3 {
   margin: .35rem 0;
   font-family: var(--ibero-serif);
-  font-size: 1.34rem;
+  font-size: var(--ibero-size-card);
   line-height: 1.25;
+  font-weight: 300;
 }
 
 .horarios-key {
@@ -199,7 +206,7 @@
 .horarios-group {
   padding: .65rem .75rem;
   margin-top: .6rem;
-  background: #f8f6f5;
+  background: var(--ibero-soft);
   border-radius: 8px;
 }
 
@@ -207,6 +214,7 @@
   margin: 0;
   font-size: .98rem;
   font-weight: 700;
+  font-family: var(--ibero-sans);
 }
 
 .horarios-group > p {
@@ -255,8 +263,8 @@
 }
 
 .horarios-ficha {
-  --horarios-red: #a91225;
-  --horarios-border: #e6dedc;
+  --horarios-red: var(--ibero-red);
+  --horarios-border: var(--ibero-border);
 }
 
 .horarios-ficha-oferta + .horarios-ficha-oferta {
@@ -278,7 +286,7 @@
   margin-top: .85rem;
   border: 1px solid var(--horarios-border);
   border-left: 4px solid var(--horarios-red);
-  border-radius: 14px;
+  border-radius: 0;
   background: #fff;
 }
 
@@ -295,7 +303,7 @@
   margin-inline-start: .4rem;
   padding: .22rem .57rem;
   border-radius: 20px;
-  background: #f9edef;
+  background: var(--ibero-red-soft);
   color: var(--horarios-red);
   font: 650 .87rem var(--ibero-sans);
   vertical-align: middle;
@@ -328,7 +336,7 @@
 .horarios-sim-totals > div {
   padding: .65rem .8rem;
   border-radius: 8px;
-  background: #f8f6f5;
+  background: var(--ibero-soft);
 }
 
 .horarios-sim-totals dt { font-size: .93rem; }
@@ -385,7 +393,7 @@
   overflow-wrap: anywhere;
   border-left: 2px solid var(--horarios-red);
   border-radius: 3px;
-  background: #f8eeee;
+  background: var(--ibero-red-soft);
   font-size: .84rem;
 }
 
@@ -423,7 +431,7 @@
 .horarios-sim-cost output { display: block; font-size: 1.25rem; font-weight: 750; }
 .horarios-sim-cost p { flex-basis: 100%; margin: 0; color: var(--horarios-muted); font-size: .9rem; }
 .horarios-sim-add { margin-top: .5rem; }
-.horarios-sim-add.is-selected { background: #f9edef; border-color: var(--horarios-red); color: var(--horarios-red); }
+.horarios-sim-add.is-selected { background: var(--ibero-red-soft); border-color: var(--horarios-red); color: var(--horarios-red); }
 
 .horarios-prerrequisitos {
   color: #793719;
@@ -443,8 +451,8 @@
   margin: .38rem 0 0;
   padding: .38rem .55rem;
   border-left: 3px solid var(--horarios-red);
-  background: #faebee;
-  color: #841128;
+  background: var(--ibero-red-soft);
+  color: var(--ibero-red-dark);
   font-size: .89rem;
   font-weight: 650;
 }

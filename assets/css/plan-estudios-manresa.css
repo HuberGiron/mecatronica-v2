@@ -1,5 +1,4 @@
 .manresa-app {
-  --ibero-red: #c8102e;
   --ink: #111827;
   --muted: #667085;
   --line: #d7dde7;
@@ -18,7 +17,7 @@
   margin: 0;
   color: var(--ink);
   background: linear-gradient(180deg, #fafafa 0%, #f3f5f9 100%);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--ibero-sans, Arial, Helvetica, sans-serif);
 }
 .manresa-app button, .manresa-app input { font: inherit; }
 .manresa-app h1, .manresa-app h2, .manresa-app h3, .manresa-app h4, .manresa-app p { margin-top: 0; }
@@ -76,7 +75,7 @@
   background: #111827;
   color: #fff;
   border-radius: 14px;
-  padding: 12px 18px;
+  padding: var(--ibero-control-padding);
   font-weight: 800;
   cursor: pointer;
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
@@ -255,8 +254,8 @@
   position: relative;
   transition: outline .12s ease, transform .12s ease, opacity .12s ease, filter .12s ease;
 }
-.manresa-app .course-card:hover { outline: 3px solid rgba(200, 16, 46, .28); }
-.manresa-app .course-card.is-selected { outline: 4px solid rgba(200, 16, 46, .42); box-shadow: 0 0 0 2px var(--ibero-red); }
+.manresa-app .course-card:hover { outline: 3px solid rgba(var(--ibero-red-rgb), .28); }
+.manresa-app .course-card.is-selected { outline: 4px solid rgba(var(--ibero-red-rgb), .42); box-shadow: 0 0 0 2px var(--ibero-red); }
 .manresa-app .course-card.is-prereq { outline: 4px solid rgba(245, 158, 11, .36); box-shadow: 0 0 0 2px #f59e0b; }
 .manresa-app .course-card.is-dependent { outline: 4px solid rgba(16, 185, 129, .24); box-shadow: 0 0 0 2px #10b981; }
 .manresa-app .course-card.is-search-dim { opacity: .22; filter: grayscale(.3); }
@@ -464,7 +463,7 @@
 .manresa-app .detail-title h2 { font-size: 34px; margin-bottom: 10px; }
 .manresa-app .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 14px 0; }
 .manresa-app .detail-field { border: 1px solid var(--line); border-radius: 14px; padding: 11px 12px; background: #f9fafb; }
-.manresa-app .detail-field span { display: block; color: var(--muted); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
+.manresa-app .detail-field span { display: block; color: var(--muted); font-size: var(--ibero-size-small) !important; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
 .manresa-app .detail-field strong { font-size: 17px; }
 .manresa-app .detail-section { margin-top: 24px; }
 .manresa-app .detail-section h3 { font-size: 21px; margin-bottom: 10px; }
@@ -902,8 +901,8 @@
   grid-template-rows: minmax(112px, auto) 32px;
 }
 .manresa-app .detail-mini .course-title {
-  font-size: .82rem;
-  line-height: 1.08;
+  font-size: .875rem !important;
+  line-height: 1.2 !important;
   padding: 12px 10px;
 }
 .manresa-app .detail-mini .course-hours, .manresa-app .detail-mini .course-sigla, .manresa-app .detail-mini .course-key, .manresa-app .detail-mini .course-credits {
@@ -1110,19 +1109,19 @@
 
 /* Ajustes de integración v2 */
 .plan-download-actions { margin-top: 1.75rem !important; margin-bottom: 2.25rem !important; }
-.plan-download-actions .plan-download-btn { min-width: 260px; padding: 1rem 1.45rem !important; border-radius: 999px !important; font-size: 1.08rem !important; font-weight: 800 !important; letter-spacing: .01em; box-shadow: 0 12px 28px rgba(200,16,46,.18); }
+.plan-download-actions .plan-download-btn { min-width: 260px; padding: var(--ibero-control-padding); border-radius: 999px !important; font-size: var(--ibero-control-size); font-weight: 800 !important; letter-spacing: .01em; box-shadow: 0 12px 28px rgba(var(--ibero-red-rgb),.18); }
 .plan-download-actions .plan-download-btn .bi, .plan-download-actions .plan-download-btn i { font-size: 1.15em; }
 .manresa-app .plan-totals div:last-child { display: none; }
 .manresa-app .panel-card { top: clamp(86px, 8vh, 104px); right: 16px; bottom: 14px; width: min(690px, calc(100vw - 32px)); padding: 18px 20px 20px; border-radius: 20px; }
 .manresa-app .panel-close { width: 36px; height: 36px; font-size: 24px; }
 .manresa-app .detail-hero { grid-template-columns: 150px minmax(0, 1fr); gap: 16px; align-items: start; }
 .manresa-app .detail-mini .course-card { min-height: 112px; grid-template-columns: minmax(0, 1fr) 36px; grid-template-rows: minmax(78px, auto) 26px; }
-.manresa-app .detail-mini .course-title { font-size: .62rem; line-height: 1.04; padding: 8px 6px; }
+.manresa-app .detail-mini .course-title { font-size: .875rem !important; line-height: 1.2 !important; padding: 8px 6px; }
 .manresa-app .detail-mini .course-hours, .manresa-app .detail-mini .course-sigla, .manresa-app .detail-mini .course-key, .manresa-app .detail-mini .course-credits { font-size: .62rem; }
 .manresa-app .detail-title h2 { font-size: clamp(1.55rem, 2.2vw, 2.15rem); line-height: 1.06; margin-bottom: 8px; }
 .manresa-app .detail-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 10px 0; }
 .manresa-app .detail-field { min-height: 0; padding: 8px 10px; border-radius: 12px; }
-.manresa-app .detail-field span { font-size: 10px; letter-spacing: .07em; margin-bottom: 3px; }
+.manresa-app .detail-field span { font-size: var(--ibero-size-small) !important; letter-spacing: .07em; margin-bottom: 3px; }
 .manresa-app .detail-field strong { font-size: .92rem; line-height: 1.28; }
 .manresa-app .detail-section { margin-top: 16px; }
 .manresa-app .detail-section h3 { font-size: 1.25rem; margin-bottom: 7px; }
@@ -1217,8 +1216,8 @@
 
 /* Ajustes de integración v4: botones y tipografía alineados al sitio Mecatrónica */
 .manresa-app {
-  --manresa-red: #E00034;
-  --manresa-red-dark: #B00028;
+  --manresa-red: var(--ibero-red);
+  --manresa-red-dark: var(--ibero-red-dark);
   --ink: var(--ibero-black, #1f1f24);
   --muted: #5f6673;
   --line: var(--ibero-border, #d9d9d9);
@@ -1235,12 +1234,14 @@
 .manresa-app .detail-title h2 {
   font-family: var(--ibero-serif, alverata, Georgia, "Times New Roman", serif) !important;
   color: var(--ibero-black, #1f1f24);
-  font-weight: 500 !important;
+  font-weight: 300 !important;
   line-height: .98;
   letter-spacing: -.04em;
 }
 .manresa-app .section-heading h2 {
-  font-size: clamp(2.45rem, 4.2vw, 4.8rem);
+  font-size: var(--ibero-size-section) !important;
+  font-weight: 300 !important;
+  line-height: 1.08 !important;
 }
 .manresa-app .detail-title h2 {
   font-size: clamp(1.9rem, 2.5vw, 2.65rem) !important;
@@ -1274,50 +1275,6 @@
   font-weight: 400;
 }
 
-/* Botones del módulo con el mismo lenguaje visual del sitio */
-.manresa-app .btn,
-.plan-download-actions .plan-download-btn {
-  min-width: 210px;
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  gap: .45rem;
-  border: 2px solid var(--ibero-red) !important;
-  border-radius: 999px !important;
-  background: var(--ibero-red) !important;
-  color: #fff !important;
-  padding: .9rem 1.55rem !important;
-  font-family: var(--ibero-sans, praxis-next, Arial, sans-serif) !important;
-  font-size: 1rem !important;
-  font-weight: 700 !important;
-  line-height: 1.1;
-  letter-spacing: .01em;
-  text-decoration: none !important;
-  box-shadow: none !important;
-  transition: background .18s ease, border-color .18s ease, color .18s ease;
-}
-.manresa-app .btn:hover,
-.manresa-app .btn:focus,
-.plan-download-actions .plan-download-btn:hover,
-.plan-download-actions .plan-download-btn:focus {
-  transform: none !important;
-  background: var(--manresa-red-dark) !important;
-  border-color: var(--manresa-red-dark) !important;
-  color: #fff !important;
-  box-shadow: none !important;
-}
-.manresa-app .btn.ghost {
-  background: #fff !important;
-  color: var(--ibero-red) !important;
-  border-color: var(--ibero-red) !important;
-}
-.manresa-app .btn.ghost:hover,
-.manresa-app .btn.ghost:focus {
-  background: var(--ibero-red) !important;
-  color: #fff !important;
-  border-color: var(--ibero-red) !important;
-}
-
 /* Los botones principales de descarga quedan grandes, pero sobrios */
 .plan-download-actions {
   gap: 1rem !important;
@@ -1326,8 +1283,8 @@
 }
 .plan-download-actions .plan-download-btn {
   min-width: 250px;
-  padding: 1rem 1.7rem !important;
-  font-size: 1.04rem !important;
+  padding: var(--ibero-control-padding);
+  font-size: var(--ibero-control-size);
 }
 .plan-download-actions .plan-download-btn .bi,
 .plan-download-actions .plan-download-btn i {
@@ -1392,8 +1349,8 @@
   grid-template-rows: minmax(70px, auto) 24px !important;
 }
 .manresa-app .detail-mini .course-title {
-  font-size: .56rem !important;
-  line-height: 1.02 !important;
+  font-size: .875rem !important;
+  line-height: 1.2 !important;
   padding: 7px 5px !important;
 }
 .manresa-app .detail-mini .course-hours,
@@ -1416,7 +1373,7 @@
 .manresa-app .detail-field span {
   color: #6f7680;
   font-weight: 700;
-  font-size: 9px !important;
+  font-size: var(--ibero-size-small) !important;
   letter-spacing: .08em;
 }
 .manresa-app .detail-field strong {
@@ -1509,67 +1466,42 @@
 }
 
 
-/* v5: corrección de botones visibles dentro del sitio Mecatrónica */
+/* Acciones del plan: mismas medidas y estados que los botones del sitio. */
 .manresa-app .btn,
-.manresa-app button.btn,
-.manresa-app a.btn,
-.plan-download-actions .plan-download-btn,
-.plan-download-actions a.plan-download-btn,
-.plan-download-actions .btn-ibero-red {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-width: 210px;
-  padding: .88rem 1.55rem !important;
-  border: 2px solid #E00034 !important;
-  border-radius: 999px !important;
-  background-color: #E00034 !important;
-  background-image: none !important;
-  color: #ffffff !important;
-  opacity: 1 !important;
-  font-family: var(--ibero-sans, praxis-next, Arial, sans-serif) !important;
-  font-weight: 700 !important;
-  line-height: 1.12 !important;
-  text-decoration: none !important;
-  box-shadow: none !important;
-  appearance: none !important;
-  -webkit-appearance: none !important;
-}
-
-.manresa-app .btn.ghost,
-.manresa-app button.btn.ghost,
-.manresa-app a.btn.ghost {
-  background-color: #ffffff !important;
-  background-image: none !important;
-  color: #E00034 !important;
-  border-color: #E00034 !important;
-}
-
-.manresa-app .btn:hover,
-.manresa-app .btn:focus,
-.plan-download-actions .plan-download-btn:hover,
-.plan-download-actions .plan-download-btn:focus {
-  background-color: #B00028 !important;
-  border-color: #B00028 !important;
-  color: #ffffff !important;
-  opacity: 1 !important;
-  transform: none !important;
-  box-shadow: none !important;
-}
-
-.manresa-app .btn.ghost:hover,
-.manresa-app .btn.ghost:focus {
-  background-color: #E00034 !important;
-  border-color: #E00034 !important;
-  color: #ffffff !important;
-}
-
 .plan-download-actions .plan-download-btn {
-  min-width: 270px;
-  padding: 1.05rem 1.85rem !important;
-  font-size: 1.08rem !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  min-width: 0;
+  min-height: var(--ibero-control-height);
+  padding: var(--ibero-control-padding);
+  border: 1px solid var(--ibero-red);
+  border-radius: var(--ibero-radius-button);
+  background: var(--ibero-red);
+  color: #fff;
+  font-family: var(--ibero-sans);
+  font-size: var(--ibero-control-size);
+  font-weight: 700;
+  line-height: 1.25;
+  white-space: normal;
+  text-decoration: none;
+  box-shadow: none;
+  transition: background .18s ease, border-color .18s ease, color .18s ease;
 }
-
+.manresa-app .btn.ghost { background: #fff; color: var(--ibero-red); border-color: var(--ibero-red); }
+.manresa-app .btn:hover,
+.manresa-app .btn:focus-visible,
+.plan-download-actions .plan-download-btn:hover,
+.plan-download-actions .plan-download-btn:focus-visible {
+  background: var(--ibero-red-dark);
+  border-color: var(--ibero-red-dark);
+  color: #fff;
+  transform: none;
+  box-shadow: none;
+}
+.manresa-app .btn.ghost:hover,
+.manresa-app .btn.ghost:focus-visible { background: var(--ibero-red); border-color: var(--ibero-red); color: #fff; }
 
 /* v6: depuración móvil */
 .ibero-plan-integration,
@@ -1657,8 +1589,8 @@
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
-    padding: .88rem 1rem !important;
-    font-size: .98rem !important;
+    padding: var(--ibero-control-padding);
+    font-size: var(--ibero-control-size);
     white-space: normal;
     text-align: center;
   }
@@ -1678,9 +1610,10 @@
     margin-bottom: 1rem;
   }
   .manresa-app .section-heading h2 {
-    font-size: clamp(2.15rem, 12vw, 3.25rem) !important;
-    line-height: .96 !important;
+    font-size: var(--ibero-size-section) !important;
+    line-height: 1.08 !important;
     max-width: 100%;
+    font-weight: 300 !important;
   }
   .manresa-app .section-actions {
     margin-top: .85rem;
@@ -1921,7 +1854,9 @@
     --sigla-w: 36px;
   }
   .manresa-app .section-heading h2 {
-    font-size: clamp(2rem, 12vw, 2.75rem) !important;
+    font-size: var(--ibero-size-section) !important;
+    font-weight: 300 !important;
+    line-height: 1.08 !important;
   }
   .manresa-app .data-table td {
     grid-template-columns: minmax(6.1rem, .42fr) minmax(0, 1fr);
@@ -2123,8 +2058,8 @@
 }
 .manresa-app .detail-download .btn {
   min-width: 220px;
-  padding: .72rem 1.15rem !important;
-  font-size: .92rem !important;
+  padding: var(--ibero-control-padding);
+  font-size: var(--ibero-control-size);
 }
 @media (max-width: 560px) {
   .manresa-app .detail-download .btn {
@@ -2134,218 +2069,61 @@
 }
 
 
-/* v17: ajuste fino de legibilidad del mapa curricular.
-   Mantiene los semestres completos en escritorio, pero da más altura útil a cada tarjeta,
-   reduce el peso del nombre de la materia y reserva más espacio para la sigla vertical. */
-@media (min-width: 768px) {
-  .manresa-app {
-    --plan-card-ratio: 1.30 / 1;
-    --plan-sigla-w: clamp(28px, 2.05vw, 38px);
-    --plan-bottom-row: clamp(22px, 1.65vw, 28px);
+/* Escala legible del mapa en pantalla; la exportación conserva su diseño propio.
+   El desplazamiento queda contenido en el mapa, sin ensanchar toda la página. */
+@media screen {
+  .manresa-app .plan-scroll {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 1rem !important;
+    scrollbar-color: var(--ibero-red) var(--ibero-soft);
   }
-
-  .manresa-app .plan-shell .curriculum-map {
-    grid-template-columns: repeat(var(--semesters, 10), minmax(0, 1fr)) !important;
-    gap: clamp(5px, .55vw, 10px) !important;
-    align-items: start !important;
-  }
-
-  .manresa-app .plan-shell .semester-column {
-    width: auto !important;
-    min-width: 0 !important;
+  .manresa-app .plan-shell .map-canvas {
+    width: max-content !important;
+    min-width: 100% !important;
     max-width: none !important;
   }
-
+  .manresa-app .plan-shell .curriculum-map {
+    grid-template-columns: repeat(var(--semesters, 10), 14rem) !important;
+    gap: .65rem !important;
+  }
+  .manresa-app .plan-shell .semester-column {
+    width: 14rem !important;
+    min-width: 14rem !important;
+    max-width: none !important;
+  }
   .manresa-app .plan-shell .semester-header {
-    padding: 5px 3px !important;
-    font-size: clamp(.54rem, .66vw, .76rem) !important;
-    line-height: 1.05 !important;
+    padding: .6rem .4rem !important;
+    font-size: .875rem !important;
+    line-height: 1.25 !important;
   }
-
-  .manresa-app .plan-shell .semester-body {
-    gap: clamp(6px, .52vw, 9px) !important;
-    padding: clamp(6px, .52vw, 8px) clamp(4px, .42vw, 6px) !important;
-  }
-
+  .manresa-app .plan-shell .semester-body { gap: .65rem !important; padding: .5rem !important; }
   .manresa-app .plan-shell .course-card:not(.catalog) {
     width: 100% !important;
     min-width: 0 !important;
-    min-height: 0 !important;
+    min-height: 10rem !important;
     height: auto !important;
-    aspect-ratio: var(--plan-card-ratio) !important;
-    grid-template-columns: minmax(0, 1fr) var(--plan-sigla-w) !important;
-    grid-template-rows: minmax(0, 1fr) var(--plan-bottom-row) !important;
+    aspect-ratio: auto !important;
+    grid-template-columns: minmax(0, 1fr) 2.5rem !important;
+    grid-template-rows: minmax(7.5rem, auto) 2rem !important;
   }
-
-  .manresa-app .plan-shell .course-title,
-  .manresa-app .plan-shell .course-title-main {
+  .manresa-app .plan-shell .course-title {
+    padding: .6rem .45rem !important;
+    font-size: .875rem !important;
+    line-height: 1.22 !important;
     font-weight: 500 !important;
-  }
-
-  .manresa-app .plan-shell .course-title {
-    padding: clamp(5px, .46vw, 8px) clamp(4px, .40vw, 7px) !important;
-    font-size: clamp(.43rem, .49vw, .60rem) !important;
-    line-height: 1.04 !important;
-    letter-spacing: -.012em !important;
-  }
-
-  .manresa-app .plan-shell .course-side {
-    grid-template-rows: var(--plan-bottom-row) 1fr !important;
-  }
-
-  .manresa-app .plan-shell .course-hours,
-  .manresa-app .plan-shell .course-key,
-  .manresa-app .plan-shell .course-credits,
-  .manresa-app .plan-shell .course-sigla-text {
-    font-size: clamp(.45rem, .51vw, .62rem) !important;
-    line-height: 1.02 !important;
-    font-weight: 700 !important;
-  }
-
-  .manresa-app .plan-shell .course-key {
-    padding: 4px clamp(4px, .36vw, 6px) !important;
-  }
-
-  .manresa-app .plan-shell .progress-badge {
-    min-width: clamp(20px, 1.55vw, 27px) !important;
-    height: clamp(18px, 1.35vw, 23px) !important;
-    padding: 0 5px !important;
-    font-size: clamp(.50rem, .50vw, .64rem) !important;
-  }
-
-  .manresa-app .plan-shell .course-progress-note {
-    font-size: clamp(.46rem, .49vw, .60rem) !important;
-    line-height: 1.06 !important;
-    font-weight: 700 !important;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1180px) {
-  .manresa-app .plan-shell .course-title {
-    font-size: clamp(.40rem, .50vw, .54rem) !important;
-    line-height: 1.03 !important;
-  }
-
-  .manresa-app .plan-shell .course-hours,
-  .manresa-app .plan-shell .course-key,
-  .manresa-app .plan-shell .course-credits,
-  .manresa-app .plan-shell .course-sigla-text {
-    font-size: clamp(.40rem, .50vw, .56rem) !important;
-  }
-}
-
-
-
-/* v18: ajuste de escala tipográfica y centrado de claves.
-   Reduce el peso visual del mapa al 100% de zoom y mantiene la proporción rectangular. */
-.manresa-app .course-key {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-}
-
-@media (min-width: 768px) {
-  .manresa-app {
-    --plan-card-ratio: 1.18 / 1;
-    --plan-sigla-w: clamp(27px, 1.90vw, 36px);
-    --plan-bottom-row: clamp(21px, 1.50vw, 26px);
-  }
-
-  .manresa-app .plan-shell .curriculum-map {
-    gap: clamp(4px, .48vw, 8px) !important;
-  }
-
-  .manresa-app .plan-shell .semester-header {
-    font-size: clamp(.48rem, .58vw, .68rem) !important;
-    line-height: 1.04 !important;
-    font-weight: 800 !important;
-    padding: 4px 3px !important;
-  }
-
-  .manresa-app .plan-shell .semester-body {
-    gap: clamp(5px, .48vw, 8px) !important;
-    padding: clamp(5px, .48vw, 8px) clamp(3px, .36vw, 5px) !important;
-  }
-
-  .manresa-app .plan-shell .course-card:not(.catalog) {
-    aspect-ratio: var(--plan-card-ratio) !important;
-    grid-template-columns: minmax(0, 1fr) var(--plan-sigla-w) !important;
-    grid-template-rows: minmax(0, 1fr) var(--plan-bottom-row) !important;
-  }
-
-  .manresa-app .plan-shell .course-title,
-  .manresa-app .plan-shell .course-title-main {
-    font-weight: 400 !important;
-  }
-
-  .manresa-app .plan-shell .course-title {
-    padding: clamp(4px, .38vw, 7px) clamp(3px, .34vw, 6px) !important;
-    font-size: clamp(.36rem, .42vw, .52rem) !important;
-    line-height: 1.03 !important;
-    letter-spacing: -.018em !important;
-  }
-
-  .manresa-app .plan-shell .course-hours,
-  .manresa-app .plan-shell .course-key,
-  .manresa-app .plan-shell .course-credits,
-  .manresa-app .plan-shell .course-sigla-text {
-    font-size: clamp(.38rem, .44vw, .54rem) !important;
-    line-height: 1.0 !important;
-    font-weight: 700 !important;
-  }
-
-  .manresa-app .plan-shell .course-key {
-    padding: 3px clamp(3px, .32vw, 5px) !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-  }
-
-  .manresa-app .plan-shell .course-sigla-text {
     letter-spacing: 0 !important;
+    overflow-wrap: anywhere;
   }
-
-  .manresa-app .plan-shell .progress-badge {
-    min-width: clamp(18px, 1.35vw, 24px) !important;
-    height: clamp(17px, 1.22vw, 21px) !important;
-    font-size: clamp(.44rem, .44vw, .56rem) !important;
-  }
-
-  .manresa-app .plan-shell .course-progress-note {
-    font-size: clamp(.40rem, .43vw, .52rem) !important;
-    line-height: 1.04 !important;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1180px) {
-  .manresa-app .plan-shell .course-title {
-    font-size: clamp(.34rem, .42vw, .48rem) !important;
-  }
-
+  .manresa-app .plan-shell .course-title-main { font-weight: inherit !important; }
+  .manresa-app .plan-shell .course-side { grid-template-rows: 2rem 1fr !important; }
   .manresa-app .plan-shell .course-hours,
   .manresa-app .plan-shell .course-key,
   .manresa-app .plan-shell .course-credits,
-  .manresa-app .plan-shell .course-sigla-text {
-    font-size: clamp(.34rem, .43vw, .50rem) !important;
-  }
+  .manresa-app .plan-shell .course-sigla-text { font-size: .8125rem !important; line-height: 1.15 !important; }
+  .manresa-app .plan-shell .course-key { display: flex; align-items: center; justify-content: center; padding: .35rem !important; }
+  .manresa-app .plan-shell .course-progress-note { font-size: .8125rem !important; line-height: 1.2 !important; }
 }
-
-
-/* v20: ajuste moderado de nombre de asignatura.
-   Base restaurada a v18; solo se aumenta el nombre 1.1x respecto a v18. */
-@media (min-width: 768px) {
-  .manresa-app .plan-shell .course-title {
-    font-size: clamp(.40rem, .46vw, .57rem) !important;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1180px) {
-  .manresa-app .plan-shell .course-title {
-    font-size: clamp(.37rem, .46vw, .53rem) !important;
-  }
-}
-
 
 /* v26: avance curricular.
    Calificación visible en 1.2x respecto al tamaño base; la exportación conserva sus estilos en línea. */

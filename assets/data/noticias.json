@@ -1,5 +1,54 @@
 [
   {
+    "titulo": "Estudiantes IBERO conquistan Intel AI Global Impact Festival con JADA, el robot que combate plagas de tomate",
+    "fecha": "Jue, 19 Nov 2026",
+    "resumen": "Estudiantes de Ingeniería en Mecatrónica y Sistemas Ciberfísicos de la IBERO fueron reconocidos como ganadores globales del Intel AI Global Impact Festival con JADA, un robot autónomo que utiliza inteligencia artificial, visión por computadora y procesamiento en el dispositivo para detectar plagas y evaluar la madurez de tomates en invernaderos. Su proyecto destacó entre 135 innovaciones de 30 países y territorios.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/estudiantes-ibero-conquistan-intel-ai-global-impact-festival-con-jada-el-robot-que-combate-plagas-de-tomate",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/ROBOT_IBERO_INTEL_1fe589b727.jpg"
+  },
+  {
+    "titulo": "IBERO y universidad de Polonia desarrollan robot de sumo para competir internacionalmente",
+    "fecha": "Mié, 4 Nov 2026",
+    "resumen": "La IBERO y una universidad de Polonia colaboran en el desarrollo de un robot de sumo para competencias internacionales. El proyecto plantea la construcción de un sistema robótico autónomo capaz de detectar a su adversario, tomar decisiones y ejecutar movimientos para expulsarlo de una plataforma circular.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/ibero-y-universidad-de-polonia-desarrollan-robot-de-sumo-para-competir-internacionalmente",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/Taller_tecnologico_con_estudiantes_y_laptops_bcf70c4a92.png"
+  },
+  {
+    "titulo": "Hackatón de IA en la IBERO: asistente para proteger a migrantes mexicanos en EU gana primer lugar",
+    "fecha": "Lun, 2 Nov 2026",
+    "resumen": "El Hackatón de Inteligencia Artificial para el Bien Común de la IBERO reunió a 34 participantes para desarrollar soluciones tecnológicas a problemas sociales. El primer lugar fue para Migrant IA, un asistente que brinda orientación sobre derechos, detenciones migratorias, violencia y protección consular para personas mexicanas en Estados Unidos. También destacaron proyectos de acompañamiento socioemocional y consulta de información ambiental.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/hackaton-de-ia-en-la-ibero-asistente-para-proteger-a-migrantes-mexicanos-en-eu-gana-primer-lugar",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/Grupo_diverso_en_hackathon_de_IA_2bc402c9d0.png"
+  },
+  {
+    "titulo": "Equipo IBERO logra segundo lugar en Baja Rocket 2026 con innovador cohete; va por tricampeonato en Colombia",
+    "fecha": "Mar, 27 Oct 2026",
+    "resumen": "El equipo estudiantil Astra Rocketry de la IBERO obtuvo el segundo lugar nacional en Baja Rocket 2026, celebrada en Laguna Salada, Baja California. Desarrollaron un cohete experimental con aletas invertidas, cinco motores y tecnología propia de telemetría. Tras conquistar dos campeonatos consecutivos en Colombia, el equipo busca conseguir su tercer título internacional.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/equipo-ibero-logra-segundo-lugar-en-baja-rocket-2026-con-innovador-cohete-va-por-tricampeonato-en-colombia",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/Astra_Rocketry_5_02626cd20e.jpg"
+  },
+  {
+    "titulo": "México instaló 5,594 robots industriales en un año; especialistas analizan el futuro de la automatización en el COMRob 2026 en la IBERO",
+    "fecha": "Lun, 26 Oct 2026",
+    "resumen": "La IBERO fue sede del 28.º Congreso Mexicano de Robótica, COMRob 2026, que reunió a investigadores, docentes, estudiantes y especialistas nacionales e internacionales para compartir avances en robótica, automatización y sistemas de control. Durante el encuentro se destacó que México instaló 5,594 robots industriales en 2024, de acuerdo con la Federación Internacional de Robótica.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/mexico-instalo-5-594-robots-industriales-en-un-ano-especialistas-analizan-el-futuro-de-la-automatizacion-en-el-com-rob-2026-en-la-ibero",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/COM_Rob2026_IBERO_37_4ecd67e42d.jpg"
+  },
+  {
+    "titulo": "IBERO y Notre Dame ponen el conocimiento en IA al alcance de todas las personas con clases gratuitas en YouTube",
+    "fecha": "Jue, 22 Oct 2026",
+    "resumen": "La IBERO y la Universidad de Notre Dame comenzaron a publicar gratuitamente en YouTube las sesiones de la Escuela Internacional de Inteligencia Artificial para el Bien Común 2026. La iniciativa ofrece clases sobre redes neuronales, aprendizaje profundo y otras tecnologías de IA, ampliando el acceso a conocimientos especializados para estudiantes, docentes, investigadores y público general.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/ibero-y-notre-dame-ponen-el-conocimiento-en-ia-al-alcance-de-todas-las-personas-con-clases-gratuitas-en-you-tube",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/Escuela_IA_ca901a949d.jpg"
+  },
+  {
+    "titulo": "Club de drones IBERO repara dron del Centro de Investigación en Ciencias de Información Geoespacial",
+    "fecha": "Jue, 15 Oct 2026",
+    "resumen": "El Club de Drones de la IBERO reparó un DJI Phantom 4 Multispectral perteneciente a CentroGeo, utilizado para investigación y levantamientos geoespaciales. Tras sufrir daños durante un vuelo de fotogrametría, estudiantes desarrollaron ocho prototipos de piezas mediante impresión 3D hasta recuperar el funcionamiento del equipo, demostrando sus capacidades de ingeniería y fabricación digital.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/club-de-drones-ibero-repara-dron-del-centro-de-investigacion-en-ciencias-de-informacion-geoespacial",
+    "imagen": "https://prensaadmin.ibero.mx/uploads/club_drones_ibero_centro_geo_e089b08968.jpg"
+  },
+  {
     "titulo": "IBERO convierte la IA en prototipos durante Claude Mexico City Build Day: 102 participantes y 61 proyectos",
     "fecha": "Vie, 18 Sep 2026",
     "resumen": "La IBERO fue sede del Claude Mexico City Build Day, encuentro en el que 102 participantes desarrollaron 61 proyectos con inteligencia artificial, incluyendo tutoría para lengua de señas, videojuegos educativos, análisis de congestión del Metro y un laboratorio de impresión 3D operado con IA.",

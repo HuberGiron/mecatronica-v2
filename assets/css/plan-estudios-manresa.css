@@ -901,8 +901,8 @@
   grid-template-rows: minmax(112px, auto) 32px;
 }
 .manresa-app .detail-mini .course-title {
-  font-size: .875rem !important;
-  line-height: 1.2 !important;
+  font-size: .82rem;
+  line-height: 1.08;
   padding: 12px 10px;
 }
 .manresa-app .detail-mini .course-hours, .manresa-app .detail-mini .course-sigla, .manresa-app .detail-mini .course-key, .manresa-app .detail-mini .course-credits {
@@ -1116,7 +1116,7 @@
 .manresa-app .panel-close { width: 36px; height: 36px; font-size: 24px; }
 .manresa-app .detail-hero { grid-template-columns: 150px minmax(0, 1fr); gap: 16px; align-items: start; }
 .manresa-app .detail-mini .course-card { min-height: 112px; grid-template-columns: minmax(0, 1fr) 36px; grid-template-rows: minmax(78px, auto) 26px; }
-.manresa-app .detail-mini .course-title { font-size: .875rem !important; line-height: 1.2 !important; padding: 8px 6px; }
+.manresa-app .detail-mini .course-title { font-size: .62rem; line-height: 1.04; padding: 8px 6px; }
 .manresa-app .detail-mini .course-hours, .manresa-app .detail-mini .course-sigla, .manresa-app .detail-mini .course-key, .manresa-app .detail-mini .course-credits { font-size: .62rem; }
 .manresa-app .detail-title h2 { font-size: clamp(1.55rem, 2.2vw, 2.15rem); line-height: 1.06; margin-bottom: 8px; }
 .manresa-app .detail-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 10px 0; }
@@ -1349,8 +1349,8 @@
   grid-template-rows: minmax(70px, auto) 24px !important;
 }
 .manresa-app .detail-mini .course-title {
-  font-size: .875rem !important;
-  line-height: 1.2 !important;
+  font-size: .56rem !important;
+  line-height: 1.02 !important;
   padding: 7px 5px !important;
 }
 .manresa-app .detail-mini .course-hours,
@@ -2069,61 +2069,218 @@
 }
 
 
-/* Escala legible del mapa en pantalla; la exportación conserva su diseño propio.
-   El desplazamiento queda contenido en el mapa, sin ensanchar toda la página. */
-@media screen {
-  .manresa-app .plan-scroll {
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    padding: 1rem !important;
-    scrollbar-color: var(--ibero-red) var(--ibero-soft);
+/* v17: ajuste fino de legibilidad del mapa curricular.
+   Mantiene los semestres completos en escritorio, pero da más altura útil a cada tarjeta,
+   reduce el peso del nombre de la materia y reserva más espacio para la sigla vertical. */
+@media (min-width: 768px) {
+  .manresa-app {
+    --plan-card-ratio: 1.30 / 1;
+    --plan-sigla-w: clamp(28px, 2.05vw, 38px);
+    --plan-bottom-row: clamp(22px, 1.65vw, 28px);
   }
-  .manresa-app .plan-shell .map-canvas {
-    width: max-content !important;
-    min-width: 100% !important;
-    max-width: none !important;
-  }
+
   .manresa-app .plan-shell .curriculum-map {
-    grid-template-columns: repeat(var(--semesters, 10), 14rem) !important;
-    gap: .65rem !important;
+    grid-template-columns: repeat(var(--semesters, 10), minmax(0, 1fr)) !important;
+    gap: clamp(5px, .55vw, 10px) !important;
+    align-items: start !important;
   }
+
   .manresa-app .plan-shell .semester-column {
-    width: 14rem !important;
-    min-width: 14rem !important;
+    width: auto !important;
+    min-width: 0 !important;
     max-width: none !important;
   }
+
   .manresa-app .plan-shell .semester-header {
-    padding: .6rem .4rem !important;
-    font-size: .875rem !important;
-    line-height: 1.25 !important;
+    padding: 5px 3px !important;
+    font-size: clamp(.54rem, .66vw, .76rem) !important;
+    line-height: 1.05 !important;
   }
-  .manresa-app .plan-shell .semester-body { gap: .65rem !important; padding: .5rem !important; }
+
+  .manresa-app .plan-shell .semester-body {
+    gap: clamp(6px, .52vw, 9px) !important;
+    padding: clamp(6px, .52vw, 8px) clamp(4px, .42vw, 6px) !important;
+  }
+
   .manresa-app .plan-shell .course-card:not(.catalog) {
     width: 100% !important;
     min-width: 0 !important;
-    min-height: 10rem !important;
+    min-height: 0 !important;
     height: auto !important;
-    aspect-ratio: auto !important;
-    grid-template-columns: minmax(0, 1fr) 2.5rem !important;
-    grid-template-rows: minmax(7.5rem, auto) 2rem !important;
+    aspect-ratio: var(--plan-card-ratio) !important;
+    grid-template-columns: minmax(0, 1fr) var(--plan-sigla-w) !important;
+    grid-template-rows: minmax(0, 1fr) var(--plan-bottom-row) !important;
   }
-  .manresa-app .plan-shell .course-title {
-    padding: .6rem .45rem !important;
-    font-size: .875rem !important;
-    line-height: 1.22 !important;
+
+  .manresa-app .plan-shell .course-title,
+  .manresa-app .plan-shell .course-title-main {
     font-weight: 500 !important;
-    letter-spacing: 0 !important;
-    overflow-wrap: anywhere;
   }
-  .manresa-app .plan-shell .course-title-main { font-weight: inherit !important; }
-  .manresa-app .plan-shell .course-side { grid-template-rows: 2rem 1fr !important; }
+
+  .manresa-app .plan-shell .course-title {
+    padding: clamp(5px, .46vw, 8px) clamp(4px, .40vw, 7px) !important;
+    font-size: clamp(.43rem, .49vw, .60rem) !important;
+    line-height: 1.04 !important;
+    letter-spacing: -.012em !important;
+  }
+
+  .manresa-app .plan-shell .course-side {
+    grid-template-rows: var(--plan-bottom-row) 1fr !important;
+  }
+
   .manresa-app .plan-shell .course-hours,
   .manresa-app .plan-shell .course-key,
   .manresa-app .plan-shell .course-credits,
-  .manresa-app .plan-shell .course-sigla-text { font-size: .8125rem !important; line-height: 1.15 !important; }
-  .manresa-app .plan-shell .course-key { display: flex; align-items: center; justify-content: center; padding: .35rem !important; }
-  .manresa-app .plan-shell .course-progress-note { font-size: .8125rem !important; line-height: 1.2 !important; }
+  .manresa-app .plan-shell .course-sigla-text {
+    font-size: clamp(.45rem, .51vw, .62rem) !important;
+    line-height: 1.02 !important;
+    font-weight: 700 !important;
+  }
+
+  .manresa-app .plan-shell .course-key {
+    padding: 4px clamp(4px, .36vw, 6px) !important;
+  }
+
+  .manresa-app .plan-shell .progress-badge {
+    min-width: clamp(20px, 1.55vw, 27px) !important;
+    height: clamp(18px, 1.35vw, 23px) !important;
+    padding: 0 5px !important;
+    font-size: clamp(.50rem, .50vw, .64rem) !important;
+  }
+
+  .manresa-app .plan-shell .course-progress-note {
+    font-size: clamp(.46rem, .49vw, .60rem) !important;
+    line-height: 1.06 !important;
+    font-weight: 700 !important;
+  }
 }
+
+@media (min-width: 768px) and (max-width: 1180px) {
+  .manresa-app .plan-shell .course-title {
+    font-size: clamp(.40rem, .50vw, .54rem) !important;
+    line-height: 1.03 !important;
+  }
+
+  .manresa-app .plan-shell .course-hours,
+  .manresa-app .plan-shell .course-key,
+  .manresa-app .plan-shell .course-credits,
+  .manresa-app .plan-shell .course-sigla-text {
+    font-size: clamp(.40rem, .50vw, .56rem) !important;
+  }
+}
+
+
+
+/* v18: ajuste de escala tipográfica y centrado de claves.
+   Reduce el peso visual del mapa al 100% de zoom y mantiene la proporción rectangular. */
+.manresa-app .course-key {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+@media (min-width: 768px) {
+  .manresa-app {
+    --plan-card-ratio: 1.18 / 1;
+    --plan-sigla-w: clamp(27px, 1.90vw, 36px);
+    --plan-bottom-row: clamp(21px, 1.50vw, 26px);
+  }
+
+  .manresa-app .plan-shell .curriculum-map {
+    gap: clamp(4px, .48vw, 8px) !important;
+  }
+
+  .manresa-app .plan-shell .semester-header {
+    font-size: clamp(.48rem, .58vw, .68rem) !important;
+    line-height: 1.04 !important;
+    font-weight: 800 !important;
+    padding: 4px 3px !important;
+  }
+
+  .manresa-app .plan-shell .semester-body {
+    gap: clamp(5px, .48vw, 8px) !important;
+    padding: clamp(5px, .48vw, 8px) clamp(3px, .36vw, 5px) !important;
+  }
+
+  .manresa-app .plan-shell .course-card:not(.catalog) {
+    aspect-ratio: var(--plan-card-ratio) !important;
+    grid-template-columns: minmax(0, 1fr) var(--plan-sigla-w) !important;
+    grid-template-rows: minmax(0, 1fr) var(--plan-bottom-row) !important;
+  }
+
+  .manresa-app .plan-shell .course-title,
+  .manresa-app .plan-shell .course-title-main {
+    font-weight: 400 !important;
+  }
+
+  .manresa-app .plan-shell .course-title {
+    padding: clamp(4px, .38vw, 7px) clamp(3px, .34vw, 6px) !important;
+    font-size: clamp(.36rem, .42vw, .52rem) !important;
+    line-height: 1.03 !important;
+    letter-spacing: -.018em !important;
+  }
+
+  .manresa-app .plan-shell .course-hours,
+  .manresa-app .plan-shell .course-key,
+  .manresa-app .plan-shell .course-credits,
+  .manresa-app .plan-shell .course-sigla-text {
+    font-size: clamp(.38rem, .44vw, .54rem) !important;
+    line-height: 1.0 !important;
+    font-weight: 700 !important;
+  }
+
+  .manresa-app .plan-shell .course-key {
+    padding: 3px clamp(3px, .32vw, 5px) !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .manresa-app .plan-shell .course-sigla-text {
+    letter-spacing: 0 !important;
+  }
+
+  .manresa-app .plan-shell .progress-badge {
+    min-width: clamp(18px, 1.35vw, 24px) !important;
+    height: clamp(17px, 1.22vw, 21px) !important;
+    font-size: clamp(.44rem, .44vw, .56rem) !important;
+  }
+
+  .manresa-app .plan-shell .course-progress-note {
+    font-size: clamp(.40rem, .43vw, .52rem) !important;
+    line-height: 1.04 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1180px) {
+  .manresa-app .plan-shell .course-title {
+    font-size: clamp(.34rem, .42vw, .48rem) !important;
+  }
+
+  .manresa-app .plan-shell .course-hours,
+  .manresa-app .plan-shell .course-key,
+  .manresa-app .plan-shell .course-credits,
+  .manresa-app .plan-shell .course-sigla-text {
+    font-size: clamp(.34rem, .43vw, .50rem) !important;
+  }
+}
+
+
+/* v20: ajuste moderado de nombre de asignatura.
+   Base restaurada a v18; solo se aumenta el nombre 1.1x respecto a v18. */
+@media (min-width: 768px) {
+  .manresa-app .plan-shell .course-title {
+    font-size: clamp(.40rem, .46vw, .57rem) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1180px) {
+  .manresa-app .plan-shell .course-title {
+    font-size: clamp(.37rem, .46vw, .53rem) !important;
+  }
+}
+
 
 /* v26: avance curricular.
    Calificación visible en 1.2x respecto al tamaño base; la exportación conserva sus estilos en línea. */

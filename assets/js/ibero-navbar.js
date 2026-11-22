@@ -100,7 +100,7 @@
     return {
       imagen: item.imagen || item.image || item.img || '/assets/img/home/video-preview.png',
       titulo: item.titulo || item.title || 'Noticia IBERO',
-      fecha: formatNewsDate(item.fecha || item.date || ''),
+      fecha: item.fechaTexto || formatNewsDate(item.fechaISO || item.fecha || item.date || ''),
       resumen: item.resumen || item.summary || item.descripcion || '',
       url: item.url || item.link || '#'
     };
@@ -133,7 +133,11 @@
   function renderNews(items) {
     if (!newsInner) return;
     const normalized = items.map(normalizeNewsItem).filter(item => item.titulo && item.url);
-    if (!normalized.length) throw new Error('Sin noticias para mostrar');
+    document.querySelectorAll('.ibero-news-arrow').forEach(button => { button.disabled = normalized.length <= 3; });
+    if (!normalized.length) {
+      newsInner.innerHTML = '<div class="carousel-item active"><div class="ibero-news-loading">Aún no hay noticias publicadas.</div></div>';
+      return;
+    }
 
     const slides = chunk(normalized, 3);
     newsInner.innerHTML = slides.map((group, slideIndex) => `
@@ -141,14 +145,14 @@
         <div class="ibero-news-grid">
           ${group.map(item => `
             <article class="ibero-news-card">
-              <img class="ibero-news-img" src="${item.imagen}" alt="${escapeHtml(item.titulo)}" loading="lazy">
+              <img class="ibero-news-img" src="${escapeHtml(item.imagen)}" alt="${escapeHtml(item.titulo)}" loading="lazy">
               <div class="ibero-news-body">
                 ${item.fecha ? `<div class="ibero-news-date">${escapeHtml(item.fecha)}</div>` : ''}
                 <h3 class="ibero-news-card-title">${escapeHtml(item.titulo)}</h3>
                 ${item.resumen ? `<p class="ibero-news-summary">${escapeHtml(item.resumen)}</p>` : ''}
               </div>
               <div class="ibero-news-footer">
-                <a class="ibero-news-link" href="${item.url}" target="_blank" rel="noopener">Leer más</a>
+                <a class="ibero-news-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">Leer más</a>
               </div>
             </article>
           `).join('')}
@@ -167,39 +171,21 @@
     }
   }
 
-  function setupNews() {
+  async function setupNews() {
     if (!newsInner) return;
-    fetch('/assets/data/noticias.json', { cache: 'no-store' })
-      .then(response => {
-        if (!response.ok) throw new Error('No se pudo cargar noticias.json');
-        return response.json();
-      })
-      .then(items => renderNews(Array.isArray(items) ? items : []))
-      .catch(() => {
-        renderNews([
-          {
-            imagen: '/assets/img/home/video-preview.png',
-            fecha: '2026-04-29',
-            titulo: 'Conoce los proyectos y actividades de Mecatrónica IBERO',
-            resumen: 'Consulta las novedades académicas, eventos y actividades del programa.',
-            url: 'https://ibero.mx/es-MX/sala-de-prensa'
-          },
-          {
-            imagen: 'https://comrob2026.mecatronica-ibero.mx/assets/hero-comrob-cdmx.jpg',
-            fecha: '2026-03-02',
-            titulo: 'COMRob 2026 en la IBERO Ciudad de México',
-            resumen: 'La IBERO será sede del Congreso Mexicano de Robótica.',
-            url: 'https://comrob2026.mecatronica-ibero.mx/'
-          },
-          {
-            imagen: '/assets/img/home/video-preview.png',
-            fecha: '2026-02-18',
-            titulo: 'Ingeniería, robótica y sistemas ciberfísicos con impacto social',
-            resumen: 'Explora cómo la tecnología se integra con la formación universitaria.',
-            url: 'https://ibero.mx/es-MX/sala-de-prensa'
-          }
-        ]);
-      });
+    let timer;
+    try {
+      const request = import('./noticias-public.js?v=noticias-1').then(module => module.loadPublicNews());
+      const timeout = new Promise((_, reject) => { timer = setTimeout(() => reject(new Error('Tiempo de espera agotado')), 12000); });
+      renderNews(await Promise.race([request, timeout]));
+    } catch (error) {
+      console.error('No se pudieron cargar las noticias', error);
+      newsInner.innerHTML = '<div class="carousel-item active"><div class="ibero-news-loading" role="status">Las noticias no están disponibles por el momento. <button type="button" class="btn btn-ibero btn-ibero-outline" data-retry-news>Reintentar</button></div></div>';
+      newsInner.querySelector('[data-retry-news]').addEventListener('click', () => {
+        newsInner.innerHTML = '<div class="carousel-item active"><div class="ibero-news-loading">Cargando noticias...</div></div>';
+        setupNews();
+      }, { once: true });
+    } finally { clearTimeout(timer); }
   }
 
   blockHoverDropdowns();

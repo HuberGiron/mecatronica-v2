@@ -1,0 +1,13 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "noticias",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "estado", "order": "ASCENDING" },
+        { "fieldPath": "fechaISO", "order": "DESCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

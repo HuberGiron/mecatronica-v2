@@ -1,0 +1,70 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function isSuperAdmin() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.activo == true
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'superadmin';
+    }
+    function validHttps(value) {
+      return value is string && value.size() <= 2048
+        && value.matches('https://[^/\\s<>"\x27]+(/[^\\s<>"\x27]*)?');
+    }
+    function validNews(d) {
+      return d.keys().hasAll(['titulo', 'resumen', 'url', 'imagen', 'fechaISO', 'fechaTexto', 'estado', 'createdAt', 'createdByUid', 'updatedAt', 'updatedByUid', 'publishedAt', 'publishedByUid', 'revision', 'legacyImported'])
+        && d.keys().hasOnly(['titulo', 'resumen', 'url', 'imagen', 'fechaISO', 'fechaTexto', 'estado', 'createdAt', 'createdByUid', 'updatedAt', 'updatedByUid', 'publishedAt', 'publishedByUid', 'revision', 'legacyImported'])
+        && d.titulo is string && d.titulo.size() > 0 && d.titulo.size() <= 240
+        && d.resumen is string && d.resumen.size() <= 3000
+        && validHttps(d.url)
+        && d.imagen is string && d.imagen.size() <= 2048
+        && (validHttps(d.imagen) || d.imagen.matches('/[^/\\s<>"\x27][^\\s<>"\x27]*'))
+        && d.fechaISO is string && d.fechaISO.matches('[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])')
+        && d.fechaTexto is string && d.fechaTexto.size() <= 100
+        && d.estado in ['borrador', 'publicado', 'oculto']
+        && d.createdAt is timestamp && d.createdByUid is string
+        && d.updatedAt == request.time && d.updatedByUid == request.auth.uid
+        && d.revision is int && d.revision >= 1 && d.legacyImported is bool
+        && (d.publishedAt == null || d.publishedAt is timestamp)
+        && d.publishedByUid is string
+        && (d.estado != 'publicado' || (d.publishedAt is timestamp && d.publishedByUid == request.auth.uid));
+    }
+
+    match /users/{uid} {
+      allow get: if signedIn() && (request.auth.uid == uid || isSuperAdmin());
+      // Los perfiles se administran desde la consola en esta primera etapa.
+      allow list, create, update, delete: if false;
+    }
+    match /noticias/{id} {
+      allow get, list: if resource.data.estado == 'publicado' || isSuperAdmin();
+      allow create: if isSuperAdmin() && validNews(request.resource.data)
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.createdByUid == request.auth.uid
+        && request.resource.data.revision == 1;
+      allow update: if isSuperAdmin() && validNews(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.createdByUid == resource.data.createdByUid
+        && request.resource.data.legacyImported == resource.data.legacyImported
+        && request.resource.data.revision == resource.data.revision + 1;
+      allow delete: if false;
+    }
+    match /site_settings/noticias {
+      allow get: if true;
+      // La importación y el cambio de fuente son atómicos y se realizan una sola vez.
+      allow create: if isSuperAdmin()
+        && request.resource.data.keys().hasOnly(['migrated', 'importedAt', 'importedByUid', 'sourceCount', 'createdCount', 'existingCount', 'version'])
+        && request.resource.data.migrated == true
+        && request.resource.data.importedAt == request.time
+        && request.resource.data.importedByUid == request.auth.uid
+        && request.resource.data.sourceCount is int && request.resource.data.sourceCount > 0 && request.resource.data.sourceCount <= 200
+        && request.resource.data.createdCount is int && request.resource.data.createdCount >= 0
+        && request.resource.data.existingCount is int && request.resource.data.existingCount >= 0
+        && request.resource.data.createdCount + request.resource.data.existingCount == request.resource.data.sourceCount
+        && request.resource.data.version == 1;
+      allow list, update, delete: if false;
+    }
+    // Las demás secciones continúan en sus JSON y no admiten escrituras web.
+    match /{document=**} { allow read, write: if false; }
+  }
+}

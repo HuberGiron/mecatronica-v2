@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Administración | Mecatrónica IBERO</title>
+  <link rel="icon" href="/assets/favicon.ico">
+  <link rel="stylesheet" href="https://use.typekit.net/jov3nat.css">
+  <link rel="stylesheet" href="/assets/css/ibero-site.css?v=visual-20261120">
+  <link rel="stylesheet" href="/assets/css/admin.css?v=noticias-1">
+</head>
+<body class="admin-page">
+  <header class="admin-header">
+    <a href="/" class="admin-brand" aria-label="Ir al sitio de Mecatrónica IBERO"><img src="/assets/img/logos/ibero-logo-white.svg" alt="IBERO Ciudad de México"><span>Mecatrónica y<br>Sistemas Ciberfísicos</span></a>
+    <a href="/" class="admin-site-link">Ver sitio</a>
+  </header>
+  <main>
+    <section id="login-view" class="admin-login" aria-labelledby="login-title">
+      <div class="admin-kicker">Administración del sitio</div>
+      <h1 id="login-title">Bienvenido.</h1>
+      <p>Inicia sesión para administrar el contenido de Mecatrónica IBERO.</p>
+      <form id="login-form">
+        <label for="login-email">Correo electrónico</label>
+        <input id="login-email" type="email" autocomplete="username" required maxlength="254">
+        <label for="login-password">Contraseña</label>
+        <input id="login-password" type="password" autocomplete="current-password" required>
+        <button id="login-submit" class="admin-button primary" type="submit" disabled>Entrar</button>
+      </form>
+      <button id="reset-password" class="admin-text-button" type="button" disabled>Restablecer contraseña</button>
+      <p id="login-message" class="admin-message" role="status" aria-live="polite">Preparando el inicio de sesión…</p>
+      <button id="unauthorized-signout" class="admin-button" type="button" hidden>Cerrar sesión</button>
+      <noscript>Activa JavaScript en tu navegador para utilizar el administrador.</noscript>
+    </section>
+
+    <div id="admin-view" class="admin-layout" hidden>
+      <aside class="admin-sidebar" aria-label="Módulos de administración">
+        <div class="admin-kicker">Contenido</div>
+        <nav>
+          <button type="button" id="nav-news" class="admin-nav-item active" aria-current="page">Noticias</button>
+          <span class="admin-nav-future">Proyectos de alumnos <small>Próximamente</small></span>
+          <span class="admin-nav-future">Investigación <small>Próximamente</small></span>
+          <span class="admin-nav-future">Publicaciones <small>Próximamente</small></span>
+          <span class="admin-nav-future">Personas <small>Próximamente</small></span>
+        </nav>
+        <div class="admin-account"><strong id="account-name"></strong><span>Superadministrador</span><button id="signout" type="button" class="admin-text-button">Cerrar sesión</button></div>
+      </aside>
+
+      <section class="admin-workspace" aria-labelledby="news-title">
+        <div class="admin-heading"><div><div class="admin-kicker">Panel de administración</div><h1 id="news-title">Noticias</h1><p>Crea y publica las novedades del programa.</p></div><button id="new-news" type="button" class="admin-button primary">Nueva noticia</button></div>
+        <div id="admin-message" class="admin-message" role="status" aria-live="polite"></div>
+        <div class="admin-stats" aria-label="Resumen de noticias"><div><strong id="count-total">0</strong><span>Total</span></div><div><strong id="count-published">0</strong><span>Publicadas</span></div><div><strong id="count-draft">0</strong><span>Borradores</span></div><div><strong id="count-hidden">0</strong><span>Ocultas</span></div></div>
+        <section id="migration-panel" class="admin-migration" hidden><div><h2>Importa las noticias actuales</h2><p>Revisa el archivo existente y pásalo a la base de datos. La página de inicio cambiará de fuente al terminar la importación.</p></div><button id="review-import" type="button" class="admin-button">Revisar importación</button></section>
+        <div class="admin-columns">
+          <section class="admin-panel admin-list-panel" aria-labelledby="list-title">
+            <div class="admin-panel-heading"><h2 id="list-title">Todas las noticias</h2><button id="reload-news" type="button" class="admin-text-button">Actualizar</button></div>
+            <label for="news-search">Buscar</label><input id="news-search" type="search" placeholder="Título o resumen">
+            <label for="news-filter">Estado</label><select id="news-filter"><option value="">Todos</option><option value="publicado">Publicadas</option><option value="borrador">Borradores</option><option value="oculto">Ocultas</option></select>
+            <p id="list-count" class="admin-muted" role="status"></p>
+            <div id="news-list" class="admin-news-list"></div>
+            <button id="load-more" type="button" class="admin-button" hidden>Mostrar más</button>
+          </section>
+          <section class="admin-panel admin-editor" aria-labelledby="editor-title">
+            <div class="admin-panel-heading"><h2 id="editor-title">Nueva noticia</h2><span id="editor-state" class="admin-badge">Borrador</span></div>
+            <form id="news-form">
+              <label for="news-title-input">Título</label><input id="news-title-input" name="titulo" required maxlength="240">
+              <div class="admin-form-row"><div><label for="news-date">Fecha de la noticia</label><input id="news-date" name="fechaISO" type="date" required></div><div><label for="news-state">Estado</label><select id="news-state" name="estado"><option value="borrador">Borrador</option><option value="publicado">Publicado</option><option value="oculto">Oculto</option></select></div></div>
+              <label for="news-summary">Resumen</label><textarea id="news-summary" name="resumen" maxlength="3000" rows="5"></textarea>
+              <label for="news-url">Enlace de la noticia</label><input id="news-url" name="url" type="url" placeholder="https://prensa.ibero.mx/…" required maxlength="2048">
+              <label for="news-image">Enlace de la imagen</label><input id="news-image" name="imagen" placeholder="https://… o /assets/img/…" maxlength="2048" aria-describedby="image-help"><p id="image-help" class="admin-field-help">Puedes usar una imagen externa o una ruta del sitio. Si lo dejas vacío, se utilizará la imagen del programa.</p>
+              <div class="admin-form-actions"><button id="save-news" type="submit" class="admin-button primary">Guardar noticia</button><button id="clear-editor" type="button" class="admin-button">Limpiar formulario</button></div>
+              <p id="editor-message" class="admin-message" role="status" aria-live="polite"></p>
+            </form>
+            <div class="admin-preview-heading"><h3>Vista previa</h3><span id="preview-visibility">Solo visible para administración</span></div>
+            <article class="admin-preview-card"><img id="preview-image" src="/assets/img/home/video-preview.png" alt=""><div><time id="preview-date"></time><h3 id="preview-title">Título de la noticia</h3><p id="preview-summary">El resumen aparecerá aquí.</p><a id="preview-link" target="_blank" rel="noopener noreferrer" hidden>Leer más</a></div></article>
+          </section>
+        </div>
+      </section>
+    </div>
+  </main>
+  <dialog id="import-dialog" aria-labelledby="import-title"><form method="dialog"><button id="close-import" value="cancel" class="admin-dialog-close" aria-label="Cerrar revisión">×</button></form><div class="admin-kicker">Migración inicial</div><h2 id="import-title">Revisa las noticias</h2><p id="import-summary"></p><p>Se conservarán los registros que ya existan. Las noticias importadas quedarán publicadas y la página de inicio comenzará a leer la base de datos.</p><ol id="import-list"></ol><p id="import-message" class="admin-message" role="status"></p><button id="confirm-import" type="button" class="admin-button primary">Importar noticias</button></dialog>
+  <script type="module">
+    import('/assets/js/admin.js?v=noticias-1').catch(() => {
+      document.getElementById('login-message').textContent = 'No se pudo cargar el administrador. Revisa tu conexión y recarga la página.';
+    });
+  </script>
+</body>
+</html>

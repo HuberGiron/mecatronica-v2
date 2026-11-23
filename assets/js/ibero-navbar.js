@@ -175,7 +175,7 @@
     if (!newsInner) return;
     let timer;
     try {
-      const request = import('./noticias-public.js?v=noticias-2').then(module => module.loadPublicNews());
+      const request = import('./noticias-public.js?v=cache-20261122').then(module => module.loadPublicNews());
       const timeout = new Promise((_, reject) => { timer = setTimeout(() => reject(new Error('Tiempo de espera agotado')), 12000); });
       renderNews(await Promise.race([request, timeout]));
     } catch (error) {

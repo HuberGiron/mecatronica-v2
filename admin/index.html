@@ -7,8 +7,8 @@
   <title>Administración | Mecatrónica IBERO</title>
   <link rel="icon" href="/assets/favicon.ico">
   <link rel="stylesheet" href="https://use.typekit.net/jov3nat.css">
-  <link rel="stylesheet" href="/assets/css/ibero-site.css?v=visual-20261120">
-  <link rel="stylesheet" href="/assets/css/admin.css?v=noticias-1">
+  <link rel="stylesheet" href="/assets/css/ibero-site.css?v=cache-20261122">
+  <link rel="stylesheet" href="/assets/css/admin.css?v=cache-20261122">
 </head>
 <body class="admin-page">
   <header class="admin-header">
@@ -80,7 +80,7 @@
   </main>
   <dialog id="import-dialog" aria-labelledby="import-title"><form method="dialog"><button id="close-import" value="cancel" class="admin-dialog-close" aria-label="Cerrar revisión">×</button></form><div class="admin-kicker">Migración inicial</div><h2 id="import-title">Revisa las noticias</h2><p id="import-summary"></p><p>Se conservarán los registros que ya existan. Las noticias importadas quedarán publicadas y la página de inicio comenzará a leer la base de datos.</p><ol id="import-list"></ol><p id="import-message" class="admin-message" role="status"></p><button id="confirm-import" type="button" class="admin-button primary">Importar noticias</button></dialog>
   <script type="module">
-    import('/assets/js/admin.js?v=noticias-1').catch(() => {
+    import('/assets/js/admin.js?v=cache-20261122').catch(() => {
       document.getElementById('login-message').textContent = 'No se pudo cargar el administrador. Revisa tu conexión y recarga la página.';
     });
   </script>

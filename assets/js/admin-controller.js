@@ -1,4 +1,4 @@
-import { NEWS_STATES, PLACEHOLDER_IMAGE, formatNewsDate, safeNewsUrl, filterNews } from './noticias-core.js';
+import { NEWS_STATES, PLACEHOLDER_IMAGE, formatNewsDate, safeNewsUrl, filterNews } from './noticias-core.js?v=cache-20261122';
 
 export function mountAdmin({ session, repositoryForUser, observeProfile, root = document }) {
   const $ = id => root.getElementById(id);

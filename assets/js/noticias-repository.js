@@ -1,5 +1,5 @@
 import { collection, doc, getDocsFromServer, getDocFromServer, query, orderBy, runTransaction, serverTimestamp } from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js';
-import { validateNews, formatNewsDate, normalizeLegacyNews, newsIdForUrl, sortNews } from './noticias-core.js';
+import { validateNews, formatNewsDate, normalizeLegacyNews, newsIdForUrl, sortNews } from './noticias-core.js?v=cache-20261122';
 
 export function createNewsRepository(db, uid) {
   const settingsRef = doc(db, 'site_settings', 'noticias');

@@ -1,6 +1,6 @@
-import { db } from './firebase-client.js';
+import { db } from './firebase-client.js?v=cache-20261122';
 import { doc, getDocFromServer, collection, query, where, orderBy, limit, getDocsFromServer } from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js';
-import { normalizeLegacyNews, sortNews, publicNewsMode } from './noticias-core.js';
+import { normalizeLegacyNews, sortNews, publicNewsMode } from './noticias-core.js?v=cache-20261122';
 
 export async function loadPublicNews() {
   const settings = await getDocFromServer(doc(db, 'site_settings', 'noticias'));

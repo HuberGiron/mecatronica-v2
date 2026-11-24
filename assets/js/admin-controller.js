@@ -5,6 +5,7 @@ export function mountAdmin({ session, repositoryForUser, observeProfile, root = 
   const win = root.defaultView;
   let user = null, repository = null, stopProfile = null, generation = 0;
   let authorized = false, busy = false, dirty = false, migrated = false, items = [], selected = null, pageSize = 15, importRows = null;
+  let jsonPlan = null, jsonDirty = false;
 
   function message(id, text = '', type = '') {
     $(id).textContent = text;
@@ -16,6 +17,8 @@ export function mountAdmin({ session, repositoryForUser, observeProfile, root = 
     $('admin-view').querySelectorAll('button,input,select,textarea').forEach(control => { control.disabled = value || !authorized; });
     $('confirm-import').disabled = value || !authorized;
     $('close-import').disabled = value;
+    $('json-dialog').querySelectorAll('button,input,select,textarea').forEach(control => { control.disabled = value || !authorized; });
+    $('confirm-json').disabled = value || !authorized || !jsonPlan?.created;
   }
   function inputData() {
     return Object.fromEntries(['titulo', 'resumen', 'fechaISO', 'estado', 'url', 'imagen'].map(name => [name, $('news-form').elements.namedItem(name).value]));
@@ -94,9 +97,12 @@ export function mountAdmin({ session, repositoryForUser, observeProfile, root = 
     return list;
   }
   function revoke(text) {
-    authorized = false; repository = null; items = []; selected = null; dirty = false; importRows = null;
+    authorized = false; repository = null; items = []; selected = null; dirty = false; importRows = null; jsonPlan = null; jsonDirty = false;
     $('admin-view').hidden = true; $('login-view').hidden = false;
     if ($('import-dialog').open) $('import-dialog').close();
+    if ($('json-dialog').open) $('json-dialog').close();
+    $('json-input').value = ''; $('json-state').value = 'borrador'; $('json-list').replaceChildren(); $('json-review').hidden = true;
+    message('json-message');
     $('news-list').replaceChildren(); $('news-form').reset(); $('login-password').value = '';
     $('unauthorized-signout').hidden = !user;
     $('login-form').hidden = !!user; $('reset-password').hidden = !!user;
@@ -140,7 +146,7 @@ export function mountAdmin({ session, repositoryForUser, observeProfile, root = 
   });
   async function logout() {
     if (busy) return;
-    if (dirty && !win.confirm('Tienes cambios sin guardar. ¿Quieres cerrar sesión y descartarlos?')) return;
+    if ((dirty || jsonDirty) && !win.confirm('Tienes cambios sin guardar. ¿Quieres cerrar sesión y descartarlos?')) return;
     try { await session.logout(); }
     catch { message(authorized ? 'admin-message' : 'login-message', 'No se pudo cerrar la sesión. Inténtalo de nuevo.', 'error'); }
   }
@@ -211,7 +217,70 @@ export function mountAdmin({ session, repositoryForUser, observeProfile, root = 
     } catch (error) { if (token === generation) message('import-message', friendlyError(error, 'No se pudo completar la importación. Puedes reintentar; los registros existentes se conservarán.'), 'error'); }
     finally { if (token === generation && authorized) setBusy(false); }
   });
-  const beforeUnload = event => { if (dirty || busy) { event.preventDefault(); event.returnValue = ''; } };
+  function invalidateJson() {
+    jsonPlan = null; jsonDirty = !!$('json-input').value.trim();
+    $('json-review').hidden = true; $('json-list').replaceChildren(); $('confirm-json').disabled = true;
+    $('confirm-json').textContent = 'Guardar noticias'; message('json-message');
+  }
+  $('open-json').addEventListener('click', () => {
+    if (!authorized || busy) return;
+    $('json-dialog').showModal(); $('json-input').focus();
+  });
+  $('close-json').addEventListener('click', () => { if (!busy) $('json-dialog').close(); });
+  $('json-dialog').addEventListener('cancel', event => { if (busy) event.preventDefault(); });
+  $('json-input').addEventListener('input', invalidateJson);
+  $('json-state').addEventListener('change', invalidateJson);
+  $('clear-json').addEventListener('click', () => {
+    if (!authorized || busy) return;
+    if (jsonDirty && !win.confirm('¿Quieres borrar el JSON que pegaste?')) return;
+    $('json-input').value = ''; invalidateJson(); $('json-input').focus();
+  });
+  $('validate-json').addEventListener('click', async () => {
+    if (!authorized || busy) return;
+    const text = $('json-input').value, estado = $('json-state').value, token = generation;
+    invalidateJson(); setBusy(true); message('json-message', 'Validando el JSON y comprobando enlaces existentes…');
+    try {
+      const plan = await repository.prepareJsonImport(text, estado);
+      if (!authorized || token !== generation) return;
+      jsonPlan = plan;
+      $('json-summary').textContent = `${plan.total} en el lote: ${plan.created} nueva${plan.created === 1 ? '' : 's'}, ${plan.existing} existente${plan.existing === 1 ? '' : 's'} y ${plan.repeated} repetida${plan.repeated === 1 ? '' : 's'} dentro del JSON.`;
+      const status = { nueva: 'Nueva', existente: 'Ya existe · se conserva', repetida: 'Repetida en el lote · se omite' };
+      for (const item of plan.rows) {
+        const row = root.createElement('li');
+        const title = root.createElement('strong'); title.textContent = item.titulo;
+        const badge = root.createElement('span'); badge.className = 'admin-badge'; badge.textContent = status[item.disposition];
+        const date = root.createElement('time'); date.dateTime = item.fechaISO; date.textContent = `${formatNewsDate(item.fechaISO)} · ${NEWS_STATES[item.estado]}`;
+        const summary = root.createElement('p'); summary.textContent = item.resumen;
+        const link = root.createElement('a'); link.href = item.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = item.url;
+        row.append(badge, title, date, summary, link); $('json-list').append(row);
+      }
+      $('json-review').hidden = false;
+      $('confirm-json').textContent = `${estado === 'publicado' ? 'Publicar' : 'Guardar como borrador'} ${plan.created} ${plan.created === 1 ? 'noticia' : 'noticias'}`;
+      message('json-message', plan.created ? 'JSON válido. Revisa la lista y confirma para guardar las noticias nuevas.' : 'Todas las noticias ya existen o se repiten. No hay noticias nuevas que guardar.', plan.created ? 'success' : '');
+      $('json-review-title').focus({ preventScroll: true });
+      $('json-review').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } catch (error) { if (token === generation && authorized) message('json-message', friendlyError(error, 'No se pudo revisar el lote. Comprueba tu conexión y vuelve a validar.'), 'error'); }
+    finally { if (token === generation && authorized) setBusy(false); }
+  });
+  $('confirm-json').addEventListener('click', async () => {
+    if (!authorized || busy || !jsonPlan?.created) return;
+    const plan = jsonPlan, token = generation; setBusy(true); message('json-message', 'Guardando noticias. Espera a que termine…');
+    try {
+      const result = await repository.importJsonNews(plan);
+      if (!authorized || token !== generation) return;
+      jsonPlan = null; jsonDirty = false; $('json-input').value = ''; $('json-review').hidden = true; $('json-list').replaceChildren(); $('json-dialog').close();
+      const text = `Lote guardado: ${result.created} noticia${result.created === 1 ? '' : 's'} agregada${result.created === 1 ? '' : 's'}; ${result.skipped} omitida${result.skipped === 1 ? '' : 's'} por existir o repetirse.`;
+      message('admin-message', text, 'success');
+      try {
+        await refresh();
+        if (authorized && token === generation && !migrated) message('admin-message', `${text} Para mostrarlas en el sitio, completa también la migración inicial.`, 'success');
+      } catch {
+        if (authorized && token === generation) message('admin-message', `${text} No se pudo actualizar la lista; pulsa Actualizar.`, 'success');
+      }
+    } catch (error) { if (authorized && token === generation) message('json-message', friendlyError(error, 'No se pudo guardar el lote. Puedes reintentar; las noticias existentes se conservarán.'), 'error'); }
+    finally { if (token === generation && authorized) setBusy(false); }
+  });
+  const beforeUnload = event => { if (dirty || jsonDirty || busy) { event.preventDefault(); event.returnValue = ''; } };
   win.addEventListener('beforeunload', beforeUnload);
   return () => { stopAuth?.(); stopProfile?.(); win.removeEventListener('beforeunload', beforeUnload); };
 }

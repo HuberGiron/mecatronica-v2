@@ -1,0 +1,16 @@
+[
+  {
+    "titulo": "Título de la primera noticia",
+    "fecha": "2026-11-24",
+    "resumen": "Sustituye este texto por el resumen de la primera noticia.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/primera-noticia-ejemplo",
+    "imagen": "/assets/img/home/video-preview.png"
+  },
+  {
+    "titulo": "Título de la segunda noticia",
+    "fecha": "Lun, 23 Nov 2026",
+    "resumen": "Sustituye este texto por el resumen de la segunda noticia.",
+    "url": "https://prensa.ibero.mx/es-MX/nota/segunda-noticia-ejemplo",
+    "imagen": "/assets/img/home/video-preview.png"
+  }
+]

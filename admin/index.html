@@ -8,7 +8,7 @@
   <link rel="icon" href="/assets/favicon.ico">
   <link rel="stylesheet" href="https://use.typekit.net/jov3nat.css">
   <link rel="stylesheet" href="/assets/css/ibero-site.css?v=cache-20261122">
-  <link rel="stylesheet" href="/assets/css/admin.css?v=cache-20261122">
+  <link rel="stylesheet" href="/assets/css/admin.css?v=json-20261124">
 </head>
 <body class="admin-page">
   <header class="admin-header">
@@ -47,7 +47,7 @@
       </aside>
 
       <section class="admin-workspace" aria-labelledby="news-title">
-        <div class="admin-heading"><div><div class="admin-kicker">Panel de administración</div><h1 id="news-title">Noticias</h1><p>Crea y publica las novedades del programa.</p></div><button id="new-news" type="button" class="admin-button primary">Nueva noticia</button></div>
+        <div class="admin-heading"><div><div class="admin-kicker">Panel de administración</div><h1 id="news-title">Noticias</h1><p>Crea y publica las novedades del programa.</p></div><div class="admin-heading-actions"><button id="open-json" type="button" class="admin-button">Pegar JSON</button><button id="new-news" type="button" class="admin-button primary">Nueva noticia</button></div></div>
         <div id="admin-message" class="admin-message" role="status" aria-live="polite"></div>
         <div class="admin-stats" aria-label="Resumen de noticias"><div><strong id="count-total">0</strong><span>Total</span></div><div><strong id="count-published">0</strong><span>Publicadas</span></div><div><strong id="count-draft">0</strong><span>Borradores</span></div><div><strong id="count-hidden">0</strong><span>Ocultas</span></div></div>
         <section id="migration-panel" class="admin-migration" hidden><div><h2>Importa las noticias actuales</h2><p>Revisa el archivo existente y pásalo a la base de datos. La página de inicio cambiará de fuente al terminar la importación.</p></div><button id="review-import" type="button" class="admin-button">Revisar importación</button></section>
@@ -79,8 +79,27 @@
     </div>
   </main>
   <dialog id="import-dialog" aria-labelledby="import-title"><form method="dialog"><button id="close-import" value="cancel" class="admin-dialog-close" aria-label="Cerrar revisión">×</button></form><div class="admin-kicker">Migración inicial</div><h2 id="import-title">Revisa las noticias</h2><p id="import-summary"></p><p>Se conservarán los registros que ya existan. Las noticias importadas quedarán publicadas y la página de inicio comenzará a leer la base de datos.</p><ol id="import-list"></ol><p id="import-message" class="admin-message" role="status"></p><button id="confirm-import" type="button" class="admin-button primary">Importar noticias</button></dialog>
+  <dialog id="json-dialog" aria-labelledby="json-title" aria-describedby="json-help">
+    <button id="close-json" type="button" class="admin-dialog-close" aria-label="Cerrar importación JSON">×</button>
+    <div class="admin-kicker">Agregar noticias</div><h2 id="json-title">Pegar JSON</h2>
+    <p id="json-help">Pega una noticia como objeto o varias dentro de una lista. Usa el formato de siempre: titulo, fecha, resumen, url e imagen. Hasta 200 noticias por lote.</p>
+    <details class="admin-json-example"><summary>Ver ejemplo del formato</summary><pre>{
+  "titulo": "Título de la noticia",
+  "fecha": "2026-11-24",
+  "resumen": "Resumen de la noticia.",
+  "url": "https://prensa.ibero.mx/es-MX/nota/ejemplo",
+  "imagen": "/assets/img/home/video-preview.png"
+}</pre><p>Para varias noticias: [ { ... }, { ... } ]. También se acepta la fecha como «Mar, 24 Nov 2026» o el campo fechaISO. La imagen y el resumen son opcionales.</p></details>
+    <label for="json-input">JSON de noticias</label><textarea id="json-input" rows="10" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="json-help" placeholder='{"titulo": "…", "fecha": "2026-11-24", "url": "https://…"}'></textarea>
+    <label for="json-state">Guardar las noticias nuevas como</label><select id="json-state"><option value="borrador">Borrador</option><option value="publicado">Publicado</option></select>
+    <p class="admin-field-help">El estado seleccionado se aplica a todo el lote. Las noticias existentes se conservan sin cambios.</p>
+    <div class="admin-form-actions"><button id="validate-json" type="button" class="admin-button">Validar y revisar</button><button id="clear-json" type="button" class="admin-text-button">Limpiar JSON</button></div>
+    <p id="json-message" class="admin-message" role="status" aria-live="polite"></p>
+    <section id="json-review" aria-labelledby="json-review-title" hidden><h3 id="json-review-title" tabindex="-1">Revisión del lote</h3><p id="json-summary" role="status"></p><ol id="json-list" class="admin-json-list"></ol></section>
+    <div class="admin-form-actions"><button id="confirm-json" type="button" class="admin-button primary" disabled>Guardar noticias</button></div>
+  </dialog>
   <script type="module">
-    import('/assets/js/admin.js?v=cache-20261122').catch(() => {
+    import('/assets/js/admin.js?v=json-20261124').catch(() => {
       document.getElementById('login-message').textContent = 'No se pudo cargar el administrador. Revisa tu conexión y recarga la página.';
     });
   </script>

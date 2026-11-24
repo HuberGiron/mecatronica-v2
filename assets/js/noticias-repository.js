@@ -1,5 +1,6 @@
 import { collection, doc, getDocsFromServer, getDocFromServer, query, orderBy, runTransaction, serverTimestamp } from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js';
 import { validateNews, formatNewsDate, normalizeLegacyNews, newsIdForUrl, sortNews } from './noticias-core.js?v=cache-20261122';
+import { parseNewsJson, buildJsonImportPlan } from './noticias-json.js?v=json-20261124';
 
 export function createNewsRepository(db, uid) {
   const settingsRef = doc(db, 'site_settings', 'noticias');
@@ -53,6 +54,34 @@ export function createNewsRepository(db, uid) {
       }));
       if (new Set(rows.map(item => item.id)).size !== rows.length) throw new Error('Hay enlaces repetidos en el JSON. Corrígelos antes de importar.');
       return sortNews(rows);
+    },
+    async prepareJsonImport(text, estado) {
+      const input = parseNewsJson(text, estado);
+      return buildJsonImportPlan(input, await this.list());
+    },
+    async importJsonNews(plan) {
+      // Revisa de nuevo los enlaces al confirmar, sin modificar registros existentes ni la migración inicial.
+      const fresh = await buildJsonImportPlan(plan?.input, await this.list());
+      const rows = fresh.rows.filter(item => item.disposition === 'nueva');
+      if (!rows.length) return { created: 0, skipped: fresh.total };
+      return runTransaction(db, async transaction => {
+        const references = rows.map(item => doc(db, 'noticias', item.id));
+        const snapshots = await Promise.all(references.map(ref => transaction.get(ref)));
+        let created = 0;
+        for (const [index, item] of rows.entries()) {
+          if (snapshots[index].exists()) continue;
+          const data = validateNews(item), now = serverTimestamp();
+          transaction.set(references[index], {
+            ...data, fechaTexto: formatNewsDate(data.fechaISO),
+            createdAt: now, createdByUid: uid, updatedAt: now, updatedByUid: uid,
+            publishedAt: data.estado === 'publicado' ? now : null,
+            publishedByUid: data.estado === 'publicado' ? uid : '',
+            revision: 1, legacyImported: false
+          });
+          created++;
+        }
+        return { created, skipped: fresh.total - created };
+      });
     },
     async importLegacy(rows) {
       if (!Array.isArray(rows) || !rows.length || rows.length > 200) throw new Error('Primero revisa el archivo que vas a importar.');

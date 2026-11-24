@@ -1,8 +1,8 @@
 import { app, db } from './firebase-client.js?v=cache-20261122';
 import { getAuth, setPersistence, browserSessionPersistence, onAuthStateChanged, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js';
 import { doc, onSnapshot } from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js';
-import { createNewsRepository } from './noticias-repository.js?v=cache-20261122';
-import { mountAdmin } from './admin-controller.js?v=cache-20261122';
+import { createNewsRepository } from './noticias-repository.js?v=json-20261124';
+import { mountAdmin } from './admin-controller.js?v=json-20261124';
 
 const auth = getAuth(app);
 await setPersistence(auth, browserSessionPersistence);
